@@ -2,24 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	@apply bg-black text-white;
+}
+
+.sans {
+	font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.mono {
+	font-family: 'IBM Plex Mono', monospace !important;
+}
+
 ::selection {
-	@apply bg-gray-600 text-white;
+	@apply bg-green-300 text-green-900;
 }
 
 .active {
-	@apply text-blue-800;
+	@apply text-green-300;
 }
 
 #content-markdown {
 	.content {
-		@apply md:text-lg;
+		@apply text-base;
 
 		a {
 			@apply link-underline;
 		}
 
 		blockquote {
-			@apply mt-5 border-2 border-gray-50 p-5 text-sm;
+			@apply mono mt-5 border-2 border-white p-5 text-sm;
 
 			p {
 				@apply mt-0 leading-6;
@@ -31,20 +43,20 @@
 		}
 
 		h2 {
-			@apply mt-12 text-xl font-black md:text-2xl;
+			@apply mono mt-12 text-xl font-black md:text-2xl;
 		}
 
 		h3 {
-			@apply mt-10 font-black md:text-xl;
+			@apply mono mt-10 font-black md:text-xl;
 		}
 
 		h4 {
-			@apply mt-8 font-black;
+			@apply mono mt-8 font-black;
 		}
 
 		h5,
 		h6 {
-			@apply mt-5 font-black;
+			@apply mono mt-5 font-black;
 		}
 
 		img {
@@ -73,7 +85,7 @@
 	}
 
 	.anchorLink {
-		@apply link ml-3;
+		@apply link sans ml-3;
 	}
 }
 
@@ -86,53 +98,50 @@
 }
 
 .content-uppercase {
-	@apply font-semibold uppercase tracking-widest;
+	@apply mono font-semibold uppercase tracking-widest;
 }
 
-.header-link {
-	@apply font-bold text-gray-600 hover:text-blue-800;
+.handwritten {
+	font-family: 'Permanent Marker', cursive;
 }
 
-.highlight {
-	@apply rounded-md bg-blue-800 px-0.5 text-white;
+.header-link-active {
+	@apply link-active border-b-2;
 }
 
 .link {
-	@apply ring-1 ring-transparent transition duration-150 hover:text-blue-800 hover:underline focus:outline-none focus:ring-white;
+	@apply ring-1 ring-transparent transition duration-150 hover:text-green-300 hover:underline focus:outline-none focus:ring-green-300;
 }
 
 .link-active {
-	@apply border-blue-800 text-blue-800;
+	@apply border-green-400 text-green-300;
 }
 
 .link-underline {
-	@apply text-blue-800 ring-1 ring-transparent transition duration-150 hover:text-blue-900 hover:underline focus:outline-none focus:ring-white;
+	@apply text-green-300 ring-1 ring-transparent transition duration-150 hover:text-green-400 hover:underline focus:outline-none focus:ring-green-300;
 }
 
 .main-header {
-	@apply text-2xl font-black !leading-snug tracking-tight md:text-2xl;
+	@apply mono text-3xl font-black leading-snug tracking-tight md:text-4xl;
+}
+
+mark,
+.highlight {
+	@apply bg-green-300 text-green-900;
 }
 
 .mb-content {
 	@apply mb-8 md:mb-12 lg:mb-16;
 }
 
+.minimal-scrollbar {
+	@apply scrollbar scrollbar-track-white scrollbar-thumb-green-300;
+}
+
 .mt-content {
-	@apply mt-8 md:mt-12 lg:mt-16;
+	@apply sm:mt-8 md:mt-12 lg:mt-16;
 }
 
 .negative-z {
 	z-index: -1;
-}
-
-.section-content {
-	@apply mx-auto w-full max-w-7xl px-3;
-}
-
-.svg-sm {
-	@apply h-4 w-4;
-}
-
-.svg-base {
-	@apply h-5 w-5;
 }
