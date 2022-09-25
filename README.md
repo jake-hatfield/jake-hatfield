@@ -1,38 +1,34 @@
-# create-svelte
+# Jake Hatfield Portfolio
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is my [professional portfolio](https://jake-hatfield.com) to showcase what projects I'm working on, what technologies I have experience with, and what currently interests me.
 
-## Creating a project
+Here's the tech stack I used to build it:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 💖 SvelteKit
+- ⌨️ TypeScript
+- ✉️ SendGrid
+- ⬛ Carbon Icons
+- 🧪 Vitest/Playwright (with Github Actions CI)
+- 📷 Custom image enhancements (converting files to .webp and upscaling on load)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+This code is not to be reproduced and is intended for Jake Hatfield's purposes only.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## 📖 Articles
 
-## Developing
+Self-deemed noteworthy posts on technical topics.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 📢 Contact
 
-```bash
-npm run dev
+The contact form was created with SendGrid to prevent having to use lame mailto links.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## ✍️ Journal
 
-## Building
+Some thoughts about what I'm currently working on or working through.
 
-To create a production version of your app:
+## ⚒️ Projects
 
-```bash
-npm run build
-```
+A list of my projects, descriptions, dates, and tech stacks used. A link to the Github repository is included if it's open-source and a link to the production version if it's deployed.
 
-You can preview the production build with `npm run preview`.
+## 📃 Resume
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+An up-to-date resume shareable through Google Drive or downloadable directly from the page.
