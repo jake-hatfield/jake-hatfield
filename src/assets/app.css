@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-	@apply bg-black text-white;
+	@apply mono text-zinc-900;
 }
 
 .sans {
@@ -15,11 +15,11 @@ html {
 }
 
 ::selection {
-	@apply bg-green-300 text-green-900;
+	@apply bg-blue-400 text-green-900;
 }
 
 .active {
-	@apply text-green-300;
+	@apply text-blue-400;
 }
 
 #content-markdown {
@@ -110,15 +110,15 @@ html {
 }
 
 .link {
-	@apply ring-1 ring-transparent transition duration-150 hover:text-green-300 hover:underline focus:outline-none focus:ring-green-300;
+	@apply ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-blue-400 hover:text-blue-400 hover:underline;
 }
 
 .link-active {
-	@apply border-green-400 text-green-300;
+	@apply border-green-400 text-blue-400;
 }
 
 .link-underline {
-	@apply text-green-300 ring-1 ring-transparent transition duration-150 hover:text-green-400 hover:underline focus:outline-none focus:ring-green-300;
+	@apply text-blue-400 ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-blue-400 hover:text-green-400 hover:underline;
 }
 
 .main-header {
@@ -127,7 +127,7 @@ html {
 
 mark,
 .highlight {
-	@apply bg-green-300 text-green-900;
+	@apply bg-blue-400 text-green-900;
 }
 
 .mb-content {
@@ -135,7 +135,7 @@ mark,
 }
 
 .minimal-scrollbar {
-	@apply scrollbar scrollbar-track-white scrollbar-thumb-green-300;
+	@apply scrollbar scrollbar-track-white scrollbar-thumb-blue-400;
 }
 
 .mt-content {
@@ -144,4 +144,9 @@ mark,
 
 .negative-z {
 	z-index: -1;
+}
+
+.pattern {
+	background-color: #f3e8d3;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2318181b' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }

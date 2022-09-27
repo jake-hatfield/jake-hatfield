@@ -45,7 +45,13 @@ const config = {
 	],
 	extensions,
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$assets: './src/assets',
+			$components: './src/components',
+			$stores: './src/stores',
+			$routes: './src/routes'
+		}
 	}
 };
 
