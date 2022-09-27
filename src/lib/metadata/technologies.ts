@@ -1,0 +1,16 @@
+export default [
+	'HTML',
+	'CSS',
+	'JavaScript',
+	'TypeScript',
+	'Svelte',
+	'React',
+	'NodeJS',
+	'Supabase',
+	'MongoDB',
+	'GraphQL',
+	'TailwindCSS',
+	'Jest',
+	'Vitest',
+	'Playwright',
+];
