@@ -1,26 +1,15 @@
 <script lang="ts">
 	// components
+	import Button from '$components/utilities/Button.svelte';
 	import Image from '$components/utilities/Image.svelte';
-	import LaunchButton from '$components/layout/LaunchButton.svelte';
-
-	// images
-	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=500;250&format=webp&srcset';
-	import AvatarSrcset from '$assets/images/rasters/avatar.png?width=500;250&srcset';
-	import Avatar from '$assets/images/rasters/avatar.png?width=500';
 
 	// icons
-	import {
-		Documentation,
-		Envelope,
-		Folder,
-		Growth,
-		Steel,
-		Tools,
-		UserAnalytics,
-	} from 'carbon-pictograms-svelte';
+	import { ArrowRight } from 'carbon-icons-svelte';
 
-	// lib
-	import technologies from '$lib/metadata/technologies';
+	// images
+	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;250&format=webp&srcset';
+	import AvatarSrcset from '$assets/images/rasters/avatar.png?width=832;250&srcset';
+	import Avatar from '$assets/images/rasters/avatar.png?width=832';
 
 	// types
 	import type { PageData } from './$types';
@@ -30,15 +19,27 @@
 	$: ({ imagePlaceholders } = data);
 </script>
 
-<div class="content-section">
-	<header>
-		<h1 class="py-3 text-3xl font-black">Welcome to HowdyOS</h1>
-		<p>The official operating system for Jake Hatfield</p>
-	</header>
-	<!-- <Image
-		alt="Jake Hatfield"
+<section class="mt-content md:flex md:items-start md:justify-between">
+	<div class="md:w-1/2">
+		<header>
+			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
+			<h1 class="py-3 text-3xl font-black">jake hatfield</h1>
+		</header>
+		<p>
+			i'm a circumstantially self-taught full-stack software engineer running a bootstrapped solo
+			business. this site exists to share what i'm working on and learning along the way.
+		</p>
+		<Button
+			class="mt-5"
+			href="/changelog"
+			icon={ArrowRight}
+			kind="secondary"
+			title="follow my journey" />
+	</div>
+	<Image
+		alt="jake hatfield"
 		class="md:ml-8 md:w-1/2"
-		height={500}
+		height={300}
 		loading="eager"
 		placeholder={imagePlaceholders[0]}
 		sources={[
@@ -46,40 +47,7 @@
 			{ srcset: AvatarSrcset, type: 'image/png' },
 		]}
 		src={Avatar}
-		width={250} /> -->
-
-	<div class="flex justify-between">
-		<ul class="flex flex-col justify-between">
-			<li>
-				<LaunchButton icon={UserAnalytics} title="About" />
-			</li>
-			<li>
-				<LaunchButton icon={Folder} title="Articles" />
-			</li>
-			<li>
-				<LaunchButton icon={Growth} title="Journal" />
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<LaunchButton icon={Steel} title="Projects" />
-			</li>
-			<li>
-				<LaunchButton icon={Documentation} title="Resume" />
-			</li>
-			<li>
-				<LaunchButton icon={Envelope} title="Contact" />
-			</li>
-			<li>
-				<LaunchButton icon={Tools} title="Tools" />
-			</li>
-		</ul>
-	</div>
-	<ul class="mt-8 grid grid-cols-6 gap-3 border-2 border-zinc-900 bg-zinc-300 p-5">
-		{#each technologies as technology}
-			<li class="relative">
-				<img src={`../logos/${technology.toLowerCase()}.svg`} alt={technology} class="h-16 w-16" />
-			</li>
-		{/each}
-	</ul>
-</div>
+		width={250} />
+</section>
+recent articles recent journals recent projects
+<section>TEST</section>

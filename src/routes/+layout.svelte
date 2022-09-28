@@ -35,12 +35,13 @@
 	// links/modal for each launch button
 </script>
 
-<div class="pattern relative flex h-full min-h-screen flex-col items-start">
-	<!-- <Header /> -->
+<div
+	class="relative mx-auto flex h-full min-h-screen w-full max-w-4xl flex-col items-start px-4 sm:px-6 lg:px-8">
+	<Header />
 
-	<main class="relative h-full w-full">
+	<main class="mb-content mt-content relative h-full w-full">
 		<slot />
 	</main>
 
-	<!-- <Footer /> -->
+	<Footer />
 </div>

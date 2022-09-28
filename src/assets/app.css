@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-	@apply mono text-zinc-900;
+	@apply mono bg-black text-white;
 }
 
 .sans {
@@ -15,11 +15,11 @@ html {
 }
 
 ::selection {
-	@apply bg-blue-400 text-green-900;
+	@apply bg-lime-400 text-lime-900;
 }
 
 .active {
-	@apply text-blue-400;
+	@apply text-lime-400;
 }
 
 #content-markdown {
@@ -90,11 +90,7 @@ html {
 }
 
 .content-section {
-	@apply mt-content mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
-}
-
-.content-section-text {
-	@apply mb-content mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8;
+	@apply mt-content mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8;
 }
 
 .content-uppercase {
@@ -110,15 +106,15 @@ html {
 }
 
 .link {
-	@apply ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-blue-400 hover:text-blue-400 hover:underline;
+	@apply text-lime-400 ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-lime-400 hover:text-lime-500 hover:underline;
 }
 
 .link-active {
-	@apply border-green-400 text-blue-400;
+	@apply border-green-400 text-lime-400;
 }
 
 .link-underline {
-	@apply text-blue-400 ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-blue-400 hover:text-green-400 hover:underline;
+	@apply text-lime-400 underline ring-1 ring-transparent transition duration-150 focus:outline-none focus:ring-lime-400 hover:text-lime-500;
 }
 
 .main-header {
@@ -127,7 +123,7 @@ html {
 
 mark,
 .highlight {
-	@apply bg-blue-400 text-green-900;
+	@apply bg-lime-400 text-lime-900;
 }
 
 .mb-content {
@@ -135,7 +131,7 @@ mark,
 }
 
 .minimal-scrollbar {
-	@apply scrollbar scrollbar-track-white scrollbar-thumb-blue-400;
+	@apply scrollbar scrollbar-track-white scrollbar-thumb-lime-400;
 }
 
 .mt-content {
@@ -144,9 +140,4 @@ mark,
 
 .negative-z {
 	z-index: -1;
-}
-
-.pattern {
-	background-color: #f3e8d3;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2318181b' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }

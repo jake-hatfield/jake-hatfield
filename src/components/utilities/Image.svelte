@@ -2,7 +2,7 @@
 	export let alt: string;
 	export let height: number;
 	export let loading: 'lazy' | 'eager' = 'lazy';
-	export let maxWidth: string = '1216px';
+	export let maxWidth: string = '832px';
 	export let placeholder: string;
 	export let sizes: string = `(max-width: ${maxWidth}) 100vw, ${maxWidth}}`;
 	export let sources: { srcset: string; type: string }[];
@@ -16,7 +16,7 @@
 		<source data-sizes={sizes} data-srcset={source.srcset} type={source.type} {width} {height} />
 	{/each}
 	<img
-		class="lazy box-shadow-retro rounded-sm border-2 border-zinc-900 shadow-lg"
+		class="lazy border-2 border-violet-700"
 		{alt}
 		{loading}
 		decoding="async"
