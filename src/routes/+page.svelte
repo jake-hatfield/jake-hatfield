@@ -23,12 +23,13 @@
 	<div class="md:w-1/2">
 		<header>
 			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
-			<h1 class="py-3 text-3xl font-black">jake hatfield</h1>
+			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
 		</header>
-		<p>
+		<p class="mt-5">
 			i'm a circumstantially self-taught full-stack software engineer running a bootstrapped solo
-			business. this site exists to share what i'm working on and learning along the way.
+			business.
 		</p>
+		<p class="mt-3">this site exists to share what i'm working on and learning along the way.</p>
 		<Button
 			class="mt-5"
 			href="/changelog"

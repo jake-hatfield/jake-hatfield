@@ -39,7 +39,6 @@
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"prettier-plugin-tailwindcss": "^0.1.13",
-		"reading-time": "^1.5.0",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-external-links": "^2.0.1",
 		"rehype-slug": "^5.0.1",
@@ -61,6 +60,7 @@
 		"@fontsource/ibm-plex-sans": "^4.5.12",
 		"@fontsource/permanent-marker": "^4.5.6",
 		"@sendgrid/mail": "^7.7.0",
-		"luxon": "^3.0.4"
+		"luxon": "^3.0.4",
+		"reading-time-estimator": "^1.7.2"
 	}
 }

@@ -10,7 +10,7 @@
 </script>
 
 <nav aria-label="footer" class="mb-3 mt-auto w-full md:flex md:items-center md:justify-between">
-	<p class="text-center text-zinc-400">
+	<p class="text-center">
 		&copy; {new Date().getFullYear()} jake hatfield
 	</p>
 	<ul>
