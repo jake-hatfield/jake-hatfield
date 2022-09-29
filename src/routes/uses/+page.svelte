@@ -7,7 +7,7 @@
 <section>
 	<header>
 		<h1 class="text-3xl font-black">uses</h1>
-		<p class="pt-5">
+		<p class="mt-5">
 			i'm inspired quite a bit by <Link
 				href="https://www.ted.com/talks/steve_lacy_the_bare_maximum"
 				isExternal

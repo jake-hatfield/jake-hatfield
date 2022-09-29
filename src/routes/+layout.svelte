@@ -30,9 +30,6 @@
 			lazyloadInstance.update();
 		}
 	});
-
-	// initial popup for first-time users
-	// links/modal for each launch button
 </script>
 
 <div

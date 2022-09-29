@@ -26,10 +26,9 @@
 			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
 		</header>
 		<p class="mt-5">
-			i'm a circumstantially self-taught full-stack software engineer running a bootstrapped solo
-			business.
+			i'm a self-taught full-stack software engineer running a bootstrapped solo business.
 		</p>
-		<p class="mt-3">this site exists to share what i'm working on and learning along the way.</p>
+		<p class="mt-3">this site exists to share what i'm currently learning and working on.</p>
 		<Button
 			class="mt-5"
 			href="/changelog"
