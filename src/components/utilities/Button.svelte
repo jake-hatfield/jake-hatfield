@@ -32,9 +32,9 @@
 		isFullWidth === true ? 'w-full' : 'w-fit'
 	} ${
 		size === 'sm'
-			? 'p-1.5'
+			? 'py-0.5 px-1'
 			: size === 'md'
-			? 'p-2'
+			? 'p-1.5'
 			: size === 'lg'
 			? 'p-3'
 			: 'pt-[9px] pb-[9px] px-3 border-b border-transparent'

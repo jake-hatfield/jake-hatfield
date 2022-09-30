@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 // lib
-import { pluralize } from '$lib/utilities/stringHelpers';
+import { pluralize } from '$lib/utilities/string';
 
 export const convertTimestampToDateTime = (timestamp: number) => {
 	return DateTime.fromSeconds(timestamp);
@@ -35,7 +35,7 @@ export const formatDifference = (futureDate: DateTime, date?: DateTime) => {
 	if (difference.days < 1) {
 		return `${pluralize(+difference.hours.toFixed(0), 'hour')} ${pluralize(
 			+difference.minutes.toFixed(0),
-			'minute'
+			'minute',
 		)} left`;
 	}
 
@@ -56,5 +56,5 @@ export const formatTimestamp = (timestamp: number, showYear = false) => {
 };
 
 export const formatIsoToText = (isoTimestamp: string) => {
-	return DateTime.fromISO(isoTimestamp).toFormat('LLL dd @ t');
+	return DateTime.fromISO(isoTimestamp).toFormat('dd LLL, yyyy').toLowerCase();
 };

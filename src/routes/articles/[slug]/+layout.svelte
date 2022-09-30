@@ -1,12 +1,13 @@
 <script lang="ts">
-	// packages
-	import { DateTime } from 'luxon';
-
 	// components
 	import Button from '$components/utilities/Button.svelte';
 
+	// icons
+	import { Calendar, Tag, Time } from 'carbon-icons-svelte';
+
 	// lib
-	import { kebabCase } from '$lib/utilities/stringHelpers';
+	import { kebabCase } from '$lib/utilities/string';
+	import { formatIsoToText } from '$lib/utilities/dateTime';
 
 	// types
 	import type { LayoutData } from '.svelte-kit/types/src/routes/$types';
@@ -22,27 +23,35 @@
 <section class="content-section-text">
 	<article id="content-markdown" itemscope itemtype="http://schema.org/Article">
 		<header>
-			<h1 class="mono inline-block text-2xl font-black md:text-4xl">
+			<h1 class="inline-block text-2xl font-black md:text-3xl">
 				{article.title}
 			</h1>
-			<p class="mt-5">
-				Last updated: <date datetime={article.date}>
-					{DateTime.fromISO(article.date).toFormat('LLLL dd, yyyy')}
-				</date>
-			</p>
-			<div class="mt-1.5">{article.readingTime}</div>
-			<ul class="md:flex md:flex-wrap md:items-center">
-				{#each article.tags as tag}
-					<li class="mt-3 bg-cyan-500 text-center text-sm first:ml-0 md:ml-3">
-						<Button
-							href={`/blog/tags/${kebabCase(tag.toString())}`}
-							isFullWidth
-							kind="secondary"
-							size="sm"
-							title={tag.toString()} />
-					</li>
-				{/each}
-			</ul>
+			<div class="mt-3 flex items-center">
+				<div class="flex items-center">
+					<Tag class="text-orange-400" />
+					<ul class="ml-3 flex items-center">
+						{#each article.tags as tag}
+							<li class="ml-1.5 first:ml-0">
+								<Button kind="secondary" href={`/tags/${kebabCase(tag)}`} size="sm" title={tag} />
+							</li>
+						{/each}
+					</ul>
+				</div>
+				<span class="mx-3">|</span>
+				<div class="flex items-center">
+					<Time class="text-orange-400" />
+					<p class="ml-3">{article.readingTime}</p>
+				</div>
+				<span class="mx-3">|</span>
+				<div class="flex items-center">
+					<Calendar class="text-orange-400" />
+					<p class="ml-3">{formatIsoToText(article.createdAt)}</p>
+				</div>
+				<p class="ml-3 text-zinc-500">
+					{#if article.updatedAt && article.updatedAt > article.createdAt}updated
+					{:else}published{/if}
+				</p>
+			</div>
 		</header>
 		<div class="cover-image">
 			<!-- <Image path="posts/{post.slug}" filename="cover" alt="Cover Image" /> -->

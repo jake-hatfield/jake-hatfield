@@ -9,7 +9,7 @@
 	import { kebabCase } from '$lib/utilities/string';
 
 	// data
-	const primaryLinks = ['home', 'articles', 'changelogs', 'projects', 'resume', 'uses'];
+	const primaryLinks = ['home', 'articles', 'changelogs', 'projects', 'uses'];
 
 	const secondaryLinks = [
 		{ icon: InformationSquare, title: 'about' },
@@ -21,7 +21,7 @@
 	<ul class="flex items-center">
 		{#each primaryLinks as link}
 			<li class="ml-3 first:ml-0">
-				<Button href={link === 'home' ? './' : `./${kebabCase(link)}`} kind="ghost" title={link} />
+				<Button href={link === 'home' ? '/' : `/${kebabCase(link)}`} kind="ghost" title={link} />
 			</li>
 		{/each}
 	</ul>
@@ -29,7 +29,7 @@
 		{#each secondaryLinks as link}
 			<li class="ml-3 first:ml-0">
 				<Button
-					href={`./${kebabCase(link.title)}`}
+					href={`/${kebabCase(link.title)}`}
 					icon={link.icon}
 					kind="ghost"
 					title={link.title} />

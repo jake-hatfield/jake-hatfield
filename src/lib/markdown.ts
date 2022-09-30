@@ -92,7 +92,7 @@ export default (type: 'articles' | 'changelogs') => {
 				relatedItems.push({
 					item: { ...relatedItem, readingTime: readingTime(relatedItem.html).text },
 					count: 1,
-					date: relatedItem.date,
+					createdAt: relatedItem.createdAt,
 				});
 			}
 		}
@@ -106,9 +106,9 @@ export default (type: 'articles' | 'changelogs') => {
 	const filteredItems: FinalizedItem[] = items
 		.filter((item) => !item.hidden)
 		.sort((a, b) =>
-			new Date(a.date).getTime() > new Date(b.date).getTime()
+			new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime()
 				? -1
-				: new Date(a.date).getTime() < new Date(b.date).getTime()
+				: new Date(a.createdAt).getTime() < new Date(b.createdAt).getTime()
 				? 1
 				: 0,
 		)
@@ -121,7 +121,7 @@ export default (type: 'articles' | 'changelogs') => {
 				...item,
 				readingTime: readingTimeDuration,
 				relatedItems: relatedItems
-					.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+					.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
 					.sort((a, b) => b.count - a.count)
 					.slice(0, 3)
 					.map((x) => x.item),

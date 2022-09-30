@@ -63,7 +63,7 @@
 					<p>
 						snappy mechanical keyboard. what drew me in was the construction quality and the macro
 						assignability. it's as helpful as i expected to be able to shortcut a few commands while
-						working
+						working.
 					</p>
 				</div>
 			</Use>

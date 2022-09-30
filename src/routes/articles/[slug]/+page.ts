@@ -3,35 +3,44 @@ import { error } from '@sveltejs/kit';
 
 // types
 import type { PageLoad } from './$types';
-import type Post from '$types/blog/Post';
+import type { FinalizedItem } from '$types/markdown/Item';
 
-// Get posts' info
-const allPosts = import.meta.glob('$lib/posts/*.md', { eager: true });
+// Get items' info
+const allArticles = import.meta.glob('$lib/articles/*.md', { eager: true });
 
-const posts: Post[] = [];
+const articles: FinalizedItem[] = [];
 
 // Get the posts' slugs
-for (const path in allPosts) {
-	const post = allPosts[path];
-	const slug = post.metadata.slug;
-	const p = { post, slug };
-	posts.push(p);
+for (const path in allArticles) {
+	const article = allArticles[path];
+	console.log(article);
+	const slug = path
+		// remove everything before the file name
+		.substring(path.lastIndexOf('/') + 1)
+		// remove the ".md" extension
+		.split('.')[0]
+		.toLowerCase();
+	const a = { article, slug };
+	articles.push(a);
 }
 
 export const load: PageLoad = ({ params }) => {
 	const { slug } = params;
 
+	console.log(slug);
+	console.log(articles);
+
 	// Find the post with the slug
-	const filteredPost = posts.find((p) => {
-		return p.slug.toLowerCase() === slug.toLowerCase();
+	const filteredItem = articles.find((article) => {
+		return article.slug.toLowerCase() === slug.toLowerCase();
 	});
 
-	if (!filteredPost) {
-		throw error(500, 'Could not load post');
+	if (!filteredItem) {
+		throw error(500, 'Could not load article');
 	}
 
 	return {
 		// Tell page to load that post's module
-		page: filteredPost.post.default,
+		page: filteredItem.article.default,
 	};
 };

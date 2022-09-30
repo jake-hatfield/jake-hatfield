@@ -17,7 +17,7 @@
 		nov '19. i created this site to share what <Link
 			href="/articles"
 			isUnderlined
-			title="learnings" />, <Link href="/changelog" isUnderlined title="thoughts" />, and <Link
+			title="learnings" />, <Link href="/changelogs" isUnderlined title="thoughts" />, and <Link
 			href="/projects"
 			isUnderlined
 			title="projects" /> are currently taking my time and attention.

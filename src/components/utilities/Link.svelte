@@ -2,11 +2,11 @@
 	// icons
 	import { Launch } from 'carbon-icons-svelte';
 
-	// required props
+	// * required props *
 	export let href: string;
 	export let title: string;
 
-	// other props
+	// optional props
 	export let disabled = false;
 	export let icon: any | null = null;
 	export let isBlock = false;

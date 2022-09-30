@@ -26,9 +26,11 @@
 			i'm a self-taught full-stack software engineer running a bootstrapped solo business.
 		</p>
 		<p class="mt-3">
-			really, i'm just a dude trying to become the best programmer and human i can be. i created
-			this site to share what <Link href="/articles" isUnderlined title="learnings" />, <Link
-				href="/changelog"
+			really, i'm just a dude trying to become the best programmer and person i can be.
+		</p>
+		<p class="mt-3">
+			i created this site to share what <Link href="/articles" isUnderlined title="learnings" />, <Link
+				href="/changelogs"
 				isUnderlined
 				title="thoughts" />, and <Link href="/projects" isUnderlined title="projects" /> are currently
 			taking my time and attention.

@@ -31,7 +31,7 @@ html {
 		}
 
 		blockquote {
-			@apply mono mt-5 border-2 border-white p-5 text-sm;
+			@apply mt-5 bg-violet-700 p-3 text-sm text-lime-400;
 
 			p {
 				@apply mt-0 leading-6;
@@ -123,7 +123,7 @@ html {
 
 mark,
 .highlight {
-	@apply bg-lime-400 text-lime-900;
+	@apply bg-violet-700 text-lime-400;
 }
 
 .mb-content {

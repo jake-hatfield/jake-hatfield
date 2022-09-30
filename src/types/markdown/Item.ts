@@ -1,6 +1,7 @@
 export interface Item {
 	slug: string;
-	date: string;
+	createdAt: string;
+	updatedAt: string | null;
 	excerpt: string;
 	hidden: boolean;
 	tags: string[];
