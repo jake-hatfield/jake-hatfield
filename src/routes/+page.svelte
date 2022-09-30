@@ -1,10 +1,7 @@
 <script lang="ts">
 	// components
-	import Button from '$components/utilities/Button.svelte';
 	import Image from '$components/utilities/Image.svelte';
-
-	// icons
-	import { ArrowRight } from 'carbon-icons-svelte';
+	import Link from '$components/utilities/Link.svelte';
 
 	// images
 	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;250&format=webp&srcset';
@@ -28,13 +25,14 @@
 		<p class="mt-5">
 			i'm a self-taught full-stack software engineer running a bootstrapped solo business.
 		</p>
-		<p class="mt-3">this site exists to share what i'm currently learning and working on.</p>
-		<Button
-			class="mt-5"
-			href="/changelog"
-			icon={ArrowRight}
-			kind="secondary"
-			title="follow my journey" />
+		<p class="mt-3">
+			really, i'm just a dude trying to become the best programmer and human i can be. i created
+			this site to share what <Link href="/articles" isUnderlined title="learnings" />, <Link
+				href="/changelog"
+				isUnderlined
+				title="thoughts" />, and <Link href="/projects" isUnderlined title="projects" /> are currently
+			taking my time and attention.
+		</p>
 	</div>
 	<Image
 		alt="jake hatfield"
@@ -49,5 +47,5 @@
 		src={Avatar}
 		width={250} />
 </section>
-recent articles recent journals recent projects
-<section>TEST</section>
+
+<section class="mt-8">recent articles recent journals recent projects</section>

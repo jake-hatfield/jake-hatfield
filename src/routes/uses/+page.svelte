@@ -217,7 +217,7 @@
 			<Use href="https://jakearchibald.github.io/svgomg/" title="svgomg" type="vector optimization">
 				<div class="mt-3" slot="description">
 					<p>
-						great, simple Use. i use it on pretty much every .svg i deal with (if i remember <span
+						great, simple tool. i use it on pretty much every .svg i deal with (if i remember <span
 							role="img"
 							aria-label="Brain emoji">🧠</span> to).
 					</p>
@@ -310,8 +310,8 @@
 				<div class="mt-3" slot="description">
 					<p>
 						i reused the same password on all services like an idiot until my chipotle account got
-						compromised and someone ordered a metric ton of burritos. switched to bitwarden,
-						re-created insane 40-character alphanumeric passwords, never looked back.
+						compromised and someone ordered a metric ton of burritos with my card. switched to
+						bitwarden, re-created insane 40-character alphanumeric passwords, never looked back.
 					</p>
 				</div>
 			</Use>
