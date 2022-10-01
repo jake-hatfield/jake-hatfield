@@ -1,15 +1,16 @@
+const siteUrl = 'jake-hatfield.com';
+
 export default {
 	author: 'Jake Hatfield',
 	siteLanguage: 'en',
 	siteTitle: 'Jake Hatfield',
-	siteUrl: 'jake-hatfield.com',
+	siteUrl,
 	keywords: [],
-	personalEmail: 'me@jake-hatfield.com',
+	personalEmail: `me@${siteUrl}`,
 	placeholderInformation: {
 		email: 'lukamagic@mavs.com',
 		firstName: 'Luka',
 		lastName: 'Doncic',
 		phone: '+1 555-555-5555',
 	},
-	]
 };

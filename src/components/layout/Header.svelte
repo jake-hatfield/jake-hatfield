@@ -7,13 +7,14 @@
 
 	// lib
 	import { kebabCase } from '$lib/utilities/string';
+	import metadata from '$lib/metadata';
 
 	// data
 	const primaryLinks = ['home', 'articles', 'changelogs', 'projects', 'uses'];
 
 	const secondaryLinks = [
-		{ icon: InformationSquare, title: 'about' },
-		{ icon: SendAlt, title: 'contact' },
+		{ href: '/about', icon: InformationSquare, title: 'about' },
+		{ href: `mailto:${metadata.personalEmail}`, icon: SendAlt, title: 'contact' },
 	];
 </script>
 
@@ -26,13 +27,9 @@
 		{/each}
 	</ul>
 	<ul class="flex items-center">
-		{#each secondaryLinks as link}
+		{#each secondaryLinks as { href, icon, title }}
 			<li class="ml-3 first:ml-0">
-				<Button
-					href={`/${kebabCase(link.title)}`}
-					icon={link.icon}
-					kind="ghost"
-					title={link.title} />
+				<Button {href} {icon} kind="ghost" {title} />
 			</li>
 		{/each}
 	</ul>
