@@ -1,7 +1,6 @@
 <script lang="ts">
 	// components
 	import Article from '$components/items/Article.svelte';
-	import CTA from '$components/layout/CTA.svelte';
 
 	// types
 	import type { PageData } from './$types';
@@ -13,7 +12,6 @@
 <section>
 	<header>
 		<h1 class="text-3xl font-black">articles</h1>
-		<CTA />
 	</header>
 
 	<ul>

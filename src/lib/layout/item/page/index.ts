@@ -17,7 +17,6 @@ export default (type: Types) => {
 	// Get the posts' slugs
 	for (const path in imports) {
 		const article = imports[path];
-		console.log(article);
 		const slug = path
 			// remove everything before the file name
 			.substring(path.lastIndexOf('/') + 1)

@@ -33,7 +33,7 @@
 </script>
 
 <div
-	class="relative mx-auto flex h-full min-h-screen w-full max-w-4xl flex-col items-start px-4 sm:px-6 lg:px-8">
+	class="relative mx-auto flex h-full min-h-screen w-full max-w-3xl flex-col items-start px-4 sm:px-6 lg:px-8">
 	<Header />
 
 	<main class="mb-content mt-content relative h-full w-full">

@@ -18,19 +18,21 @@
 	];
 </script>
 
-<nav aria-label="header" class="mt-3 flex w-full items-center justify-between">
-	<ul class="flex items-center">
-		{#each primaryLinks as link}
-			<li class="ml-3 first:ml-0">
-				<Button href={link === 'home' ? '/' : `/${kebabCase(link)}`} kind="ghost" title={link} />
-			</li>
-		{/each}
-	</ul>
-	<ul class="flex items-center">
-		{#each secondaryLinks as { href, icon, title }}
-			<li class="ml-3 first:ml-0">
-				<Button {href} {icon} kind="ghost" {title} />
-			</li>
-		{/each}
-	</ul>
-</nav>
+<header class="w-full">
+	<nav class="mt-3 flex w-full items-center justify-between">
+		<ul class="flex items-center">
+			{#each primaryLinks as link}
+				<li class="ml-3 first:ml-0">
+					<Button href={link === 'home' ? '/' : `/${kebabCase(link)}`} kind="ghost" title={link} />
+				</li>
+			{/each}
+		</ul>
+		<ul class="flex items-center">
+			{#each secondaryLinks as { href, icon, title }}
+				<li class="ml-3 first:ml-0">
+					<Button {href} {icon} kind="ghost" {title} />
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</header>

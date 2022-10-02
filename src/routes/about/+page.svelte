@@ -61,34 +61,34 @@
 		i can handle authentication, process payments, send emails, preserve data in storage, and plug
 		that all into a responsive, accessible, and intuitive front end.
 	</p>
-	<article class="mt-8">
-		<header>
-			<h2 class="text-2xl font-black">my technologies</h2>
-		</header>
-		<ul class="pl-5 md:pl-8">
-			{#each technologies as technology}
-				<li class="mt-1.5 list-disc">{technology}</li>
-			{/each}
-		</ul>
-	</article>
-	<article class="mt-8">
-		<header>
-			<h2 class="text-2xl font-black">my non-technical skills</h2>
-		</header>
-		<ul class="pl-5 md:pl-8">
-			{#each nonTechnicalSkills as skill}
-				<li class="mt-1.5 list-disc">{skill}</li>
-			{/each}
-		</ul>
-	</article>
-	<article class="mt-8">
-		<header>
-			<h2 class="text-2xl font-black">my future learning interests</h2>
-		</header>
-		<ul class="pl-5 md:pl-8">
-			{#each futureTechnologies as technology}
-				<li class="mt-1.5 list-disc">{technology}</li>
-			{/each}
-		</ul>
-	</article>
+</section>
+<section class="mt-8">
+	<header>
+		<h2 class="text-2xl font-black">my technologies</h2>
+	</header>
+	<ul class="pl-5 md:pl-8">
+		{#each technologies as technology}
+			<li class="mt-1.5 list-disc">{technology}</li>
+		{/each}
+	</ul>
+</section>
+<section class="mt-8">
+	<header>
+		<h2 class="text-2xl font-black">my non-technical skills</h2>
+	</header>
+	<ul class="pl-5 md:pl-8">
+		{#each nonTechnicalSkills as skill}
+			<li class="mt-1.5 list-disc">{skill}</li>
+		{/each}
+	</ul>
+</section>
+<section class="mt-8">
+	<header>
+		<h2 class="text-2xl font-black">my future learning interests</h2>
+	</header>
+	<ul class="pl-5 md:pl-8">
+		{#each futureTechnologies as technology}
+			<li class="mt-1.5 list-disc">{technology}</li>
+		{/each}
+	</ul>
 </section>

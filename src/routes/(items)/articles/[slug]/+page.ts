@@ -13,7 +13,6 @@ const articles: FinalizedItem[] = [];
 // Get the posts' slugs
 for (const path in allArticles) {
 	const article = allArticles[path];
-	console.log(article);
 	const slug = path
 		// remove everything before the file name
 		.substring(path.lastIndexOf('/') + 1)
@@ -26,9 +25,6 @@ for (const path in allArticles) {
 
 export const load: PageLoad = ({ params }) => {
 	const { slug } = params;
-
-	console.log(slug);
-	console.log(articles);
 
 	// Find the post with the slug
 	const filteredItem = articles.find((article) => {
