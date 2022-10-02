@@ -2,14 +2,14 @@
 import { readingTime } from 'reading-time-estimator';
 
 // types
-import type { FinalizedItem, Item } from '$types/markdown/Item';
+import type { FinalizedItem, Item, Types } from '$types/markdown/Item';
 
 // helpers to import the relevant markdown folder
 const articles = import.meta.glob('./articles/*.md', { eager: true });
 const changelogs = import.meta.glob('./changelogs/*.md', { eager: true });
 const projects = import.meta.glob('./projects/*.md', { eager: true });
 
-export default (type: 'articles' | 'changelogs' | 'projects') => {
+export const getImports = (type: Types) => {
 	// import the relevant markdown folder
 	let imports: Record<string, unknown> = {};
 
@@ -26,6 +26,12 @@ export default (type: 'articles' | 'changelogs' | 'projects') => {
 		default:
 			break;
 	}
+
+	return imports;
+};
+
+export default (type: Types) => {
+	const imports = getImports(type);
 
 	// store the items from imports
 	const items: Item[] = [];

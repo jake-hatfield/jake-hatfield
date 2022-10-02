@@ -6,7 +6,7 @@
 	import Button from '$components/utilities/Button.svelte';
 
 	// lib
-	import { kebabCase } from '$lib/utilities/stringHelpers';
+	import { kebabCase } from '$lib/utilities/string';
 
 	// types
 	import type { LayoutData } from '.svelte-kit/types/src/routes/$types';

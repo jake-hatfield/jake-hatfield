@@ -14,3 +14,5 @@ export interface Item {
 export interface FinalizedItem extends Item {
 	readingTime: string;
 }
+
+export type Types = 'articles' | 'changelogs' | 'projects';
