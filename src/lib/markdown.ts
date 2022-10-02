@@ -7,8 +7,9 @@ import type { FinalizedItem, Item } from '$types/markdown/Item';
 // helpers to import the relevant markdown folder
 const articles = import.meta.glob('./articles/*.md', { eager: true });
 const changelogs = import.meta.glob('./changelogs/*.md', { eager: true });
+const projects = import.meta.glob('./projects/*.md', { eager: true });
 
-export default (type: 'articles' | 'changelogs') => {
+export default (type: 'articles' | 'changelogs' | 'projects') => {
 	// import the relevant markdown folder
 	let imports: Record<string, unknown> = {};
 
@@ -18,6 +19,9 @@ export default (type: 'articles' | 'changelogs') => {
 			break;
 		case 'changelogs':
 			imports = changelogs;
+			break;
+		case 'projects':
+			imports = projects;
 			break;
 		default:
 			break;

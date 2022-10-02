@@ -1,0 +1,250 @@
+---
+createdAt: 2019-12-29
+updatedAt: null
+excerpt: 'a quick look back at 2019 and what i learned during this year.'
+hidden: false
+tags: [meta, open source]
+title: changelogs one
+---
+
+<script>
+    import Link from "$components/utilities/Link.svelte"
+</script>
+
+This is a complete guide to Amazon arbitrage in 2022. In this in-depth guide, you'll learn:
+
+- What Amazon arbitrage is and how it works
+- How Fulfillment by Amazon (FBA) arbitrage has been affected by COVID
+- How to create your Amazon Seller account
+- How to find and evaluate products to flip for profit
+- How to prepare and sell your first batch of items
+- How to grow and scale an arbitrage business
+
+Let's dive right in.
+
+## What is Amazon arbitrage?
+
+Amazon arbitrage, also known as FBA arbitrage, is simply reselling items purchased from a retailer on Amazon. An example would be buying a cookie jar for $8 from a store like Target and selling it for $25 on Amazon. The difference, after accounting for selling fees and shipping costs, is your profit.
+
+Arbitrage isn't a term specific to Amazon, since it's fundamentally just taking advantage of a price discrepancy in two different marketplaces. You can arbitrage stocks, commodities, currencies, and in this case: physical products.
+
+Amazon arbitrage relies heavily on the <Link href='https://www.britannica.com/topic/supply-and-demand' title='Law of Supply and Demand' isExternal /> in order to create selling opportunities. As long as something is less expensive from one place and sells for more somewhere else, arbitrage is possible. Here are a few examples:
+
+- Walmart has a surplus of inventory it needs to get rid of. You can browse the clearance aisle to find things they're willing to liquidate that are selling for a higher price on Amazon.
+- Hasbro is selling a limited-edition collector's item for full price on their website. Since there's a finite quantity in circulation, you think to check the price on Amazon and notice it's selling for 3X what you can buy it for.
+- Macy's is running a seasonal sale for Christmas with a 40% off promo code that expires at the end of the week. Normally this product would be break-even profitable to sell on Amazon, but now can pocket $12 more per unit with the sale.
+
+> Amazon arbitrage relies heavily on the Law of Supply and Demand in order to create selling opportunities
+
+Simple situations like these are more common than you would think. **_more_**
+
+## Why choose an arbitrage model?
+
+Arbitrage is a foundational component to the success of Amazon. If the company wasn't able to attract 3rd party sellers to help create a diverse catalog of items, they'd be significantly less dominant than they are today. In a symbiotic relationship, Amazon provides the online presence, the order fulfillment, and the customer service; 3rd party sellers provide products to customers.
+
+Rather than deal with the immeasurable costs of shipping, warehousing, logistics, marketing, programming, and customer support, normal people like you and me get to focus on one thing only: inventory.
+
+The opportunity to reach a global market yet only specialize in one aspect of retail sales is unprecedented, and people are taking notice. Amazon's 3rd party marketplace launched in 2000, and has since grown to 2 million 3rd party sellers providing <Link href='https://www.cnbc.com/2021/10/19/amazon-touts-small-business-success-amid-third-party-seller-scrutiny-.html' title="60%+ of the marketplace's sales" isExternal />.
+
+> The opportunity to reach a global market yet only specialize in one aspect of retail sales is unprecedented, and people are taking notice.
+
+An arbitrage model on Amazon flattens the learning curve even more, since you don't even have to develop your own products to join in on the sales. By selling another brand's product, you can piggyback on existing success without needing to conduct R&D or marketing for exposure; the product has already been created and awareness already built.
+
+Amazon needs help selling and individual sellers will always need a springboard, so why not partner up with the most authoritative one in e-commerce?
+
+### Pros and cons of Amazon arbitrage
+
+There are a lot of positives to choosing an arbitrage model to sell on Amazon, but there are also a few negatives to know about.
+
+The 6 big advantages to Amazon arbitrage are:
+
+- Low startup costs
+- Ease to learn
+- Fast
+- Flexible schedule
+- No time investment brand-building
+- Seamless transition into wholesale or private label
+
+The strengths of arbitrage make a potent combination for people who may be new to the world of e-commerce. There's low overhead, it doesn't take long to see progress, it doesn't require skills like marketing, and there's growth potential into other areas of selling.
+
+However, the primary disadvantages of Amazon arbitrage are side-effects of the good things about it. For instance, one reason why it's easy to start is because you don't need to build wholesale or distributor connections. Consequently, you don't get wholesale pricing, instead having to buy inventory from retailers. You don't necessarily have a predictable supply and constantly need to be on lookout for the next deal.
+
+Although being able to piggyback on another brand cuts years off of getting involved in e-commerce, the downside is that you're not building your own long-term empire. <Link href='https://unctad.org/news/global-e-commerce-jumps-267-trillion-covid-19-boosts-online-sales' title='E-commerce has seen massive growth due to COVID' isExternal />, and it still has an amazingly bright future. However, you won't be able to build a self-sustaining e-commerce business without investing in your own brand.
+
+The last disadvantage to arbitrage is that it's tough to scale. The ability to find new products is directly proportional to the time spent in research. This is a linear, rather than exponential investment. Sourcing new products to flip is a necessary grind, and many sellers get burnt out in the process. The best way around this is to have experienced sellers do the research for you with an [online arbitrage sourcing list](https://leadgeek.io/product/online-arbitrage-sourcing-list/) which allow you to save your energy to yay-or-nay those recommendations.
+
+For many people, the strengths of arbitrage outweigh the weaknesses and are a great introductory step to learn e-commerce.
+
+### Is Amazon arbitrage legal?
+
+First, let's dispel the myth that arbitrage is against any rule. The legality of buying items from one place and selling for a higher price on another is sometimes called into question. Not only is this process in line with free-market capitalism, but arbitrage is legal according to the Supreme Court's <Link href='https://www.justice.gov/archives/jm/criminal-resource-manual-1854-copyright-infringement-first-sale-doctrine' title='First Sale Doctrine' isExternal />.
+
+Though legal, not all products _can_ be resold on Amazon. A few years back, shady sellers were hawking inauthentic goods on the platform. Customers got burned, Amazon's reputation took a hit, and sellers were banned. Since then, Amazon has set up safeguards to prevent inauthentic goods from getting into the marketplace with a product gating system (i.e. product restriction system).
+
+You may have heard that brands like Nike, Adidas, and Sony are gated for new sellers. This is true, and there also are sub-categories like "topicals" in "beauty & personal care" that are also gated.
+
+#### Amazon product restrictions
+
+The gating system is certainly a hurdle for new sellers to overcome, but that's kind of the point. A larger barrier to entry deters bad actors from entering the platform and hurting the consumer's trust in Amazon (and their willingness to buy your products), but it also means that anyone who sticks out the growing pains early on will be rewarded.
+
+If you get approved in a gated brand or category, you get more exclusive access to sell a product without having to compete with the masses. This typically means larger margins and sustainable inventory that can re-ordered as needed.
+
+These selling permissions are a hassle, but there are still plenty of products that are ungated (unrestricted) that a green seller can take advantage of.
+
+With COVID causing chaos in supply chains and the price differentials between marketplaces widening, brands that have been historically unprofitable to sell are now becoming worth the time to look into. What we're seeing is that these brands are often ungated with little to no competition - anyone who can find a good supply of it can bring it back to Amazon with near-exclusive access.
+
+#### Getting ungated on Amazon
+
+// snippet answer
+
+The only way to know for sure if your Amazon account can add a certain product to inventory is to check in <Link href='https://sellercentral.amazon.com/' title='Amazon Seller Central' isExternal />, the primary tool Amazon provides to 3rd party sellers for managing their accounts.
+
+At first, you will undoubtedly run into issues with being able to add a profitable product your account.
+
+// add more
+
+##### How to maintain good account health
+
+Here are a few tips to prevent issues from popping up:
+
+- Ensure the integrity of the items you're flipping by only selling the same condition. For instance, don't sell a used item as "new." Take into account the condition of the packaging as well - I advise you not to sell something you wouldn't be happy buying yourself.
+- Don't dropship. Dropshipping, or accepting a customer's order and fulfilling it through another source, is _only_ acceptable if you're the seller of record. You also have to remove any packing slips, invoices, and external packaging that identifies another vendor before it's delivered the customer. In 99% of cases, it's probably not worth the headache, but if you're really interested in this method you can read up on <Link href='https://sellercentral.amazon.com/gp/help/external/201808410' title="Amazon's dropshipping policy" isExternal />.
+- Verify that the item you're purchasing matches the listing on Amazon. One complaint about a mismatched product can get you a negative seller review at best and a permanent suspension at worst. It's helpful to check that the Universal Product Code (UPC) matches one on Amazon. **_Share Keepa tip_** Although this UPC verification method doesn't work in every case, I recommend you pass up on selling the product if you're not 100% sure it's a match in some other way.
+- Document inventory thoroughly. When purchasing from a retailer, you're not going to get an invoice like you would with a distributor - you'll get a receipt. Even so, **Amazon often accepts receipts if a dispute comes up about a product's authenticity**. Pictures of the items showing bar codes and the condition they were packaged in prior to shipment are helpful to have documented.
+- Source only from reputable retailers such as Walmart, Dillard's, REI, etc. A no-name source can be scamming payment information or selling fake items which put your entire business at risk. There are plenty of good products from reliable sources, so stay patient and don't compromise on the quality of goods you'll be delivering to customers.
+- Monitor your account health and don't let an issue go unchecked. Amazon is a company obsessed with metrics, so if you fail to respond to an authenticity claim, they'll see it as an admission of fault. Respond promptly to any notice in your account with thorough documentation. If the worst has happened, learn [how to appeal an IP complaint](https://leadgeek.io/blog/how-to-appeal-ip-complaint/).
+- Positive seller feedback is crucial for getting approved in restricted brands in categories, so cultivate it by disputing applicable negative reviews. Since Amazon fulfills FBA orders, they don't (and shouldn't) hold you accountable if a customer's item is late or damaged during transit. Although they might leave a low review on your seller account, you can appeal to have it automatically removed from your record. To do this, // example
+
+### Is Amazon arbitrage dead?
+
+As many new sellers join the community, you may have heard some people say that Amazon arbitrage is dead. In my opinion, they're right in one sense - the _old_ way of arbitrage is dead. But there's a new revitalization that's taking place and unlikely to slow down any time soon.
+
+If you read about the [stock shortages](https://www.washingtonpost.com/technology/2021/10/28/amazon-apple-holiday-season/) Amazon experienced during COVID at peak season in 2020 (and that was _with_ [3,700 new Amazon sellers joining every day](https://www.businessinsider.com/amazon-pulls-in-thousands-new-independent-sellers-a-day-2021-3) to help provide supply to their customer base), you know that demand is higher than ever.
+
+[Exposure to Amazon's marketplace is increasing](https://www.nytimes.com/2021/04/29/technology/amazons-profits-triple.html) as people turn away from physical retailers to shop on the safety of the Internet. At the same time, Amazon is reaching new customer demographics and [international marketplaces](https://sell.amazon.com/global-selling), causing an unprecedented surge of interest to hit the marketplace. With inventory and [supply lines still unpredictable](https://www.whitehouse.gov/cea/written-materials/2021/06/17/why-the-pandemic-has-disrupted-supply-chains/) due to COVID, countless new arbitrage opportunities are created daily. In fact, I'd argue that there's no better time than when Amazon first launched to get started.
+
+So it's not dead, just different; and in many ways, it's better.
+
+### How much can you make selling on Amazon?
+
+Before starting out on a project, it's a good idea to know if it's worth your time. With the right automation procedures in place, Amazon arbitrage is a good way to make recurring passive income as a side-gig.
+
+Most commonly, Amazon arbitrage is a way for FBA sellers to supplement a primary source of income. To set reasonable expectations, only a minority of sellers have been able to quit their job through through arbitrage alone; though a combination of arbitrage, wholesale, and private label selling can become full-time income.
+
+With a low barrier to entry and not much overhead, you don't need a lot of capital to get started in arbitrage. Profit margins of ~25% are common for retail, and arbitrage is no exception. Thankfully, product research is the only bottleneck and it's fairly easy to gain momentum through high sales volume. Ultimately, how much you can make selling on Amazon depends on several factors, including:
+
+- The amount of your initial investment
+- The types of products you buy
+- The criteria of those products
+- The throughput of your inventory
+- How quickly you can recoup costs and re-invest profits
+
+#### Amazon seller fees
+
+While on the topic of income, let's cover the realistic costs associated with selling on Amazon. These fees aren't specific to arbitrage, rather they're included for anyone selling on the marketplace.
+
+There are four main categories of fees:
+
+- Plan fees
+- Referral fees
+- Fulfillment fees
+- Shipping fees
+
+For an up-to-date fee sheet, view the official [Amazon seller pricing documentation](https://sell.amazon.com/pricing).
+
+##### Plan fees
+
+The first type of fee comes up when registering for an Amazon seller account, when you're given the choice between an Individual or Professional plan. The Individual plan limits you to a maximum of 40 units sold per month and charges a per-item fee of $0.99.
+
+The Professional plan costs $39.99 per month but doesn't have a per-item fee associated with it. With this option, you get:
+
+- No monthly volume cap
+- Participation in chiefly the beauty, clothing, grocery, and health categories
+- Enhanced order management with reports
+- The ability to upload products in bulk
+- The power to advertise products (albeit rare with arbitrage)
+- Access to Amazon Marketplace Web Service's API
+- and most importantly: **Buy Box eligibility**
+
+If you're just testing the waters and opt for the Individual plan, it's critical to note that you won't be eligible to win the Buy Box. This drastically cuts down on your ability to stay competitive with other sellers, since that's how [82% of Amazon sales](https://www.bigcommerce.com/blog/win-amazon-buy-box/) are made.
+
+> If you're just testing the waters and opt for the Individual plan, it's critical to note that you won't be eligible to win the Buy Box.
+
+Though more expensive up front, I recommend a Professional plan to maximize your ability to succeed. Without the Buy Box, you're simply competing at a disadvantage.
+
+// expand on why professional is better
+
+##### Referral fees
+
+Amazon referral fees are paid on each item sold. The fee varies depending on the category, but most calculate the fee as a percentage of the sale price with a minimum per-item fee of $0.30. Realistically, the referral fee usually comes out to be 15% of the sale price.
+
+It's not unusual for businesses to take a cut from 3rd party sellers allowed on their marketplace. Apple, for instance, famously took [30% from each transaction on the App store](https://www.theverge.com/21445923/platform-fees-apps-games-business-marketplace-apple-google) until it was recently reduced for smaller developers to 15%.
+
+Some might see it as a monopolistic tax, when you consider the investments made in infrastructure and personnel to allow a dominant marketplace to flourish, 15% seems like a small price to pay. Starting, scaling, and managing a system like this on your own would cost a lot more than 15% per item - there's a reason why it took [9 years for Amazon to turn a profit](https://www.computerworld.com/article/2575106/amazon-records-first-profitable-year-in-its-history.html).
+
+Referral fees fluctuate, so stay current on them [here](https://sellercentral.amazon.com/help/hub/reference/200336920).
+
+##### Fulfillment fees
+
+The FBA program charges a fee to take the burden of order fulfillment, product returns, and customer service off your shoulders. Put simply, you make the sales and Amazon handles everything else.
+
+This optional (yet recommended) program allows your products to qualify for 2-day free shipping, which has become many [consumer's expected delivery option](https://www.shipstation.com/blog/customer-expectations-around-delivery-options/). So important is easy, cheap shipping that 25% of people said they'd be willing to give up coffee for free shipping on all [online orders](https://www.forbes.com/sites/forbestechcouncil/2019/08/27/shipping-is-critical-to-keeping-online-shoppers-happy/).
+
+Opting for FBA sharpens your competitive edge when it comes to the Buy Box as well. Order fulfillment is one of the primary factors considered when Amazon algorithmically determines which seller wins the Buy Box. Assuming all other variables are constant, a seller that offers faster, cheaper, and more reliable shipping is more likely to win.
+
+> Assuming all other variables are constant, a seller that offers faster, cheaper, and more reliable shipping is more likely to win.
+
+Since Amazon is fulfilling the orders, FBA sellers inherit Amazon's self-awarded perfect scores in these areas. As a result, FBA sellers are much more competitive for the Buy Box than sellers who fulfill their own orders.
+
+Like Referral fees, FBA fees are calculated on a per-item basis, but also take into account the type, size, and weight of the product. As you might expect, the smaller and lighter a product is, the cheaper it is to deliver.
+
+The [FBA rates](https://sellercentral.amazon.com/help/hub/reference/GPDC3KPYAGDTVDJP) include several classes of standard-sized inventory and an additional fee structure for over sized products. Generally, these fees come out to be 10-15% of the sale price.
+
+Leadgeek exclusively uses the [official FBA calculator](https://sellercentral.amazon.com/hz/fba/profitabilitycalculator/index?lang=en_US) to determine an item's profitability, and we suggest you do the same instead of relying on a 3rd party tool.
+
+##### Shipping fees
+
+To understand shipping fees correctly, let's quickly cover the logistics of getting your products into a customer's hands with FBA.
+
+With arbitrage, you'll be looking for products in retailers in-person or online. In person, there's obviously not extra expense to receive the item; if you're buying online, you'll likely qualify for free shipping. Most reputable retailers offer free shipping on a minimum order (i.e. orders of $75+), or even 2-day free shipping to compete with Amazon. If this isn't the case with your source, that's an extra expense to take into account.
+
+When you have the products, you'll need to ship them into an Amazon distribution center. To streamline their systems, Amazon doesn't allow you to ship directly from a retailer or drop things off to their warehouse yourself. Instead, they've partnered with UPS and FedEx to offer reduced shipping rates to their 3rd party sellers.
+
+Thanks to these discounts, the average cost for shipping to a distribution center is ~$0.40-$0.50 per lb. Once you have your inventory prepped, simply take it to the nearest UPS or FedEx drop-off and you're set!
+
+#### Profitability summary
+
+Let's put all this information together with a real-world example. Let's say your store does $4,000 in revenue per month. With a profit margin of 25%, they've made back their initial
+
+// more on this
+
+#### Tips for risk management
+
+Like investing in stocks, bonds, and real estate, Amazon arbitrage has risk associated with it. The business thinker Peter Drucker said it best: "All profit is derived from risk."
+
+> "All profit is derived from risk" - Peter Drucker
+
+The key to this process is to manage risk well, and like any business, your ability to earn is dependent on how fast you learn. You'll inevitably purchase items that stink, but how you react to those mistakes will determine your success.
+
+Before you get carried away I'd recommend starting out slow.
+
+In practice, this looks like purchasing only a few units of an item that passes your criteria and analysis (more on this later). Buying a trial run of 5-10 units before committing to a larger ----- see if a retailer has a longer return policy ---- cultivate good seller feedback
+
+// add more
+
+## What can I sell on Amazon?
+
+### What pro
+
+Of the 27+ categories on Amazon, the ones most often arbitraged are:
+
+- Home & kitchen
+- Toys & games
+- Beauty & personal care
+- Office supplies
+- Grocery
+- Clothes, shoes, and accessories
+- Pet supplies
+- Sports & outdoors
+- Tools & home improvement
+- Books

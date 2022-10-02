@@ -4,7 +4,7 @@ updatedAt: null
 excerpt: 'a quick look back at 2019 and what i learned during this year.'
 hidden: false
 tags: [meta, open source]
-title: test2
+title: project one
 ---
 
 <script>

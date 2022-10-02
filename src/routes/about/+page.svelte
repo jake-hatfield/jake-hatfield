@@ -59,8 +59,7 @@
 	</p>
 	<p class="mt-3">
 		i can handle authentication, process payments, send emails, preserve data in storage, and plug
-		that all into a responsive, accessible, and intuitive interface on the front end that fills a
-		real need (hopefully).
+		that all into a responsive, accessible, and intuitive front end.
 	</p>
 	<article class="mt-8">
 		<header>
