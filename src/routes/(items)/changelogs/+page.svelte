@@ -1,6 +1,7 @@
 <script lang="ts">
 	// components
 	import CTA from '$components/layout/CTA.svelte';
+	import Item from '$components/layout/Item.svelte';
 
 	// types
 	import type { PageData } from './$types';
@@ -18,7 +19,7 @@
 	{#if changelogs?.length > 0}
 		<ul>
 			{#each changelogs as changelog}
-				<li>{changelog.title}</li>
+				<Item item={changelog} type="changelogs" />
 			{:else}
 				nothing here
 			{/each}

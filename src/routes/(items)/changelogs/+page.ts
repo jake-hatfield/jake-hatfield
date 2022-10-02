@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const [changelogsRes] = await Promise.all([fetch('/api/items?type=changelogs')]);
+	const [changelogsRes] = await Promise.all([fetch('/api/changelogs')]);
 
 	if (!changelogsRes.ok) {
 		throw error(500, `Error fetching changelogs for this page`);

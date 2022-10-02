@@ -1,19 +1,14 @@
 // svelte
 import { error } from '@sveltejs/kit';
 
-// types
-import type { LayoutLoad } from './$types';
-
-export const reusableLoad: LayoutLoad = async ({ fetch, url }) => {
-	const jsonUrl = url.pathname.replace(/\/\s*$/, '') + '.json';
-
-	const res = await fetch(jsonUrl);
+export const reusableLoad = async ({ fetch, url }) => {
+	const res = await fetch(`/api${url.pathname.replace(/\/\s*$/, '')}`);
 
 	if (!res.ok) {
-		throw error(500, `Could not load ${jsonUrl}`);
+		throw error(500, `Could not load`);
 	}
 
 	return {
-		article: await res.json(),
+		item: await res.json(),
 	};
 };

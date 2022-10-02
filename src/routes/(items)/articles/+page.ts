@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const [articlesRes] = await Promise.all([fetch('/api/items?type=articles')]);
+	const [articlesRes] = await Promise.all([fetch('/api/articles')]);
 
 	if (!articlesRes.ok) {
 		throw error(500, `Error fetching articles for this page`);

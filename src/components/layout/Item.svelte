@@ -11,15 +11,16 @@
 	import { ArrowRight, Calendar, Tag, Time } from 'carbon-icons-svelte';
 
 	// types
-	import type { FinalizedItem } from '$types/markdown/Item';
+	import type { FinalizedItem, Types } from '$types/markdown/Item';
 
 	// * required props *
-	export let article: FinalizedItem;
+	export let item: FinalizedItem;
+	export let type: Types;
 
 	// destructure props
-	$: ({ createdAt, excerpt, readingTime, slug, tags, title, updatedAt } = article);
+	$: ({ createdAt, excerpt, readingTime, slug, tags, title, updatedAt } = item);
 
-	$: href = `./articles/${slug}`;
+	$: href = `./${type}/${slug}`;
 </script>
 
 <li class="mt-5">

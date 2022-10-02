@@ -1,5 +1,5 @@
 // lib
-import { reusableLoad } from '$lib/layout/index';
+import { reusableLoad } from '$lib/layout/item/index';
 
 // types
 import type { LayoutLoad } from './$types';

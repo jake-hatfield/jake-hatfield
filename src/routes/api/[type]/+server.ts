@@ -1,15 +1,15 @@
 // lib
+import { handleApiError } from '$lib/utilities/api';
 import getItems from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';
 import type EndpointError from '$types/Error';
-import { handleApiError } from '$lib/utilities/api';
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ params, url }) => {
 	let error: EndpointError;
 
-	const type = url.searchParams.get('type');
+	const { type } = params;
 
 	const types = ['articles', 'changelogs', 'projects'] as const;
 
@@ -17,7 +17,7 @@ export const GET: RequestHandler = async ({ url }) => {
 		error = {
 			code: 'NOT_FOUND',
 			message: 'An item type is required',
-			suggestion: 'Try entering an item type in the URL search parameters',
+			suggestion: 'Try entering an item type in the URL',
 		};
 
 		return handleApiError(url.pathname, 404, error, { items: [] });

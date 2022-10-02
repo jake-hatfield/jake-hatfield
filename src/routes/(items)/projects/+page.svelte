@@ -1,8 +1,10 @@
 <script lang="ts">
+	// components
+	import Item from '$components/layout/Item.svelte';
+
 	// types
 	import type { PageData } from './$types';
 
-	// props
 	export let data: PageData;
 	$: ({ projects } = data);
 </script>
@@ -15,7 +17,7 @@
 	{#if projects?.length > 0}
 		<ul>
 			{#each projects as project}
-				<li>{project.title}</li>
+				<Item item={project} type="projects" />
 			{:else}
 				nothing here
 			{/each}

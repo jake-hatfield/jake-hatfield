@@ -9,8 +9,7 @@
 					from="0 18 18"
 					to="360 18 18"
 					dur="1s"
-					repeatCount="indefinite"
-				/>
+					repeatCount="indefinite" />
 			</path>
 		</g>
 	</g>
