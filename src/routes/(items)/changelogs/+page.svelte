@@ -1,7 +1,6 @@
 <script lang="ts">
 	// components
-	import CTA from '$components/layout/CTA.svelte';
-	import Item from '$components/layout/Item.svelte';
+	import Item from '$components/layout/item/index.svelte';
 	import SEO from '$components/utilities/SEO.svelte';
 
 	// types
@@ -16,7 +15,6 @@
 <section>
 	<header>
 		<h1 class="text-3xl font-black">changelogs</h1>
-		<CTA />
 	</header>
 
 	{#if changelogs?.length > 0}

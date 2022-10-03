@@ -3,6 +3,9 @@
 	import Link from '$components/utilities/Link.svelte';
 	import SEO from '$components/utilities/SEO.svelte';
 	import Use from '$routes/uses/Use.svelte';
+
+	// lib
+	import metadata from '$lib/metadata';
 </script>
 
 <SEO title="uses" metaDescription="see what tools i use to create projects." />
@@ -287,7 +290,8 @@
 				<p>
 					my ci experience is mostly limited to running unit tests this way. i'm always learning
 					more, though, and am open to a better ci/cd pipeline if you wanna <Link
-						href="/contact"
+						href={`mailto:${metadata.email}?subject=ci/cd recommendation`}
+						isExternal
 						isUnderlined
 						title="drop a rec" />.
 				</p>

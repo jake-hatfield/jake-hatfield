@@ -14,7 +14,7 @@
 
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'about' },
-		{ href: `mailto:${metadata.personalEmail}`, icon: SendAlt, title: 'contact' },
+		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'contact' },
 	];
 </script>
 

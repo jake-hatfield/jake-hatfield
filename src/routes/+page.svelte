@@ -5,8 +5,8 @@
 	import SEO from '$components/utilities/SEO.svelte';
 
 	// images
-	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;250&format=webp&srcset';
-	import AvatarSrcset from '$assets/images/rasters/avatar.png?width=832;250&srcset';
+	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;268&format=webp&srcset';
+	import AvatarSrcset from '$assets/images/rasters/avatar.png?width=832;268&srcset';
 	import Avatar from '$assets/images/rasters/avatar.png?width=832';
 
 	// types
@@ -14,7 +14,7 @@
 
 	// props
 	export let data: PageData;
-	$: ({ imagePlaceholders } = data);
+	$: ({ articles, changelogs, imagePlaceholders, projects } = data);
 </script>
 
 <SEO
@@ -22,7 +22,7 @@
 	metaDescription="if you're new, start here. see what I'm learning about, thinking about, and working on." />
 
 <section class="md:flex md:items-start md:justify-between">
-	<div class="md:w-1/2">
+	<div class="md:w-3/5">
 		<header>
 			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
 			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
@@ -41,7 +41,7 @@
 	</div>
 	<Image
 		alt="jake hatfield"
-		class="md:ml-8 md:w-1/2"
+		class="md:ml-8 md:w-2/5"
 		height={300}
 		loading="eager"
 		placeholder={imagePlaceholders[0]}
@@ -50,7 +50,29 @@
 			{ srcset: AvatarSrcset, type: 'image/png' },
 		]}
 		src={Avatar}
-		width={250} />
+		width={268} />
 </section>
 
-<section class="mt-8">recent articles recent journals recent projects</section>
+<section class="mt-8">
+	<ul>
+		{#each articles as article}
+			<li>{article.title}</li>
+		{/each}
+	</ul>
+</section>
+
+<section class="mt-8">
+	<ul>
+		{#each changelogs as article}
+			<li>{article.title}</li>
+		{/each}
+	</ul>
+</section>
+
+<section class="mt-8">
+	<ul>
+		{#each projects as article}
+			<li>{article.title}</li>
+		{/each}
+	</ul>
+</section>

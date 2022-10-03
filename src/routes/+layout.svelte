@@ -37,6 +37,8 @@
 	// TODO<Jake>: Recent articles, projects, and changelogs on home page
 	// TODO<Jake>: Images for items for SEO only
 	// TODO<Jake>: RSS
+	// TODO<Jake>: Email signup
+	// TODO<Jake>: Mobile optimizations
 </script>
 
 <div

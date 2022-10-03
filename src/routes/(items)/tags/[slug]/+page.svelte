@@ -1,6 +1,6 @@
 <script lang="ts">
 	// components
-	import Item from '$components/layout/Item.svelte';
+	import Item from '$components/layout/item/index.svelte';
 	import SEO from '$components/utilities/SEO.svelte';
 
 	// types
@@ -15,7 +15,7 @@
 
 <section>
 	<header>
-		<h1 class="pt-3 text-3xl font-black">
+		<h1 class="text-3xl font-black">
 			#{tag}
 		</h1>
 	</header>

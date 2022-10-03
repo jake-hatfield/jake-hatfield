@@ -13,7 +13,7 @@
 <form class={`flex items-center w-full max-w-md ${$$props.class}`}>
 	<Input
 		hasInlineButton
-		helperText={`no spam, unsubscribe whenever`}
+		helperText={`get an email when i publish new content. no spam, unsubscribe whenever.`}
 		id="cta-email"
 		isLabelHidden
 		placeholder={placeholders.email}

@@ -6,5 +6,5 @@ export default {
 	siteTitle: 'jake hatfield',
 	siteUrl,
 	keywords: [],
-	personalEmail: `me@${siteUrl}`,
+	email: `me@${siteUrl}`,
 };

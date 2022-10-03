@@ -1,6 +1,6 @@
 <script lang="ts">
 	// components
-	import Item from '$components/layout/Item.svelte';
+	import Item from '$components/layout/item/index.svelte';
 	import SEO from '$components/utilities/SEO.svelte';
 
 	// types
