@@ -31,8 +31,12 @@
 		}
 	});
 
-	// TODO<Jake>: Refactor loading pages/layouts for items
 	// TODO<Jake>: Create tag system
+	// TODO<Jake>: Excerpt from articles
+	// TODO<Jake>: Related items
+	// TODO<Jake>: Recent articles, projects, and changelogs on home page
+	// TODO<Jake>: Images for items for SEO only
+	// TODO<Jake>: RSS
 </script>
 
 <div

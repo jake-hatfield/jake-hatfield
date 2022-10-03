@@ -1,7 +1,6 @@
 <script lang="ts">
 	// components
 	import Button from '$components/utilities/Button.svelte';
-
 	import Link from '$components/utilities/Link.svelte';
 
 	// lib
@@ -16,7 +15,9 @@
 
 	// * required props *
 	export let item: FinalizedItem;
-	export let type: Types;
+
+	// optional props
+	export let type: Types | 'item' = 'item';
 
 	// destructure props
 	$: ({ createdAt, excerpt, readingTime, slug, tags, title, updatedAt } = item);
@@ -40,13 +41,11 @@
 					{/each}
 				</ul>
 			</div>
-			<span class="mx-3">|</span>
-			<div class="flex items-center">
+			<div class="ml-3 flex items-center">
 				<Time class="text-orange-400" />
 				<p class="ml-3">{readingTime}</p>
 			</div>
-			<span class="mx-3">|</span>
-			<div class="flex items-center">
+			<div class="ml-3 flex items-center">
 				<Calendar class="text-orange-400" />
 				<p class="ml-3">{formatIsoToText(createdAt)}</p>
 			</div>
@@ -56,6 +55,10 @@
 		</div>
 		<p class="mt-3">> {excerpt}</p>
 	</header>
-
-	<Link class="mt-3" {href} icon={ArrowRight} isUnderlined title="read article" />
+	<Link
+		class="mt-3"
+		{href}
+		icon={ArrowRight}
+		isUnderlined
+		title={`view ${type === 'item' ? type : type.slice(0, -1)}`} />
 </li>

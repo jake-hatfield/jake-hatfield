@@ -21,7 +21,7 @@
 	title="home"
 	metaDescription="if you're new, start here. see what I'm learning about, thinking about, and working on." />
 
-<section class="mt-content md:flex md:items-start md:justify-between">
+<section class="md:flex md:items-start md:justify-between">
 	<div class="md:w-1/2">
 		<header>
 			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
@@ -30,9 +30,7 @@
 		<p class="mt-5">
 			i'm a self-taught full-stack software engineer running a bootstrapped solo business.
 		</p>
-		<p class="mt-3">
-			really, i'm just a dude trying to become the best programmer and person i can be.
-		</p>
+		<p class="mt-3">i want to design and build digital products like other people play piano.</p>
 		<p class="mt-3">
 			i created this site to share what <Link href="/articles" isUnderlined title="learnings" />, <Link
 				href="/changelogs"
