@@ -1,6 +1,7 @@
 <script lang="ts">
 	// components
 	import Button from '$components/utilities/Button.svelte';
+
 	import Link from '$components/utilities/Link.svelte';
 
 	// lib

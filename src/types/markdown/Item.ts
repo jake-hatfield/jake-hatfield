@@ -1,14 +1,15 @@
 export interface Item {
-	slug: string;
 	createdAt: string;
-	updatedAt: string | null;
-	excerpt: string;
-	hidden: boolean;
-	tags: string[];
-	title: string;
-	html: string;
 	css: { code: string; map: null };
 	head: string;
+	html: string;
+	image: string;
+	excerpt: string;
+	hidden: boolean;
+	slug: string;
+	tags: string[];
+	title: string;
+	updatedAt: string | null;
 }
 
 export interface FinalizedItem extends Item {

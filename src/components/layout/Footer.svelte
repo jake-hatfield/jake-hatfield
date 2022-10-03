@@ -1,9 +1,9 @@
 <script lang="ts">
 	// icons
-	import { LogoGithub } from 'carbon-icons-svelte';
+	import { LogoGithub, Rss } from 'carbon-icons-svelte';
 
 	// lib
-	import { capitalize } from '$lib/utilities/string';
+	import data from '$lib/metadata';
 
 	// data
 	const socialLinks = [{ icon: LogoGithub, title: 'github' }];
@@ -14,11 +14,11 @@
 		&copy; {new Date().getFullYear()} jake hatfield
 	</p>
 	<nav>
-		<ul>
+		<ul class="flex items-center">
 			{#each socialLinks as link}
-				<li>
+				<li class="ml-3 first:ml-0">
 					<a
-						aria-label={`View Jake Hatfield's ${capitalize(link.title)} profile`}
+						aria-label={`${data.author}'s ${link.title} profile`}
 						class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
 						href={`https://${link.title}.com/jake-hatfield`}
 						target="_blank"
@@ -27,6 +27,14 @@
 					</a>
 				</li>
 			{/each}
+			<li class="ml-3">
+				<a
+					aria-label={`rss feed`}
+					class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
+					href={'/rss.xml'}>
+					<Rss size={22} />
+				</a>
+			</li>
 		</ul>
 	</nav>
 </footer>

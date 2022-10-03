@@ -1,5 +1,5 @@
 // lib
-import { reusableLoad } from '$lib/layout/item/index';
+import reusableLoad from '$lib/markdown/item/layout';
 
 // types
 import type { LayoutLoad } from './$types';

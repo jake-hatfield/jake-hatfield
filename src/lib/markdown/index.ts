@@ -5,9 +5,9 @@ import { readingTime } from 'reading-time-estimator';
 import type { FinalizedItem, Item, Types } from '$types/markdown/Item';
 
 // helpers to import the relevant markdown folder
-const articles = import.meta.glob('./items/articles/*.md', { eager: true });
-const changelogs = import.meta.glob('./items/changelogs/*.md', { eager: true });
-const projects = import.meta.glob('./items/projects/*.md', { eager: true });
+const articles = import.meta.glob('$lib/markdown/articles/*.md', { eager: true });
+const changelogs = import.meta.glob('$lib/markdown/changelogs/*.md', { eager: true });
+const projects = import.meta.glob('$lib/markdown/projects/*.md', { eager: true });
 
 export const getImports = (type: Types) => {
 	// import the relevant markdown folder

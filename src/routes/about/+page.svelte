@@ -1,12 +1,15 @@
 <script lang="ts">
 	// components
 	import Link from '$components/utilities/Link.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 
 	// lib
-	import futureTechnologies from '$lib/metadata/futureTechnologies';
-	import nonTechnicalSkills from '$lib/metadata/nonTechnicalSkills';
-	import technologies from '$lib/metadata/technologies';
+	import { future, nonTechnical, technical } from '$lib/metadata/skills';
 </script>
+
+<SEO
+	title="about"
+	metaDescription="learn a little about my story and see what skills I use to build projects." />
 
 <section>
 	<header>
@@ -67,8 +70,8 @@
 		<h2 class="text-2xl font-black">my technologies</h2>
 	</header>
 	<ul class="pl-5 md:pl-8">
-		{#each technologies as technology}
-			<li class="mt-1.5 list-disc">{technology}</li>
+		{#each technical as skill}
+			<li class="mt-1.5 list-disc">{skill}</li>
 		{/each}
 	</ul>
 </section>
@@ -77,7 +80,7 @@
 		<h2 class="text-2xl font-black">my non-technical skills</h2>
 	</header>
 	<ul class="pl-5 md:pl-8">
-		{#each nonTechnicalSkills as skill}
+		{#each nonTechnical as skill}
 			<li class="mt-1.5 list-disc">{skill}</li>
 		{/each}
 	</ul>
@@ -87,8 +90,8 @@
 		<h2 class="text-2xl font-black">my future learning interests</h2>
 	</header>
 	<ul class="pl-5 md:pl-8">
-		{#each futureTechnologies as technology}
-			<li class="mt-1.5 list-disc">{technology}</li>
+		{#each future as skill}
+			<li class="mt-1.5 list-disc">{skill}</li>
 		{/each}
 	</ul>
 </section>

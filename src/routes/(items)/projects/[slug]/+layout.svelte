@@ -1,6 +1,6 @@
 <script lang="ts">
 	// lib
-	import ReusableLayout from '$lib/layout/item/index.svelte';
+	import ReusableLayout from '$lib/markdown/item/layout/index.svelte';
 
 	// types
 	import type { PageData } from './$types';

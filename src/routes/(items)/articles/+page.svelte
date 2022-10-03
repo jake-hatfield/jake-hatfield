@@ -1,6 +1,7 @@
 <script lang="ts">
 	// components
 	import Item from '$components/layout/Item.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 
 	// types
 	import type { PageData } from './$types';
@@ -8,6 +9,8 @@
 	export let data: PageData;
 	$: ({ articles } = data);
 </script>
+
+<SEO title="articles" metaDescription="read what i'm learning about." />
 
 <section>
 	<header>

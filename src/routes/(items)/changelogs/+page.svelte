@@ -2,6 +2,7 @@
 	// components
 	import CTA from '$components/layout/CTA.svelte';
 	import Item from '$components/layout/Item.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 
 	// types
 	import type { PageData } from './$types';
@@ -9,6 +10,8 @@
 	export let data: PageData;
 	$: ({ changelogs } = data);
 </script>
+
+<SEO title="changelogs" metaDescription="read what i'm thinking about." />
 
 <section>
 	<header>

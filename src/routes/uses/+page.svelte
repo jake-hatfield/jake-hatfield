@@ -1,8 +1,11 @@
 <script lang="ts">
 	// components
 	import Link from '$components/utilities/Link.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 	import Use from '$routes/uses/Use.svelte';
 </script>
+
+<SEO title="uses" metaDescription="see what tools i use to create projects." />
 
 <section>
 	<header>

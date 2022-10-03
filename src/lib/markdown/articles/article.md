@@ -1,10 +1,11 @@
 ---
 createdAt: 2019-12-29
-updatedAt: null
 excerpt: 'a quick look back at 2019 and what i learned during this year.'
 hidden: false
+image: 'test'
 tags: [meta, open source]
 title: article one
+updatedAt: null
 ---
 
 <script>

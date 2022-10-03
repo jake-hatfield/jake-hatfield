@@ -2,6 +2,7 @@
 	// components
 	import Image from '$components/utilities/Image.svelte';
 	import Link from '$components/utilities/Link.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 
 	// images
 	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;250&format=webp&srcset';
@@ -15,6 +16,10 @@
 	export let data: PageData;
 	$: ({ imagePlaceholders } = data);
 </script>
+
+<SEO
+	title="home"
+	metaDescription="if you're new, start here. see what I'm learning about, thinking about, and working on." />
 
 <section class="mt-content md:flex md:items-start md:justify-between">
 	<div class="md:w-1/2">

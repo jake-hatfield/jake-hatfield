@@ -1,6 +1,8 @@
 <script lang="ts">
 	// components
 	import Button from '$components/utilities/Button.svelte';
+	import Image from '$components/utilities/Image.svelte';
+	import SEO from '$components/utilities/SEO.svelte';
 
 	// icons
 	import { Calendar, Tag, Time } from 'carbon-icons-svelte';
@@ -16,6 +18,8 @@
 	export let data: LayoutData;
 	$: ({ item } = data);
 </script>
+
+<SEO title={item.title} metaDescription={item.excerpt} />
 
 <section class="content-section-text">
 	<article id="content-markdown" itemscope itemtype="http://schema.org/Article">
@@ -50,9 +54,17 @@
 				</p>
 			</div>
 		</header>
-		<div class="cover-image">
-			<!-- <Image path="posts/{post.slug}" filename="cover" alt="Cover Image" /> -->
-		</div>
+		<!-- <Image
+			alt={item.title}
+			height={300}
+			loading="eager"
+			placeholder={imagePlaceholders[0]}
+			sources={[
+				{ srcset: srcsetWebp, type: 'image/webp' },
+				{ srcset: srcset, type: 'image/png' },
+			]}
+			{src}
+			width={250} /> -->
 		<div class="content">
 			<slot />
 		</div>

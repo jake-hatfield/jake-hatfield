@@ -30,6 +30,9 @@
 			lazyloadInstance.update();
 		}
 	});
+
+	// TODO<Jake>: Refactor loading pages/layouts for items
+	// TODO<Jake>: Create tag system
 </script>
 
 <div

@@ -1,6 +1,6 @@
 export default {
 	email: 'lukamagic@mavs.com',
-	firstName: 'Luka',
-	lastName: 'Doncic',
+	firstName: 'luka',
+	lastName: 'doncic',
 	phone: '+1 555-555-5555',
 };

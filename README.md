@@ -17,11 +17,7 @@ This code is not to be reproduced and is intended for Jake Hatfield's purposes o
 
 Self-deemed noteworthy posts on technical topics.
 
-## 📢 Contact
-
-The contact form was created with SendGrid to prevent having to use lame mailto links.
-
-## ✍️ Journal
+## ✍️ Changelogs
 
 Some thoughts about what I'm currently working on or working through.
 
