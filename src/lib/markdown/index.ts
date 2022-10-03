@@ -9,7 +9,7 @@ const articles = import.meta.glob('$lib/markdown/articles/*.md', { eager: true }
 const changelogs = import.meta.glob('$lib/markdown/changelogs/*.md', { eager: true });
 const projects = import.meta.glob('$lib/markdown/projects/*.md', { eager: true });
 
-export default (type: Types) => {
+export default (type: Types, limit: string | null) => {
 	// get the requested imports
 	const imports = getImports(type);
 
@@ -58,10 +58,10 @@ export default (type: Types) => {
 		return relatedItems;
 	};
 
-	return filterItems(items);
+	return filterItems(items, limit);
 };
 
-export const filterItems = (items: Item[]) => {
+export const filterItems = (items: Item[], limit: string | null) => {
 	// don't show hidden items
 	return (
 		items
@@ -92,15 +92,16 @@ export const filterItems = (items: Item[]) => {
 					// 	.map((x) => x.item),
 				};
 			})
+			.slice(0, limit ? +limit : items.length)
 	);
 };
 
-export const getAllItems = () => {
+export const getAllItems = (limit: string | null) => {
 	const allImports = { ...articles, ...changelogs, ...projects };
 
 	const items = getItemsFromImports(allImports);
 
-	return filterItems(items);
+	return filterItems(items, limit);
 };
 
 const getAllTagsAndItems = (items: Item[]) => {

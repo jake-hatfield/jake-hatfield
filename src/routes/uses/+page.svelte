@@ -11,7 +11,7 @@
 <SEO title="uses" metaDescription="see what tools i use to create projects." />
 
 <section>
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h1 class="text-3xl font-black">uses</h1>
 	</header>
 	<p class="mt-5">
@@ -32,7 +32,7 @@
 	</p>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">workstation</h2>
 	</header>
 	<ul class="mt-5">
@@ -122,7 +122,7 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">development</h2>
 	</header>
 	<ul class="mt-5">
@@ -177,7 +177,7 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">design</h2>
 	</header>
 	<ul class="mt-5">
@@ -247,7 +247,7 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">deployment</h2>
 	</header>
 	<ul class="mt-5">
@@ -300,7 +300,7 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">productivity</h2>
 	</header>
 	<ul class="mt-5">

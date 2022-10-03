@@ -13,7 +13,7 @@
 <SEO title="projects" metaDescription="see what i'm working on." />
 
 <section>
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h1 class="text-3xl font-black">projects</h1>
 	</header>
 

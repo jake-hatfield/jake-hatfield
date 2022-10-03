@@ -12,15 +12,15 @@
 	metaDescription="learn a little about my story and see what skills I use to build projects." />
 
 <section>
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h1 class="text-3xl font-black">about</h1>
 	</header>
 	<p class="mt-5">
 		i'm jake hatfield. i'm a self-taught full-stack engineer and I wrote my first line of code in
 		nov '19. i created this site to share what <Link
-			href="/articles"
+			href="/changelogs"
 			isUnderlined
-			title="learnings" />, <Link href="/changelogs" isUnderlined title="thoughts" />, and <Link
+			title="thoughts" />, <Link href="/articles" isUnderlined title="learnings" />, and <Link
 			href="/projects"
 			isUnderlined
 			title="projects" /> are currently taking my time and attention.
@@ -34,8 +34,8 @@
 		entire suite of tools.
 	</p>
 	<p class="mt-3">
-		i'm still here 2+ years later, thanks mostly to trusty old google and the deep desire not to
-		make the same idiotic mistake twice
+		i'm still here {new Date().getFullYear() - 2020}+ years later, thanks mostly to trusty old
+		google and the deep desire not to make the same idiotic mistake twice
 		<span role="img" aria-label="Sweat smile emoji">😅</span>.
 	</p>
 	<p class="mt-3">

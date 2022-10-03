@@ -33,7 +33,7 @@
 
 	// TODO<Jake>: Create tag system
 	// TODO<Jake>: Related items
-	// TODO<Jake>: Recent articles, projects, and changelogs on home page
+	// >TODO<Jake>: Recent articles, projects, and changelogs on home page
 	// TODO<Jake>: Images for items for SEO only
 	// TODO<Jake>: RSS
 	// TODO<Jake>: Email signup

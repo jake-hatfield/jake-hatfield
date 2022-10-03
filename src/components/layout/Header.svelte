@@ -10,7 +10,7 @@
 	import metadata from '$lib/metadata';
 
 	// data
-	const primaryLinks = ['home', 'articles', 'changelogs', 'projects', 'uses'];
+	const primaryLinks = ['home', 'changelogs', 'articles', 'projects', 'uses'];
 
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'about' },

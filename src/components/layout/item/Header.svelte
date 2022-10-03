@@ -20,17 +20,19 @@
 </script>
 
 <div class="mt-3 flex items-center">
-	<div class="flex items-center">
-		<Tag class="text-orange-400" />
-		<ul class="ml-3 flex items-center">
-			{#each tags as tag}
-				<li class="ml-1.5 first:ml-0">
-					<Button kind="secondary" href={`/tags/${kebabCase(tag)}`} size="sm" title={tag} />
-				</li>
-			{/each}
-		</ul>
-	</div>
-	<div class="ml-3 flex items-center">
+	{#if tags.length > 0}
+		<div class="flex items-center">
+			<Tag class="text-orange-400" />
+			<ul class="ml-3 flex items-center">
+				{#each tags as tag}
+					<li class="ml-1.5 first:ml-0">
+						<Button kind="secondary" href={`/tags/${kebabCase(tag)}`} size="sm" title={tag} />
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
+	<div class={`${tags.length > 0 ? 'ml-3' : ''} flex items-center`}>
 		<Time class="text-orange-400" />
 		<p class="ml-3">{readingTime}</p>
 	</div>

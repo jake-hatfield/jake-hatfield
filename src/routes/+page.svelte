@@ -1,6 +1,7 @@
 <script lang="ts">
 	// components
 	import Image from '$components/utilities/Image.svelte';
+	import Item from '$components/layout/item/index.svelte';
 	import Link from '$components/utilities/Link.svelte';
 	import SEO from '$components/utilities/SEO.svelte';
 
@@ -32,10 +33,10 @@
 		</p>
 		<p class="mt-3">i want to design and build digital products like other people play piano.</p>
 		<p class="mt-3">
-			i created this site to share what <Link href="/articles" isUnderlined title="learnings" />, <Link
-				href="/changelogs"
+			i created this site to share what <Link href="/changelogs" isUnderlined title="thoughts" />, <Link
+				href="/articles"
 				isUnderlined
-				title="thoughts" />, and <Link href="/projects" isUnderlined title="projects" /> are currently
+				title="learnings" />, and <Link href="/projects" isUnderlined title="projects" /> are currently
 			taking my time and attention.
 		</p>
 	</div>
@@ -54,25 +55,34 @@
 </section>
 
 <section class="mt-8">
+	<header class="border-b-2 border-zinc-800 pb-1.5">
+		<h2 class="text-2xl font-black">recent changelogs</h2>
+	</header>
 	<ul>
-		{#each articles as article}
-			<li>{article.title}</li>
+		{#each changelogs as item}
+			<Item {item} type="changelogs" />
 		{/each}
 	</ul>
 </section>
 
 <section class="mt-8">
+	<header class="border-b-2 border-zinc-800 pb-1.5">
+		<h2 class="text-2xl font-black">recent articles</h2>
+	</header>
 	<ul>
-		{#each changelogs as article}
-			<li>{article.title}</li>
+		{#each articles as item}
+			<Item {item} type="articles" />
 		{/each}
 	</ul>
 </section>
 
 <section class="mt-8">
+	<header class="border-b-2 border-zinc-800 pb-1.5">
+		<h2 class="text-2xl font-black">recent projects</h2>
+	</header>
 	<ul>
-		{#each projects as article}
-			<li>{article.title}</li>
+		{#each projects as item}
+			<Item {item} type="projects" />
 		{/each}
 	</ul>
 </section>

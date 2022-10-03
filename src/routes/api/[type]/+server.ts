@@ -33,7 +33,9 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return handleApiError(url.pathname, 400, error, { items: [] });
 	}
 
-	const rawItems = getItems(type);
+	const limit = url.searchParams.get('limit');
+
+	const rawItems = getItems(type, limit);
 
 	const items = Object.keys(rawItems).map((index) => {
 		const { createdAt, description, excerpt, image, readingTime, tags, title, slug, updatedAt } =

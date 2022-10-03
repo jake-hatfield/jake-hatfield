@@ -13,7 +13,7 @@
 <SEO title="changelogs" metaDescription="read what i'm thinking about." />
 
 <section>
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h1 class="text-3xl font-black">changelogs</h1>
 	</header>
 
