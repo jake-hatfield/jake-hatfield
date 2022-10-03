@@ -62,9 +62,9 @@ export default (type: Types, limit: string | null) => {
 };
 
 export const filterItems = (items: Item[], limit: string | null) => {
-	// don't show hidden items
 	return (
 		items
+			// don't show hidden items
 			.filter((item) => !item.hidden)
 			// order items by published date
 			.sort((a, b) =>
@@ -76,12 +76,9 @@ export const filterItems = (items: Item[], limit: string | null) => {
 			)
 			// assign the calculated reading time and related items to each item
 			.map((item) => {
-				const readingTimeDuration = readingTime(item.html).text;
 				// const relatedItems = getRelatedItems(item);
-
 				return {
 					...item,
-					readingTime: readingTimeDuration,
 					// relatedItems: relatedItems
 					// 	// order the related items by date created
 					// 	.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
@@ -96,12 +93,20 @@ export const filterItems = (items: Item[], limit: string | null) => {
 	);
 };
 
-export const getAllItems = (limit: string | null) => {
+export const getAllItems = () => {
 	const allImports = { ...articles, ...changelogs, ...projects };
 
 	const items = getItemsFromImports(allImports);
 
-	return filterItems(items, limit);
+	return filterItems(items, null);
+};
+
+export const groupAllItemsByTag = () => {
+	const allItems = getAllItems();
+
+	const allTagsAndItems = getAllTagsAndItems(allItems);
+
+	return groupItemsByTags(allTagsAndItems);
 };
 
 const getAllTagsAndItems = (items: Item[]) => {
@@ -154,11 +159,13 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 				// remove everything before the file name
 				.substring(path.lastIndexOf('/') + 1)
 				// remove the ".md" extension
-				.split('.')[0]
+				.split('.md')[0]
 				// make sure it's lower case
 				.toLowerCase();
 
 			const output = item.default.render();
+
+			const readingTimeDuration = readingTime(output.html).text;
 
 			// add it to the items variable with the slug and rendered output
 			items.push({
@@ -166,6 +173,7 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 					.replace(/<[^>]+>/g, '')
 					.substring(0, 370)
 					.trim(),
+				readingTimeDuration,
 				slug,
 				...item.metadata,
 				...output,

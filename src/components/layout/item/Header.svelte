@@ -26,7 +26,7 @@
 			<ul class="ml-3 flex items-center">
 				{#each tags as tag}
 					<li class="ml-1.5 first:ml-0">
-						<Button kind="secondary" href={`/tags/${kebabCase(tag)}`} size="sm" title={tag} />
+						<Button kind="secondary" href={`/tag/${kebabCase(tag)}`} size="sm" title={tag} />
 					</li>
 				{/each}
 			</ul>

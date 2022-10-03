@@ -20,7 +20,7 @@ export default (type: Types, event) => {
 			// remove everything before the file name
 			.substring(path.lastIndexOf('/') + 1)
 			// remove the ".md" extension
-			.split('.')[0]
+			.split('.md')[0]
 			.toLowerCase();
 		const i = { item, slug };
 

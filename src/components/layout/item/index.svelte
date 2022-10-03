@@ -27,7 +27,7 @@
 			{title}
 		</h2>
 		<Header {item} />
-		<p class="mt-3 text-orange-400">> {description}</p>
+		<p class="mt-3">> {description}</p>
 	</header>
 	<p class="mt-3">
 		{excerpt}...

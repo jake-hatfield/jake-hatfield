@@ -14,7 +14,7 @@
 <SEO title={`#${tag}`} metaDescription={`view items on the site tagged "${tag}"`} />
 
 <section>
-	<header>
+	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h1 class="text-3xl font-black">
 			#{tag}
 		</h1>

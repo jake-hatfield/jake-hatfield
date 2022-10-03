@@ -5,6 +5,13 @@
 
 	// lib
 	import { future, nonTechnical, technical } from '$lib/metadata/skills';
+
+	// types
+	import type { PageData } from './$types';
+
+	// props
+	export let data: PageData;
+	$: ({ projects } = data);
 </script>
 
 <SEO
@@ -52,10 +59,12 @@
 		i picked up programming as a necessity for product development and was surprised to find that i
 		fell in love with it.
 	</p>
-	<p class="mt-3">
-		now i'm trying to refine this skill by creating an application for every letter of the alphabet.
-		right now I'm on "d."
-	</p>
+	{#if projects && projects.length > 0}
+		<p class="mt-3">
+			now i'm trying to refine this skill by creating <i>and </i> publishing a project for every
+			letter of the alphabet. right now I'm on "{String.fromCharCode(96 + projects.length)}."
+		</p>
+	{/if}
 	<p class="mt-3">
 		through trial-and-error, i've become well-versed in the development requirements of modern
 		applications.

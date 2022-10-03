@@ -2,6 +2,7 @@
 createdAt: 2019-12-29
 description: 'a quick look back at 2019 and what i learned during this year.'
 hidden: false
+image: 'test'
 tags: [open source]
 title: project one
 updatedAt: null
