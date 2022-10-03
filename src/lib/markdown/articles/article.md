@@ -1,6 +1,6 @@
 ---
 createdAt: 2019-12-29
-excerpt: 'a quick look back at 2019 and what i learned during this year.'
+description: 'a quick look back at 2019 and what i learned during this year.'
 hidden: false
 image: 'test'
 tags: [meta, open source]
@@ -12,16 +12,9 @@ updatedAt: null
     import Link from "$components/utilities/Link.svelte"
 </script>
 
-This is a complete guide to Amazon arbitrage in 2022. In this in-depth guide, you'll learn:
+Amazon arbitrage, also known as FBA arbitrage, is simply reselling items purchased from a retailer on Amazon. An example would be buying a cookie jar for $8 from a store like Target and selling it for $25 on Amazon. The difference, after accounting for selling fees and shipping costs, is your profit.
 
-- What Amazon arbitrage is and how it works
-- How Fulfillment by Amazon (FBA) arbitrage has been affected by COVID
-- How to create your Amazon Seller account
-- How to find and evaluate products to flip for profit
-- How to prepare and sell your first batch of items
-- How to grow and scale an arbitrage business
-
-Let's dive right in.
+Arbitrage isn't a term specific to Amazon, since it's fundamentally just taking advantage of a price discrepancy in two different marketplaces. You can arbitrage stocks, commodities, currencies, and in this case: physical products.
 
 ## What is Amazon arbitrage?
 

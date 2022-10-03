@@ -100,8 +100,6 @@ export const getAllItems = () => {
 
 	const items = getItemsFromImports(allImports);
 
-	console.log(items);
-
 	return filterItems(items);
 };
 
@@ -159,11 +157,17 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 				// make sure it's lower case
 				.toLowerCase();
 
+			const output = item.default.render();
+
 			// add it to the items variable with the slug and rendered output
 			items.push({
+				excerpt: output.html
+					.replace(/<[^>]+>/g, '')
+					.substring(0, 370)
+					.trim(),
 				slug,
 				...item.metadata,
-				...item.default.render(),
+				...output,
 			});
 		}
 	}

@@ -36,7 +36,7 @@
 	</div>
 	<div class="ml-3 flex items-center">
 		<Calendar class="text-orange-400" />
-		<p class="ml-3">{formatIsoToText(createdAt)}</p>
+		<time class="ml-3" datetime={createdAt}>{formatIsoToText(createdAt)}</time>
 	</div>
 	<p class="ml-3 text-zinc-500">
 		{#if updatedAt && updatedAt > createdAt}updated {:else}published{/if}

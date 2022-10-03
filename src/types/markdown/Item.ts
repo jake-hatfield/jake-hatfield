@@ -1,5 +1,6 @@
 export interface Item {
 	createdAt: string;
+	description: string;
 	css: { code: string; map: null };
 	head: string;
 	html: string;

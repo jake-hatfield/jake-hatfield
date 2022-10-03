@@ -10,8 +10,6 @@ export default async ({ fetch, url }) => {
 
 	const item = await res.json();
 
-	console.log(item);
-
 	return {
 		item,
 	};

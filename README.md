@@ -23,8 +23,4 @@ Some thoughts about what I'm currently working on or working through.
 
 ## ⚒️ Projects
 
-A list of my projects, descriptions, dates, and tech stacks used. A link to the Github repository is included if it's open-source and a link to the production version if it's deployed.
-
-## 📃 Resume
-
-An up-to-date resume shareable through Google Drive or downloadable directly from the page.
+A list of my projects, descriptions, dates, and tech stacks used.

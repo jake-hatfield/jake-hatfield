@@ -16,7 +16,7 @@
 	export let type: Types | 'item' = 'item';
 
 	// destructure props
-	$: ({ excerpt, slug, title } = item);
+	$: ({ description, excerpt, slug, title } = item);
 
 	$: href = `./${type}/${slug}`;
 </script>
@@ -27,8 +27,11 @@
 			{title}
 		</h2>
 		<Header {item} />
-		<p class="mt-3">> {excerpt}</p>
+		<p class="mt-3 text-orange-400">> {description}</p>
 	</header>
+	<p class="mt-3">
+		{excerpt}...
+	</p>
 	<Link
 		class="mt-3"
 		{href}

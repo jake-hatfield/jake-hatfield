@@ -32,13 +32,14 @@
 	});
 
 	// TODO<Jake>: Create tag system
-	// TODO<Jake>: Excerpt from articles
 	// TODO<Jake>: Related items
 	// TODO<Jake>: Recent articles, projects, and changelogs on home page
 	// TODO<Jake>: Images for items for SEO only
 	// TODO<Jake>: RSS
 	// TODO<Jake>: Email signup
 	// TODO<Jake>: Mobile optimizations
+	// TODO<Jake>: Deploy to vercel
+	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
 </script>
 
 <div

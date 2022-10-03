@@ -1,10 +1,10 @@
 ---
 createdAt: 2019-12-29
-updatedAt: null
-excerpt: 'a quick look back at 2019 and what i learned during this year.'
+description: 'a quick look back at 2019 and what i learned during this year.'
 hidden: false
 tags: [meta, closed source]
 title: changelogs one
+updatedAt: null
 ---
 
 <script>
