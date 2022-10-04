@@ -3,13 +3,20 @@
 	import CTA from '$components/layout/CTA.svelte';
 
 	// icons
-	import { LogoGithub, Rss } from 'carbon-icons-svelte';
+	import { LogoGithub, LogoYoutube, Rss } from 'carbon-icons-svelte';
 
 	// lib
-	import data from '$lib/metadata';
+	import metadata from '$lib/metadata';
 
 	// data
-	const socialLinks = [{ icon: LogoGithub, title: 'github' }];
+	const socialLinks = [
+		{ href: metadata.social.github, icon: LogoGithub, title: 'github' },
+		{
+			href: metadata.social.youtube,
+			icon: LogoYoutube,
+			title: 'youtube',
+		},
+	];
 </script>
 
 <div class="mt-auto w-full">
@@ -20,15 +27,15 @@
 		</p>
 		<nav>
 			<ul class="flex items-center">
-				{#each socialLinks as link}
+				{#each socialLinks as { href, icon, title }}
 					<li class="ml-3 first:ml-0">
 						<a
-							aria-label={`${data.author}'s ${link.title} profile`}
+							aria-label={`${metadata.author}'s ${title} profile`}
 							class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
-							href={`https://${link.title}.com/jake-hatfield`}
+							{href}
 							target="_blank"
 							rel="noopener noreferrer">
-							<svelte:component this={link.icon} size={24} />
+							<svelte:component this={icon} size={24} />
 						</a>
 					</li>
 				{/each}
@@ -37,7 +44,7 @@
 						aria-label={`rss feed`}
 						class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
 						href={'/rss.xml'}>
-						<Rss size={22} />
+						<Rss size={20} />
 					</a>
 				</li>
 			</ul>

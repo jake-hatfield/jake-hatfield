@@ -12,7 +12,7 @@ export const load: PageLoad = async ({ fetch }) => {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				images: ['avatar.png'],
+				images: ['avatar.jpeg'],
 			}),
 		}),
 		fetch('/api/projects?limit=3'),

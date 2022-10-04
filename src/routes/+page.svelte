@@ -6,9 +6,9 @@
 	import SEO from '$components/utilities/SEO.svelte';
 
 	// images
-	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.png?width=832;268&format=webp&srcset';
-	import AvatarSrcset from '$assets/images/rasters/avatar.png?width=832;268&srcset';
-	import Avatar from '$assets/images/rasters/avatar.png?width=832';
+	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.jpeg?width=832;268&format=webp&srcset';
+	import AvatarSrcset from '$assets/images/rasters/avatar.jpeg?width=832;268&srcset';
+	import Avatar from '$assets/images/rasters/avatar.jpeg?width=832';
 
 	// types
 	import type { PageData } from './$types';
@@ -16,6 +16,8 @@
 	// props
 	export let data: PageData;
 	$: ({ articles, changelogs, imagePlaceholders, projects } = data);
+
+	$: console.log(articles);
 </script>
 
 <SEO

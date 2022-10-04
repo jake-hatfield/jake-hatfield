@@ -1,6 +1,6 @@
 // lib
 import { handleApiError } from '$lib/utilities/api';
-import { groupAllItemsByTag } from '$lib/markdown';
+import { groupAllItemsByTag, getCategory } from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';
@@ -21,13 +21,11 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return handleApiError(url.pathname, 404, error, { items: [] });
 	}
 
-	const rawItems = groupAllItemsByTag();
+	const category = getCategory(tag);
 
-	const taggedItems = rawItems[tag];
-
-	const items = Object.keys(taggedItems).map((index) => {
+	const items = Object.keys(category).map((index) => {
 		const { createdAt, description, excerpt, image, readingTime, tags, title, slug, updatedAt } =
-			taggedItems[+index];
+			category[+index];
 
 		return {
 			createdAt,

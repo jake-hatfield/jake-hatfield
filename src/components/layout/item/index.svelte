@@ -18,7 +18,7 @@
 	// destructure props
 	$: ({ description, excerpt, slug, title } = item);
 
-	$: href = `./${type}/${slug}`;
+	$: href = `/${type}/${slug}`;
 </script>
 
 <li class="mt-5">

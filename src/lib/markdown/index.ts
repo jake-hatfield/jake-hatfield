@@ -1,6 +1,9 @@
 // packages
 import { readingTime } from 'reading-time-estimator';
 
+// lib
+import { kebabCase } from '$lib/utilities/string';
+
 // types
 import type { FinalizedItem, Item, Types } from '$types/markdown/Item';
 
@@ -13,55 +16,55 @@ export default (type: Types, limit: string | null) => {
 	// get the requested imports
 	const imports = getImports(type);
 
-	// get the items from the imports
+	// get the items from those imports
 	const items = getItemsFromImports(imports);
 
 	// get all the tags from the items
-	const allTagsAndItems = getAllTagsAndItems(items);
+	// const allTagsAndItems = getAllTagsAndItems(items);
 
 	// group the items by tags
-	const categories = groupItemsByTags(allTagsAndItems);
+	// const categories = groupItemsByTags(allTagsAndItems);
 
-	const getRelatedItems = (item: Item) => {
-		let allRelatedItems: Item[] = [];
+	// const getRelatedItems = (item: Item) => {
+	// 	let allRelatedItems: Item[] = [];
 
-		// get items with same tags
-		for (const tag of item.tags) {
-			allRelatedItems = allRelatedItems.concat(categories[tag]);
-		}
+	// 	// get items with same tags
+	// 	for (const tag of item.tags) {
+	// 		allRelatedItems = allRelatedItems.concat(categories[tag]);
+	// 	}
 
-		const relatedItems: {
-			item: FinalizedItem;
-			count: number;
-			createdAt: string;
-		}[] = [];
+	// 	const relatedItems: {
+	// 		item: FinalizedItem;
+	// 		count: number;
+	// 		createdAt: string;
+	// 	}[] = [];
 
-		// sort by number of similar tags
-		for (const relatedItem of allRelatedItems) {
-			if (relatedItem.slug === item.slug) {
-				continue;
-			}
+	// 	// sort by number of similar tags
+	// 	for (const relatedItem of allRelatedItems) {
+	// 		if (relatedItem.slug === item.slug) {
+	// 			continue;
+	// 		}
 
-			const rel = relatedItems.find((i) => i.item.slug === relatedItem.slug);
+	// 		const rel = relatedItems.find((i) => i.item.slug === relatedItem.slug);
 
-			if (rel) {
-				rel.count++;
-			} else {
-				relatedItems.push({
-					item: { ...relatedItem, readingTime: readingTime(relatedItem.html).text },
-					count: 1,
-					createdAt: relatedItem.createdAt,
-				});
-			}
-		}
+	// 		if (rel) {
+	// 			rel.count++;
+	// 		} else {
+	// 			relatedItems.push({
+	// 				item: { ...relatedItem, readingTime: readingTime(relatedItem.html).text },
+	// 				count: 1,
+	// 				createdAt: relatedItem.createdAt,
+	// 			});
+	// 		}
+	// 	}
 
-		return relatedItems;
-	};
+	// 	return relatedItems;
+	// };
 
-	return filterItems(items, limit);
+	return filterAndSortItems(items, limit);
 };
 
-export const filterItems = (items: Item[], limit: string | null) => {
+export const filterAndSortItems = (items: FinalizedItem[], limit: string | null) => {
 	return (
 		items
 			// don't show hidden items
@@ -74,21 +77,7 @@ export const filterItems = (items: Item[], limit: string | null) => {
 					? 1
 					: 0,
 			)
-			// assign the calculated reading time and related items to each item
-			.map((item) => {
-				// const relatedItems = getRelatedItems(item);
-				return {
-					...item,
-					// relatedItems: relatedItems
-					// 	// order the related items by date created
-					// 	.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-					// 	// get the most relevant items with overlapping tags
-					// 	.sort((a, b) => b.count - a.count)
-					// 	// get 3
-					// 	.slice(0, 3)
-					// 	.map((x) => x.item),
-				};
-			})
+			// limit the number of items as requested
 			.slice(0, limit ? +limit : items.length)
 	);
 };
@@ -96,17 +85,21 @@ export const filterItems = (items: Item[], limit: string | null) => {
 export const getAllItems = () => {
 	const allImports = { ...articles, ...changelogs, ...projects };
 
-	const items = getItemsFromImports(allImports);
+	const allItems = getItemsFromImports(allImports);
 
-	return filterItems(items, null);
+	return filterAndSortItems(allItems, null);
 };
 
-export const groupAllItemsByTag = () => {
-	const allItems = getAllItems();
+export const getAllCategories = () => {
+	const items = getAllItems();
 
-	const allTagsAndItems = getAllTagsAndItems(allItems);
+	return groupItemsByTags(getAllTagsAndItems(items));
+};
 
-	return groupItemsByTags(allTagsAndItems);
+export const getCategory = (category: string) => {
+	const categories = getAllCategories();
+
+	return categories[category];
 };
 
 const getAllTagsAndItems = (items: Item[]) => {
@@ -117,7 +110,7 @@ const getAllTagsAndItems = (items: Item[]) => {
 			// get the tag and the item
 			.map((item) => {
 				return item.tags.map((tag: string) => {
-					return { tag, item };
+					return { tag: kebabCase(tag), item };
 				});
 			})
 			.flat()
@@ -147,7 +140,7 @@ export const getImports = (type: Types) => {
 };
 
 const getItemsFromImports = (imports: Record<string, unknown>) => {
-	const items: Item[] = [];
+	const items: FinalizedItem[] = [];
 
 	// loop over the files in the found folder
 	for (const path in imports) {
@@ -162,18 +155,18 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 				.split('.md')[0]
 				// make sure it's lower case
 				.toLowerCase();
-
+			// render the content of the item
 			const output = item.default.render();
+			// estimate the reading time
+			const rt = readingTime(output.html).text;
 
-			const readingTimeDuration = readingTime(output.html).text;
-
-			// add it to the items variable with the slug and rendered output
+			// add it to the items variable with the slug, excerpt, reading time, and rendered output
 			items.push({
 				excerpt: output.html
 					.replace(/<[^>]+>/g, '')
 					.substring(0, 370)
 					.trim(),
-				readingTimeDuration,
+				readingTime: rt,
 				slug,
 				...item.metadata,
 				...output,
@@ -184,8 +177,16 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 	return items;
 };
 
-const groupItemsByTags = (array: { tag: string; item: Item }[]) => {
-	return array.reduce((acc, value) => {
+export const groupAllItemsByTag = () => {
+	const allItems = getAllItems();
+
+	const allTagsAndItems = getAllTagsAndItems(allItems);
+
+	return groupItemsByTags(allTagsAndItems);
+};
+
+const groupItemsByTags = (items: { tag: string; item: Item }[]) => {
+	return items.reduce((acc, value) => {
 		const property = value['tag'];
 		acc[property] = acc[property] || [];
 		acc[property].push(value['item']);
