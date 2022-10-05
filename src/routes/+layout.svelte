@@ -1,6 +1,6 @@
 <script lang="ts">
 	// svelte
-	import { onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 
 	// packages
 	import lazyload from 'vanilla-lazyload';
@@ -22,11 +22,12 @@
 	let lazyloadInstance: ILazyLoadInstance | null = null;
 
 	// reactive state
-	$: if (browser && !lazyloadInstance) lazyloadInstance = new lazyload();
+	$: if (browser && !lazyloadInstance)
+		lazyloadInstance = new lazyload({
+			elements_selector: '.lazy',
+		});
 
-	// onMount
-	onMount(() => {
-		console.log('hello');
+	afterUpdate(() => {
 		if (browser && lazyloadInstance) {
 			lazyloadInstance.update();
 		}
@@ -34,9 +35,10 @@
 
 	// TODO<Jake>: Related items
 	// TODO<Jake>: Images for items for SEO only
-	// TODO<Jake>: RSS
+	// >TODO<Jake>: RSS<
 	// TODO<Jake>: Email signup
-	// >TODO<Jake>: Mobile optimizations<
+	// TODO<Jake>: Favicon
+	// TODO<Jake>: Image error
 	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
 	// 👆 in progress. netlify support has been contacted for jacobhatfield.com. jakehatfield.com & jake-hatfield.com can't be transferred out of namecheap until 60 days since they've been created
 </script>

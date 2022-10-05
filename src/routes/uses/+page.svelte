@@ -8,7 +8,7 @@
 	import metadata from '$lib/metadata';
 </script>
 
-<SEO title="uses" metaDescription="see what tools i use to create projects." />
+<SEO title="uses" metaDescription="see what tools jake hatfield uses to create projects." />
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">

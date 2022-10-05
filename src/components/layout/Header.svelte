@@ -24,7 +24,6 @@
 
 	// functions
 	const closeMobileMenu = () => {
-		console.log('hello');
 		isMobileMenuActive = false;
 	};
 </script>

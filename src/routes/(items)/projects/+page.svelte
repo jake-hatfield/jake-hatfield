@@ -10,7 +10,7 @@
 	$: ({ projects } = data);
 </script>
 
-<SEO title="projects" metaDescription="see what i'm working on." />
+<SEO title="projects" metaDescription="see what jake hatfield is working on." />
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">

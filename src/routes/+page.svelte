@@ -20,7 +20,7 @@
 
 <SEO
 	title="home"
-	metaDescription="if you're new, start here. see what I'm learning about, thinking about, and working on." />
+	metaDescription="if you're new, start here. see what jake hatfield is learning about, thinking about, and working on." />
 
 <section class="md:flex md:items-start md:justify-between">
 	<div class="mb-5 md:mb-0 md:w-3/5">

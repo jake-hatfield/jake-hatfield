@@ -11,7 +11,7 @@
 	$: ({ items, tag } = data);
 </script>
 
-<SEO title={`#${tag}`} metaDescription={`view items on the site tagged "${tag}"`} />
+<SEO title={`#${tag}`} metaDescription={`view items tagged "${tag}"`} />
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">

@@ -16,7 +16,7 @@
 
 <SEO
 	title="about"
-	metaDescription="learn a little about my story and see what skills I use to build projects." />
+	metaDescription="learn a little about jake hatfield's story and see what skills he uses to build projects." />
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">

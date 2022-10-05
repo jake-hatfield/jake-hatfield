@@ -1,9 +1,9 @@
 <script lang="ts">
 	// lib
-	import data from '$lib/metadata';
+	import metadata from '$lib/metadata';
 
 	// destructure items
-	const { siteLanguage, siteTitle } = data;
+	const { keywords, siteLanguage, siteTitle } = metadata;
 
 	// * required props *
 	export let metaDescription: string;
@@ -18,6 +18,7 @@
 <svelte:head>
 	<title>{pageTitle}</title>
 	<meta name="description" content={metaDescription} />
+	<meta name="keywords" content={String(keywords)} />
 	<meta
 		name="robots"
 		content={isIndexed
