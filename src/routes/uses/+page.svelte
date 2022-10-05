@@ -78,7 +78,7 @@
 			<div class="mt-3" slot="description">
 				<p>
 					really nice-feeling mouse. i think i might have enjoyed the wireless version better, but
-					no complaints after several years of use.
+					no complaints after several years of use. wheel goes brrrr.
 				</p>
 			</div>
 		</Use>
@@ -301,7 +301,7 @@
 </section>
 <section class="mt-8">
 	<header class="border-b-2 border-zinc-800 pb-1.5">
-		<h2 class="text-2xl font-black">productivity</h2>
+		<h2 class="text-2xl font-black">apps</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://slack.com/" title="slack" type="team communication">

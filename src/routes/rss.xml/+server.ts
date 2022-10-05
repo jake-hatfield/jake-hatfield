@@ -1,44 +1,54 @@
 // lib
 import metadata from '$lib/metadata';
-// import articles from '$lib/articles';
+import { getAllItems } from '$lib/markdown/index';
+
+// types
+import type { FinalizedItem } from '$types/markdown/Item';
 
 // destructure
 const { description, siteUrl, siteTitle } = metadata;
 
 export const GET = async () => {
-	const body = xml(articles);
-	const headers = {
-		'Cache-Control': 'max-age=0, s-maxage=3600',
-		'Content-Type': 'application/xml',
+	// create the xml body
+	const body = xml(getAllItems());
+
+	// set the headers
+	const options = {
+		headers: {
+			'Cache-Control': 'max-age=0, s-maxage=3600',
+			'Content-Type': 'application/xml',
+		},
 	};
 
-	return {
-		headers,
-		body,
-	};
+	return new Response(body, options);
 };
 
-const xml = (articles) => `
+const xml = (items: FinalizedItem[]) => `
 <rss xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>${siteTitle}</title>
-    <link>${siteUrl}</link>
     <description>${description}</description>
-    ${articles
+    <link>https://${siteUrl}</link>
+    <atom:link href="https://${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+    ${items
 			.map(
-				(article) => `
+				(item) => `
         <item>
-          <title>${article.title}</title>
-          <description>${article.excerpt}</description>
-          <link>${siteUrl}/${article.slug}/</link>
-          <pubDate>${new Date(article.date).toISOString()}</pubDate>
-          ${article.tags ? article.tags.map((tag) => `<category term="${tag}" />`).join('') : ''}
-          <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteUrl}/images/articles/${
-					article.slug
-				}/cover.jpg"/>
-          <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteUrl}/images/articles/${
-					article.slug
-				}/cover.jpg"/>
+        <guid isPermaLink="true">https://${siteUrl}/${item.type}/${item.slug}</guid>
+        <title>${item.title}</title>
+        <description>${item.description}</description>
+        <link>https://${siteUrl}/${item.type}/${item.slug}</link>
+        <pubDate>${new Date(item.createdAt).toUTCString()}</pubDate>
+        ${item.tags ? item.tags.map((tag) => `<category term="${tag}" />`).join('') : ''}
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://${siteUrl}/images/items/${
+					item.slug
+				}.jpg"/>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://${siteUrl}/images/items/${
+					item.slug
+				}.jpg"/>
+        <content:encoded>
+        ${item.excerpt}
+        </content:encoded>
         </item>
       `,
 			)
