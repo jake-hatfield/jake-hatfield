@@ -16,8 +16,6 @@
 	// props
 	export let data: PageData;
 	$: ({ articles, changelogs, imagePlaceholders, projects } = data);
-
-	$: console.log(articles);
 </script>
 
 <SEO
@@ -62,7 +60,7 @@
 	</header>
 	<ul>
 		{#each changelogs as item}
-			<Item {item} type="changelogs" />
+			<Item {item} />
 		{/each}
 	</ul>
 </section>
@@ -73,7 +71,7 @@
 	</header>
 	<ul>
 		{#each articles as item}
-			<Item {item} type="articles" />
+			<Item {item} />
 		{/each}
 	</ul>
 </section>
@@ -84,7 +82,7 @@
 	</header>
 	<ul>
 		{#each projects as item}
-			<Item {item} type="projects" />
+			<Item {item} />
 		{/each}
 	</ul>
 </section>

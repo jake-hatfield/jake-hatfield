@@ -31,7 +31,6 @@
 		}
 	});
 
-	// >TODO<Jake>: Create tag system<
 	// TODO<Jake>: Related items
 	// TODO<Jake>: Images for items for SEO only
 	// TODO<Jake>: RSS

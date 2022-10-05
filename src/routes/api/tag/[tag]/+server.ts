@@ -24,8 +24,18 @@ export const GET: RequestHandler = async ({ params, url }) => {
 	const category = getCategory(tag);
 
 	const items = Object.keys(category).map((index) => {
-		const { createdAt, description, excerpt, image, readingTime, tags, title, slug, updatedAt } =
-			category[+index];
+		const {
+			createdAt,
+			description,
+			excerpt,
+			image,
+			readingTime,
+			slug,
+			tags,
+			title,
+			type,
+			updatedAt,
+		} = category[+index];
 
 		return {
 			createdAt,
@@ -36,6 +46,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 			slug,
 			tags,
 			title,
+			type,
 			updatedAt,
 		};
 	});

@@ -37,11 +37,19 @@ export const GET: RequestHandler = async ({ params, url }) => {
 
 	const rawItems = getItems(type, limit);
 
-	console.log(rawItems);
-
 	const items = Object.keys(rawItems).map((index) => {
-		const { createdAt, description, excerpt, image, readingTime, tags, title, slug, updatedAt } =
-			rawItems[+index];
+		const {
+			createdAt,
+			description,
+			excerpt,
+			image,
+			readingTime,
+			slug,
+			tags,
+			title,
+			type,
+			updatedAt,
+		} = rawItems[+index];
 
 		return {
 			createdAt,
@@ -52,6 +60,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 			slug,
 			tags,
 			title,
+			type,
 			updatedAt,
 		};
 	});

@@ -159,6 +159,8 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 			const output = item.default.render();
 			// estimate the reading time
 			const rt = readingTime(output.html).text;
+			// assign the type from where it was imported
+			const type = path.split('markdown/')[1].split('/')[0];
 
 			// add it to the items variable with the slug, excerpt, reading time, and rendered output
 			items.push({
@@ -168,6 +170,7 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 					.trim(),
 				readingTime: rt,
 				slug,
+				type,
 				...item.metadata,
 				...output,
 			});

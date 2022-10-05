@@ -12,11 +12,8 @@
 	// * required props *
 	export let item: FinalizedItem;
 
-	// optional props
-	export let type: Types | 'item' = 'item';
-
 	// destructure props
-	$: ({ description, excerpt, slug, title } = item);
+	$: ({ description, excerpt, slug, title, type } = item);
 
 	$: href = `/${type}/${slug}`;
 </script>
@@ -32,10 +29,5 @@
 	<p class="mt-3">
 		{excerpt}...
 	</p>
-	<Link
-		class="mt-3"
-		{href}
-		icon={ArrowRight}
-		isUnderlined
-		title={`view ${type === 'item' ? type : type.slice(0, -1)}`} />
+	<Link class="mt-3" {href} icon={ArrowRight} isUnderlined title={`view ${type.slice(0, -1)}`} />
 </li>
