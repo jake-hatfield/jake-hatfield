@@ -26,6 +26,7 @@
 
 	// onMount
 	onMount(() => {
+		console.log('hello');
 		if (browser && lazyloadInstance) {
 			lazyloadInstance.update();
 		}

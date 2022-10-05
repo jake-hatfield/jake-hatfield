@@ -20,7 +20,7 @@
 	{#if changelogs?.length > 0}
 		<ul>
 			{#each changelogs as changelog}
-				<Item item={changelog} type="changelogs" />
+				<Item item={changelog} />
 			{:else}
 				nothing here
 			{/each}

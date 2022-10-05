@@ -20,7 +20,7 @@
 	{#if projects?.length > 0}
 		<ul>
 			{#each projects as project}
-				<Item item={project} type="projects" />
+				<Item item={project} />
 			{:else}
 				nothing here
 			{/each}

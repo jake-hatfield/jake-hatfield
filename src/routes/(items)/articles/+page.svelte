@@ -18,7 +18,7 @@
 	</header>
 	<ul>
 		{#each articles as article}
-			<Item item={article} type={'articles'} />
+			<Item item={article} />
 		{/each}
 	</ul>
 </section>

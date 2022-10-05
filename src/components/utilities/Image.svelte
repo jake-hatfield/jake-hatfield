@@ -16,7 +16,7 @@
 		<source data-sizes={sizes} data-srcset={source.srcset} type={source.type} {width} {height} />
 	{/each}
 	<img
-		class="lazy border-2 border-violet-700"
+		class="lazy border-2 border-violet-700 object-cover"
 		{alt}
 		{loading}
 		decoding="async"
