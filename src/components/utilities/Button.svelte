@@ -61,6 +61,10 @@
 	{#if href}
 		<a
 			aria-label={kind === 'icon' ? title : ''}
+			on:click={() => {
+				isTooltipActive = false;
+				onClick();
+			}}
 			{href}
 			on:mouseenter={() => {
 				isTooltipActive = true;

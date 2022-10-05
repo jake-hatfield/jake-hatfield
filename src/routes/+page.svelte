@@ -23,7 +23,7 @@
 	metaDescription="if you're new, start here. see what I'm learning about, thinking about, and working on." />
 
 <section class="md:flex md:items-start md:justify-between">
-	<div class="md:w-3/5">
+	<div class="mb-5 md:mb-0 md:w-3/5">
 		<header>
 			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
 			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
@@ -53,7 +53,6 @@
 		src={Avatar}
 		width={268} />
 </section>
-
 <section class="mt-8">
 	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">recent changelogs</h2>
@@ -64,7 +63,6 @@
 		{/each}
 	</ul>
 </section>
-
 <section class="mt-8">
 	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">recent articles</h2>
@@ -75,7 +73,6 @@
 		{/each}
 	</ul>
 </section>
-
 <section class="mt-8">
 	<header class="border-b-2 border-zinc-800 pb-1.5">
 		<h2 class="text-2xl font-black">recent projects</h2>

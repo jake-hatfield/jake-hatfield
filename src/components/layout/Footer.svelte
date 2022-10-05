@@ -21,8 +21,9 @@
 
 <div class="mt-auto w-full">
 	<CTA />
-	<footer class="mt-5 mb-3 md:flex md:items-center md:justify-between">
-		<p class="text-center text-zinc-500">
+	<footer
+		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-zinc-800 pt-3 md:flex-row md:items-center md:justify-between">
+		<p class="mt-3 text-zinc-500 md:mt-0">
 			&copy; {new Date().getFullYear()} jake hatfield
 		</p>
 		<nav>

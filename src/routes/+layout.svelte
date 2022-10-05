@@ -36,13 +36,13 @@
 	// TODO<Jake>: Images for items for SEO only
 	// TODO<Jake>: RSS
 	// TODO<Jake>: Email signup
-	// TODO<Jake>: Mobile optimizations
-	// TODO<Jake>: Deploy to vercel
+	// >TODO<Jake>: Mobile optimizations<
 	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
+	// 👆 in progress. netlify support has been contacted for jacobhatfield.com. jakehatfield.com & jake-hatfield.com can't be transferred out of namecheap until 60 days since they've been created
 </script>
 
 <div
-	class="relative mx-auto flex h-full min-h-screen w-full max-w-3xl flex-col items-start px-4 sm:px-6 lg:px-8">
+	class="relative mx-auto flex h-full min-h-screen w-full flex-col items-start px-4 sm:px-6 md:max-w-3xl lg:px-8">
 	<Header />
 
 	<main class="mb-content mt-content relative h-full w-full">

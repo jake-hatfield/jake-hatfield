@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* for debugging purposes */
+/* * {
+	box-sizing: border-box;
+	background: rgb(0 100 0 / 0.1) !important;
+} */
+
 html {
 	@apply mono bg-black text-white;
 }
@@ -135,7 +141,7 @@ mark,
 }
 
 .mt-content {
-	@apply sm:mt-8 md:mt-12 lg:mt-16;
+	@apply mt-3 md:mt-12 lg:mt-16;
 }
 
 .negative-z {
