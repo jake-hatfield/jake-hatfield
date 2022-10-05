@@ -37,8 +37,6 @@
 	// TODO<Jake>: Images for items for SEO only
 	// >TODO<Jake>: RSS<
 	// TODO<Jake>: Email signup
-	// TODO<Jake>: Favicon
-	// TODO<Jake>: Image error
 	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
 	// 👆 in progress. netlify support has been contacted for jacobhatfield.com. jakehatfield.com & jake-hatfield.com can't be transferred out of namecheap until 60 days since they've been created
 </script>
