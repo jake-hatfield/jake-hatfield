@@ -7,7 +7,12 @@
 	import metadata from '$lib/metadata';
 
 	// assets
-	import featuredImageSrc from '$assets/images/rasters/home.jpg';
+	// 672x448 px
+	import featuredImageSrc from '/images/home.jpeg';
+	// 1200x627 px
+	import ogSrc from '/images/home/home-og.jpeg';
+	// 400x400 px
+	import ogSquareSrc from '/images/home/home-og-square.jpeg';
 
 	// destructure items from metadata
 	const {
@@ -33,9 +38,13 @@
 
 	// optional props
 	export let breadcrumbs: { name: string; slug: string }[] = [];
-	export let entityMeta = null;
+	export let entityMeta: {
+		url: string;
+		faviconWidth: number;
+		faviconHeight: number;
+		caption: string;
+	} | null = null;
 	export let isIndexed = true;
-	// ! important !: open graph requires a 1200x627 px & 400x400 px image; schema requires a 672x448 px image
 	export let featuredImage = {
 		url: featuredImageSrc,
 		alt: defaultAlt,
@@ -44,11 +53,11 @@
 		caption: 'Home page',
 	};
 	export let ogImage = {
-		url: './src/static/images/og/default.jpg',
+		url: ogSrc,
 		alt: defaultAlt,
 	};
 	export let ogImageSquare = {
-		url: './src/static/images/og/default-square.jpg',
+		url: ogSquareSrc,
 		alt: defaultAlt,
 	};
 
@@ -99,7 +108,8 @@
 		name="robots"
 		content={isIndexed
 			? 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
-			: 'noindex, nofollow'} />
+			: 'noindex, nofollow'}
+	/>
 	<html lang={siteLanguage} />
 </svelte:head>
 <OpenGraph {...openGraphProps} />
