@@ -4,7 +4,6 @@
 
 	// props
 	export let alignment: 'start' | 'center' | 'end' = 'center';
-	export let level: 0 | 1 = 0;
 	export let position: 'top' | 'bottom' = 'bottom';
 	export let size: 'sm' | 'md' | 'lg' | 'field' = 'md';
 	export let title: string;

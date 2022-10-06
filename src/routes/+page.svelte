@@ -3,7 +3,7 @@
 	import Image from '$components/utilities/Image.svelte';
 	import Item from '$components/layout/item/index.svelte';
 	import Link from '$components/utilities/Link.svelte';
-	import SEO from '$components/utilities/SEO.svelte';
+	import SEO from '$components/utilities/seo/index.svelte';
 
 	// images
 	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.jpeg?width=832;268&format=webp&srcset';

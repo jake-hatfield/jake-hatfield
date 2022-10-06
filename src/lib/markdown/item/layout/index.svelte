@@ -1,7 +1,7 @@
 <script lang="ts">
 	// components
 	import Header from '$components/layout/item/Header.svelte';
-	import SEO from '$components/utilities/SEO.svelte';
+	import SEO from '$components/utilities/seo/index.svelte';
 
 	// types
 	import type { LayoutData } from '.svelte-kit/types/src/routes/$types';

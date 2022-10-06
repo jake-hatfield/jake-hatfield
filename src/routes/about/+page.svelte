@@ -1,7 +1,7 @@
 <script lang="ts">
 	// components
 	import Link from '$components/utilities/Link.svelte';
-	import SEO from '$components/utilities/SEO.svelte';
+	import SEO from '$components/utilities/seo/index.svelte';
 
 	// lib
 	import { future, nonTechnical, technical } from '$lib/metadata/skills';

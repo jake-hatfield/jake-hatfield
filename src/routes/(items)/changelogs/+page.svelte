@@ -1,7 +1,7 @@
 <script lang="ts">
 	// components
 	import Item from '$components/layout/item/index.svelte';
-	import SEO from '$components/utilities/SEO.svelte';
+	import SEO from '$components/utilities/seo/index.svelte';
 
 	// types
 	import type { PageData } from './$types';

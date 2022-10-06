@@ -25,6 +25,7 @@
 		"@testing-library/svelte": "^3.2.1",
 		"@types/jest": "^29.0.3",
 		"@types/luxon": "^3.0.1",
+		"@types/object-hash": "^2.2.1",
 		"@types/sharp": "^0.31.0",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -63,6 +64,7 @@
 		"@fontsource/permanent-marker": "^4.5.6",
 		"@sendgrid/mail": "^7.7.0",
 		"luxon": "^3.0.4",
+		"object-hash": "^3.0.0",
 		"reading-time-estimator": "^1.7.2"
 	}
 }

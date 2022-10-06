@@ -1,6 +1,6 @@
 // lib
 import { handleApiError } from '$lib/utilities/api';
-import { groupAllItemsByTag, getCategory } from '$lib/markdown';
+import { getCategory } from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';

@@ -19,48 +19,6 @@ export default (type: Types, limit: string | null) => {
 	// get the items from those imports
 	const items = getItemsFromImports(imports);
 
-	// get all the tags from the items
-	// const allTagsAndItems = getAllTagsAndItems(items);
-
-	// group the items by tags
-	// const categories = groupItemsByTags(allTagsAndItems);
-
-	// const getRelatedItems = (item: Item) => {
-	// 	let allRelatedItems: Item[] = [];
-
-	// 	// get items with same tags
-	// 	for (const tag of item.tags) {
-	// 		allRelatedItems = allRelatedItems.concat(categories[tag]);
-	// 	}
-
-	// 	const relatedItems: {
-	// 		item: FinalizedItem;
-	// 		count: number;
-	// 		createdAt: string;
-	// 	}[] = [];
-
-	// 	// sort by number of similar tags
-	// 	for (const relatedItem of allRelatedItems) {
-	// 		if (relatedItem.slug === item.slug) {
-	// 			continue;
-	// 		}
-
-	// 		const rel = relatedItems.find((i) => i.item.slug === relatedItem.slug);
-
-	// 		if (rel) {
-	// 			rel.count++;
-	// 		} else {
-	// 			relatedItems.push({
-	// 				item: { ...relatedItem, readingTime: readingTime(relatedItem.html).text },
-	// 				count: 1,
-	// 				createdAt: relatedItem.createdAt,
-	// 			});
-	// 		}
-	// 	}
-
-	// 	return relatedItems;
-	// };
-
 	return filterAndSortItems(items, limit);
 };
 
@@ -83,7 +41,7 @@ export const filterAndSortItems = (items: FinalizedItem[], limit: string | null)
 };
 
 export const getAllItems = () => {
-	const allImports = { ...articles, ...changelogs, ...projects };
+	const allImports = import.meta.glob('$lib/markdown/*/*.md', { eager: true });
 
 	const allItems = getItemsFromImports(allImports);
 
@@ -178,14 +136,6 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 	}
 
 	return items;
-};
-
-export const groupAllItemsByTag = () => {
-	const allItems = getAllItems();
-
-	const allTagsAndItems = getAllTagsAndItems(allItems);
-
-	return groupItemsByTags(allTagsAndItems);
 };
 
 const groupItemsByTags = (items: { tag: string; item: Item }[]) => {

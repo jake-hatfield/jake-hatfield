@@ -28,22 +28,22 @@ const xml = (items: FinalizedItem[]) => `
   <channel>
     <title>${siteTitle}</title>
     <description>${description}</description>
-    <link>https://${siteUrl}</link>
-    <atom:link href="https://${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>${siteUrl}</link>
+    <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     ${items
 			.map(
 				(item) => `
         <item>
-        <guid isPermaLink="true">https://${siteUrl}/${item.type}/${item.slug}</guid>
+        <guid isPermaLink="true">${siteUrl}/${item.type}/${item.slug}</guid>
         <title>${item.title}</title>
         <description>${item.description}</description>
-        <link>https://${siteUrl}/${item.type}/${item.slug}</link>
+        <link>${siteUrl}/${item.type}/${item.slug}</link>
         <pubDate>${new Date(item.createdAt).toUTCString()}</pubDate>
         ${item.tags ? item.tags.map((tag) => `<category term="${tag}" />`).join('') : ''}
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://${siteUrl}/images/items/${
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteUrl}/images/items/${
 					item.slug
 				}.jpg"/>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="https://${siteUrl}/images/items/${
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteUrl}/images/items/${
 					item.slug
 				}.jpg"/>
         <content:encoded>
