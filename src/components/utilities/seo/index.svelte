@@ -6,8 +6,19 @@
 	// lib
 	import metadata from '$lib/metadata';
 
-	// destructure items
-	const { author, github, keywords, siteLanguage, siteTitle, siteUrl } = metadata;
+	// assets
+	import featuredImageSrc from '$assets/images/rasters/home.jpg';
+
+	// destructure items from metadata
+	const {
+		author,
+		social: { github },
+		keywords,
+		ogLanguage,
+		siteLanguage,
+		siteTitle,
+		siteUrl,
+	} = metadata;
 
 	// default items
 	const defaultAlt = '';
@@ -16,12 +27,22 @@
 	export let isMarkdownItem = false;
 	export let createdAt: string;
 	export let metaDescription: string;
+	export let slug: string;
 	export let title;
 	export let updatedAt: string;
 
 	// optional props
 	export let breadcrumbs: { name: string; slug: string }[] = [];
+	export let entityMeta = null;
 	export let isIndexed = true;
+	// ! important !: open graph requires a 1200x627 px & 400x400 px image; schema requires a 672x448 px image
+	export let featuredImage = {
+		url: featuredImageSrc,
+		alt: defaultAlt,
+		width: 672,
+		height: 448,
+		caption: 'Home page',
+	};
 	export let ogImage = {
 		url: './src/static/images/og/default.jpg',
 		alt: defaultAlt,
@@ -33,6 +54,7 @@
 
 	// global page title format
 	const pageTitle = `${title} - ${siteTitle}`;
+	const url = `${siteUrl}/${slug}`;
 
 	// open graph
 	const openGraphProps = {
@@ -40,31 +62,32 @@
 		image: ogImage,
 		imageSquare: ogImageSquare,
 		metaDescription,
-		ogLanguage: 'en_US',
+		ogLanguage,
 		pageTitle,
 		siteTitle,
 		siteUrl,
+		url,
 		...(isMarkdownItem ? { createdAt, updatedAt } : { createdAt: '', updatedAt: '' }),
 	};
 
 	// schema
 	const schemaOrgProps = {
-		isMarkdownItem,
 		author,
 		breadcrumbs,
 		createdAt,
-		entity,
-		updatedAt,
+		entity: author,
 		entityMeta,
 		featuredImage,
+		github,
+		isMarkdownItem,
 		metaDescription,
 		siteLanguage,
 		siteTitle,
-		siteTitleAlt: siteShortTitle,
+		siteTitleAlt: siteTitle,
 		siteUrl,
 		title: pageTitle,
+		updatedAt,
 		url,
-		github,
 	};
 </script>
 

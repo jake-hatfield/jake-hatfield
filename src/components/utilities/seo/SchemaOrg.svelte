@@ -8,7 +8,7 @@
 	export let entity;
 	export let updatedAt: string;
 	export let featuredImage;
-	export let metadescription: string;
+	export let metaDescription: string;
 	export let siteLanguage: string;
 	export let siteTitle: string;
 	export let siteTitleAlt: string;
@@ -109,7 +109,7 @@
 		author: {
 			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
 		},
-		description: metadescription,
+		description: metaDescription,
 		breadcrumb: {
 			'@id': `${url}#breadcrumb`,
 		},
