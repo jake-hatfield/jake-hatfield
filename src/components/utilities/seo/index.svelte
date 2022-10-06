@@ -1,18 +1,18 @@
 <script lang="ts">
 	// components
 	import OpenGraph from '$components/utilities/seo/OpenGraph.svelte';
-	import SchemaOrg from '$components/utilities/seo/SchemaOrg.svelte';
+	import Schema from '$components/utilities/seo/Schema.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
 
 	// assets
 	// 672x448 px
-	import featuredImageSrc from '$assets/images/rasters/home/home.jpeg?url';
-	// 1200x627 px
-	import ogSrc from '$assets/images/rasters/home/home-og.jpeg?url';
+	import featuredImageSrc from '$assets/images/rasters/pages/home/index.jpg?url';
+	// 1200x630 px
+	import ogSrc from '$assets/images/rasters/pages/home/og.jpg?url';
 	// 400x400 px
-	import ogSquareSrc from '$assets/images/rasters/home/home-og-square.jpeg?url';
+	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg?url';
 
 	// destructure items from metadata
 	const {
@@ -50,7 +50,7 @@
 		alt: defaultAlt,
 		width: 672,
 		height: 448,
-		caption: 'Home page',
+		caption: 'home page',
 	};
 	export let ogImage = {
 		url: ogSrc,
@@ -80,7 +80,7 @@
 	};
 
 	// schema
-	const schemaOrgProps = {
+	const schemaProps = {
 		author,
 		breadcrumbs,
 		createdAt,
@@ -113,4 +113,4 @@
 	<html lang={siteLanguage} />
 </svelte:head>
 <OpenGraph {...openGraphProps} />
-<SchemaOrg {...schemaOrgProps} />
+<Schema {...schemaProps} />

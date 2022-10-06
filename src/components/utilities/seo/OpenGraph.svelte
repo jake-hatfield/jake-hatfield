@@ -29,7 +29,7 @@
 	{#if image}
 		<meta property="og:image" content={image.url} />
 		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="627" />
+		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={image.alt} />
 	{/if}
 	{#if imageSquare}

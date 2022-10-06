@@ -36,7 +36,7 @@
 	// TODO<Jake>: Images for items for SEO only -- fix RSS images
 	// TODO<Jake>: Email signup
 	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
-	// 👆 in progress. jakehatfield.com & jake-hatfield.com can't be transferred out of namecheap until 60 days since they've been created
+	// 👆 in progress.
 </script>
 
 <div

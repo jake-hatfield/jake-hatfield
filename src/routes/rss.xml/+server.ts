@@ -8,6 +8,8 @@ import type { FinalizedItem } from '$types/markdown/Item';
 // destructure
 const { description, siteUrl, siteTitle } = metadata;
 
+const assetsUrl = `${siteUrl}/_app/immutable/assets`;
+
 export const GET = async () => {
 	// create the xml body
 	const body = xml(getAllItems());
@@ -40,12 +42,12 @@ const xml = (items: FinalizedItem[]) => `
         <link>${siteUrl}/${item.type}/${item.slug}</link>
         <pubDate>${new Date(item.createdAt).toUTCString()}</pubDate>
         ${item.tags ? item.tags.map((tag) => `<category term="${tag}" />`).join('') : ''}
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteUrl}/images/items/${
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${assetsUrl}/${
 					item.slug
-				}.jpg"/>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteUrl}/images/items/${
+				}/${item.slug}.jpeg"/>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${assetsUrl}/${
 					item.slug
-				}.jpg"/>
+				}/${item.slug}.jpeg"/>
         <content:encoded>
         ${item.excerpt}
         </content:encoded>
