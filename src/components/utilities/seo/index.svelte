@@ -8,11 +8,11 @@
 
 	// assets
 	// 672x448 px
-	import featuredImageSrc from '$assets/images/rasters/pages/home/index.jpg?url';
+	import featuredImageSrc from '$assets/images/rasters/pages/home/index.jpg';
 	// 1200x630 px
-	import ogSrc from '$assets/images/rasters/pages/home/og.jpg?url';
+	import ogSrc from '$assets/images/rasters/pages/home/og.jpg';
 	// 400x400 px
-	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg?url';
+	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg';
 
 	// destructure items from metadata
 	const {
