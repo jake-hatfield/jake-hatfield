@@ -1,8 +1,6 @@
 <script lang="ts">
-	interface Image {
-		url: string;
-		alt: string;
-	}
+	// types
+	import type Image from '$types/markdown/Image';
 
 	// * required props *
 	export let createdAt: string;

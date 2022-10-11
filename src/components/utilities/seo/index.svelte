@@ -2,6 +2,7 @@
 	// components
 	import OpenGraph from '$components/utilities/seo/OpenGraph.svelte';
 	import Schema from '$components/utilities/seo/Schema.svelte';
+	import Twitter from '$components/utilities/seo/Twitter.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
@@ -12,7 +13,10 @@
 	// 1200x630 px
 	import ogSrc from '$assets/images/rasters/pages/home/og.jpg';
 	// 400x400 px
-	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg';
+	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg?url';
+
+	// types
+	import type Image from '$types/markdown/Image';
 
 	// destructure items from metadata
 	const {
@@ -26,12 +30,13 @@
 	} = metadata;
 
 	// default items
-	const defaultAlt = '';
+	const defaultAlt = 'A black background with the title of the page';
 
 	// * required props *
 	export let isMarkdownItem = false;
 	export let createdAt: string;
 	export let metaDescription: string;
+	export let readingTime: string;
 	export let slug: string;
 	export let title;
 	export let updatedAt: string;
@@ -52,11 +57,11 @@
 		height: 448,
 		caption: 'home page',
 	};
-	export let ogImage = {
+	export let ogImage: Image = {
 		url: ogSrc,
 		alt: defaultAlt,
 	};
-	export let ogImageSquare = {
+	export let ogImageSquare: Image = {
 		url: ogSquareSrc,
 		alt: defaultAlt,
 	};
@@ -98,6 +103,19 @@
 		updatedAt,
 		url,
 	};
+
+	// twitter
+	const twitterProps = {
+		isMarkdownItem,
+		image: {
+			url: ogSrc,
+			alt: defaultAlt,
+		},
+		metaDescription,
+		readingTime,
+		title: pageTitle,
+		url,
+	};
 </script>
 
 <svelte:head>
@@ -112,5 +130,6 @@
 	/>
 	<html lang={siteLanguage} />
 </svelte:head>
+<Twitter {...twitterProps} />
 <OpenGraph {...openGraphProps} />
 <Schema {...schemaProps} />

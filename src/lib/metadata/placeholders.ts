@@ -1,5 +1,5 @@
 export default {
-	email: 'alan-turing@bletchley-park.com',
+	email: 'alanturing@bletchleypark.com',
 	firstName: 'alan',
 	lastName: 'turing',
 	phone: '+1 555-555-5555',

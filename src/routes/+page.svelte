@@ -38,16 +38,16 @@
 		breadcrumbs: [{ name: 'home', slug: '' }],
 		metaDescription:
 			"if you're new, start here. see what jake hatfield is learning about, thinking about, and working on.",
-		featuredImage: Avatar,
-		ogImage: Avatar,
-		ogImageSquare: Avatar,
+		// featuredImage: Avatar,
+		// ogImage: Avatar,
+		// ogImageSquare: Avatar,
 	};
 </script>
 
 <SEO {...seoProps} />
 
 <section class="md:flex md:items-start md:justify-between">
-	<div class="mb-5 md:mb-0 md:w-3/5">
+	<div class="mb-5 md:mb-0 md:w-2/3">
 		<header>
 			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
 			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
@@ -67,7 +67,7 @@
 	</div>
 	<Image
 		alt="jake hatfield"
-		class="md:ml-8 md:w-2/5"
+		class="md:ml-8 md:w-1/3"
 		height={300}
 		loading="eager"
 		placeholder={imagePlaceholders[0]}
