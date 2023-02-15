@@ -16,7 +16,8 @@
 
 <SEO
 	title="about"
-	metaDescription="learn a little about jake hatfield's story and see what skills he uses to build projects." />
+	metaDescription="learn a little about jake hatfield's story and see what skills he uses to build projects."
+/>
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">
@@ -27,18 +28,20 @@
 		nov '19. i created this site to share what <Link
 			href="/changelogs"
 			isUnderlined
-			title="thoughts" />, <Link href="/articles" isUnderlined title="learnings" />, and <Link
+			title="thoughts"
+		/>, <Link href="/articles" isUnderlined title="learnings" />, and <Link
 			href="/projects"
 			isUnderlined
-			title="projects" /> are currently taking my time and attention.
+			title="projects"
+		/> are currently taking my time and attention.
 	</p>
 	<p class="mt-3">
 		most of my experiences have been trial-by-fire as i bootstrapped a <Link
-			href="https://leadgeek.io"
+			href="https://leadgeek.io/vs/online-arbitrage-sourcing-list"
 			isExternal
 			isUnderlined
-			title="solo business" /> in '20 that has evolved from a spreadsheet with custom macros into an
-		entire suite of tools.
+			title="online arbitrage sourcing list"
+		/> in '20 that has evolved from a spreadsheet with custom macros into an entire suite of tools.
 	</p>
 	<p class="mt-3">
 		i'm still here {new Date().getFullYear() - 2020}+ years later, thanks mostly to trusty old

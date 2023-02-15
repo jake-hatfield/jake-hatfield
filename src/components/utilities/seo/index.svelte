@@ -13,7 +13,7 @@
 	// 1200x630 px
 	import ogSrc from '$assets/images/rasters/pages/home/og.jpg';
 	// 400x400 px
-	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg?url';
+	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg';
 
 	// types
 	import type Image from '$types/markdown/Image';

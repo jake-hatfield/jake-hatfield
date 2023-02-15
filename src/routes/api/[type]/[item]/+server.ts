@@ -33,7 +33,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return handleApiError(url.pathname, 404, error, { item: null });
 	}
 
-	const item = getItems(type).find((item) => item.slug === queriedItem);
+	const item = getItems(type, null).find((item) => item.slug === queriedItem);
 
 	if (!item) {
 		error = {

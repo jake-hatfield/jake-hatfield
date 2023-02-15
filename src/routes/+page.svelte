@@ -38,6 +38,7 @@
 		breadcrumbs: [{ name: 'home', slug: '' }],
 		metaDescription:
 			"if you're new, start here. see what jake hatfield is learning about, thinking about, and working on.",
+		readingTime: '5 mins.',
 		// featuredImage: Avatar,
 		// ogImage: Avatar,
 		// ogImageSquare: Avatar,
