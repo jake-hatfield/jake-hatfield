@@ -6,8 +6,8 @@ I graduated from [Texas A&M](https://www.tamu.edu/) in '16 with a B.S. in Biolog
 
 #### 🔭 I’m currently working on...
 
-- [x] [Leadgeek](https://leadgeek.io/), which creates software and provides services for 3rd party Amazon sellers to find things to flip on the marketplace
-- [x] Client projects, like [Transform Writings](https://transformwritings.com)
+- [x] [Leadgeek](https://leadgeek.io/), which creates software and provides services for 3rd party Amazon sellers to find products to flip
+- [x] Client projects, like [Transform Writing](https://transformwriting.com)
 - [x] Goofy things for me and my friends to enjoy
 
 #### 🌱 I’m currently learning...
