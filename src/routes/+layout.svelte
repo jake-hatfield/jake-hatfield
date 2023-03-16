@@ -35,8 +35,6 @@
 
 	// TODO<Jake>: Fix OG templates - https://www.opengraph.xyz/url/https%3A%2F%2Fceea6f2d1895.ngrok.io
 	// TODO<Jake>: Images for items for SEO only -- fix RSS images
-	// TODO<Jake>: Email signup
-	// TODO<Jake>: 301 redirects for jacobhatfield.com & jakehatfield.com
 	// TODO<Jake>: ImprovMX for new domains
 	// TODO<Jake>: Error page
 </script>

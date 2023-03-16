@@ -13,10 +13,10 @@
 	import metadata from '$lib/metadata';
 
 	// data
-	const primaryLinks = ['home', 'changelogs', 'articles', 'projects', 'uses'];
+	const primaryLinks = ['Home', 'Changelogs', 'Articles', 'Projects', 'Uses'];
 	const secondaryLinks = [
-		{ href: '/about', icon: InformationSquare, title: 'about' },
-		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'contact' },
+		{ href: '/about', icon: InformationSquare, title: 'About' },
+		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
 	];
 
 	// state
@@ -34,10 +34,11 @@
 			{#each primaryLinks as link}
 				<li class="ml-3 first:ml-0">
 					<Button
-						href={link === 'home' ? '/' : `/${kebabCase(link)}`}
+						href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
 						kind="ghost"
 						onClick={closeMobileMenu}
-						title={link} />
+						title={link}
+					/>
 				</li>
 			{/each}
 		</ul>
@@ -56,7 +57,8 @@
 			icon={isMobileMenuActive ? Close : Menu}
 			iconSize={32}
 			onClick={() => (isMobileMenuActive = !isMobileMenuActive)}
-			title="Menu" />
+			title="Menu"
+		/>
 	</div>
 	{#if isMobileMenuActive}
 		<nav class="absolute inset-x-0 top-16 z-40 md:top-16" in:fly|local>
@@ -65,23 +67,17 @@
 					{#each primaryLinks as link}
 						<li class="mt-1.5 first:mt-0">
 							<Button
-								href={link === 'home' ? '/' : `/${kebabCase(link)}`}
+								href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
 								isFullWidth
 								kind="ghost"
 								onClick={() => closeMobileMenu()}
-								title={link} />
+								title={link}
+							/>
 						</li>
 					{/each}
 					{#each secondaryLinks as { href, icon, title }}
 						<li class="mt-1.5 first:mt-0">
-							<Button
-								<Button
-								{href}
-								{icon}
-								isFullWidth
-								kind="ghost"
-								onClick={closeMobileMenu}
-								{title} />
+							<Button {href} {icon} isFullWidth kind="ghost" onClick={closeMobileMenu} {title} />
 						</li>
 					{/each}
 				</ul>

@@ -45,10 +45,10 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$assets: './src/assets/*',
-			$components: './src/components/*',
+			$components: './src/lib/components/*',
 			$stores: './src/stores/*',
 			$routes: './src/routes/*',
-            $types: "./src/types/*"
+			$types: './src/types/*',
 		},
 	},
 };

@@ -10,11 +10,11 @@
 	$: ({ changelogs } = data);
 </script>
 
-<SEO title="changelogs" metaDescription="read what jake hatfield is thinking about." />
+<SEO title="Changelogs" metaDescription="Read what Jake Hatfield is thinking about." />
 
 <section>
 	<header class="border-b-2 border-zinc-800 pb-1.5">
-		<h1 class="text-3xl font-black">changelogs</h1>
+		<h1 class="text-3xl font-black">Changelogs</h1>
 	</header>
 
 	{#if changelogs?.length > 0}

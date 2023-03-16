@@ -1,7 +1,4 @@
 <script lang="ts">
-	// components
-	import CTA from '$components/layout/CTA.svelte';
-
 	// icons
 	import { LogoGithub, LogoYoutube, Rss } from 'carbon-icons-svelte';
 
@@ -20,11 +17,11 @@
 </script>
 
 <div class="mt-auto w-full">
-	<CTA />
 	<footer
-		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-zinc-800 pt-3 md:flex-row md:items-center md:justify-between">
+		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-zinc-800 pt-3 md:flex-row md:items-center md:justify-between"
+	>
 		<p class="mt-3 text-zinc-500 md:mt-0">
-			&copy; {new Date().getFullYear()} jake hatfield
+			&copy; {new Date().getFullYear()} Jake Hatfield
 		</p>
 		<nav>
 			<ul class="flex items-center">
@@ -35,7 +32,8 @@
 							class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
 							{href}
 							target="_blank"
-							rel="noopener noreferrer">
+							rel="noopener noreferrer"
+						>
 							<svelte:component this={icon} size={24} />
 						</a>
 					</li>
@@ -44,7 +42,8 @@
 					<a
 						aria-label={`rss feed`}
 						class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
-						href={'/rss.xml'}>
+						href={'/rss.xml'}
+					>
 						<Rss size={20} />
 					</a>
 				</li>

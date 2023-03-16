@@ -13,11 +13,12 @@
 <form class={`flex items-center w-full max-w-md ${$$props.class}`}>
 	<Input
 		hasInlineButton
-		helperText={`get an email when i publish new content. no spam, unsubscribe whenever.`}
+		helperText={`get an email when I publish new content. no spam, unsubscribe whenever.`}
 		id="cta-email"
 		isLabelHidden
 		placeholder={placeholders.email}
-		type="email">
+		type="email"
+	>
 		<Button
 			class="ml-px flex-none"
 			icon={ArrowRight}
@@ -25,6 +26,7 @@
 			loading={false}
 			onClick={() => alert('hello')}
 			size="field"
-			title="sign up" />
+			title="sign up"
+		/>
 	</Input>
 </form>

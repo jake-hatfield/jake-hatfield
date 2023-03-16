@@ -22,7 +22,7 @@ export default (type: Types, event) => {
 			// remove the ".md" extension
 			.split('.md')[0]
 			.toLowerCase();
-		const i = { item, slug };
+		const I = { item, slug };
 
 		items.push(i);
 	}

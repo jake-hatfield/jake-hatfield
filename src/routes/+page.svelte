@@ -25,7 +25,7 @@
 
 	// seo
 	const seoProps = {
-		title: 'home',
+		title: 'Home',
 		slug: '',
 		entityMeta: {
 			url: `${siteUrl}/`,
@@ -37,7 +37,7 @@
 		updatedAt: '2022-10-06T00:00:00.000+0100',
 		breadcrumbs: [{ name: 'home', slug: '' }],
 		metaDescription:
-			"if you're new, start here. see what jake hatfield is learning about, thinking about, and working on.",
+			"If you're new, start here. See what Jake Hatfield is learning about, thinking about, and working on.",
 		readingTime: '5 mins.',
 		// featuredImage: Avatar,
 		// ogImage: Avatar,
@@ -50,15 +50,15 @@
 <section class="md:flex md:items-start md:justify-between">
 	<div class="mb-5 md:mb-0 md:w-2/3">
 		<header>
-			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> howdy, i'm</p>
-			<h1 class="pt-3 text-3xl font-black">jake hatfield</h1>
+			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> Howdy, I'm</p>
+			<h1 class="pt-3 text-3xl font-black">Jake Hatfield</h1>
 		</header>
 		<p class="mt-5">
-			i'm a self-taught full-stack software engineer running a bootstrapped solo business.
+			I'm a self-taught full-stack software engineer running a bootstrapped solo business.
 		</p>
-		<p class="mt-3">i want to design and build digital products like other people play piano.</p>
+		<p class="mt-3">I want to design and build digital products like other people play piano.</p>
 		<p class="mt-3">
-			i created this site to share what <Link href="/changelogs" isUnderlined title="thoughts" />, <Link
+			I created this site to share what <Link href="/changelogs" isUnderlined title="thoughts" />, <Link
 				href="/articles"
 				isUnderlined
 				title="learnings"
@@ -67,7 +67,7 @@
 		</p>
 	</div>
 	<Image
-		alt="jake hatfield"
+		alt="Jake Hatfield"
 		class="md:ml-8 md:w-1/3"
 		height={300}
 		loading="eager"

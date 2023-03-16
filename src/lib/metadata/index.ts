@@ -4,14 +4,14 @@ import { isDevEnv } from '$lib/utilities';
 const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000/' : 'jake-hatfield.com';
 
 export default {
-	author: 'jake hatfield',
+	author: ' Jake Hatfield',
 	description:
-		"jake hatfield's personal website. check out the thoughts, learnings, and projects currently taking up his time.",
-	keywords: ['jake hatfield', 'jacob hatfield'],
+		" Jake Hatfield's personal website. check out the thoughts, learnings, and projects currently taking up his time.",
+	keywords: [' Jake Hatfield', 'Jacob Hatfield'],
 	siteLanguage: 'en',
 	ogLanguage: 'en_US',
-	siteTitle: 'jake hatfield',
-	siteShortTitle: 'jake hatfield',
+	siteTitle: ' Jake Hatfield',
+	siteShortTitle: ' Jake Hatfield',
 	siteUrl: `https://${siteUrl}`,
 	email: `me@${siteUrl}`,
 	social: {

@@ -137,7 +137,7 @@ mark,
 }
 
 .minimal-scrollbar {
-	@apply scrollbar scrollbar-track-white scrollbar-thumb-lime-400;
+	@apply scrollbar scrollbar-track-neutral-800 scrollbar-thumb-neutral-600;
 }
 
 .mt-content {
