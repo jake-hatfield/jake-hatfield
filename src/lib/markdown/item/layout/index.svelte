@@ -29,7 +29,8 @@
 		<ul class="content-section mb-content">
 			{#each item.relatedPosts as rel}
 				<li
-					class="ml-6 h-72 w-56 min-w-[225px] overflow-hidden border-2 border-transparent bg-zinc-800 text-white transition duration-150 first:ml-0 hover:border-rose-600">
+					class="ml-6 h-72 w-56 min-w-[225px] overflow-hidden border-2 border-transparent bg-neutral-800 text-white transition duration-150 first:ml-0 hover:border-rose-600"
+				>
 					{rel.title}
 				</li>
 			{/each}

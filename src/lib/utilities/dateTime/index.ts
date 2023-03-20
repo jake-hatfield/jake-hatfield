@@ -1,10 +1,15 @@
+// packages
 import { DateTime } from 'luxon';
 
 // lib
-import { pluralize } from '$lib/utilities/string';
+import { handlePluralization } from '$lib/utilities/string';
 
-export const convertTimestampToDateTime = (timestamp: number) => {
-	return DateTime.fromSeconds(timestamp);
+export const convertIsoToTimestamp = (iso: string) => {
+	return DateTime.fromISO(iso).toMillis();
+};
+
+export const convertTimestampToIso = (timestamp: number) => {
+	return new Date(timestamp * 1000).toISOString();
 };
 
 export const getCurrentTime = () => {
@@ -26,35 +31,63 @@ export const formatDifference = (futureDate: DateTime, date?: DateTime) => {
 
 	const difference = getDifference(futureDate, dt);
 
-	// if only minutes left
-	if (+difference.hours.toFixed(0) === 0 && difference.minutes < 60) {
-		return `${pluralize(+difference.minutes.toFixed(0), 'minute')} left`;
-	}
+	// if time difference is in the past
+	if (difference.minutes < 0) {
+		// don't mess around with stupid negative values & operands
+		const diffDays = Math.abs(+difference.days.toFixed(0));
+		const diffHours = Math.abs(+difference.hours.toFixed(0));
+		const diffMinutes = Math.abs(+difference.minutes.toFixed(0));
 
-	// if more than 1 hour, but less than 1 day left
-	if (difference.days < 1) {
-		return `${pluralize(+difference.hours.toFixed(0), 'hour')} ${pluralize(
-			+difference.minutes.toFixed(0),
-			'minute',
-		)} left`;
-	}
+		if (diffDays === 0 && diffHours === 0 && diffMinutes < 60) {
+			if (diffMinutes < 1) {
+				return 'Just now';
+			} else {
+				return `${handlePluralization('minute', diffMinutes, true)} ago`;
+			}
+		}
 
-	if (difference.days < 2) {
-		return `${pluralize(+difference.hours.toFixed(0), 'hour')} left`;
-	}
+		if (diffDays < 1) {
+			return `${handlePluralization('hour', Math.abs(+difference.hours), true)} ago`;
+		}
 
-	return `${pluralize(+difference.days.toFixed(0), 'day')} left`;
-};
-
-export const formatTimestamp = (timestamp: number, showYear = false) => {
-	const dt = convertTimestampToDateTime(timestamp);
-	if (showYear) {
-		return dt.toFormat('LLL dd, yyyy');
+		return `${handlePluralization('day', diffDays, true)} ago`;
 	} else {
-		return dt.toFormat('LLL dd');
+		// then time difference must be in the future...
+
+		// simplify this process
+		const diffDays = +difference.days.toFixed(0);
+		const diffHours = +difference.hours.toFixed(0);
+		const diffMinutes = +difference.minutes.toFixed(0);
+
+		// if only minutes left
+		if (diffDays === 0 && diffHours === 0 && diffMinutes < 60) {
+			return `${handlePluralization('minute', diffMinutes, true)} left`;
+		}
+
+		// if more than 1 hour, but less than 1 day left
+		if (diffDays < 1) {
+			return `${handlePluralization(
+				'hour',
+				+difference.hours.toFixed(0),
+				true,
+			)} ${handlePluralization('minute', diffMinutes, true)} left`;
+		}
+
+		if (diffDays < 2) {
+			return `${handlePluralization('hour', diffHours, true)} left`;
+		}
+
+		return `${handlePluralization('day', diffDays, true)}${
+			diffHours > 0 ? `, ${handlePluralization('hour', diffHours, true)}` : ''
+		} left`;
 	}
 };
 
-export const formatIsoToText = (isoTimestamp: string) => {
-	return DateTime.fromISO(isoTimestamp).toFormat('dd LLL, yyyy').toLowerCase();
+export const formatTimestamp = (timestamp: number, format = 'LLL dd, yyyy') => {
+	const isoTime = convertTimestampToIso(timestamp);
+	return DateTime.fromISO(isoTime).toFormat(format);
+};
+
+export const formatIsoToText = (isoTime: string, format = 'LLL dd, yyyy') => {
+	return DateTime.fromISO(isoTime).toFormat(format);
 };

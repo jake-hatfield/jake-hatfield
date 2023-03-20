@@ -7,6 +7,7 @@
 
 	// lib
 	import metadata from '$lib/metadata';
+	import emptyState from '$lib/metadata/emptyState';
 
 	// assets
 	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.jpeg?width=832;268&format=webp&srcset';
@@ -50,20 +51,29 @@
 <section class="md:flex md:items-start md:justify-between">
 	<div class="mb-5 md:mb-0 md:w-2/3">
 		<header>
-			<p class="text-2xl"><span role="img" aria-label="Waving emoji">👋</span> Howdy, I'm</p>
+			<p class="text-lg font-black">
+				<span role="img" aria-label="Waving emoji">👋</span> Howdy, I'm
+			</p>
 			<h1 class="pt-3 text-3xl font-black">Jake Hatfield</h1>
 		</header>
 		<p class="mt-5">
-			I'm a self-taught full-stack software engineer running a bootstrapped solo business.
+			I'm a self-taught full-stack software engineer running a bootstrapped solo business in
+			Houston, TX.
 		</p>
-		<p class="mt-3">I want to design and build digital products like other people play piano.</p>
 		<p class="mt-3">
-			I created this site to share what <Link href="/changelogs" isUnderlined title="thoughts" />, <Link
-				href="/articles"
+			<mark>I want to design and build digital products like other people play piano,</mark> so I
+			created this site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
+				href="/changelogs"
 				isUnderlined
 				title="learnings"
-			/>, and <Link href="/projects" isUnderlined title="projects" /> are currently taking my time and
-			attention.
+			/>, and <Link href="/projects" isUnderlined title="projects" /> are helping me achieve this goal.
+		</p>
+		<p class="mt-3">
+			<mark
+				>I'm currently looking to contribute full-time to a team of other software engineers</mark
+			>
+			who are solving meaningful problems on a bigger scale than I can accomplish completely on my own.
+			<span role="img" aria-label="Call me hand emoji">🤙</span>
 		</p>
 	</div>
 	<Image
@@ -80,6 +90,6 @@
 		width={268}
 	/>
 </section>
-<Recent type="changelogs" items={changelogs} />
-<Recent type="articles" items={articles} />
-<Recent type="projects" items={projects} />
+<Recent emptyState={emptyState.articles} items={articles} type="articles" />
+<Recent emptyState={emptyState.changelogs} items={changelogs} type="changelogs" />
+<Recent emptyState={emptyState.projects} items={projects} type="projects" />

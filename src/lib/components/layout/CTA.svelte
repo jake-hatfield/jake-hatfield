@@ -10,7 +10,7 @@
 	import { ArrowRight } from 'carbon-icons-svelte';
 </script>
 
-<form class={`flex items-center w-full max-w-md ${$$props.class}`}>
+<form class={`flex items-center w-full max-w-md ${$$props.class ? $$props.class : ''}`}>
 	<Input
 		hasInlineButton
 		helperText={`get an email when I publish new content. no spam, unsubscribe whenever.`}

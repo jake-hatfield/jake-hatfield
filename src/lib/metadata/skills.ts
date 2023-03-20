@@ -25,6 +25,7 @@ export const technical = [
 	'Gatsby.js',
 	'Next.js',
 	'Node.js',
+	'Express.js',
 	'SQL',
 	'Supabase',
 	'NoSQL',
@@ -35,8 +36,5 @@ export const technical = [
 	'Vitest',
 	'Playwright',
 	'D3.js',
-	'Babel',
-	'Webpack',
-	'ESLint',
 	'Git',
 ];

@@ -4,7 +4,7 @@ import { getCategory } from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';
-import type EndpointError from '$types/Error';
+import type { EndpointError } from '$types/Error';
 
 export const GET: RequestHandler = async ({ params, url }) => {
 	let error: EndpointError;
@@ -23,7 +23,17 @@ export const GET: RequestHandler = async ({ params, url }) => {
 
 	const category = getCategory(tag);
 
-	const items = Object.keys(category).map((index) => {
+	if (!category) {
+		error = {
+			code: 'NOT_FOUND',
+			message: 'No items found for this tag',
+			suggestion: 'Try entering an item tag in the URL',
+		};
+
+		return handleApiError(url.pathname, 404, error, { items: [] });
+	}
+
+	const items = category.items.map((index) => {
 		const {
 			createdAt,
 			description,
@@ -31,11 +41,11 @@ export const GET: RequestHandler = async ({ params, url }) => {
 			image,
 			readingTime,
 			slug,
-			tags,
+			tag,
 			title,
 			type,
 			updatedAt,
-		} = category[+index];
+		} = index;
 
 		return {
 			createdAt,
@@ -44,7 +54,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 			image,
 			readingTime,
 			slug,
-			tags,
+			tag,
 			title,
 			type,
 			updatedAt,

@@ -1,6 +1,6 @@
-export default interface EndpointError {
+export interface EndpointError {
 	// created error code
-	code?: string;
+	code: string;
 	// primary message
 	message: string;
 	// secondary message to perform appropriate action next time

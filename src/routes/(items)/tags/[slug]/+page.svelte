@@ -11,10 +11,10 @@
 	$: ({ items, tag } = data);
 </script>
 
-<SEO title={`#${tag}`} metaDescription={`view items tagged "${tag}"`} />
+<SEO title={`#${tag}`} metaDescription={`View items tagged "${tag}"`} />
 
 <section>
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h1 class="text-3xl font-black">
 			#{tag}
 		</h1>

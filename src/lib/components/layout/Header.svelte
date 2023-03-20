@@ -6,17 +6,20 @@
 	import Button from '$components/utilities/Button.svelte';
 
 	// icons
-	import { Close, InformationSquare, Menu, SendAlt } from 'carbon-icons-svelte';
+	import Close from 'carbon-icons-svelte/lib/Close.svelte';
+	import Document from 'carbon-icons-svelte/lib/Document.svelte';
+	import Home from 'carbon-icons-svelte/lib/Home.svelte';
+	import InformationSquare from 'carbon-icons-svelte/lib/InformationSquare.svelte';
+	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
 
 	// lib
 	import { kebabCase } from '$lib/utilities/string';
-	import metadata from '$lib/metadata';
 
 	// data
-	const primaryLinks = ['Home', 'Changelogs', 'Articles', 'Projects', 'Uses'];
+	const primaryLinks = ['Articles', 'Changelogs', 'Projects'];
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
-		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
+		{ href: '/resume', icon: Document, title: 'Resume' },
 	];
 
 	// state
@@ -28,45 +31,49 @@
 	};
 </script>
 
-<header class="relative mt-3 w-full pb-1.5 md:mt-0 md:border-b-2 md:border-zinc-800">
-	<nav class="mt-3 hidden w-full items-center justify-between lg:flex">
-		<ul class="flex items-center">
-			{#each primaryLinks as link}
-				<li class="ml-3 first:ml-0">
-					<Button
-						href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
-						kind="ghost"
-						onClick={closeMobileMenu}
-						title={link}
-					/>
-				</li>
-			{/each}
-		</ul>
-		<ul class="flex items-center">
+<header class="relative mt-3 w-full pb-1.5 md:mt-0 md:border-b-2 md:border-neutral-900">
+	<nav class="mt-3 flex w-full items-center justify-between">
+		<div class="flex items-center">
+			<Button href="/" icon={Home} kind="ghost" title="Home" type="icon" tooltipAlignment="start" />
+			<ul class="hidden items-center lg:flex">
+				{#each primaryLinks as link}
+					<li class="ml-0.5">
+						<Button
+							href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
+							kind="ghost"
+							onClick={closeMobileMenu}
+							title={link}
+						/>
+					</li>
+				{/each}
+			</ul>
+		</div>
+		<ul class="hidden items-center lg:flex">
 			{#each secondaryLinks as { href, icon, title }}
-				<li class="ml-3 first:ml-0">
+				<li class="ml-0.5 first:ml-0">
 					<Button {href} {icon} kind="ghost" onClick={closeMobileMenu} {title} />
 				</li>
 			{/each}
 		</ul>
+		<div class="lg:hidden">
+			<Button
+				aria-expanded={isMobileMenuActive}
+				icon={isMobileMenuActive ? Close : Menu}
+				kind="ghost"
+				onClick={() => (isMobileMenuActive = !isMobileMenuActive)}
+				title="Menu"
+				type="icon"
+			/>
+		</div>
 	</nav>
-	<div class="flex justify-end md:hidden">
-		<Button
-			aria-expanded={isMobileMenuActive}
-			kind="icon"
-			icon={isMobileMenuActive ? Close : Menu}
-			iconSize={32}
-			onClick={() => (isMobileMenuActive = !isMobileMenuActive)}
-			title="Menu"
-		/>
-	</div>
 	{#if isMobileMenuActive}
 		<nav class="absolute inset-x-0 top-16 z-40 md:top-16" in:fly|local>
-			<div class="border-2 border-zinc-800 bg-black">
+			<div class="border-2 border-neutral-900 bg-black">
 				<ul class="p-3">
 					{#each primaryLinks as link}
 						<li class="mt-1.5 first:mt-0">
 							<Button
+								class="text-left"
 								href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
 								isFullWidth
 								kind="ghost"
@@ -77,7 +84,15 @@
 					{/each}
 					{#each secondaryLinks as { href, icon, title }}
 						<li class="mt-1.5 first:mt-0">
-							<Button {href} {icon} isFullWidth kind="ghost" onClick={closeMobileMenu} {title} />
+							<Button
+								class="text-left"
+								{href}
+								{icon}
+								isFullWidth
+								kind="ghost"
+								onClick={closeMobileMenu}
+								{title}
+							/>
 						</li>
 					{/each}
 				</ul>

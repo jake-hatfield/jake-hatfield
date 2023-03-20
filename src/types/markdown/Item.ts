@@ -8,7 +8,7 @@ export interface Item {
 	excerpt: string;
 	hidden: boolean;
 	slug: string;
-	tags: string[];
+	tag: string;
 	title: string;
 	updatedAt: string | null;
 }

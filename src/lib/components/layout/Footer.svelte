@@ -1,51 +1,56 @@
 <script lang="ts">
+	// components
+	import Button from '$components/utilities/Button.svelte';
+
 	// icons
-	import { LogoGithub, LogoYoutube, Rss } from 'carbon-icons-svelte';
+	import { LogoGithub, LogoYoutube, Rss, SendAlt } from 'carbon-icons-svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
 
 	// data
 	const socialLinks = [
-		{ href: metadata.social.github, icon: LogoGithub, title: 'github' },
+		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
+		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
 		{
 			href: metadata.social.youtube,
 			icon: LogoYoutube,
-			title: 'youtube',
+			title: 'YouTube',
 		},
 	];
 </script>
 
 <div class="mt-auto w-full">
 	<footer
-		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-zinc-800 pt-3 md:flex-row md:items-center md:justify-between"
+		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-neutral-900 pt-3 md:flex-row md:items-center md:justify-between"
 	>
-		<p class="mt-3 text-zinc-500 md:mt-0">
+		<p class="mt-3 text-neutral-400 md:mt-0">
 			&copy; {new Date().getFullYear()} Jake Hatfield
 		</p>
 		<nav>
 			<ul class="flex items-center">
 				{#each socialLinks as { href, icon, title }}
-					<li class="ml-3 first:ml-0">
-						<a
-							aria-label={`${metadata.author}'s ${title} profile`}
-							class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
+					<li class="ml-0.5 first:ml-0">
+						<Button
 							{href}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<svelte:component this={icon} size={24} />
-						</a>
+							{icon}
+							isNoFollow
+							kind="ghost"
+							{title}
+							tooltipPosition="top"
+							type="icon"
+						/>
 					</li>
 				{/each}
-				<li class="ml-3">
-					<a
-						aria-label={`rss feed`}
-						class="text-lime-400 transition-colors duration-150 hover:text-lime-500"
-						href={'/rss.xml'}
-					>
-						<Rss size={20} />
-					</a>
+				<li class="ml-0.5">
+					<Button
+						href="/rss.xml"
+						icon={Rss}
+						kind="ghost"
+						title="RSS"
+						tooltipPosition="top"
+						type="icon"
+					/>
 				</li>
 			</ul>
 		</nav>

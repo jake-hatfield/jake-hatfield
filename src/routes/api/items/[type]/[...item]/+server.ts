@@ -1,17 +1,18 @@
 // lib
 import { handleApiError } from '$lib/utilities/api';
-import getItems from '$lib/markdown';
+import getItems, { typeGuardPost } from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';
-import type EndpointError from '$types/Error';
+import type { EndpointError } from '$types/Error';
 
-export const GET: RequestHandler = async ({ params, url }) => {
+export const GET: RequestHandler = async (event) => {
 	let error: EndpointError;
 
-	const { type, item: queriedItem } = params;
-
-	const types = ['articles', 'changelogs', 'projects'] as const;
+	const {
+		params: { type, item: queriedItem },
+		url,
+	} = event;
 
 	if (!type) {
 		error = {
@@ -23,7 +24,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return handleApiError(url.pathname, 404, error, { item: null });
 	}
 
-	if (!types.includes(type)) {
+	if (!typeGuardPost(type)) {
 		error = {
 			code: 'INVALID_TYPE',
 			message: `${type} is not a valid item type`,

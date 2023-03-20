@@ -4,8 +4,8 @@ import type { FinalizedItem } from '$types/markdown/Item';
 
 export const load: PageLoad = async ({ fetch }) => {
 	const [articlesRes, changelogsRes, imagePlaceholdersRes, projectsRes] = await Promise.all([
-		fetch('/api/articles?limit=3'),
-		fetch('/api/changelogs?limit=3'),
+		fetch('/api/items/articles?limit=3'),
+		fetch('/api/items/changelogs?limit=3'),
 		fetch('/api/images', {
 			method: 'POST',
 			headers: {
@@ -15,7 +15,7 @@ export const load: PageLoad = async ({ fetch }) => {
 				images: ['avatar.jpeg'],
 			}),
 		}),
-		fetch('/api/projects?limit=3'),
+		fetch('/api/items/projects?limit=3'),
 	]);
 
 	const articles: FinalizedItem[] = await articlesRes.json();

@@ -11,7 +11,7 @@
 <SEO title="Uses" metaDescription="See what tools Jake Hatfield uses to create projects." />
 
 <section>
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h1 class="text-3xl font-black">Uses</h1>
 	</header>
 	<p class="mt-5">
@@ -33,7 +33,7 @@
 	</p>
 </section>
 <section class="mt-8">
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Workstation</h2>
 	</header>
 	<ul class="mt-5">
@@ -57,7 +57,7 @@
 		</Use>
 		<Use
 			href="https://www.amazon.com/gp/product/B08BCRYS6B/"
-			title="LG 27gn950-b"
+			title="LG 27GN950-B"
 			type="Monitor x2"
 		>
 			<div class="mt-3" slot="description">
@@ -127,7 +127,7 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Development</h2>
 	</header>
 	<ul class="mt-5">
@@ -182,14 +182,14 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Design</h2>
 	</header>
 	<ul class="mt-5">
 		<Use
 			href="https://www.adobe.com/products/illustrator.html"
-			title="illustrator"
-			type="vector editing"
+			title="Illustrator"
+			type="Vector editing"
 		>
 			<div class="mt-3" slot="description">
 				<p>
@@ -219,7 +219,7 @@
 				<p>I can crank out a product demo video or advert with minimal Googling.</p>
 			</div>
 		</Use>
-		<Use href="https://www.figma.com/" title="figma" type="UI / UX">
+		<Use href="https://www.figma.com/" title="Figma" type="UI / UX">
 			<div class="mt-3" slot="description">
 				<p>
 					Bet you thought I was gonna say XD, huh? Figma is one of the most performant, intuitive
@@ -257,8 +257,8 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header class="border-b-2 border-zinc-800 pb-1.5">
-		<h2 class="text-2xl font-black">deployment</h2>
+	<header class="border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">Deployment</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://www.netlify.com/" title="Netlify" type="Hosting">
@@ -311,8 +311,8 @@
 	</ul>
 </section>
 <section class="mt-8">
-	<header class="border-b-2 border-zinc-800 pb-1.5">
-		<h2 class="text-2xl font-black">apps</h2>
+	<header class="border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">Apps</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://slack.com/" title="Slack" type="Team communication">

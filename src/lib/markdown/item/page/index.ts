@@ -2,7 +2,7 @@
 import { error } from '@sveltejs/kit';
 
 // lib
-import { getImports } from '$lib/markdown';
+import { formatPath, getImports } from '$lib/markdown';
 
 // types
 import type { FinalizedItem, Types } from '$types/markdown/Item';
@@ -16,22 +16,19 @@ export default (type: Types, event) => {
 	// Get the posts' slugs
 	for (const path in imports) {
 		const item = imports[path];
-		const slug = path
-			// remove everything before the file name
-			.substring(path.lastIndexOf('/') + 1)
-			// remove the ".md" extension
-			.split('.md')[0]
-			.toLowerCase();
-		const I = { item, slug };
+		const i = { item, slug: formatPath(path) };
 
 		items.push(i);
 	}
 
-	const { slug } = event.params;
-
 	// Find the post with the slug
 	const filteredItem = items.find((item) => {
-		return item.slug.toLowerCase() === slug.toLowerCase();
+		return (
+			item.slug.toLowerCase() ===
+			`${
+				event.params.category ? `${event.params.category.toLowerCase()}/` : ''
+			}${event.params.slug.toLowerCase()}`
+		);
 	});
 
 	if (!filteredItem) {

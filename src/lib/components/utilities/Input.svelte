@@ -64,16 +64,16 @@
 	{#if label}
 		<label
 			for={id}
-			class={`block font-medium text-zinc-100 ${isLabelHidden ? 'sr-only' : ''} ${
-				isReadOnly ? 'text-zinc-600 cursor-not-allowed' : 'cursor-text'
-			}`}>
+			class={`block font-medium text-neutral-100 ${isLabelHidden ? 'sr-only' : ''} ${
+				isReadOnly ? 'text-neutral-400 cursor-not-allowed' : 'cursor-text'
+			}`}
+		>
 			{label}
 		</label>
 	{/if}
 	<div class={`${label ? 'mt-1.5' : ''} relative flex`}>
 		{#if units}
-			<span
-				class="flex w-10 flex-none items-center justify-center bg-zinc-900 px-3 pt-[8px] pb-[7px]">
+			<span class="flex w-10 flex-none items-center justify-center bg-black px-3 pt-[8px] pb-[7px]">
 				{units}
 			</span>
 		{/if}
@@ -85,9 +85,9 @@
 				error
 					? 'border-red-300 text-red-400 placeholder-red-300 focus:ring-red-500 focus:border-red-500'
 					: isReadOnly
-					? 'border-transparent text-zinc-500 cursor-not-allowed'
-					: 'border-violet-700 text-zinc-100 focus:ring-white focus:border-white cursor-text'
-			} placeholder-zinc-500 focus:outline-none sm:text-sm mono`}
+					? 'border-transparent text-neutral-400 cursor-not-allowed'
+					: 'border-violet-700 text-neutral-100 focus:ring-white focus:border-white cursor-text'
+			} placeholder-neutral-400 focus:outline-none sm:text-sm mono`}
 			disabled={isReadOnly}
 			{id}
 			on:input={handleInput}
@@ -95,10 +95,12 @@
 			{placeholder}
 			required={isRequired}
 			{type}
-			{value} />
+			{value}
+		/>
 		{#if error}
 			<div
-				class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-red-300">
+				class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-red-300"
+			>
 				<ErrorFilled />
 			</div>
 		{/if}
@@ -108,8 +110,9 @@
 				transition:fade={{ duration: 150 }}
 				class={`absolute inset-y-0 ${
 					error ? 'right-10' : 'right-2.5'
-				} text-zinc-300 transition duration-150 hover:text-zinc-300`}
-				data-testId={showPasswordText ? 'hide-password-text' : 'show-password-text'}>
+				} text-neutral-400 transition duration-150`}
+				data-testId={showPasswordText ? 'hide-password-text' : 'show-password-text'}
+			>
 				{#if showPasswordText}
 					<ViewOffFilled size={24} />
 				{:else}
@@ -128,7 +131,7 @@
 					{error}
 				</p>
 			{:else if isReadOnly}
-				<p class="text-zinc-500" id={`${id}-read-only`}>This field is read-only</p>
+				<p class="text-neutral-400" id={`${id}-read-only`}>This field is read-only</p>
 			{:else if helperText}
 				<p class="text-white" id={`${id}-helper-text`}>
 					{helperText}

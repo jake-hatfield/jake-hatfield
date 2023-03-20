@@ -1,19 +1,23 @@
 <script lang="ts">
 	// icons
-	import { Launch } from 'carbon-icons-svelte';
+	import Launch from 'carbon-icons-svelte/lib/Launch.svelte';
+
+	// types
+	import type ProgressBarRound from 'carbon-icons-svelte/lib/ProgressBarRound.svelte';
 
 	// * required props *
 	export let href: string;
 	export let title: string;
 
 	// optional props
+	export let ariaLabel = title;
 	export let disabled = false;
-	export let icon: any | null = null;
+	export let icon: typeof ProgressBarRound | null = null;
 	export let isBlock = false;
 	export let isExternal = false;
+	export let isNoFollow = false;
 	export let isUnderlined = false;
 	export let onClick = () => {};
-	export let ariaLabel = title;
 
 	if (icon && isExternal)
 		throw new Error('Link component cannot have an icon and an isExternal status');
@@ -22,38 +26,31 @@
 {#if disabled}
 	<p
 		aria-label={ariaLabel}
-		class={`flex text-zinc-500 text-opacity-80 ${$$props.class ? $$props.class : ''}`}>
-		<span class="flex items-center">
-			<span>
-				{title}
-			</span>
-			{#if isExternal}
-				<Launch size={16} class="ml-1.5" />
-			{:else if icon}
-				<svelte:component this={icon} size={16} class="ml-1.5" />
-			{/if}
-		</span>
+		class={`inline text-neutral-400 text-opacity-80 ${$$props.class ? $$props.class : ''}`}
+	>
+		<!-- putting these items on separate lines will create a space -->
+		{title}{#if isExternal}
+			<Launch size={16} class="ml-0.5 inline text-orange-400" />
+		{:else if icon}
+			<svelte:component this={icon} size={16} class="ml-0.5 inline text-orange-400" />
+		{/if}
 	</p>
 {:else}
 	<a
 		aria-label={ariaLabel}
-		class={`${isBlock ? 'block' : 'inline-block'} ${isUnderlined ? 'link-underline' : 'link'} ${
-			$$props.class ? $$props.class : ''
-		}`}
-		{disabled}
+		class={`${isBlock ? 'block' : 'inline'} ${isUnderlined ? 'link-underline' : 'link'} ${
+			icon || isExternal ? 'mr-0.5' : ''
+		} ${$$props.class ? $$props.class : ''}`}
 		{href}
 		on:click={onClick}
-		rel={isExternal ? 'noopener noreferrer' : null}
-		target={isExternal ? '_blank' : null}>
-		<span class="flex items-center">
-			<span>
-				{title}
-			</span>
-			{#if isExternal}
-				<Launch size={16} class="ml-1.5 text-orange-400" />
-			{:else if icon}
-				<svelte:component this={icon} size={16} class="ml-1.5 text-orange-400" />
-			{/if}
-		</span>
+		rel={isExternal ? 'noopener noreferrer' : isNoFollow ? 'nofollow' : null}
+		target={isExternal ? '_blank' : null}
+	>
+		<!-- putting these items on separate lines will create a space -->
+		{title}{#if isExternal}
+			<Launch size={16} class="ml-0.5 inline text-orange-400" />
+		{:else if icon}
+			<svelte:component this={icon} size={16} class="ml-0.5 inline text-orange-400" />
+		{/if}
 	</a>
 {/if}

@@ -15,7 +15,7 @@ export default {
 	siteUrl: `https://${siteUrl}`,
 	email: `me@${siteUrl}`,
 	social: {
-		github: 'https://github.com/jake-hatfield',
-		youtube: 'https://www.youtube.com/channel/UCRiYp0i1khDxjJPD9-nd7zw',
+		github: 'https://github.com/jake-hatfield?tab=repositories',
+		youtube: 'https://www.youtube.com/@jake-hatfield',
 	},
 };

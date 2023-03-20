@@ -1,7 +1,11 @@
 <script lang="ts">
 	// components
+	import EmptyState from '$components/layout/EmptyState.svelte';
 	import Item from '$components/layout/item/index.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
+
+	// lib
+	import emptyState from '$lib/metadata/emptyState';
 
 	// types
 	import type { PageData } from './$types';
@@ -22,17 +26,14 @@
 <SEO title="Projects" metaDescription="See what Jake Hatfield is working on." />
 
 <section>
-	<header class="border-b-2 border-zinc-800 pb-1.5">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h1 class="text-3xl font-black">Projects</h1>
 	</header>
-
-	{#if projects?.length > 0}
-		<ul>
-			{#each projects as project}
-				<Item item={project} />
-			{:else}
-				nothing here
-			{/each}
-		</ul>
-	{/if}
+	<ul>
+		{#each projects as project}
+			<Item item={project} />
+		{:else}
+			<EmptyState emptyState={emptyState.projects} />
+		{/each}
+	</ul>
 </section>

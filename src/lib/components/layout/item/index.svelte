@@ -18,16 +18,16 @@
 	$: href = `/${type}/${slug}`;
 </script>
 
-<li class="mt-5">
+<li class="mt-5 border-2 border-neutral-900 p-5">
 	<header>
-		<h2 class="text-2xl font-black">
+		<h2 class="text-xl font-black">
 			{title}
 		</h2>
 		<Header {item} />
-		<p class="mt-3">> {description}</p>
+		<p class="mt-3"><span class="text-orange-400">></span> {description}</p>
 	</header>
 	<p class="mt-3">
 		{excerpt}...
 	</p>
-	<Link class="mt-3" {href} icon={ArrowRight} isUnderlined title={`view ${type.slice(0, -1)}`} />
+	<Link class="mt-5" {href} icon={ArrowRight} isUnderlined title={`View ${type}`} />
 </li>
