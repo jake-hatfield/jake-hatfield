@@ -1,11 +1,11 @@
 ---
-createdAt: 2023-03-20
+createdAt: 2023-03-21T18:00:00Z
 description: TypeScript, Express.js, Discord.js, FFmpeg, Heroku
 hidden: false
 image: flip.jpg
 keywords: []
-tag: guide
-title: Star Wars Discord bot
+tag: backend
+title: Star Wars Discord Bot
 updatedAt: null
 ---
 

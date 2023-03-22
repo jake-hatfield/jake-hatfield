@@ -2,6 +2,10 @@
 	// svelte
 	import { fly } from 'svelte/transition';
 
+	// app
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
+
 	// components
 	import Button from '$components/utilities/Button.svelte';
 
@@ -40,8 +44,10 @@
 					<li class="ml-0.5">
 						<Button
 							href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
+							isSelected={browser && $page.url.pathname === `/${link.toLowerCase()}`}
 							kind="ghost"
 							onClick={closeMobileMenu}
+							selectedClasses="text-violet-400 hover:text-lime-400"
 							title={link}
 						/>
 					</li>
@@ -51,7 +57,15 @@
 		<ul class="hidden items-center lg:flex">
 			{#each secondaryLinks as { href, icon, title }}
 				<li class="ml-0.5 first:ml-0">
-					<Button {href} {icon} kind="ghost" onClick={closeMobileMenu} {title} />
+					<Button
+						{href}
+						{icon}
+						isSelected={browser && $page.url.pathname === href.toLowerCase()}
+						kind="ghost"
+						onClick={closeMobileMenu}
+						selectedClasses="text-violet-400 hover:text-lime-400"
+						{title}
+					/>
 				</li>
 			{/each}
 		</ul>

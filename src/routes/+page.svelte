@@ -61,8 +61,8 @@
 			Houston, TX.
 		</p>
 		<p class="mt-3">
-			<mark>I want to design and build digital products like other people play piano,</mark> so I
-			created this site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
+			I want to design and build digital products like other people play piano, so I created this
+			site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
 				href="/changelogs"
 				isUnderlined
 				title="learnings"

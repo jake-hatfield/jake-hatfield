@@ -118,10 +118,7 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 				readingTime: readingTime(output.html).text,
 				slug: formatPath(path),
 				tag: kebabCase(item.metadata.tag),
-				type:
-					unformattedType === 'projects'
-						? unformattedType
-						: handlePluralization.singular(unformattedType),
+				type: unformattedType,
 				...item.metadata,
 				...output,
 			});

@@ -37,15 +37,16 @@ html {
 		}
 
 		blockquote {
-			@apply mt-5 bg-violet-700 p-3 text-sm text-lime-400;
+			@apply mt-5 border border-neutral-700 bg-neutral-900 p-3 text-sm text-orange-400;
 
 			p {
 				@apply mt-0 leading-6;
 			}
 		}
 
-		figcaption {
-			@apply mt-3 text-center text-sm;
+		code {
+			font-size: 15px;
+			@apply mono border border-neutral-700 bg-neutral-900 px-1 text-sm font-semibold text-orange-400;
 		}
 
 		h2 {
@@ -66,15 +67,7 @@ html {
 		}
 
 		img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 2rem;
-			margin-bottom: 2rem;
-
-			max-width: 100%;
-			height: auto;
-			width: auto;
+			@apply border-2 border-violet-400;
 		}
 
 		p {
@@ -82,16 +75,30 @@ html {
 		}
 
 		ul {
+			@apply arrow-list;
+		}
+
+		ol {
 			@apply mt-5 pl-5 md:pl-8;
 
 			li {
-				@apply mt-1.5 list-disc;
+				@apply mt-1.5 list-decimal pl-3;
 			}
 		}
 	}
 
 	.anchorLink {
 		@apply link sans ml-3;
+	}
+}
+
+.arrow-list {
+	@apply mt-5 list-none pl-5 md:pl-8;
+
+	list-style-type: '➡️';
+
+	li {
+		@apply mt-1.5 pl-3;
 	}
 }
 

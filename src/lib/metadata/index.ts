@@ -1,7 +1,7 @@
 // lib
 import { isDevEnv } from '$lib/utilities';
 
-const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000/' : 'jake-hatfield.com';
+const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000' : 'jake-hatfield.com';
 
 export default {
 	author: ' Jake Hatfield',

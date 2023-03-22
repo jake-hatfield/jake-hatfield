@@ -105,7 +105,7 @@
 		>
 			<div class="mt-3" slot="description">
 				<p>
-					I got my desk pre-covid when WFH prices were much more reasonable. I wanted a standing
+					I got my desk pre-COVID when WFH prices were much more reasonable. I wanted a standing
 					desk since sitting all day kills my back, but I didn't like any of the tops (and they were
 					significantly more expensive that way). I opted for just the base and built the top out of
 					poplar.

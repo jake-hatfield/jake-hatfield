@@ -38,7 +38,7 @@
 {:else}
 	<a
 		aria-label={ariaLabel}
-		class={`${isBlock ? 'block' : 'inline'} ${isUnderlined ? 'link-underline' : 'link'} ${
+		class={`${isBlock ? 'inline-block' : 'inline'} ${isUnderlined ? 'link-underline' : 'link'} ${
 			icon || isExternal ? 'mr-0.5' : ''
 		} ${$$props.class ? $$props.class : ''}`}
 		{href}

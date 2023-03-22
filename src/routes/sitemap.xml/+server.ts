@@ -38,7 +38,7 @@ const xml = (items: FinalizedItem[], pages: string[]) => `<?xml version="1.0" en
 		.map(
 			(page) => `
   <url>
-    <loc>${siteUrl}${page}</loc>
+    <loc>${siteUrl}/${page}</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>

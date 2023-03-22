@@ -2,11 +2,11 @@ export const handleClickOutside = (
 	node: HTMLElement,
 	{
 		enabled: initialEnabled,
-		cb
+		cb,
 	}: {
 		enabled: boolean;
 		cb: any;
-	}
+	},
 ) => {
 	const handleClick = ({ target }) => {
 		if (!node.contains(target)) {
@@ -28,11 +28,11 @@ export const handleClickOutside = (
 		update,
 		destroy() {
 			window.removeEventListener('click', handleClick);
-		}
+		},
 	};
 };
 
-export const keyboardShortcut = (node: HTMLElement, params) => {
+export const handleKeyboardShortcut = (node: HTMLElement, params) => {
 	let handler;
 	const removeHandler = () => window.removeEventListener('keydown', handler),
 		setHandler = () => {
@@ -56,6 +56,6 @@ export const keyboardShortcut = (node: HTMLElement, params) => {
 
 	return {
 		update: setHandler,
-		destroy: removeHandler
+		destroy: removeHandler,
 	};
 };

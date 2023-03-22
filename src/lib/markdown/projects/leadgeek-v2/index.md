@@ -1,10 +1,10 @@
 ---
-createdAt: 2023-03-20
+createdAt: 2023-03-21T18:00:04Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, D3.js, Stripe, SendGrid, Sentry, Vitest, Playwright, Github Actions, Vercel
 hidden: false
 image: flip.jpg
 keywords: []
-tag: guide
+tag: fullstack
 title: Leadgeek v2
 updatedAt: null
 ---

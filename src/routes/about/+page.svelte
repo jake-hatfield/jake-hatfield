@@ -24,8 +24,8 @@
 		<h1 class="text-3xl font-black">About</h1>
 	</header>
 	<p class="mt-5">
-		I'm Jake. I'm a self-taught full-stack engineer and I wrote my first line of code in '19. I
-		created this site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
+		I'm a self-taught full-stack engineer and I wrote my first line of code in '19. I created this
+		site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
 			href="/changelogs"
 			isUnderlined
 			title="learnings"
@@ -33,12 +33,8 @@
 		attention.
 	</p>
 	<p class="mt-3">
-		Most of my experiences have been trial-by-fire as I bootstrapped a <Link
-			href="https://leadgeek.io/vs/online-arbitrage-sourcing-list"
-			isExternal
-			isUnderlined
-			title="online arbitrage sourcing list"
-		/> in '20 that has evolved from a spreadsheet with custom macros into an entire suite of tools.
+		Most of my experiences have been trial-by-fire as I solo-bootstrapped a business in '20 that has
+		evolved from a spreadsheet with custom macros into an entire suite of tools.
 	</p>
 	<p class="mt-3">
 		I'm still here ~{new Date().getFullYear() - 2020} years later, thanks mostly to trusty old Google
@@ -71,9 +67,9 @@
 	<header>
 		<h2 class="text-2xl font-black">My technologies</h2>
 	</header>
-	<ul class="pl-5 md:pl-8">
+	<ul class="arrow-list">
 		{#each technical as skill}
-			<li class="mt-1.5 list-disc">{skill}</li>
+			<li>{skill}</li>
 		{/each}
 	</ul>
 </section>
@@ -81,9 +77,9 @@
 	<header>
 		<h2 class="text-2xl font-black">My non-technical skills</h2>
 	</header>
-	<ul class="pl-5 md:pl-8">
+	<ul class="arrow-list">
 		{#each nonTechnical as skill}
-			<li class="mt-1.5 list-disc">{skill}</li>
+			<li>{skill}</li>
 		{/each}
 	</ul>
 </section>
@@ -98,9 +94,9 @@
 	<header>
 		<h2 class="text-2xl font-black">My future learning interests</h2>
 	</header>
-	<ul class="pl-5 md:pl-8">
+	<ul class="arrow-list">
 		{#each future as skill}
-			<li class="mt-1.5 list-disc">{skill}</li>
+			<li>{skill}</li>
 		{/each}
 	</ul>
 </section>
