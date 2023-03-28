@@ -158,17 +158,101 @@ I had to think carefully about what features to include in this system and how t
 
 Here is a basic summary of what I came up with:
 
-- All product leads are publicly available on the <Link href="https://leadgeek.io/marketplace" isExternal isUnderlined title="Marketplace"/>, with identifying information redacted. This information is stripped server-side, and no identifying data (namely, the Amazon Standard Identification Number, or ASIN) is sent in any server requests. This is to prevent anyone from reverse-engineering the product's identity or source.
+### Product systems
 
-- Leads are fetched from a _view_ of the fully-sensitive leads table in Supabase that's removed any sensitive fields. These critical information areas are obfuscated on the <Link href="https://leadgeek.io/leads/abee667b-d133-4653-a2fe-6d554ea19fe7" isExternal isUnderlined title="arbitrage lead pages"/> with a simple CSS blur filter, but the information is not really even present on the page being rendered. For example, if someone were savvy enough to disable the blur style via their browser's dev tools to try to obtain the Amazon link, they'd see a link to a <Link href="https://amazon.com/dp/0812977785" isExternal isUnderlined title="book about ethics"/> instead.
+All product leads are publicly available on the <Link href="https://leadgeek.io/marketplace" isExternal isUnderlined title="Marketplace"/>, with identifying information redacted. This information is stripped server-side, and no identifying data (namely, the Amazon Standard Identification Number, or ASIN) is sent in any server requests. This is to prevent anyone from reverse-engineering the product's identity or source.
 
-- Only a minimum amount of information has to be stored in my database about each lead since almost all the dynamic information is retrieved in real-time via Keepa's API. Initially, I requested this information server-side, but the Keepa API takes a few seconds to fetch the data. The slow page speed was annoying, so I decided to fetch it client-side and use skeleton placeholders while loading.
+Leads are fetched from a _view_ of the fully-sensitive leads table in Supabase that's removed any sensitive fields. These critical information areas are obfuscated on the <Link href="https://leadgeek.io/leads/abee667b-d133-4653-a2fe-6d554ea19fe7" isExternal isUnderlined title="arbitrage lead pages"/> with a simple CSS blur filter, but the information is not really even present on the page being rendered. For example, if someone were savvy enough to disable the blur style via their browser's dev tools to try to obtain the Amazon link, they'd see a link to a <Link href="https://amazon.com/dp/0812977785" isExternal isUnderlined title="book about ethics"/> instead.
 
-- To obtain access to the identifying information of each product lead, you can exchange a token, which is the currency of Leadgeek's Marketplace. The price of a token varies, since there are discounts for purchasing in bulk.
+Only a minimum amount of information has to be stored in my database about each lead since almost all the dynamic information is retrieved in real-time via Keepa's API. Initially, I requested this information server-side, but the Keepa API takes a few seconds to fetch the data. The slow page speed was annoying, so I decided to fetch it client-side and use skeleton placeholders while loading.
 
-- Access to the identifying details for each lead is limited (currently at 10 spots, with 1 token = 1 spot) to prevent competition over saturation. In fact, to prevent any other sellers from seeing a lead you love, you can buy out all the other spots and make the product lead exclusively yours.
+To obtain access to the identifying information of each product lead, you can exchange a token, which is the currency of Leadgeek's Marketplace. The price of a token varies, since there are discounts for purchasing in bulk.
 
-- In case there's more than one concurrent connection to the same lead page, token redemptions are update live with Supabase's listener on database table updates. The behavior is much like a stock price-tracking app, reflecting updates in real-time via a Webhook.
+Access to the identifying details for each lead is limited (currently at 10 spots, with 1 token = 1 spot) to prevent competition over saturation. In fact, to prevent any other sellers from seeing a lead you love, you can buy out all the other spots and make the product lead exclusively yours.
+
+In case there's more than one concurrent connection to the same lead page, token redemptions are update live with Supabase's listener on database table updates. The behavior is much like a stock price-tracking app, reflecting updates in real-time via a Webhook.
+
+You can navigate to the previous and next leads directly through each lead page.
+
+The last viewed page and sorting preferences from the Marketplace are stored as URL query parameters while viewing individual lead pages so that your state in the Marketplace is preserved.
+
+From the transaction history modal, you can request a token refund within 15 minutes of redemption. This will re-allocate tokens to your account and reset the number of redemptions for the lead.
+
+### Settings systems
+
+#### Profile
+
+The profile area is pretty standard: update your name, phone number, and notifications preferences. In order to get the notifications preferences working correctly, though, I had to set up a webhook for SendGrid. Here was my analysis for the feature:
+
+- There are two directions for updating email notification preferences. The first is from Leadgeek → SendGrid, but it could also flow from SendGrid → Leadgeek if someone were to click the "unsubscribe" link in the footer of a promotional email.
+- User's notification preferences are stored in Supabase in their own table, but these booleans don't actually impact whether or not users get emails in SendGrid.
+- The only way to integrate properly is to set up a listener webhook for SendGrid and subscribe/unsubscribe in SendGrid's contact lists and update the values in Supabase.
+
+And it works like a charm.
+
+#### Billing
+
+Tokens can be added to your Wallet from the billing page. You can either navigate there directly and click "add tokens" or by pre-selecting a package of tokens from the pricing page.
+
+It's a simple 2-step modal. The first step prompts the user to select a plan and the second step is the details review and submission.
+
+You can initiate the checkout process without having a payment method associated with your account, though it's a requirement to add on the second step.
+
+The payment method modal is simply a custom Stripe elements form.
+
+#### Favorites
+
+If you're logged into your Leadgeek account, you can favorite a lead. It will show up in your Favorites panel in the header and the Favorites area in the settings pages.
+
+#### Portfolio
+
+If you purchase a lead, the identifying information is immediately revealed. Your transaction history for this lead is updated in the modal for this lead's page and the lead is added to your Portfolio in the settings pages.
+
+### Notifications
+
+Global and individual notifications can be created by admins to communicate to users important messages. Notifications can be checked in the respective panel in the header.
+
+### Affiliate system
+
+I created an affiliate system from scratch for the [v1 app](./leadgeek-v1-app#affiliate-system), which I was able to port over to v2. This system is quite a bit cleaner since the marketing site and web app are no longer separate. I also simplified the approval process by allowing anyone with a Leadgeek account to be automatically granted an affiliate link.
+
+### Admin systems
+
+#### Lead update
+
+An important feature I added was the lead update system in the admin panel. The information for each lead inevitably changes as retailers change their price, things go in and out of stock, or promo codes expire.
+
+After a few days of updating the table directly in Supabase, I created something more enjoyable to use for editing lead information. All the stored fields in the table can be edited in a modal, and the lead can also be taken completely off the Marketplace in case it's no longer valid.
+
+#### Member approval
+
+The current state of the member approval system is a table of each new applicant displaying their email, the date of application, and whether or not they've linked their Seller Central account.
+
+There are two buttons associated with each applicant, to "approve" or "deny." Each button sends an email with content reflecting the intent.
+
+If the applicant linked their Seller Central account, it's an immediate approval. If not, I'll email them a few times reminding them to do so, and eventually reject their application.
+
+### Marketing systems
+
+landing pages
+
+#### Documentation
+
+I enjoy writing an article more than creating a video. It's just so much more maintainable to make a small edit to text rather than re-shooting or re-editing video content.
+
+For this reason, and since my product is such a new concept in this market, I wanted to create a compounding body of work to minimize support drain over time. I didn't want to be asked the same question over and over again.
+
+I'm happy to answer those emails, but if multiple people are confused about how some feature works, that's on _me_, not _them_. So to clarify things, I made a documentation system that's slowly growing.
+
+It's not just user-facing, but also internally-facing in case I'm able to hire more people to help me with this project in the future.
+
+#### Analytics
+
+I hate Google Analytics, I really do. Nothing is ever free, and using GA makes your users Google's product. Not only that, but you have to display abrasive cookie banners to comply with GDPR. Ick.
+
+I opted for Fathom Analytics, which is a privacy-focused, paid analytics tool. One of the most massive advantages I hadn't considered when switching is that I get significantly better anonymous data since I can serve my analytics script from a custom domain _not on a blocklist_.
+
+It's really enjoyable to use, and I'll happily continue to pay for the service for all my sites.
 
 ## Showcase
 

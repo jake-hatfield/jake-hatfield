@@ -10,8 +10,8 @@
 	export let featuredImage;
 	export let metaDescription: string;
 	export let siteLanguage: string;
-	export let siteTitle: string;
-	export let siteTitleAlt: string;
+	// export let siteTitle: string;
+	// export let siteTitleAlt: string;
 	export let siteUrl: string;
 	export let title: string;
 	export let url: string;
