@@ -13,17 +13,21 @@
 	export let data: PageData;
 	$: ({ projects } = data);
 
-	// leadgeek
-	// - v1 site
-	// - v1 app
-	// - v2
-	// - chrome extension
-	// graphene
-	// transform writing
-	// star wars discord bot
+	// seo
+	const title = 'Projects';
+	const slug = 'projects';
+	const seoProps = {
+		breadcrumbs: [{ name: title, slug }],
+		createdAt: '2022-10-06T00:00:00.000+0100',
+		metaDescription: 'See what Jake Hatfield is working on.',
+		readingTime: '5 mins.',
+		slug,
+		title,
+		updatedAt: '2022-10-06T00:00:00.000+0100',
+	};
 </script>
 
-<SEO title="Projects" metaDescription="See what Jake Hatfield is working on." />
+<SEO {...seoProps} />
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">

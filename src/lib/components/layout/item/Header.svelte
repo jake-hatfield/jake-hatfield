@@ -1,6 +1,7 @@
 <script lang="ts">
 	// components
 	import Button from '$components/utilities/Button.svelte';
+	import Link from '$components/utilities/Link.svelte';
 
 	// lib
 	import { formatIsoToText } from '$lib/utilities/dateTime';
@@ -8,6 +9,8 @@
 
 	// icons
 	import Calendar from 'carbon-icons-svelte/lib/Calendar.svelte';
+	import LinkIcon from 'carbon-icons-svelte/lib/Link.svelte';
+	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
 	import Tag from 'carbon-icons-svelte/lib/Tag.svelte';
 	import Time from 'carbon-icons-svelte/lib/Time.svelte';
 
@@ -18,7 +21,7 @@
 	export let item: FinalizedItem;
 
 	// destructure props
-	$: ({ createdAt, readingTime, tag, updatedAt } = item);
+	$: ({ createdAt, readingTime, repository, site, tag, updatedAt } = item);
 </script>
 
 <div class="mt-5 text-neutral-400 md:flex md:items-center">
@@ -38,7 +41,7 @@
 		<Time class="mt-0.5 flex-none text-orange-400" size={20} />
 		<p class="ml-3">{readingTime}</p>
 	</div>
-	<div class="flex items-end">
+	<div class="flex items-center">
 		<div class="mt-3 flex items-start md:mt-0 md:ml-3">
 			<Calendar class="mt-0.5 flex-none text-orange-400" size={20} />
 			<time class="ml-3" datetime={updatedAt ? updatedAt : createdAt}
@@ -46,4 +49,20 @@
 			>
 		</div>
 	</div>
+	{#if repository}
+		<div class="flex items-center">
+			<div class="mt-3 flex items-start md:mt-0 md:ml-3">
+				<LogoGithub class="mt-0.5 flex-none text-orange-400" size={20} />
+				<Link class="ml-3" href={repository} isExternal isUnderlined title="Repo" />
+			</div>
+		</div>
+	{/if}
+	{#if site}
+		<div class="flex items-center">
+			<div class="mt-3 flex items-start md:mt-0 md:ml-3">
+				<LinkIcon class="mt-0.5 flex-none text-orange-400" size={20} />
+				<Link class="ml-3" href={site} isExternal isUnderlined title="Website" />
+			</div>
+		</div>
+	{/if}
 </div>

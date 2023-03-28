@@ -7,9 +7,8 @@ I graduated from [Texas A&M](https://www.tamu.edu/) in '16 with a B.S. in Biolog
 #### 🔭 I’m currently working on...
 
 - [x] [Leadgeek](https://leadgeek.io/) in my free time
-- [x] Client projects, like [Transform Writing](https://transformwriting.com)
 - [x] [Graphene](https://github.com/jake-hatfield/graphene), an opinionated Next.js starter
-- [x] Goofy things for me and my friends to enjoy
+- [x] Goofy things for me and my friends to enjoy, like [Doom Scheme](https://github.com/jake-hatfield/doom-scheme) and my [Star Wars Discord Bot](https://github.com/jake-hatfield/star-wars-discord-bot)
 
 #### 💬 Ask me about...
 
@@ -18,11 +17,9 @@ I graduated from [Texas A&M](https://www.tamu.edu/) in '16 with a B.S. in Biolog
   > "I wish there was a way to know you were in the good old days before you've actually left them."
 
 - 🏫 My approach to learning
-- 💖 My love of the film [There Will Be Blood](https://en.wikipedia.org/wiki/There_Will_Be_Blood) (I'm an oil man 🛢️)
-- 👷‍♂️ What stinks sometimes about building and selling a product 100% solo
+- 👷‍♂️ What's awesome and what stinks about building and selling a product 100% solo
 
 #### ⚡ Fun facts:
 
-- 🏀 I take 3v3 pickup basketball way too seriously with my dad and best friend
 - 🤙 I don't really do social media, including (and especially) [LinkedIn](https://www.linkedin.com/) 👎
 - ✉️ You can email at [me [at] jake-hatfield [dot] com](mailto:me@jake-hatfield.com)

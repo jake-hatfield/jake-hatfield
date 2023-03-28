@@ -7,6 +7,8 @@ export interface Item {
 	image: string;
 	excerpt: string;
 	hidden: boolean;
+	repository: string | null;
+	site: string | null;
 	slug: string;
 	tag: string;
 	title: string;

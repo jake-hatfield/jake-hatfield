@@ -4,6 +4,8 @@ description: TypeScript, React, Redux, Node.js, Express.js, MongoDB, TailwindCSS
 hidden: false
 image: flip.jpg
 keywords: []
+repository: null
+site: null
 tag: fullstack
 title: Leadgeek v1 App
 updatedAt: null
@@ -25,17 +27,17 @@ This was Leadgeek's core product for nearly 2 years, which is an <Link href='htt
 
 My vision for this project was really simple: my potential competitor's products were overwhelmingly low-quality, clunky, and malformed spreadsheets. I saw an opportunity to improve an already-profitable niche and provide small businesses with a superior, modern solution.
 
-At the time, however, I didn't have any full-stack engineering experience. My _own product_ being marketed by this project's companion, the [v1 site](./leadgeek-v1-site), was a Google spreadsheet (though better than the other spreadsheets, right? 😅).
+At the time, however, I didn't have any full-stack engineering experience. My _own product_ being marketed by this project's companion, the [v1 site](./leadgeek-v1-site), was a Google spreadsheet.
 
 My knowledge was limited to building a small handful JAMstack websites. I didn't really know where to start, so I just started Googling and learned along the way.
 
 All I really knew was that I wanted to build a subscription-based, login-protected web app that could display the information from my spreadsheet in a more helpful and intuitive way.
 
-Since the main benefit of products like mine are to save clients time, I wanted to create personalizations that would dial that to 11 and set me apart from competitors. I knew that if I could build a tailored experience and set my price point competitively, I would be able to get a foothold into the niche.
+Since the main benefit of products like mine are to save clients time, I wanted to create personalizations that would maximize that and set me apart from competitors. I knew that if I could build a tailored experience and set my price point competitively, I would be able to get a foothold into the niche.
 
 ## Results
 
-The success of Leadgeek can be completely attributed to this web app. It served over 420 customers in the nearly 2 years it was active and provided an amazing full-stack experience. Not only did it provide a challenging project to work on for 14 hours a day over nearly 2 years, but it generated $130k+ from the starting point of a big fat $0.
+The success of Leadgeek can be completely attributed to this web app. It served over 420 customers in the nearly 2 years it was active and provided an amazing full-stack experience. Not only did it provide a challenging project to work on for 14 hours every single day, but it generated $130k+ from the starting point of a big fat $0.
 
 I was able to communicate directly with my customers and provide specifically asked-for customizations that made their Amazon selling process better. I really enjoyed making people happy and helping them succeed.
 
@@ -84,7 +86,7 @@ This was the basic flow for users:
 
 Something I was always mindful about was security. Naive little Jake rolled authentication himself, which is not a decision I would make in the future - though I learned a ton about security best practices by doing it.
 
-User-created passwords hashed and salted with 10 rounds, so no raw password was stored in my database. On successful email/password login, a 5-day expiry JWT and secured with a 256-bit hashing algorithm is stored in the client's request header, `x-auth-token`.
+User-created passwords are hashed and salted with 10 rounds, so no raw password was stored in my database. On successful email/password login, a 5-day expiry JWT and secured with a 256-bit hashing algorithm is stored in the client's request header, `x-auth-token`.
 
 The reset password logic was also implemented from scratch. If a user requests to reset their password, a lookup in the database by email is performed. If a user is found, a reset password token with a 1-hour expiration is generated.
 
@@ -128,7 +130,7 @@ It was kind of a headache to implement, but I got more familiar with Stripe's AP
 
 ## Showcase
 
-### The Feed
+### Product pages
 
 <Lightbox description="The Feed">
     <img alt="The Feed" src="./feed.jpg" />
@@ -146,7 +148,7 @@ It was kind of a headache to implement, but I got more familiar with Stripe's AP
     <img alt="The detailed view for each lead" src="./detailed-view.jpg" />
 </Lightbox>
 
-### Settings
+### Settings pages
 
 <Lightbox description="The account page (dark mode)">
     <img alt="The account page (dark mode)" src="./account-dark.jpg" />
@@ -176,7 +178,7 @@ Now that I have experience with both, I can firmly say that I enjoy working with
 
 I would have added unit and integration tests, but I didn't even know they were a thing when I started, and by the time I was ready to start working with them, I was phasing this project out in favor of the update.
 
-Besides that, I actually don't have many regrets on this project. Of course I would refactor it a bit to be cleaner, and I probably would have chosen Next.js, or better yet SvelteKit (which is what I went with for [v2](./leadgeek-v2)). But I would consider this an overall success. Mission accomplished. Let's pack up and go home.
+Besides that, I actually don't have many regrets on this project. Of course I would refactor it a bit to be cleaner, and I probably would have chosen Next.js, or better yet SvelteKit (which is what I went with for [v2](./leadgeek-v2)). But I would consider this an overall success 🎉.
 
 ## Wrapping up
 

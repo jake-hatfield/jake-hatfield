@@ -12,12 +12,23 @@
 	// props
 	export let data: PageData;
 	$: ({ projects } = data);
+
+	// seo
+	const title = 'About';
+	const slug = 'about';
+	const seoProps = {
+		breadcrumbs: [{ name: title, slug }],
+		createdAt: '2022-10-06T00:00:00.000+0100',
+		metaDescription:
+			"Learn a little about Jake Hatfield's story and see what skills he uses to build projects.",
+		readingTime: '5 mins.',
+		slug,
+		title,
+		updatedAt: '2022-10-06T00:00:00.000+0100',
+	};
 </script>
 
-<SEO
-	title="About"
-	metaDescription="Learn a little about Jake Hatfield's story and see what skills he uses to build projects."
-/>
+<SEO {...seoProps} />
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">

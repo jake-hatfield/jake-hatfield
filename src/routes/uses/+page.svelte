@@ -6,9 +6,22 @@
 
 	// lib
 	import metadata from '$lib/metadata';
+
+	// seo
+	const title = 'Uses';
+	const slug = 'uses';
+	const seoProps = {
+		breadcrumbs: [{ name: title, slug }],
+		createdAt: '2022-10-06T00:00:00.000+0100',
+		metaDescription: 'See what tools Jake Hatfield uses to create projects.',
+		readingTime: '5 mins.',
+		slug,
+		title,
+		updatedAt: '2022-10-06T00:00:00.000+0100',
+	};
 </script>
 
-<SEO title="Uses" metaDescription="See what tools Jake Hatfield uses to create projects." />
+<SEO {...seoProps} />
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
@@ -229,12 +242,7 @@
 		</Use>
 		<Use href="https://jakearchibald.github.io/svgomg/" title="SVGOMG" type="Vector optimization">
 			<div class="mt-3" slot="description">
-				<p>
-					Great, simple tool. I use it on pretty much every .svg I deal with (if I remember <span
-						role="img"
-						aria-label="Brain emoji">🧠</span
-					> to).
-				</p>
+				<p>Great, simple tool. I use it on pretty much every .svg I deal with.</p>
 			</div>
 		</Use>
 		<Use href="https://squoosh.app/" title="Squoosh" type="Raster optimization">

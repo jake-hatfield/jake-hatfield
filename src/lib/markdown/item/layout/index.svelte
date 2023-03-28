@@ -8,11 +8,11 @@
 
 	// props
 	export let data: LayoutData;
-	$: ({ item } = data);
+	$: ({ item, seoProps } = data);
 </script>
 
 {#key item.title}
-	<SEO title={item.title} metaDescription={item.excerpt} />
+	<SEO {...seoProps} />
 
 	<section class="content-section-text">
 		<article id="content-markdown" itemscope itemtype="http://schema.org/Article">

@@ -6,7 +6,6 @@
 	import Recent from '$components/layout/item/Recent.svelte';
 
 	// lib
-	import metadata from '$lib/metadata';
 	import emptyState from '$lib/metadata/emptyState';
 
 	// assets
@@ -21,28 +20,16 @@
 	export let data: PageData;
 	$: ({ articles, changelogs, imagePlaceholders, projects } = data);
 
-	// destructure
-	const { author, siteUrl } = metadata;
-
 	// seo
 	const seoProps = {
-		title: 'Home',
-		slug: '',
-		entityMeta: {
-			url: `${siteUrl}/`,
-			faviconWidth: 512,
-			faviconHeight: 512,
-			caption: author,
-		},
+		breadcrumbs: [{ name: 'Home', slug: '' }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-		breadcrumbs: [{ name: 'home', slug: '' }],
 		metaDescription:
 			"If you're new, start here. See what Jake Hatfield is learning about, thinking about, and working on.",
 		readingTime: '5 mins.',
-		// featuredImage: Avatar,
-		// ogImage: Avatar,
-		// ogImageSquare: Avatar,
+		slug: '',
+		title: 'Home',
+		updatedAt: '2022-10-06T00:00:00.000+0100',
 	};
 </script>
 
@@ -58,7 +45,7 @@
 		</header>
 		<p class="mt-5">
 			I'm a self-taught full-stack software engineer running a bootstrapped solo business in
-			Houston, TX.
+			Houston, TX. <span role="img" aria-label="Pin emoji">📌</span>
 		</p>
 		<p class="mt-3">
 			I want to design and build digital products like other people play piano, so I created this
@@ -69,9 +56,7 @@
 			/>, and <Link href="/projects" isUnderlined title="projects" /> are helping me achieve this goal.
 		</p>
 		<p class="mt-3">
-			<mark
-				>I'm currently looking to contribute full-time to a team of other software engineers</mark
-			>
+			<mark>I'm currently looking to join a team of other software engineers</mark>
 			who are solving meaningful problems on a bigger scale than I can accomplish completely on my own.
 			<span role="img" aria-label="Call me hand emoji">🤙</span>
 		</p>

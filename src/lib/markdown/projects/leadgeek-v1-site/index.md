@@ -4,6 +4,8 @@ description: TypeScript, Gatsby.js, GraphQL, TailwindCSS, Stripe, Netlify
 hidden: false
 image: flip.jpg
 keywords: []
+repository: null
+site: null
 tag: frontend
 title: Leadgeek v1 Site
 updatedAt: null
@@ -54,7 +56,11 @@ Besides what I personally got out of this project, it received some external app
 
 > **Disclaimer**: I was relatively inexperienced when I put this site together. I would have made some very different decisions if I were to build this project now, but I'm actually quite proud of how it turned out, considering I was an absolute newbie with only Google to help solve problems. I've included it in my portfolio to document where my programming journey started and where I'm at now.
 
+### TypeScript
+
 I didn't know TypeScript when I originally built the site, so it was written completely in JavaScript and refactored later. Yeah, ouch. Ouch for a 100% JavaScript site without tests or error monitoring (I was just unaware these things existed), and ouch for the refactor.
+
+### Gatsby.js
 
 I had previously built a handful of much smaller Gatsby.js projects for myself and some clients, so it was what I had the most familiarity with.
 
@@ -62,13 +68,23 @@ What initially drew me to Gatsby.js in general was the speed and SEO advantages 
 
 Another enormous benefit of going with Gatsby.js, which I'm not ashamed to admit I needed at the time, is that the plugin ecosystem is fairly mature. I knew I was going to need some sort of help to put this project together. Plugins helped me with things I didn't have the bandwidth for, like generating sitemaps, handling SEO, and sourcing the file system.
 
+### GraphQL and MongoDB
+
 GraphQL was essential to get the progressive image enhancements and later query MongoDB.
+
+### TailwindCSS
 
 I chose TailwindCSS because I knew I wanted a unique-looking site, and from what little I knew, TailwindCSS could help me achieve it. I had some experience with MaterialCSS and Bootstrap, but they generated fairly boring projects. Overall, I'm very grateful that I picked this technology here, because this project helped me fall in love with TailwindCSS.
 
+### Mailchimp
+
 I chose Mailchimp primarily because it's affordable and it has the ability to create remarketing automations, but in hindsight, I really wish I had gone a different direction here. More on this later.
 
+### Stripe
+
 This was also the first time I integrated Stripe in a project. It kicked my butt at first. I remember being frustrated because I had to actually read the documentation and it didn't _just work_. How silly of me. My mindset on problems like this has changed so much. But boy, creating a subscription for the first time had me _sweating_ 😅.
+
+### Netlify
 
 I deployed the site on Netlify because it's free and perfect for the JAMstack. Netlify functions are very similar to AWS Lambda functions, and they enabled me to integrate Stripe, Mailchimp, MongoDB, etc. This was my first exposure to serverless functions (and now that I'm thinking about it, my first exposure to backend at all).
 
@@ -84,7 +100,7 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
     <img alt="The home page's hero section" src="./index-hero.jpg" />
 </Lightbox>
 
-<Lightbox description="The home page's testimonial sectio">
+<Lightbox description="The home page's testimonial section">
     <img alt="The home page's testimonial section" src="./index-testimonials.jpg" />
 </Lightbox>
 

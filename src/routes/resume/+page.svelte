@@ -5,9 +5,23 @@
 
 	// lib
 	import metadata from '$lib/metadata';
+
+	// seo
+	const title = 'Resume';
+	const slug = 'resume';
+	const seoProps = {
+		breadcrumbs: [{ name: title, slug }],
+		createdAt: '2022-10-06T00:00:00.000+0100',
+		metaDescription:
+			"View Jake Hatfield's public resume or get in contact for a more detailed one containing links to private Github repos.",
+		readingTime: '5 mins.',
+		slug,
+		title,
+		updatedAt: '2022-10-06T00:00:00.000+0100',
+	};
 </script>
 
-<SEO title="Resume" metaDescription="See what tools Jake Hatfield uses to create projects." />
+<SEO {...seoProps} />
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
@@ -15,7 +29,7 @@
 	</header>
 	<p class="mt-5">
 		<Link
-			href="https://drive.google.com/file/d/181jF9VSeF9JlfzDUQ39IqnUIcSLplolz/view?usp=share_link"
+			href="https://drive.google.com/file/d/1J16I8FSbFw1CZzAh6eZ8PQtrAO5B40sU/view?usp=share_link"
 			isExternal
 			isUnderlined
 			title="View my public resume"

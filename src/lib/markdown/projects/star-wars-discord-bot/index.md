@@ -4,9 +4,11 @@ description: TypeScript, Express.js, Discord.js, FFmpeg, Heroku
 hidden: false
 image: flip.jpg
 keywords: []
+repository: https://github.com/jake-hatfield/star-wars-discord-bot
+site: null
 tag: backend
 title: Star Wars Discord Bot
 updatedAt: null
 ---
 
-This is a complete guide to Amazon arbitrage in 2023. In this in-depth guide, you'll learn:
+Test.

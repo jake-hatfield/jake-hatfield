@@ -1,9 +1,13 @@
 <script lang="ts">
 	// svelte
-	import { afterUpdate } from 'svelte';
+	import { afterUpdate, onMount } from 'svelte';
 
 	// packages
+	import { load } from 'fathom-client';
 	import lazyload from 'vanilla-lazyload';
+
+	// env
+	import { PUBLIC_FATHOM_ID, PUBLIC_FATHOM_URL } from '$env/static/public';
 
 	// app
 	import { browser } from '$app/environment';
@@ -11,6 +15,9 @@
 	// components
 	import Footer from '$components/layout/Footer.svelte';
 	import Header from '$components/layout/Header.svelte';
+
+	// lib
+	import { isDevEnv } from '$lib/metadata';
 
 	// styles
 	import '$assets/app.css';
@@ -27,6 +34,16 @@
 			elements_selector: '.lazy',
 		});
 
+	onMount(() => {
+		if (!isDevEnv()) {
+			// load analytics
+			load(PUBLIC_FATHOM_ID, {
+				url: PUBLIC_FATHOM_URL,
+				auto: false,
+			});
+		}
+	});
+
 	afterUpdate(() => {
 		if (browser && lazyloadInstance) {
 			lazyloadInstance.update();
@@ -34,9 +51,6 @@
 	});
 
 	// TODO<Jake>: Fix OG templates - https://www.opengraph.xyz/url/https%3A%2F%2Fceea6f2d1895.ngrok.io
-	// TODO<Jake>: Images for items for SEO only -- fix RSS images
-	// TODO<Jake>: ImprovMX for new domains
-	// TODO<Jake>: Error page
 </script>
 
 <div
