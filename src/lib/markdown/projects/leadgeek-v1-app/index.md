@@ -2,8 +2,8 @@
 createdAt: 2023-03-21T18:00:02Z
 description: TypeScript, React, Redux, Node.js, Express.js, MongoDB, TailwindCSS, Stripe, Heroku
 hidden: false
-image: flip.jpg
-keywords: []
+image: feed.jpg
+keywords: [mern stack project, full stack project]
 repository: null
 site: null
 tag: fullstack

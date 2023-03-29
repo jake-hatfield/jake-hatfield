@@ -2,8 +2,8 @@
 createdAt: 2023-03-21T18:00:01Z
 description: TypeScript, Gatsby.js, GraphQL, TailwindCSS, Stripe, Netlify
 hidden: false
-image: flip.jpg
-keywords: []
+image: index-hero.jpg
+keywords: [gatsby.js front end project]
 repository: null
 site: null
 tag: frontend

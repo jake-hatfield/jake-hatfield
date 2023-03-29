@@ -2,8 +2,8 @@
 createdAt: 2023-03-21T18:00:04Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, Amazon Selling Partner API, Layer Cake, D3.js, Stripe, Maizzle, SendGrid, Sentry, Vitest, Playwright, Github Actions, Vercel
 hidden: false
-image: flip.jpg
-keywords: []
+image: index-hero.jpg
+keywords: [sveltekit full stack project]
 repository: null
 site: https://leadgeek.io
 tag: fullstack
@@ -398,4 +398,4 @@ I feel there would be diminishing returns in my personal growth to stick with th
 
 I'm ready to make the next step in my software engineering career, and that means contributing to a bigger project in a team. It's a very exciting thought.
 
-The predecessors of this project are the [v1 site](./leadgeek-v1-site) and the [v1 app](./leadgeek-v1-app). Since putting this together, I've been investing my time into [Graphene](./graphene), a highly opinionated Next.js starter and [Doom Scheme](./doom-scheme), a React Native app for composing your next rap verse.
+The predecessors of this project are the [v1 site](./leadgeek-v1-site) and the [v1 app](./leadgeek-v1-app). Since putting this together, I've been investing my time into [Graphene](./graphene), a highly opinionated Next.js starter and [Doom Scheme](./doom-scheme), a React Native app for composing and sharing your next rap verse.

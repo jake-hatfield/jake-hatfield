@@ -11,7 +11,7 @@ const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000' : domain;
 export default {
 	author: 'Jake Hatfield',
 	description:
-		"Jake Hatfield's personal website. check out the thoughts, learnings, and projects currently taking up his time.",
+		"Jake Hatfield's personal website. Check out the thoughts, learnings, and projects currently taking up his time.",
 	keywords: [
 		'Jake Hatfield',
 		'Jacob Hatfield',

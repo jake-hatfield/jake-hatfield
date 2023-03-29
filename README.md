@@ -8,7 +8,7 @@ I graduated from [Texas A&M](https://www.tamu.edu/) in '16 with a B.S. in Biolog
 
 - [x] [Leadgeek](https://leadgeek.io/) in my free time
 - [x] [Graphene](https://github.com/jake-hatfield/graphene), an opinionated Next.js starter
-- [x] Goofy things for me and my friends to enjoy, like [Doom Scheme](https://github.com/jake-hatfield/doom-scheme) and my [Star Wars Discord Bot](https://github.com/jake-hatfield/star-wars-discord-bot)
+- [x] Goofy things for me and my friends to enjoy, like [Doom Scheme](https://github.com/jake-hatfield/doom-scheme) and my [Star Wars Discord Bot](https://github.com/jake-hatfield/c-meme-30)
 
 #### 💬 Ask me about...
 

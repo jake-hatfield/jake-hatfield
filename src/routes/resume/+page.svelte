@@ -29,7 +29,7 @@
 	</header>
 	<p class="mt-5">
 		<Link
-			href="https://drive.google.com/file/d/1J16I8FSbFw1CZzAh6eZ8PQtrAO5B40sU/view?usp=share_link"
+			href="https://drive.google.com/file/d/1pY42MUZrdfpQMoKcC9qf4zC_9AdbRSum/view?usp=share_link"
 			isExternal
 			isUnderlined
 			title="View my public resume"
