@@ -87,7 +87,7 @@ This was the basic flow for users:
 
 Something I was always mindful about was security. Naive little Jake rolled authentication himself, which is not a decision I would make in the future - though I learned a ton about security best practices by doing it.
 
-User-created passwords are hashed and salted with 10 rounds, so no raw password was stored in my database. On successful email/password login, a 5-day expiry JWT and secured with a 256-bit hashing algorithm is stored in the client's request header, `x-auth-token`.
+User-created passwords are hashed and salted with 10 rounds, so no raw password was stored in my database. On successful email/password login, a 5-day expiry JWT secured with a 256-bit hashing algorithm is stored in the client's request header, `x-auth-token`.
 
 The reset password logic was also implemented from scratch. If a user requests to reset their password, a lookup in the database by email is performed. If a user is found, a reset password token with a 1-hour expiration is generated.
 
@@ -97,7 +97,7 @@ I send the user an email via Nodemailer containing a link to the `reset-password
 
 Pre-built affiliate tracking systems charge fat commissions on top of what you're already paying your affiliates. Therefore, I decided to cut out the middleman and opted to create Leadgeek's affiliate system myself.
 
-Once it was ready, I plugged it into the [v1 site](./leadgeek-v1-site) as the entry point. I ended up using a slightly re-worked variation for [v2](./leadgeek-v2) that simplified the system a bit, but the affiliate system generally looked like this:
+Once it was ready, I plugged it into the [v1 site](./leadgeek-v1-site) as the entry point. I ended up using a slightly re-worked variation for [v2](./leadgeek-v2) that simplified the system a bit, but it generally looked like this:
 
 1. Affiliates must apply via the v1 site.
 2. If approved, affiliates are assigned a unique Leadgeek ID, `lgid`.

@@ -37,7 +37,7 @@ html {
 		}
 
 		blockquote {
-			@apply mt-5 border border-neutral-700 bg-neutral-900 p-3 text-sm text-orange-400;
+			@apply mt-5 border-2 border-neutral-700 p-3 text-sm text-neutral-200;
 
 			p {
 				@apply mt-0 leading-6;
@@ -46,7 +46,7 @@ html {
 
 		code {
 			font-size: 15px;
-			@apply mono border border-neutral-700 bg-neutral-900 px-1 text-sm font-semibold text-orange-400;
+			@apply mono border-2 border-neutral-700 bg-neutral-900 px-1 text-sm font-semibold text-orange-400;
 		}
 
 		h2 {

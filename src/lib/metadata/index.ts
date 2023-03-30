@@ -31,7 +31,8 @@ export default {
 		discord: 'https://discord.com/users/280901621850832896',
 		dribbble: 'https://dribbble.com/jake-hatfield',
 		github: 'https://github.com/jake-hatfield?tab=repositories',
-		spotify: 'https://open.spotify.com/user/jacobmhatfield?si=cc65aff9915143ff',
+		hackerNews: 'https://news.ycombinator.com/user?id=jake-hatfield',
+		spotify: 'https://open.spotify.com/user/jacobmhatfield',
 		youtube: 'https://www.youtube.com/@jake-hatfield',
 	},
 };

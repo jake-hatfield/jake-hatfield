@@ -4,7 +4,7 @@ description: TypeScript, SvelteKit, Supabase, TailwindCSS, Amazon Selling Partne
 hidden: false
 keywords: [sveltekit, full-stack project]
 repository: null
-summary: Find products to flip on Amazon with a modern, elegant, and consumer-friendly workflow
+summary: Find products to flip on Amazon with a modern workflow
 site: https://leadgeek.io
 tag: fullstack
 title: Leadgeek v2

@@ -6,6 +6,7 @@
 	import { LogoDiscord, LogoGithub, LogoYoutube, Rss, SendAlt } from 'carbon-icons-svelte';
 	import LogoDribbble from '$assets/images/vectors/LogoDribbble.svelte';
 	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
+	import LogoYCombinator from '$assets/images/vectors/LogoYCombinator.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
@@ -15,6 +16,7 @@
 		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
 		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
 		{ href: metadata.social.dribbble, icon: LogoDribbble, title: 'Dribbble' },
+		{ href: metadata.social.hackerNews, icon: LogoYCombinator, title: 'Hacker News' },
 		{ href: metadata.social.discord, icon: LogoDiscord, title: 'Discord' },
 		{ href: metadata.social.spotify, icon: LogoSpotify, title: 'Spotify' },
 		{

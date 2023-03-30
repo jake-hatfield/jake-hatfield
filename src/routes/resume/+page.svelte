@@ -10,7 +10,7 @@
 	const title = 'Resume';
 	const slug = 'resume';
 	const seoProps = {
-		breadcrumbs: [{ name: title, slug }],
+		breadcrumbs: [{ title, slug }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription:
 			"View Jake Hatfield's public resume or get in contact for a more detailed one containing links to private Github repos.",
@@ -29,7 +29,7 @@
 	</header>
 	<p class="mt-5">
 		<Link
-			href="https://drive.google.com/file/d/1Y1E79y-AmQodbSQqqL3awGEfIuZ4C20S/view?usp=share_link"
+			href="https://drive.google.com/file/d/14IkwU_M2ZpdjMFC4UxTndkxCqKtA1ZD5/view?usp=share_link"
 			isExternal
 			isUnderlined
 			title="View my public resume"

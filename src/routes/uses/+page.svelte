@@ -11,7 +11,7 @@
 	const title = 'Uses';
 	const slug = 'uses';
 	const seoProps = {
-		breadcrumbs: [{ name: title, slug }],
+		breadcrumbs: [{ title, slug }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription: 'See what tools Jake Hatfield uses to create projects.',
 		readingTime: '5 mins.',
