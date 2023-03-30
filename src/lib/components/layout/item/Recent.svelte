@@ -23,7 +23,13 @@
 <section class="mt-8">
 	<header class="border-b-2 border-neutral-900 pb-1.5 md:flex md:items-end md:justify-between">
 		<h2 class="text-xl font-black md:text-2xl">Recent {type}</h2>
-		<Link class="mt-3 md:mt-0" href={`/${kebabCase(type)}`} icon={ArrowRight} title="See all" />
+		<Link
+			class="mt-3 md:mt-0"
+			href={`/${kebabCase(type)}`}
+			icon={ArrowRight}
+			isBlock
+			title="See all"
+		/>
 	</header>
 	<ul>
 		{#each items as item}

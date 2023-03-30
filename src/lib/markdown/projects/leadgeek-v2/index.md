@@ -2,9 +2,9 @@
 createdAt: 2023-03-21T18:00:04Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, Amazon Selling Partner API, Layer Cake, D3.js, Stripe, Maizzle, SendGrid, Sentry, Vitest, Playwright, Github Actions, Vercel
 hidden: false
-image: index-hero.jpg
-keywords: [sveltekit full stack project]
+keywords: [sveltekit, full-stack project]
 repository: null
+summary: Find products to flip on Amazon with a modern, elegant, and consumer-friendly workflow
 site: https://leadgeek.io
 tag: fullstack
 title: Leadgeek v2
@@ -256,7 +256,7 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
 
 ## Showcase
 
-### Product pages
+### Product
 
 <Lightbox description="The home page's hero section">
     <img alt="The home page's hero section" src="./index-hero.jpg" />
@@ -294,7 +294,7 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
     <img alt="The sign up page" src="./sign-up.jpg" />
 </Lightbox>
 
-### Settings pages
+### Settings
 
 <Lightbox description="The profile page">
     <img alt="The profile page" src="./profile.jpg" />
@@ -316,7 +316,7 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
     <img alt="The portfolio page" src="./portfolio.jpg" />
 </Lightbox>
 
-### Resources pages
+### Resources
 
 <Lightbox description="The about page">
     <img alt="The about page" src="./about.jpg" />
@@ -364,7 +364,11 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
 
 ## Hindsight
 
+### Technical
+
 Maybe it's a sign of growth that I don't have any technical regrets with this project. I'm actually quite fond of it's design, uniqueness as a product, helpfulness to the Amazon selling community, and technical implementation. I guess it could use more test coverage, but I'll do some regression testing as I go through Sentry error reports.
+
+### Business
 
 #### Free trials
 

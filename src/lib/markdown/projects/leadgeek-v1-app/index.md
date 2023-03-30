@@ -6,6 +6,7 @@ image: feed.jpg
 keywords: [mern stack project, full stack project]
 repository: null
 site: null
+summary: Hello!
 tag: fullstack
 title: Leadgeek v1 App
 updatedAt: null
@@ -130,7 +131,7 @@ It was kind of a headache to implement, but I got more familiar with Stripe's AP
 
 ## Showcase
 
-### Product pages
+### Product
 
 <Lightbox description="The Feed">
     <img alt="The Feed" src="./feed.jpg" />
@@ -148,7 +149,7 @@ It was kind of a headache to implement, but I got more familiar with Stripe's AP
     <img alt="The detailed view for each lead" src="./detailed-view.jpg" />
 </Lightbox>
 
-### Settings pages
+### Settings
 
 <Lightbox description="The account page (dark mode)">
     <img alt="The account page (dark mode)" src="./account-dark.jpg" />

@@ -8,7 +8,7 @@
 	import ChevronRight from 'carbon-icons-svelte/lib/ChevronRight.svelte';
 
 	// lib
-	import { handlePluralization } from '$lib/utilities/string';
+	import { handlePluralization, kebabCase } from '$lib/utilities/string';
 
 	// types
 	import type { FinalizedItem } from '$types/markdown/Item';
@@ -17,31 +17,43 @@
 	export let item: FinalizedItem;
 
 	// destructure props
-	$: ({ description, excerpt, slug, title, type } = item);
+	$: ({ description, summary, slug, title, type } = item);
 
 	$: href = `/${type}/${slug}`;
 </script>
 
-<li class="mt-5 border border-neutral-700 bg-neutral-900 p-5">
-	<header>
-		<h2 class="text-xl font-black">
-			{title}
-		</h2>
-		<Header {item} />
-		<div class="mt-3 flex items-start">
-			<ChevronRight class="mt-0.5 flex-none text-orange-400" size={20} />
-			<p class="ml-3">{description}</p>
-		</div>
-	</header>
-	<p class="mt-3">
-		{excerpt}...
-	</p>
-	<Link
-		class="mt-3"
+<li class="mt-5 border-2 border-neutral-800 bg-neutral-900">
+	<a
+		aria-label={`View the ${title} ${handlePluralization.singular(type)}`}
+		class="block h-full max-h-80 w-full"
 		{href}
-		icon={ArrowRight}
-		isBlock
-		isUnderlined
-		title={`View ${handlePluralization.singular(type)}`}
-	/>
+	>
+		<div
+			class="h-80 border-b-2 border-neutral-800 bg-cover bg-center"
+			style={`background-image: url("images/items/${kebabCase(item.title)}.jpg")`}
+		/>
+	</a>
+	<div class="p-5">
+		<header>
+			<h2 class="text-xl font-black">
+				{title}
+			</h2>
+			<Header {item} />
+			<div class="mt-3 flex items-start">
+				<ChevronRight class="mt-0.5 flex-none text-orange-400" size={20} />
+				<p class="ml-3 text-neutral-400">{description}</p>
+			</div>
+		</header>
+		<p class="mt-3">
+			{summary}
+		</p>
+		<Link
+			class="mt-3"
+			{href}
+			icon={ArrowRight}
+			isBlock
+			isUnderlined
+			title={`View ${handlePluralization.singular(type)}`}
+		/>
+	</div>
 </li>

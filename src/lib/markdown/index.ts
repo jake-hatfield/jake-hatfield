@@ -109,12 +109,8 @@ const getItemsFromImports = (imports: Record<string, unknown>) => {
 			// estimate the reading time
 			const unformattedType = path.split('markdown/')[1].split('/')[0];
 
-			// add it to the items variable with the slug, excerpt, reading time, and rendered output
+			// add it to the items variable with the slug, reading time, and rendered output
 			items.push({
-				excerpt: output.html
-					.replace(/<[^>]+>/g, '')
-					.substring(0, 275)
-					.trim(),
 				readingTime: readingTime(output.html).text,
 				slug: formatPath(path),
 				tag: kebabCase(item.metadata.tag),

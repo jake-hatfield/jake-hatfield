@@ -5,11 +5,11 @@ export interface Item {
 	head: string;
 	html: string;
 	image: string;
-	excerpt: string;
 	hidden: boolean;
 	repository: string | null;
 	site: string | null;
 	slug: string;
+	summary: string;
 	tag: string;
 	title: string;
 	updatedAt: string | null;

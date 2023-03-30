@@ -37,10 +37,10 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		const {
 			createdAt,
 			description,
-			excerpt,
 			image,
 			readingTime,
 			slug,
+			summary,
 			tag,
 			title,
 			type,
@@ -50,10 +50,10 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return {
 			createdAt,
 			description,
-			excerpt,
 			image,
 			readingTime,
 			slug,
+			summary,
 			tag,
 			title,
 			type,

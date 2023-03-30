@@ -27,7 +27,10 @@ export default {
 	siteUrl: `https://${siteUrl}`,
 	email: `me@${domain}`,
 	social: {
+		discord: 'https://discord.com/users/280901621850832896',
+		dribbble: 'https://dribbble.com/jake-hatfield',
 		github: 'https://github.com/jake-hatfield?tab=repositories',
+		spotify: 'https://open.spotify.com/user/jacobmhatfield?si=cc65aff9915143ff',
 		youtube: 'https://www.youtube.com/@jake-hatfield',
 	},
 };

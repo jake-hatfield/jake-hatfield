@@ -2,10 +2,10 @@
 createdAt: 2023-03-21T18:00:01Z
 description: TypeScript, Gatsby.js, GraphQL, TailwindCSS, Stripe, Netlify
 hidden: false
-image: index-hero.jpg
-keywords: [gatsby.js front end project]
+keywords: [gatsby.js, frontend project]
 repository: null
 site: null
+summary: Hello!
 tag: frontend
 title: Leadgeek v1 Site
 updatedAt: null
@@ -29,7 +29,7 @@ Quite simply, I needed to sell stuff. This being my first solo digital product, 
 
 v0 of my product was a custom spreadsheet with macros which was populated with that day's Amazon research and emailed to subscribers. I knew when I started Leadgeek that this wasn't final form, but I had to buy a bit of time to build the [v1 app](./leadgeek-v1-app) and I wanted to validate product-market fit.
 
-With this in mind, I knew that everything I built to market the spreadsheet had to be 1:1 transferrable to market the web app _and_ scale an as-of-yet-undetermined amount. Easy 😂.
+With this in mind, I knew that everything I built to market the spreadsheet had to be 1:1 transferrable to market the web app and scale an as-of-yet-undetermined amount.
 
 ## Results
 
@@ -40,6 +40,8 @@ Creating this website helped refine my skills as an engineer, especially conside
 I learned how to market, maintain, and run a business. I learned about Google Ads, Open Graph, and copywriting. I learned about taking raw customer input, distilling it to its most concise form, and fleshing out the FAQ section a bit more. I learned that you can attract the kind of customers you want by investing more thought into your product's design. I handled customer support, product development, and daily maintenance simultaneously.
 
 Overall, the experience was very humbling, and I'm extremely grateful that it was able to accelerate my learning to become a well-rounded, cross-discipline software engineer.
+
+### Accolades
 
 Besides what I personally got out of this project, it received some external appreciation as well. Leadgeek was organically chosen as showcase of the week in <Link href='https://tailwindweekly.com/issue-96/' isExternal isUnderlined title='Tailwind Weekly'/> for its unique design.
 
@@ -53,8 +55,6 @@ Besides what I personally got out of this project, it received some external app
 - Mailchimp
 - MongoDB
 - Netlify
-
-> **Disclaimer**: I was relatively inexperienced when I put this site together. I would have made some very different decisions if I were to build this project now, but I'm actually quite proud of how it turned out, considering I was an absolute newbie with only Google to help solve problems. I've included it in my portfolio to document where my programming journey started and where I'm at now.
 
 ### TypeScript
 
@@ -90,11 +90,7 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
 
 ## Showcase
 
-### Home page
-
-<Lightbox description="The home page overview">
-    <img alt="The home page overview" src="./index.jpg" />
-</Lightbox>
+### Home
 
 <Lightbox description="The home page's hero section">
     <img alt="The home page's hero section" src="./index-hero.jpg" />
@@ -108,19 +104,19 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
     <img alt="The home page's call-to-action section" src="./index-cta.jpg" />
 </Lightbox>
 
-### Demo page
+### Demo
 
 <Lightbox description="The demo page">
     <img alt="The demo page" src="./demo.jpg" />
 </Lightbox>
 
-### Pricing page
+### Pricing
 
 <Lightbox description="The pricing page">
     <img alt="The pricing page" src="./pricing.jpg" />
 </Lightbox>
 
-### Features page
+### Features
 
 <Lightbox description="The feature overview page">
     <img alt="The feature overview page" src="./features.jpg" />
@@ -130,13 +126,25 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
     <img alt="An individual feature page" src="./feature.jpg" />
 </Lightbox>
 
-### Sign up page
+### Sign up
 
 <Lightbox description="The sign up page">
     <img alt="The sign up page" src="./sign-up.jpg" />
 </Lightbox>
 
 ## Hindsight
+
+### Technical
+
+From a technical perspective, things I would do differently include:
+
+- Implementing a TypeScript refactor earlier.
+- Using Next.js instead of Gatsby.js. The race for the best static framework seemed so much closer years ago, but Next.js really pulled ahead over time. The Gatsby.js build times are comparatively insane in a bad way.
+- Pick a tool like SendGrid over Mailchimp. Something as simple as a sign-up confirmation email took as long as 15 minutes to queue up using their API. Ridiculous.
+- Use more of a DRY approach to the codebase. I think there was some code re-use that could have been avoided.
+- Unit and integration tests are completely lacking.
+
+### Business
 
 From a business perspective, I made plenty of mistakes.
 
@@ -147,14 +155,6 @@ Regrettably, I believe 100% that Leadgeek could have had $120k+ ARR. Now that it
 I also should have bought the `.com` domain when I had the chance. It was $5k when I launched, and now it's sitting at $20k. I have the `.co` and it's redirecting to the main `.io`, but that one "m" is very expensive.
 
 To be honest, though, I think this is just a vanity thing. The business isn't suffering without the `.com` domain, and there are a lot of places to focus my efforts in the meantime.
-
-From a technical perspective, things I would do differently include:
-
-- Implementing a TypeScript refactor earlier.
-- Using Next.js instead of Gatsby.js. The race for the best static framework seemed so much closer years ago, but Next.js really pulled ahead over time. The Gatsby.js build times are comparatively insane in a bad way.
-- Pick a tool like SendGrid over Mailchimp. Something as simple as a sign-up confirmation email took as long as 15 minutes to queue up using their API. Ridiculous.
-- Use more of a DRY approach to the codebase. I think there was some code re-use that could have been avoided.
-- Unit and integration tests are completely lacking.
 
 ## Wrapping up
 

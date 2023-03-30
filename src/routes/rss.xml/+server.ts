@@ -49,7 +49,7 @@ const xml = (items: FinalizedItem[]) => `
 					item.slug
 				}/${item.slug}.jpeg"/>
         <content:encoded>
-        ${item.excerpt}
+        ${item.summary}
         </content:encoded>
         </item>
       `,

@@ -6,6 +6,7 @@ image: flip.jpg
 keywords: []
 repository: https://github.com/jake-hatfield/graphene
 site: null
+summary: An opinionated starter for Next.js projects
 tag: open-source
 title: Graphene
 updatedAt: null

@@ -3,7 +3,9 @@
 	import Button from '$components/utilities/Button.svelte';
 
 	// icons
-	import { LogoGithub, LogoYoutube, Rss, SendAlt } from 'carbon-icons-svelte';
+	import { LogoDiscord, LogoGithub, LogoYoutube, Rss, SendAlt } from 'carbon-icons-svelte';
+	import LogoDribbble from '$assets/images/vectors/LogoDribbble.svelte';
+	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
@@ -12,6 +14,9 @@
 	const socialLinks = [
 		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
 		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
+		{ href: metadata.social.dribbble, icon: LogoDribbble, title: 'Dribbble' },
+		{ href: metadata.social.discord, icon: LogoDiscord, title: 'Discord' },
+		{ href: metadata.social.spotify, icon: LogoSpotify, title: 'Spotify' },
 		{
 			href: metadata.social.youtube,
 			icon: LogoYoutube,
@@ -28,7 +33,7 @@
 			&copy; {new Date().getFullYear()} Jake Hatfield
 		</p>
 		<nav>
-			<ul class="flex items-center">
+			<ul class="flex flex-wrap items-center">
 				{#each socialLinks as { href, icon, title }}
 					<li class="ml-0.5 first:ml-0">
 						<Button

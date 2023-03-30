@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 
 // lib
 import metadata from '$lib/metadata';
-import { capitalize, titleCase } from '$lib/utilities/string';
+import { capitalize, kebabCase, titleCase } from '$lib/utilities/string';
 
 export default async ({ fetch, url }) => {
 	const res = await fetch(`/api/items${url.pathname.replace(/\/\s*$/, '')}`);
@@ -30,7 +30,7 @@ export default async ({ fetch, url }) => {
 		isMarkdownItem: true,
 		keywords: item.keywords ?? [],
 		kind: item.type,
-		metaDescription: item.excerpt,
+		metaDescription: item.summary,
 		shortMetaDescription: item.description,
 		readingTime: item.readingTime,
 		slug: `${item.type}/${item.slug}`,
@@ -38,7 +38,10 @@ export default async ({ fetch, url }) => {
 		updatedAt: item.updatedAt ? item.updatedAt : item.createdAt,
 	};
 
+	const image = `/images/items/${kebabCase(item.title)}`;
+
 	return {
+		image,
 		item,
 		seoProps,
 	};

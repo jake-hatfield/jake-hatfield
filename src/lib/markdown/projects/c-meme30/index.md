@@ -2,10 +2,10 @@
 createdAt: 2023-03-21T18:00:00Z
 description: TypeScript, Node.js, Express.js, Discord.js, Railway
 hidden: false
-image: c-meme30.jpg
-keywords: []
+keywords: [node.js, express.js, backend project]
 repository: https://github.com/jake-hatfield/c-meme30
 site: null
+summary: Play Star Wars prequel voice lines in your Discord server
 tag: backend
 title: C-Meme30
 updatedAt: null
@@ -119,6 +119,8 @@ However, using the Opus codec really increased the quality of the stream. Especi
 No regrets on this project. Its purpose was to help me learn and apply new programming skills over time, so I'm not embarrassed by the code quality from years ago.
 
 It's not like this is a complicated project, but I'm happy with its ability to just allow me and my friends to have a better time while gaming together. Life gets in the way, so nowadays it's pretty rare to sit down and game. It's a bit nostalgic for C-Meme30 to help us have a laugh like we did back in 2019.
+
+### Future updates
 
 However, there are a few little quality-of-life fixes that should be made.
 

@@ -8,7 +8,7 @@
 
 	// props
 	export let data: LayoutData;
-	$: ({ item, seoProps } = data);
+	$: ({ image, item, seoProps } = data);
 </script>
 
 {#key item.title}
@@ -22,6 +22,13 @@
 				</h1>
 				<Header {item} />
 			</header>
+			<div>
+				<img
+					class="mt-12 w-full border-2 border-violet-700"
+					src={`${image}.jpg`}
+					alt={`${item.title}'s hero image`}
+				/>
+			</div>
 			<div class="content">
 				<slot />
 			</div>

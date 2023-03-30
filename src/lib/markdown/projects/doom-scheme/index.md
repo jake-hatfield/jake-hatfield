@@ -6,6 +6,7 @@ image: flip.jpg
 keywords: []
 repository: https://github.com/jake-hatfield/doom-scheme
 site: null
+summary: Use artificial intelligence to help compose and share your next rap verse
 tag: fullstack
 title: Doom Scheme
 updatedAt: null
