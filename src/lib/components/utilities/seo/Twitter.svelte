@@ -3,7 +3,7 @@
 	import metadata from '$lib/metadata/index';
 
 	// types
-	import type Image from '$types/markdown/Image';
+	import type { Image } from '$types/markdown/Image';
 
 	// * required props *
 	export let image: Image;

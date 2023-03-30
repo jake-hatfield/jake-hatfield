@@ -7,20 +7,13 @@
 	// lib
 	import metadata from '$lib/metadata';
 
-	// assets
-	// 672x448 px
-	import featuredImageSrc from '$assets/images/rasters/pages/home/index.jpg';
-	// 1200x630 px
-	import ogSrc from '$assets/images/rasters/pages/home/og.jpg';
-	// 400x400 px
-	import ogSquareSrc from '$assets/images/rasters/pages/home/og-square.jpg';
-
 	// types
-	import type Image from '$types/markdown/Image';
+	import type { Image } from '$types/markdown/Image';
 
 	// destructure items from metadata
 	const {
 		author,
+		description,
 		social: { github },
 		keywords,
 		ogLanguage,
@@ -29,20 +22,15 @@
 		siteUrl,
 	} = metadata;
 
-	// default items
-	const defaultAlt = 'A black background with the title of the page';
-
 	// * required props *
 	export let isMarkdownItem = false;
 	export let createdAt: string;
 	export let metaDescription: string;
 	export let readingTime: string;
 	export let slug: string;
-	export let title;
-	export let updatedAt: string;
 
 	// optional props
-	export let breadcrumbs: { name: string; slug: string }[] = [];
+	export let breadcrumbs: { title: string; slug: string }[] = [];
 	export let entityMeta: {
 		url: string;
 		faviconWidth: number;
@@ -50,31 +38,24 @@
 		caption: string;
 	} | null = null;
 	export let isIndexed = true;
-	export let featuredImage = {
-		url: featuredImageSrc,
-		alt: defaultAlt,
-		width: 672,
-		height: 448,
-		caption: 'home page',
-	};
-	export let ogImage: Image = {
-		url: ogSrc,
-		alt: defaultAlt,
-	};
-	export let ogImageSquare: Image = {
-		url: ogSquareSrc,
-		alt: defaultAlt,
-	};
+	export let shortMetaDescription = description;
+	export let title = 'Online Arbitrage Lead Marketplace';
+	export let updatedAt = metadata.createdAt;
 
 	// global page title format
 	const pageTitle = `${title} - ${siteTitle}`;
 	const url = `${siteUrl}/${slug}`;
+	const imageUrl = encodeURI(
+		`${siteUrl}/api/open-graph?title=${title}&description=${shortMetaDescription}`,
+	);
 
 	// open graph
 	const openGraphProps = {
 		isMarkdownItem,
-		image: ogImage,
-		imageSquare: ogImageSquare,
+		image: {
+			url: imageUrl + '&format=rect',
+			alt: shortMetaDescription,
+		},
 		metaDescription,
 		ogLanguage,
 		pageTitle,
@@ -91,13 +72,10 @@
 		createdAt,
 		entity: author,
 		entityMeta,
-		featuredImage,
-		github,
+		image: { url: imageUrl + '&format=rectAlt', alt: shortMetaDescription },
 		isMarkdownItem,
 		metaDescription,
 		siteLanguage,
-		siteTitle,
-		siteTitleAlt: siteTitle,
 		siteUrl,
 		title: pageTitle,
 		updatedAt,
@@ -108,8 +86,8 @@
 	const twitterProps = {
 		isMarkdownItem,
 		image: {
-			url: ogSrc,
-			alt: defaultAlt,
+			url: imageUrl + '&format=square',
+			alt: shortMetaDescription,
 		},
 		metaDescription,
 		readingTime,
@@ -128,7 +106,7 @@
 			? 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 			: 'noindex, nofollow'}
 	/>
-	<html lang={siteLanguage} />
+	<link rel="canonical" href={url} />
 </svelte:head>
 <Twitter {...twitterProps} />
 <OpenGraph {...openGraphProps} />

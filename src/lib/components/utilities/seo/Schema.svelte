@@ -2,23 +2,23 @@
 	// packages
 	import hash from 'object-hash';
 
+	// types
+	import type { Image } from '$types/markdown/Image';
+
 	// * required props *
 	export let author: string;
 	export let createdAt: string;
 	export let entity;
 	export let updatedAt: string;
-	export let featuredImage;
+	export let image: Image;
 	export let metaDescription: string;
 	export let siteLanguage: string;
-	// export let siteTitle: string;
-	// export let siteTitleAlt: string;
 	export let siteUrl: string;
 	export let title: string;
 	export let url: string;
-	export let github: string;
 
 	// optional props
-	export let breadcrumbs: { name: string; slug: string }[];
+	export let breadcrumbs: { title: string; slug: string }[];
 	export let entityMeta: { url: string; faviconWidth: number; faviconHeight: number } | null = null;
 	export let isMarkdownItem = false;
 	export let itemType: string = 'article';
@@ -43,11 +43,10 @@
 					logo: {
 						'@id': `${siteUrl}/#personlogo`,
 					},
-					sameAs: [github],
 			  }
 			: null;
 
-	// ! important !: uncomment if using search on the site
+	// ⚠️ important ⚠️: uncomment if using search on the site
 	// const schemaOrgWebsite = {
 	// 	'@type': 'WebSite',
 	// 	'@id': `${siteUrl}/#website`,
@@ -69,13 +68,13 @@
 
 	const schemaOrgImageObject = {
 		'@type': 'ImageObject',
-		'@id': `${url}#primaryimage`,
+		'@id': `${url}#primaryImage`,
 		inLanguage: siteLanguage,
-		url: featuredImage.url,
-		contentUrl: featuredImage.url,
-		width: featuredImage.width,
-		height: featuredImage.height,
-		caption: featuredImage.caption,
+		url: image.url,
+		contentUrl: image.url,
+		width: 1200,
+		height: 630,
+		caption: metaDescription,
 	};
 
 	const schemaOrgBreadcrumbList = {
@@ -88,7 +87,7 @@
 				'@type': 'WebPage',
 				'@id': `${siteUrl}/${element.slug}`,
 				url: `${siteUrl}/${element.slug}`,
-				name: element.name,
+				name: element.title,
 			},
 		})),
 	};
@@ -102,7 +101,7 @@
 			'@id': `${siteUrl}/#website`,
 		},
 		primaryImageOfPage: {
-			'@id': `${url}#primaryimage`,
+			'@id': `${url}#primaryImage`,
 		},
 		datePublished: createdAt,
 		dateModified: updatedAt,
@@ -144,7 +143,7 @@
 				'@id': `${siteUrl}/#/schema/person/${entityHash}`,
 			},
 			image: {
-				'@id': `${url}#primaryimage`,
+				'@id': `${url}#primaryImage`,
 			},
 			articleSection: [itemType],
 			inLanguage: siteLanguage,
@@ -168,13 +167,12 @@
 		logo: {
 			'@id': `${siteUrl}/#personlogo`,
 		},
-		sameAs: [github],
 	};
 
 	// create an array of included schema items
 	const schemaOrgArray = [
 		schemaOrgEntity,
-		// ! important !: uncomment if using search on the site
+		// ⚠️ important ⚠️: uncomment if using search on the site
 		// schemaOrgWebsite,
 		schemaOrgImageObject,
 		schemaOrgWebPage,

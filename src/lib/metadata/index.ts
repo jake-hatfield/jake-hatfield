@@ -10,6 +10,7 @@ const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000' : domain;
 
 export default {
 	author: 'Jake Hatfield',
+	createdAt: '2022-10-06T00:00:00.000+0100',
 	description:
 		"Jake Hatfield's personal website. Check out the thoughts, learnings, and projects currently taking up his time.",
 	keywords: [

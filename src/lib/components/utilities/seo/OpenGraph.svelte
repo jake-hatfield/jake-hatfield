@@ -1,11 +1,10 @@
 <script lang="ts">
 	// types
-	import type Image from '$types/markdown/Image';
+	import type { Image } from '$types/markdown/Image';
 
 	// * required props *
 	export let createdAt: string;
 	export let image: Image;
-	export let imageSquare: Image;
 	export let metaDescription: string;
 	export let ogLanguage: string;
 	export let pageTitle: string;
@@ -30,10 +29,10 @@
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={image.alt} />
 	{/if}
-	{#if imageSquare}
-		<meta property="og:image" content={imageSquare.url} />
-		<meta property="og:image:width" content="400" />
-		<meta property="og:image:height" content="400" />
+	{#if image}
+		<meta property="og:image" content={image.url} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={image.alt} />
 	{/if}
 	{#if isMarkdownItem}
