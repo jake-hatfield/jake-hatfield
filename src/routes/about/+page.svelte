@@ -4,7 +4,7 @@
 	import SEO from '$components/utilities/seo/index.svelte';
 
 	// lib
-	import { future, nonTechnical, technical } from '$lib/metadata/skills';
+	import { creative, future, technical } from '$lib/metadata/skills';
 
 	// types
 	import type { PageData } from './$types';
@@ -20,7 +20,7 @@
 		breadcrumbs: [{ title, slug }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription:
-			"Learn a little about Jake Hatfield's story and see what skills he uses to build projects.",
+			"Learn about Jake Hatfield's story and see what skills he uses to build projects.",
 		readingTime: '5 mins.',
 		slug,
 		title,
@@ -36,21 +36,25 @@
 	</header>
 	<p class="mt-5">
 		I'm a self-taught full-stack engineer and I wrote my first line of code in '19. I created this
-		site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
+		site to share what <Link href="/projects" isUnderlined title="projects" />, <Link
 			href="/changelogs"
 			isUnderlined
 			title="learnings"
-		/>, and <Link href="/projects" isUnderlined title="projects" /> are currently taking my time and
+		/>, and <Link href="/articles" isUnderlined title="thoughts" /> are currently taking my time and
 		attention.
 	</p>
 	<p class="mt-3">
-		Most of my experiences have been trial-by-fire as I solo-bootstrapped a business in '20 that has
-		evolved from a spreadsheet with custom macros into an entire suite of tools.
+		Most of my experiences have been trial-by-fire as I solo-bootstrapped a business called <Link
+			href="/projects/leadgeek-v2"
+			isUnderlined
+			title="Leadgeek"
+		/> in '20 that has evolved from a spreadsheet with custom macros into an entire suite of tools.
 	</p>
 	<p class="mt-3">
 		I'm still here ~{new Date().getFullYear() - 2020} years later, thanks mostly to trusty old Google
 		and the deep desire not to make the same mistake twice
-		<span role="img" aria-label="Sweat smile emoji">😅</span>.
+		<span role="img" aria-label="Sweat smile emoji">😅</span>. Now that Leadgeek is highly
+		maintainable on the side, I'm looking for my next challenging project.
 	</p>
 	<p class="mt-3">
 		I graduated from Texas A&M in '16 with a B.S. in Biology that I would love to use in conjunction
@@ -66,6 +70,18 @@
 		that all into a responsive, accessible, and intuitive front end.
 	</p>
 	<p class="mt-3">
+		I feel like my experience solo-building products from scratch and selling them to real people
+		has accelerated my learning and made me extremely well-rounded. At the same time, I've realized
+		over the last 3+ years that I can only accomplish a finite amount building and marketing
+		products by myself.
+	</p>
+	<p class="mt-3">
+		Resultantly, <mark
+			>I'd like to contribute to a team of other software engineers who are solving meaningful
+			problems on a bigger scale than I can accomplish completely on my own.</mark
+		>
+	</p>
+	<p class="mt-3">
 		<mark
 			>I'm trying to refine my ability as a software engineer by creating and publishing a project
 			for each letter of the alphabet. Right now I'm on "{String.fromCharCode(
@@ -75,22 +91,44 @@
 	</p>
 </section>
 <section class="mt-8">
-	<header>
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">My technologies</h2>
 	</header>
-	<ul class="arrow-list">
+	<ul class="mt-5 grid gap-5 md:grid-cols-2">
 		{#each technical as skill}
-			<li>{skill}</li>
+			<li class="flex items-center">
+				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
+					>{skill.title}</span
+				>
+			</li>
 		{/each}
 	</ul>
 </section>
 <section class="mt-8">
-	<header>
-		<h2 class="text-2xl font-black">My non-technical skills</h2>
+	<header class="border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">My software</h2>
 	</header>
-	<ul class="arrow-list">
-		{#each nonTechnical as skill}
-			<li>{skill}</li>
+	<ul class="mt-5 grid gap-5 md:grid-cols-2">
+		{#each creative as skill}
+			<li class="flex items-center">
+				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
+					>{skill.title}</span
+				>
+			</li>
+		{/each}
+	</ul>
+</section>
+<section class="mt-8">
+	<header class="border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">My future learning interests</h2>
+	</header>
+	<ul class="mt-5 grid gap-5 md:grid-cols-2">
+		{#each future as skill}
+			<li class="flex items-center">
+				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
+					>{skill.title}</span
+				>
+			</li>
 		{/each}
 	</ul>
 </section>
@@ -100,14 +138,4 @@
 			<Link class="mt-1.5" href="/uses" isUnderlined title="My tools" />
 		</h2>
 	</header>
-</section>
-<section class="mt-8">
-	<header>
-		<h2 class="text-2xl font-black">My future learning interests</h2>
-	</header>
-	<ul class="arrow-list">
-		{#each future as skill}
-			<li>{skill}</li>
-		{/each}
-	</ul>
 </section>

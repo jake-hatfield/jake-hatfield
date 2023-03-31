@@ -2,10 +2,11 @@
 createdAt: 2023-03-21T18:00:01Z
 description: TypeScript, Gatsby.js, GraphQL, TailwindCSS, Stripe, Netlify
 hidden: false
+image: projects/leadgeek-v1-site.jpg
 keywords: [gatsby.js, frontend project]
 repository: null
 site: null
-summary: Hello!
+summary: The marketing website for its companion web app
 tag: frontend
 title: Leadgeek v1 Site
 updatedAt: null

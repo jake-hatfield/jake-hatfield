@@ -22,7 +22,7 @@
 
 	// seo
 	const seoProps = {
-		breadcrumbs: [{ name: 'Home', slug: '' }],
+		breadcrumbs: [{ title: 'Home', slug: '' }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription:
 			"If you're new, start here. See what Jake Hatfield is learning about, thinking about, and working on.",
@@ -49,11 +49,11 @@
 		</p>
 		<p class="mt-3">
 			I want to design and build digital products like other people play piano, so I created this
-			site to share what <Link href="/articles" isUnderlined title="thoughts" />, <Link
+			site to share what <Link href="/projects" isUnderlined title="projects" />, <Link
 				href="/changelogs"
 				isUnderlined
 				title="learnings"
-			/>, and <Link href="/projects" isUnderlined title="projects" /> are helping me achieve this goal.
+			/>, and <Link href="/articles" isUnderlined title="thoughts" /> are helping me achieve this goal.
 		</p>
 		<p class="mt-3">
 			<mark>I'm currently looking to join a team of other software engineers</mark>
@@ -75,6 +75,6 @@
 		width={268}
 	/>
 </section>
-<Recent emptyState={emptyState.articles} items={articles} type="articles" />
-<Recent emptyState={emptyState.changelogs} items={changelogs} type="changelogs" />
 <Recent emptyState={emptyState.projects} items={projects} type="projects" />
+<Recent emptyState={emptyState.changelogs} items={changelogs} type="changelogs" />
+<Recent emptyState={emptyState.articles} items={articles} type="articles" />

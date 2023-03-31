@@ -7,7 +7,7 @@
 	import placeholders from '$lib/metadata/placeholders';
 
 	// icons
-	import { ArrowRight } from 'carbon-icons-svelte';
+	import ArrowRight from 'carbon-icons-svelte/lib/ArrowRight.svelte';
 </script>
 
 <form class={`flex items-center w-full max-w-md ${$$props.class ? $$props.class : ''}`}>

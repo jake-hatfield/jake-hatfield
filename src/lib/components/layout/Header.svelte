@@ -20,7 +20,7 @@
 	import { kebabCase } from '$lib/utilities/string';
 
 	// data
-	const primaryLinks = ['Articles', 'Changelogs', 'Projects'];
+	const primaryLinks = ['Projects', 'Changelogs', 'Articles'];
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
 		{ href: '/resume', icon: Document, title: 'Resume' },

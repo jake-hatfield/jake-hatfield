@@ -2,6 +2,7 @@
 createdAt: 2023-03-21T18:00:04Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, Amazon Selling Partner API, Layer Cake, D3.js, Stripe, Maizzle, SendGrid, Sentry, Vitest, Playwright, Github Actions, Vercel
 hidden: false
+image: projects/leadgeek-v2.jpg
 keywords: [sveltekit, full-stack project]
 repository: null
 summary: Find products to flip on Amazon with a modern workflow
@@ -170,7 +171,7 @@ To obtain access to the identifying information of each product lead, you can ex
 
 Access to the identifying details for each lead is limited (currently at 10 spots, with 1 token = 1 spot) to prevent competition over saturation. In fact, to prevent any other sellers from seeing a lead you love, you can buy out all the other spots and make the product lead exclusively yours.
 
-In case there's more than one concurrent connection to the same lead page, token redemptions are update live with Supabase's listener on database table updates. The behavior is much like a stock price-tracking app, reflecting updates in real-time via a Webhook.
+In case there's more than one concurrent connection to the same lead page, token redemptions are updated live with Supabase's listener on database table updates. The behavior is much like a stock price-tracking app, reflecting updates in real-time via a Webhook.
 
 You can navigate to the previous and next leads directly through each lead page.
 
@@ -233,8 +234,6 @@ There are two buttons associated with each applicant, to "approve" or "deny." Ea
 If the applicant linked their Seller Central account, it's an immediate approval. If not, I'll email them a few times reminding them to do so, and eventually reject their application.
 
 ### Marketing systems
-
-landing pages
 
 #### Documentation
 

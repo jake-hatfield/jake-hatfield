@@ -3,10 +3,14 @@
 	import Button from '$components/utilities/Button.svelte';
 
 	// icons
-	import { LogoDiscord, LogoGithub, LogoYoutube, Rss, SendAlt } from 'carbon-icons-svelte';
+	import LogoDiscord from 'carbon-icons-svelte/lib/LogoDiscord.svelte';
+	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
+	import LogoYoutube from 'carbon-icons-svelte/lib/LogoYoutube.svelte';
 	import LogoDribbble from '$assets/images/vectors/LogoDribbble.svelte';
 	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
 	import LogoYCombinator from '$assets/images/vectors/LogoYCombinator.svelte';
+	import Rss from '$assets/images/vectors/Rss.svelte';
+	import SendAlt from 'carbon-icons-svelte/lib/SendAlt.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';

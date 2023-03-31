@@ -2,11 +2,11 @@
 createdAt: 2023-03-21T18:00:02Z
 description: TypeScript, React, Redux, Node.js, Express.js, MongoDB, TailwindCSS, Stripe, Heroku
 hidden: false
-image: feed.jpg
+image: projects/leadgeek-v1-app.jpg
 keywords: [mern stack project, full stack project]
 repository: null
 site: null
-summary: Hello!
+summary: Upgrade your arbitrage sourcing from spreadsheets to software
 tag: fullstack
 title: Leadgeek v1 App
 updatedAt: null
