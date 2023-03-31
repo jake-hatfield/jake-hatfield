@@ -6,6 +6,7 @@ export interface Item {
 	html: string;
 	image: string;
 	hidden: boolean;
+	hiddenRepo: boolean;
 	repository: string | null;
 	site: string | null;
 	slug: string;

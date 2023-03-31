@@ -7,6 +7,9 @@
 	import { formatIsoToText } from '$lib/utilities/dateTime';
 	import { kebabCase } from '$lib/utilities/string';
 
+	// metadata
+	import metadata from '$lib/metadata';
+
 	// icons
 	import Calendar from 'carbon-icons-svelte/lib/Calendar.svelte';
 	import LinkIcon from 'carbon-icons-svelte/lib/Link.svelte';
@@ -21,7 +24,7 @@
 	export let item: FinalizedItem;
 
 	// destructure props
-	$: ({ createdAt, readingTime, repository, site, tag, updatedAt } = item);
+	$: ({ createdAt, hiddenRepo, readingTime, repository, site, tag, updatedAt } = item);
 </script>
 
 <div class="mt-5 text-neutral-400 md:flex md:items-center">
@@ -49,11 +52,19 @@
 			>
 		</div>
 	</div>
-	{#if repository}
+	{#if repository || hiddenRepo}
 		<div class="flex items-center">
 			<div class="mt-3 flex items-start md:mt-0 md:ml-3">
 				<LogoGithub class="mt-0.5 flex-none text-orange-400" size={20} />
-				<Link class="ml-3" href={repository} isExternal isUnderlined title="Repo" />
+				<Link
+					class="ml-3"
+					href={hiddenRepo
+						? `mailto:${metadata.email}?subject=Private%20Repo%20Access%20Request`
+						: repository}
+					isExternal
+					isUnderlined
+					title={hiddenRepo ? 'Request' : 'Repo'}
+				/>
 			</div>
 		</div>
 	{/if}

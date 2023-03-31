@@ -1,5 +1,6 @@
 <script lang="ts">
 	// components
+	import Item from '$routes/about/Item.svelte';
 	import Link from '$components/utilities/Link.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
 
@@ -95,12 +96,8 @@
 		<h2 class="text-2xl font-black">My technologies</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each technical as skill}
-			<li class="flex items-center">
-				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
-					>{skill.title}</span
-				>
-			</li>
+		{#each technical as item}
+			<Item {item} />
 		{/each}
 	</ul>
 </section>
@@ -109,12 +106,8 @@
 		<h2 class="text-2xl font-black">My software</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each creative as skill}
-			<li class="flex items-center">
-				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
-					>{skill.title}</span
-				>
-			</li>
+		{#each creative as item}
+			<Item {item} />
 		{/each}
 	</ul>
 </section>
@@ -123,12 +116,8 @@
 		<h2 class="text-2xl font-black">My future learning interests</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each future as skill}
-			<li class="flex items-center">
-				<svelte:component this={skill.icon} height={24} width={24} /><span class="ml-3"
-					>{skill.title}</span
-				>
-			</li>
+		{#each future as item}
+			<Item {item} />
 		{/each}
 	</ul>
 </section>

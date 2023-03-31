@@ -2,6 +2,7 @@
 createdAt: 2023-03-21T18:00:04Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, Amazon Selling Partner API, Layer Cake, D3.js, Stripe, Maizzle, SendGrid, Sentry, Vitest, Playwright, Github Actions, Vercel
 hidden: false
+hiddenRepo: true
 image: projects/leadgeek-v2.jpg
 keywords: [sveltekit, full-stack project]
 repository: null
@@ -26,7 +27,7 @@ The core idea behind the product is that Amazon sellers no longer have to perfor
 
 Access to this data can be purchased as-needed, which scales better with the lifecycle demands of customers in this market.
 
-> Code for this project is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com' isExternal isUnderlined title='request'/>.
+> Code for this project is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
 
 ## Goals
 
@@ -141,7 +142,7 @@ I went with Maizzle for creating emails that were sent via SendGrid. I chose it 
 
 In Maizzle I created 2 base templates, 1 for transactional emails and 1 for promotional emails. The content of these emails was written completely in Markdown and styled using TailwindCSS so I can interate and create new emails extremely easily.
 
-> Code for these templated emails is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com' isExternal isUnderlined title='request'/>.
+> Code for these templated emails is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
 
 ### Sentry, Vitest, Playwright, and Github Actions
 

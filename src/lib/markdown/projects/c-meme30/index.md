@@ -2,6 +2,7 @@
 createdAt: 2023-03-21T18:00:00Z
 description: TypeScript, Node.js, Express.js, Discord.js, Railway
 hidden: false
+hiddenRepo: false
 image: projects/c-meme30.jpg
 keywords: [node.js, express.js, backend project]
 repository: https://github.com/jake-hatfield/c-meme30

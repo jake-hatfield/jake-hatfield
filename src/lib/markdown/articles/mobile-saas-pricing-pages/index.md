@@ -17,8 +17,8 @@ updatedAt: null
     import Link from "$components/utilities/Link.svelte"
 </script>
 
-> This is a <Link href="https://cxl.com/blog/mobile-saas-pricing-pages/" isExternal isUnderlined title="guest post"/> I wrote for <Link href="https://cxl.com" isExternal isNoFollow isUnderlined title="CXL"/> in 2020.
+This is a <Link href="https://cxl.com/blog/mobile-saas-pricing-pages/" isExternal isUnderlined title="guest post"/> I wrote for <Link href="https://cxl.com" isExternal isNoFollow isUnderlined title="CXL"/> in 2020.
 
 In an effort to better understand how to best structure the pricing page of [my own SaaS](/projects/leadgeek-v1-app), I individually conducted case-study UI/UX research and gave it a write-up.
 
-I thought it would be useful to have this hard data on pricing page structure to refer to in the future. It turns out I was right, as my research has been featured on sites like <Link href="https://pitchground.com/blog/learn-saas-marketing/" isExternal isUnderlined title="Pitchground" />.
+My research published in this article has been featured on sites like <Link href="https://pitchground.com/blog/learn-saas-marketing/" isExternal isUnderlined title="Pitchground" />.

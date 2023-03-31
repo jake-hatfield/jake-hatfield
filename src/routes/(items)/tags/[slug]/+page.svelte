@@ -25,8 +25,6 @@
 		title,
 		updatedAt: '2022-10-06T00:00:00.000+0100',
 	};
-
-	$: console.log(items);
 </script>
 
 <SEO {...seoProps} />

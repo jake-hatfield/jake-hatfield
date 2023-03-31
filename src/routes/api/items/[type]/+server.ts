@@ -41,8 +41,10 @@ export const GET: RequestHandler = async (event) => {
 			const {
 				createdAt,
 				description,
+				hiddenRepo,
 				image,
 				readingTime,
+				repository,
 				slug,
 				summary,
 				tag,
@@ -54,8 +56,10 @@ export const GET: RequestHandler = async (event) => {
 			return {
 				createdAt,
 				description,
+				hiddenRepo,
 				image,
 				readingTime,
+				repository,
 				slug,
 				summary,
 				tag,

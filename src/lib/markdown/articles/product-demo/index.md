@@ -17,7 +17,7 @@ updatedAt: null
     import Link from "$components/utilities/Link.svelte"
 </script>
 
-> This is a <Link href="https://cxl.com/blog/mobile-saas-pricing-pages/" isExternal isUnderlined title="guest post"/> I wrote for <Link href="https://cxl.com" isExternal isNoFollow isUnderlined title="CXL"/> in 2021.
+This is a <Link href="https://cxl.com/blog/mobile-saas-pricing-pages/" isExternal isUnderlined title="guest post"/> I wrote for <Link href="https://cxl.com" isExternal isNoFollow isUnderlined title="CXL"/> in 2021.
 
 After my guest post about [SaaS pricing pages for mobile screens](./mobile-saas-pricing-pages), I was asked to contribute another case study for CXL. At the time, I was learning what made a SaaS product demo great, so I decided to write down my thoughts.
 

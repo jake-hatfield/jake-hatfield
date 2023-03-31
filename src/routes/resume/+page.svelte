@@ -33,7 +33,11 @@
 			isExternal
 			isUnderlined
 			title="View my public resume"
-		/> or <Link href={`mailto:${metadata.email}`} isExternal isUnderlined title="contact me" /> for a
-		version with links to code in some of my private repos.
+		/> or <Link
+			href="mailto:me@jake-hatfield.com?subject=Private%20Resume%20Access%20Request"
+			isExternal
+			isUnderlined
+			title="contact me"
+		/> for a version with links to code in some of my private repos.
 	</p>
 </section>
