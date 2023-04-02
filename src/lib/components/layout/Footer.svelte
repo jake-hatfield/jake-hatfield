@@ -3,6 +3,7 @@
 	import Button from '$components/utilities/Button.svelte';
 
 	// icons
+	import LogoBehance from '$assets/images/vectors/LogoBehance.svelte';
 	import LogoDiscord from 'carbon-icons-svelte/lib/LogoDiscord.svelte';
 	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
 	import LogoYoutube from 'carbon-icons-svelte/lib/LogoYoutube.svelte';
@@ -20,6 +21,7 @@
 		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
 		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
 		{ href: metadata.social.dribbble, icon: LogoDribbble, title: 'Dribbble' },
+		{ href: metadata.social.behance, icon: LogoBehance, title: 'Behance' },
 		{ href: metadata.social.hackerNews, icon: LogoYCombinator, title: 'Hacker News' },
 		{ href: metadata.social.discord, icon: LogoDiscord, title: 'Discord' },
 		{ href: metadata.social.spotify, icon: LogoSpotify, title: 'Spotify' },

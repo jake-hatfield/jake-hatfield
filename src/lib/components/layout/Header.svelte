@@ -23,7 +23,7 @@
 	const primaryLinks = ['Projects', 'Changelogs', 'Articles'];
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
-		{ href: '/resume', icon: Document, title: 'Resume' },
+		{ href: '/resume.pdf', icon: Document, title: 'Resume' },
 	];
 
 	// state

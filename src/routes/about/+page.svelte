@@ -77,7 +77,7 @@
 		products by myself.
 	</p>
 	<p class="mt-3">
-		Resultantly, <mark
+		Consequently, <mark
 			>I'd like to contribute to a team of other software engineers who are solving meaningful
 			problems on a bigger scale than I can accomplish completely on my own.</mark
 		>

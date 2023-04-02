@@ -1,5 +1,6 @@
 <script lang="ts">
 	// svelte
+	import { quadInOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
 
 	// packages
@@ -17,14 +18,14 @@
 	on:change={({ detail }) => {
 		isInView = detail.inView;
 	}}
-	on:inview_init={(event) => {
-		const { observer, node } = event.detail;
-		console.log(observer);
-	}}
 >
 	{#if isInView}
 		<div
-			in:fade|local={{ delay: clamp(Math.floor(Math.random() * 1000), 300, 600), duration: 350 }}
+			in:fade|local={{
+				delay: clamp(Math.floor(Math.random() * 1000), 300, 350),
+				duration: 350,
+				easing: quadInOut,
+			}}
 		>
 			<slot />
 		</div>

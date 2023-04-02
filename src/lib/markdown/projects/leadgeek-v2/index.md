@@ -88,7 +88,7 @@ All this to say, I was ready for Leadgeek to be on the side. For that, I needed 
 
 ## Tech stack
 
-I had recently picked up SvelteKit for a [Transform Writing](./transform-writing) and loved the development experience and performance of the finished product. Therefore, I went with a very similar tech stack for v2:
+I recently picked up SvelteKit for [Transform Writing](./transform-writing) and loved the development experience and performance of the finished product. Therefore, I went with a very similar tech stack for v2:
 
 - TypeScript
 - SvelteKit

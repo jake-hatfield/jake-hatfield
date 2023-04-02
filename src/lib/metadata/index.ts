@@ -28,6 +28,7 @@ export default {
 	siteUrl: `https://${siteUrl}`,
 	email: `me@${domain}`,
 	social: {
+		behance: 'https://www.behance.net/jake-hatfield',
 		discord: 'https://discord.com/users/280901621850832896',
 		dribbble: 'https://dribbble.com/jake-hatfield',
 		github: 'https://github.com/jake-hatfield?tab=repositories',
