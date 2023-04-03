@@ -35,7 +35,7 @@
 	};
 </script>
 
-<header class="relative mt-3 w-full pb-1.5 md:mt-0 md:border-b-2 md:border-neutral-900">
+<header class="relative mt-3 w-full border-b-2 border-neutral-900 pb-1.5 md:mt-0">
 	<nav class="mt-3 flex w-full items-center justify-between">
 		<div class="flex items-center">
 			<Button href="/" icon={Home} kind="ghost" title="Home" type="icon" tooltipAlignment="start" />

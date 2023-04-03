@@ -122,4 +122,10 @@
 		</p>
 	</div>
 </Testimonial>
-<Button class="mt-5" href="/resume.pdf" icon={ArrowRight} kind="secondary" title="View my resume" />
+<Button
+	class="mt-content"
+	href="/resume.pdf"
+	icon={ArrowRight}
+	kind="secondary"
+	title="View my resume"
+/>

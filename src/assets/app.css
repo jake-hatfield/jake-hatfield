@@ -152,7 +152,7 @@ mark,
 }
 
 .mt-content {
-	@apply mt-3 md:mt-12 lg:mt-16;
+	@apply mt-12 lg:mt-16;
 }
 
 .negative-z {
