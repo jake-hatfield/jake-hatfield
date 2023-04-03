@@ -7,7 +7,7 @@
 </script>
 
 <li
-	class={`list-none relative border-2 border-neutral-800 bg-black p-3 text-white md:p-5 ${
+	class={`list-none relative border-2 border-neutral-800 bg-black p-5 text-white ${
 		$$props.class ? $$props.class : ''
 	}`}
 >
@@ -26,11 +26,11 @@
 		<span role="img" aria-label="Megaphone emoji">📢</span> <cite>{author}</cite>
 	</p>
 	<Quotes
-		class="absolute bottom-0 right-0 -translate-y-5 -translate-x-2 rotate-180 transform text-violet-700"
+		class="absolute -bottom-3 -right-3 -translate-y-5 -translate-x-2 rotate-180 transform text-violet-700"
 		size={32}
 	/>
 	<Quotes
-		class="absolute bottom-0 right-0 -translate-x-3 -translate-y-6 rotate-180 transform text-lime-400"
+		class="absolute -bottom-3 -right-3 -translate-x-3 -translate-y-6 rotate-180 transform text-lime-400"
 		size={32}
 	/>
 </li>

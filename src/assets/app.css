@@ -79,14 +79,15 @@ html {
 		}
 
 		ol {
-			@apply mt-5 pl-5 md:pl-8;
+			@apply mt-5 pl-8;
 
 			li {
 				@apply mt-1.5 list-decimal pl-3;
 			}
 		}
 
-		li > ul {
+		li > ul,
+		li > ol {
 			@apply mt-0;
 		}
 	}
