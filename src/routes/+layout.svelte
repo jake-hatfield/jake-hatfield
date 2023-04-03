@@ -49,8 +49,6 @@
 			lazyloadInstance.update();
 		}
 	});
-
-	// TODO<Jake>: Fix OG templates - https://www.opengraph.xyz/url/https%3A%2F%2Fceea6f2d1895.ngrok.io
 </script>
 
 <div

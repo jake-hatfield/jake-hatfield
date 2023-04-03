@@ -1,5 +1,5 @@
 ---
-createdAt: 2023-03-21T18:00:03Z
+createdAt: 2023-03-25T18:00:03Z
 description: TypeScript, SvelteKit, Supabase, TailwindCSS, Stripe, SendGrid, Twilio, Vitest, Playwright, Github Actions, Vercel
 hidden: false
 hiddenRepo: true
@@ -21,9 +21,25 @@ updatedAt: null
 
 ## Summary
 
+This is a software-as-a-service (SaaS) I put together for a client, Sam, in 2022 that helps students submit their essays for proofreading.
+
+Sam mentioned to me that their current contract development team wasn't close to meeting their vision for the web app, so I offered some advice. That advice ended up with me programming the application myself, which worked out well for both parties.
+
+I had my sights on creating [Leadgeek v2](./leadgeek-v2) in the near future and wanted a chance to build and test a design system from scratch.
+
+The game plan for the current dev team was just to mash together WordPress plugins, so I stepped in to provide an actual solution that achieved Sam's vision for the project.
+
 ## Goals
 
+Sam's goal for Transform Writing is to have a bit of a side-hustle running in the background as he pursues his full-time career.
+
+He expected for it to take a bit of time to ramp up customer acquisition, so I wanted to build him something that would be inexpensive to maintain but also scale with his growth.
+
+You can read more about the [tech stack](#tech-stack), but I believe the tools that I used to build it is the most optimized, high-quality suite that can be assembled to meet his needs.
+
 ## Results
+
+I could write about what I think, but I'd rather just let you know what Sam had to say:
 
 > "During the initial stages of Transform Writing's formation, we encountered challenges with three different website developers who were unable to handle the complexity of the project. I approached Jake with our concerns and inquired whether our expectations for the website were unreasonable.
 >
@@ -41,13 +57,53 @@ updatedAt: null
 > <br/><br/> The final product is a remarkable asset to our company, offering unparalleled convenience and efficiency, enhancing customer experience, and maintaining our reputation among existing clients.
 >
 > <br/><br/> We are confident that Jake will excel in handling similarly complex projects, and we will undoubtedly consult him for any future website development requirements."
-> <br/><br/> &mdash; <cite>Samuel Broadbent</cite>
+> <br/><br/> &mdash; <cite>Samuel Broadbent, Founder of Transform Writing</cite>
 
 ## Tech stack
 
-// progressively loaded images
+- TypeScript
+- SvelteKit
+- Supabase
+- TailwindCSS
+- Stripe
+- SendGrid
+- Twilio
+- Vitest
+- Playwright
+- Github Actions
+- Vercel
+
+I intentionally picked the tech stack I wanted to build [Leadgeek v2](./leadgeek-v2) in. The knowledge and experience I gained on Transform Writing was directly transferrable to being able to create Leadgeek v2 relatively quickly.
+
+### TypeScript and SvelteKit
+
+Prior to working on this project, I had just scrapped a Chrome extension that I had written with Svelte. My goals for that project had changed, so I didn't publish my work on it; however, I fell in love with building things with this extremely modern and succinct framework.
+
+When Sam mentioned that his current developer wasn't working out, I offered to help him. I thought it would be a good opportunity to learn SvelteKit and provide a more polished product than he was expecting to receive by hiring another developer.
+
+While SvelteKit is an amazing tool, and I would use it for any new production project _now_, it probably wasn't the right pick _then_. I write more about why in [hindsight](#hindsight).
+
+### Supabase
+
+I hadn't built a project with Supabase before, but I chose it for 3 reasons:
+
+1. I wanted to learn relational databasing
+2. I wanted to offload handling auth
+3. It was talked up like crazy by other devs in the community
+
+In the end, I'm really glad I got some experience with it. I think I would choose it for almost every side-project in the future.
+
+### SendGrid and Twilio
+
+One of Sam's asks was to have email and SMS notifications for clients and admins when a submitted document was updated. I hadn't worked with either of these services before, but I knew they were pretty much the industry-standard for their respective notification methods.
+
+Their API is easy to pick up and the documentation is great.
 
 ## Overview
+
+// progressively loading images
+// security with docs
+// affordable while scalable
 
 ## Showcase
 
@@ -94,3 +150,9 @@ updatedAt: null
 ## Hindsight
 
 ## Wrapping up
+
+This project was an amazing experience to be able to build a rock-solid design system from the ground up. I can't state enough how much it allowed me to be able to iterate on [Leadgeek v2](./leadgeek-v2) faster than I should have been able.
+
+I'm also glad Sam was pleased with the finished product. I expect to maintain this code base to some degree in the future to create additional features and landing pages.
+
+Recently, I ported a lot of the code I wrote in this project into a Next.js starter called [Graphene](./graphene). Now, I'm working on a React Native app powered by GPT-3 called [Doom Scheme](./doom-scheme).

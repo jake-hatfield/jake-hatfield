@@ -45,7 +45,7 @@
 		>.
 	</p>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Workstation</h2>
 	</header>
@@ -139,7 +139,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Development</h2>
 	</header>
@@ -194,7 +194,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Design</h2>
 	</header>
@@ -264,7 +264,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Deployment</h2>
 	</header>
@@ -318,7 +318,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">Apps</h2>
 	</header>

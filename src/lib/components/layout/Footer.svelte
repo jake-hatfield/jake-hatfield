@@ -11,14 +11,14 @@
 	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
 	import LogoYCombinator from '$assets/images/vectors/LogoYCombinator.svelte';
 	import Rss from '$assets/images/vectors/Rss.svelte';
-	import SendAlt from 'carbon-icons-svelte/lib/SendAlt.svelte';
+	import SendAltFilled from 'carbon-icons-svelte/lib/SendAltFilled.svelte';
 
 	// lib
 	import metadata from '$lib/metadata';
 
 	// data
 	const socialLinks = [
-		{ href: `mailto:${metadata.email}`, icon: SendAlt, title: 'Contact' },
+		{ href: `mailto:${metadata.email}`, icon: SendAltFilled, title: 'Contact' },
 		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
 		{ href: metadata.social.dribbble, icon: LogoDribbble, title: 'Dribbble' },
 		{ href: metadata.social.behance, icon: LogoBehance, title: 'Behance' },

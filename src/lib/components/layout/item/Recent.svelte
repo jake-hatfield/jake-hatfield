@@ -20,7 +20,7 @@
 	export let type: Types;
 </script>
 
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5 md:flex md:items-end md:justify-between">
 		<h2 class="text-xl font-black md:text-2xl">Recent {type}</h2>
 		<Link

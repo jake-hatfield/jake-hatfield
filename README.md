@@ -4,6 +4,8 @@ I'm [Jake](https://jake-hatfield.com). I'm a self-taught full-stack software eng
 
 I graduated from [Texas A&M](https://www.tamu.edu/) in '16 with a B.S. in Biology that I would love to use in conjunction with programming one day. Whether that will ever happen is TBD.
 
+> The work I'm most proud of is in private repos. 👇 Email me to request access to view that code.
+
 ## 🔭 I’m currently working on...
 
 - [x] [Leadgeek](https://leadgeek.io/) in my free time

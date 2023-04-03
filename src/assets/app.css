@@ -85,6 +85,10 @@ html {
 				@apply mt-1.5 list-decimal pl-3;
 			}
 		}
+
+		li > ul {
+			@apply mt-0;
+		}
 	}
 
 	.anchorLink {

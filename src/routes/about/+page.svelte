@@ -91,7 +91,7 @@
 		>
 	</p>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">My technologies</h2>
 	</header>
@@ -101,7 +101,7 @@
 		{/each}
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">My software</h2>
 	</header>
@@ -111,7 +111,7 @@
 		{/each}
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="text-2xl font-black">My future learning interests</h2>
 	</header>
@@ -121,7 +121,7 @@
 		{/each}
 	</ul>
 </section>
-<section class="mt-8">
+<section class="mt-content">
 	<header>
 		<h2 class="text-2xl font-black">
 			<Link class="mt-1.5" href="/uses" isUnderlined title="My tools" />

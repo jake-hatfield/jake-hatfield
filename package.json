@@ -16,6 +16,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
+		"@resvg/resvg-js": "^2.4.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
@@ -45,6 +46,8 @@
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-external-links": "^2.0.1",
 		"rehype-slug": "^5.0.1",
+		"satori": "^0.4.4",
+		"satori-html": "^0.3.2",
 		"sharp": "^0.31.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",

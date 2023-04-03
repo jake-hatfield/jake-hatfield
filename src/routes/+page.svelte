@@ -88,7 +88,6 @@
 		/>
 	</div>
 </section>
-
 <Recent emptyState={emptyState.projects} items={projects} type="projects" />
 <Testimonial author="Samuel Broadbent, Founder of Transform Writing" class="mt-content">
 	<div slot="content">
@@ -97,9 +96,8 @@
 			our web application] more efficient.
 		</p>
 		<p class="mt-3">
-			The final product is a remarkable asset to our company, offering unparalleled convenience and
-			efficiency, enhancing customer experience, and maintaining our reputation among existing
-			clients.
+			<mark>The final product is a remarkable asset to our company,</mark> offering unparalleled convenience
+			and efficiency, enhancing customer experience, and maintaining our reputation among existing clients.
 		</p>
 		<p class="mt-3">
 			We are confident that Jake will excel in handling similarly complex projects, and we will
@@ -108,7 +106,7 @@
 	</div>
 </Testimonial>
 <Recent emptyState={emptyState.changelogs} items={changelogs} type="changelogs" />
-<Testimonial author="Yucheng Wang, client of Leadgeek" class="mt-8">
+<Testimonial author="Yucheng Wang, client of Leadgeek" class="mt-content">
 	<div slot="content">
 		<p>
 			The software is awesome... It looks FANTASTIC on my first try! <mark>Great work.</mark>
@@ -116,7 +114,7 @@
 	</div>
 </Testimonial>
 <Recent emptyState={emptyState.articles} items={articles} type="articles" />
-<Testimonial author="John Fernando, client of Leadgeek" class="mt-8">
+<Testimonial author="John Fernando, client of Leadgeek" class="mt-content">
 	<div slot="content">
 		<p>
 			Seriously, this is <mark>excellent customer service</mark> and you're very reassuring...I'm seriously
@@ -124,3 +122,4 @@
 		</p>
 	</div>
 </Testimonial>
+<Button class="mt-5" href="/resume.pdf" icon={ArrowRight} kind="secondary" title="View my resume" />
