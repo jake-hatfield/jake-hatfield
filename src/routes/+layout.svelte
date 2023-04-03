@@ -3,7 +3,7 @@
 	import { afterUpdate, onMount } from 'svelte';
 
 	// packages
-	import { load } from 'fathom-client';
+	import { load, trackPageview } from 'fathom-client';
 	import lazyload from 'vanilla-lazyload';
 
 	// env
@@ -11,6 +11,7 @@
 
 	// app
 	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 
 	// components
 	import Footer from '$components/layout/Footer.svelte';
@@ -33,13 +34,16 @@
 		lazyloadInstance = new lazyload({
 			elements_selector: '.lazy',
 		});
+	// track a page view on route change
+	$: browser && $page.url.pathname && trackPageview();
 
 	onMount(() => {
 		if (!isDevEnv()) {
 			// load analytics
 			load(PUBLIC_FATHOM_ID, {
-				url: PUBLIC_FATHOM_URL,
 				auto: false,
+				honorDNT: true,
+				url: PUBLIC_FATHOM_URL,
 			});
 		}
 	});
