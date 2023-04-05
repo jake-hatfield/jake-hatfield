@@ -6,7 +6,7 @@ image: changelogs/v0.0.2.jpg
 keywords: []
 repository: null
 site: null
-summary: Back to building...
+summary: Back to building
 tag: technical
 title: v0.0.2
 updatedAt: null
@@ -32,10 +32,10 @@ I've been chipping away at <Link href="https://github.com/jake-hatfield/doom-sch
 
 ## Updated
 
-- The profile page in the app with static data. Previously it was just a screen that displayed "Profile."
+- The profile screen in the app with static data. Previously it was just a screen that displayed "Profile."
 
-<Lightbox description="Profile page">
-    <img alt="Profile page" src="./profile.jpg" />
+<Lightbox description="Profile screen">
+    <img alt="Profile screen" src="./profile.jpg" />
 </Lightbox>
 
 <CTA/>

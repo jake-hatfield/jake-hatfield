@@ -29,9 +29,11 @@
 			use:handleKeyboardShortcut={{ code: 'Escape' }}
 		/>
 		<aside
-			class="minimal-scrollbar fixed left-2 right-2 top-0 z-40 max-h-screen max-w-6xl transform overflow-y-auto bg-neutral-900 md:top-1/2 md:left-1/2 md:max-h-screen md:w-full md:-translate-x-1/2 md:-translate-y-1/2"
+			class="minimal-scrollbar fixed left-2 right-2 top-0 z-40 max-h-screen max-w-6xl transform overflow-y-auto bg-neutral-900 p-8 md:top-1/2 md:left-1/2 md:max-h-screen md:w-full md:-translate-x-1/2 md:-translate-y-1/2"
 		>
-			<slot />
+			<div class="mx-auto flex min-w-full max-w-none justify-center">
+				<slot />
+			</div>
 		</aside>
 	</div>
 {/if}
