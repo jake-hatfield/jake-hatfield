@@ -2,10 +2,10 @@
 createdAt: 2023-03-23T18:00:00Z
 description: TypeScript, React, Redux, Node.js, Express.js, MongoDB, TailwindCSS, Stripe, Heroku
 hidden: false
-hiddenRepo: true
+hiddenRepo: false
 image: projects/leadgeek-v1-app.jpg
 keywords: [mern stack project, full stack project]
-repository: null
+repository: https://github.com/jake-hatfield/leadgeek-v1-app
 site: null
 summary: Upgrade your arbitrage sourcing from spreadsheets to software
 tag: fullstack
@@ -23,7 +23,7 @@ updatedAt: null
 
 This was Leadgeek's core product for nearly 2 years, which is an <Link href='https://leadgeek.io' isExternal isUnderlined title='online arbitrage sourcing list'/> for Amazon sellers. Each day, product research from retailers was compiled and provided to people flipping products via Amazon's 3rd party fulfillment program.
 
-> This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it. Code for this project is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
+> This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it.
 
 ## Goals
 

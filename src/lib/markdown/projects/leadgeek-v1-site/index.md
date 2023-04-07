@@ -2,10 +2,10 @@
 createdAt: 2023-03-22T18:00:00Z
 description: TypeScript, Gatsby.js, GraphQL, TailwindCSS, Stripe, Netlify
 hidden: false
-hiddenRepo: true
+hiddenRepo: false
 image: projects/leadgeek-v1-site.jpg
 keywords: [gatsby.js, frontend project]
-repository: null
+repository: https://github.com/jake-hatfield/leadgeek-v1-site
 site: null
 summary: The marketing website for its companion web app
 tag: frontend
@@ -23,7 +23,7 @@ updatedAt: null
 
 This is the marketing website for v1 of Leadgeek's product, which is an <Link href='https://leadgeek.io' isExternal isUnderlined title='online arbitrage sourcing list'/>. Essentially, it's a collection of daily research compiled and vetted for Amazon sellers to flip products from retailers.
 
-> This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it. Code for this project is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
+> This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it.
 
 ## Goals
 
