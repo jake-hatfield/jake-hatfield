@@ -29,6 +29,10 @@ Access to this data can be purchased as-needed, which scales better with the lif
 
 > Code for this project is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
 
+<Lightbox description="The home page's hero section">
+    <img alt="The home page's hero section" src="./index-hero.jpg" />
+</Lightbox>
+
 ## Goals
 
 Switching from a subscription model to a self-service model was a massive, drastic decision to make. I had dependable and consistent recurring income, and I wasn't sure how well the new model would perform.
@@ -60,6 +64,10 @@ If users were able to obtain product leads individually, I could solve this issu
 #### Affordability
 
 I also have plans to integrate a companion product sourcing tool in the form of a browser extension. I had started building one for Chrome using Svelte, but it didn't feel consumer-friendly to have a subscription for product research and a subscription for product analysis. The extension pricing made more sense to me with a usage-based model, so they were only charged for the analysis they conducted.
+
+<Lightbox description="The home page's primary features section">
+    <img alt="The home page's primary features section" src="./index-features.jpg" />
+</Lightbox>
 
 ### Personal improvements
 
@@ -126,6 +134,10 @@ The Amazon Selling Partner API (SP-API) integration was a must. It took a little
 
 I later used this mandatory integration to verify the uniqueness of a user's Leadgeek account. It also allowed me to provide a one-of-a-kind feature in the form of a daily, personalized email which notifies members about which new leads are ungated for their Seller Central account.
 
+<Lightbox description="An example lead page that uses D3.js and Layer Cake">
+    <img alt="An example lead page that uses D3.js and Layer Cake" src="./lead-example.jpg" />
+</Lightbox>
+
 ### Layer Cake and D3.js
 
 I went with Layer Cake and D3.js for displaying a graphical representation of historical information about each lead on the Marketplace.
@@ -162,11 +174,19 @@ Here is a basic summary of what I came up with:
 
 ### Product systems
 
+<Lightbox description="The Marketplace">
+    <img alt="The Marketplace" src="./marketplace.jpg" />
+</Lightbox>
+
 All product leads are publicly available on the <Link href="https://leadgeek.io/marketplace" isExternal isUnderlined title="Marketplace"/>, with identifying information redacted. This information is stripped server-side, and no identifying data (namely, the Amazon Standard Identification Number, or ASIN) is sent in any server requests. This is to prevent anyone from reverse-engineering the product's identity or source.
 
 Leads are fetched from a _view_ of the fully-sensitive leads table in Supabase that's removed any sensitive fields. These critical information areas are obfuscated on the <Link href="https://leadgeek.io/leads/abee667b-d133-4653-a2fe-6d554ea19fe7" isExternal isUnderlined title="arbitrage lead pages"/> with a simple CSS blur filter, but the information is not really even present on the page being rendered. For example, if someone were savvy enough to disable the blur style via their browser's dev tools to try to obtain the Amazon link, they'd see a link to a <Link href="https://amazon.com/dp/0812977785" isExternal isUnderlined title="book about ethics"/> instead.
 
 Only a minimum amount of information has to be stored in my database about each lead since almost all the dynamic information is retrieved in real-time via Keepa's API. Initially, I requested this information server-side, but the Keepa API takes a few seconds to fetch the data. The slow page speed was annoying, so I decided to fetch it client-side and use skeleton placeholders while loading.
+
+<Lightbox description="The claim modal">
+    <img alt="The claim modal" src="./lead-claim-example.jpg" />
+</Lightbox>
 
 To obtain access to the identifying information of each product lead, you can exchange a token, which is the currency of Leadgeek's Marketplace. The price of a token varies, since there are discounts for purchasing in bulk.
 
@@ -182,6 +202,10 @@ From the transaction history modal, you can request a token refund within 15 min
 
 ### Settings systems
 
+<Lightbox description="The profile page">
+    <img alt="The profile page" src="./profile.jpg" />
+</Lightbox>
+
 #### Profile
 
 The profile area is pretty standard: update your name, phone number, and notifications preferences. In order to get the notifications preferences working correctly, though, I had to set up a webhook for SendGrid. Here was my analysis for the feature:
@@ -191,6 +215,10 @@ The profile area is pretty standard: update your name, phone number, and notific
 - The only way to integrate properly is to set up a listener webhook for SendGrid and subscribe/unsubscribe in SendGrid's contact lists and update the values in Supabase.
 
 And it works like a charm.
+
+<Lightbox description="The billing page">
+    <img alt="The billing page" src="./billing.jpg" />
+</Lightbox>
 
 #### Billing
 
@@ -202,9 +230,17 @@ You can initiate the checkout process without having a payment method associated
 
 The payment method modal is simply a custom Stripe elements form.
 
+<Lightbox description="The favorites page">
+    <img alt="The favorites page" src="./favorites.jpg" />
+</Lightbox>
+
 #### Favorites
 
 If you're logged into your Leadgeek account, you can favorite a lead. It will show up in your Favorites panel in the header and the Favorites area in the settings pages.
+
+<Lightbox description="The portfolio page">
+    <img alt="The portfolio page" src="./portfolio.jpg" />
+</Lightbox>
 
 #### Portfolio
 
@@ -236,6 +272,10 @@ If the applicant linked their Seller Central account, it's an immediate approval
 
 ### Marketing systems
 
+<Lightbox description="The documentation page">
+    <img alt="The documentation page" src="./documentation.jpg" />
+</Lightbox>
+
 #### Documentation
 
 I enjoy writing an article more than creating a video. It's just so much more maintainable to make a small edit to text rather than re-shooting or re-editing video content.
@@ -245,6 +285,10 @@ For this reason, and since my product is such a new concept in this market, I wa
 I'm happy to answer those emails, but if multiple people are confused about how some feature works, that's on _me_, not _them_. So to clarify things, I made a documentation system that's slowly growing.
 
 It's not just user-facing, but also internally-facing in case I'm able to hire more people to help me with this project in the future.
+
+<Lightbox description="A documentation example">
+    <img alt="A documentation example" src="./documentation-example.jpg" />
+</Lightbox>
 
 #### Analytics
 
@@ -258,32 +302,12 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
 
 ### Product
 
-<Lightbox description="The home page's hero section">
-    <img alt="The home page's hero section" src="./index-hero.jpg" />
-</Lightbox>
-
-<Lightbox description="The home page's primary features section">
-    <img alt="The home page's primary features section" src="./index-features.jpg" />
-</Lightbox>
-
 <Lightbox description="The home page's secondary features and testimonials section">
     <img alt="The home page's secondary features and testimonial section" src="./index-features-and-testimonials.jpg" />
 </Lightbox>
 
 <Lightbox description="The home page's FAQs and call-to-action section">
     <img alt="The home page's FAQs and call-to-action section" src="./index-faqs-and-cta.jpg" />
-</Lightbox>
-
-<Lightbox description="The Marketplace">
-    <img alt="The Marketplace" src="./marketplace.jpg" />
-</Lightbox>
-
-<Lightbox description="An example lead page">
-    <img alt="An example lead page" src="./lead-example.jpg" />
-</Lightbox>
-
-<Lightbox description="The claim modal">
-    <img alt="The claim modal" src="./lead-claim-example.jpg" />
 </Lightbox>
 
 <Lightbox description="The pricing page">
@@ -296,24 +320,8 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
 
 ### Settings
 
-<Lightbox description="The profile page">
-    <img alt="The profile page" src="./profile.jpg" />
-</Lightbox>
-
-<Lightbox description="The billing page">
-    <img alt="The billing page" src="./billing.jpg" />
-</Lightbox>
-
 <Lightbox description="The selling page">
     <img alt="The selling page" src="./selling.jpg" />
-</Lightbox>
-
-<Lightbox description="The favorites page">
-    <img alt="The favorites page" src="./favorites.jpg" />
-</Lightbox>
-
-<Lightbox description="The portfolio page">
-    <img alt="The portfolio page" src="./portfolio.jpg" />
 </Lightbox>
 
 ### Resources
@@ -334,24 +342,12 @@ It's really enjoyable to use, and I'll happily continue to pay for the service f
     <img alt="A blog post example" src="./blog.jpg" />
 </Lightbox>
 
-<Lightbox description="The documentation page">
-    <img alt="The documentation page" src="./documentation.jpg" />
-</Lightbox>
-
-<Lightbox description="A documentation example">
-    <img alt="A documentation example" src="./documentation-example.jpg" />
-</Lightbox>
-
 <Lightbox description="The changelog page">
     <img alt="The changelog page" src="./changelog.jpg" />
 </Lightbox>
 
 <Lightbox description="A changelog example">
     <img alt="A changelog example" src="./changelog-example.jpg" />
-</Lightbox>
-
-<Lightbox description="The ASIN auto ungating list">
-    <img alt="The ASIN auto ungating list" src="./asin-auto-ungating.jpg" />
 </Lightbox>
 
 <Lightbox description="The Amazon supplier list">
@@ -389,6 +385,10 @@ Every new member starts with a trust score of 0.5, and every refund feedback the
 My idea is that any member with a trust score below a certain threshold will need to submit their refund request for manual approval. Basically, if you abuse the system, you're out.
 
 Similarly, any feedback submission from a highly trusted member will get priority attendance, since it's more likely that something has become out of date with the lead since the original time it was posted to the Marketplace.
+
+<Lightbox description="The ASIN auto ungating list">
+    <img alt="The ASIN auto ungating list" src="./asin-auto-ungating.jpg" />
+</Lightbox>
 
 #### Unexpected success
 

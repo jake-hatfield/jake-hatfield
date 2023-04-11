@@ -25,6 +25,10 @@ This is the marketing website for v1 of Leadgeek's product, which is an <Link hr
 
 > This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it.
 
+<Lightbox description="The home page's hero section">
+    <img alt="The home page's hero section" src="./index-hero.jpg" />
+</Lightbox>
+
 ## Goals
 
 Quite simply, I needed to sell stuff. This being my first solo digital product, I wasn't really sure what elements I needed to do that, and I had to figure it out along the way.
@@ -42,6 +46,10 @@ Creating this website helped refine my skills as an engineer, especially conside
 I learned how to market, maintain, and run a business. I learned about Google Ads, Open Graph, and copywriting. I learned about taking raw customer input, distilling it to its most concise form, and fleshing out the FAQ section a bit more. I learned that you can attract the kind of customers you want by investing more thought into your product's design. I handled customer support, product development, and daily maintenance simultaneously.
 
 Overall, the experience was very humbling, and I'm extremely grateful that it was able to accelerate my learning to become a well-rounded, cross-discipline software engineer.
+
+<Lightbox description="The pricing page">
+    <img alt="The pricing page" src="./pricing.jpg" />
+</Lightbox>
 
 ### Accolades
 
@@ -74,6 +82,10 @@ Another enormous benefit of going with Gatsby.js, which I'm not ashamed to admit
 
 GraphQL was essential to get the progressive image enhancements and later query MongoDB.
 
+<Lightbox description="The home page's testimonial section">
+    <img alt="The home page's testimonial section" src="./index-testimonials.jpg" />
+</Lightbox>
+
 ### TailwindCSS
 
 I chose TailwindCSS because I knew I wanted a unique-looking site, and from what little I knew, TailwindCSS could help me achieve it. I had some experience with MaterialCSS and Bootstrap, but they generated fairly boring projects. Overall, I'm very grateful that I picked this technology here, because this project helped me fall in love with TailwindCSS.
@@ -94,14 +106,6 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
 
 ### Home
 
-<Lightbox description="The home page's hero section">
-    <img alt="The home page's hero section" src="./index-hero.jpg" />
-</Lightbox>
-
-<Lightbox description="The home page's testimonial section">
-    <img alt="The home page's testimonial section" src="./index-testimonials.jpg" />
-</Lightbox>
-
 <Lightbox description="The home page's call-to-action section">
     <img alt="The home page's call-to-action section" src="./index-cta.jpg" />
 </Lightbox>
@@ -113,10 +117,6 @@ I deployed the site on Netlify because it's free and perfect for the JAMstack. N
 </Lightbox>
 
 ### Pricing
-
-<Lightbox description="The pricing page">
-    <img alt="The pricing page" src="./pricing.jpg" />
-</Lightbox>
 
 ### Features
 

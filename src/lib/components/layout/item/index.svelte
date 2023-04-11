@@ -45,7 +45,7 @@
 				{#if description}
 					<div class="mt-3 flex items-start">
 						<ChevronRight class="mt-0.5 flex-none text-orange-400" size={20} />
-						<p class="ml-3 text-neutral-400">{description}</p>
+						<p class="ml-3 text-neutral-200">{description}</p>
 					</div>
 				{/if}
 			</header>

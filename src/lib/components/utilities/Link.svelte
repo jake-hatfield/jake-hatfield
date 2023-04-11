@@ -26,7 +26,7 @@
 {#if disabled}
 	<p
 		aria-label={ariaLabel}
-		class={`inline text-neutral-400 text-opacity-80 ${$$props.class ? $$props.class : ''}`}
+		class={`inline text-neutral-200 text-opacity-80 ${$$props.class ? $$props.class : ''}`}
 	>
 		<!-- putting these items on separate lines will create a space -->
 		{title}{#if isExternal}
@@ -43,7 +43,7 @@
 		} ${$$props.class ? $$props.class : ''}`}
 		{href}
 		on:click={onClick}
-		rel={isExternal ? 'noopener noreferrer' : isNoFollow ? 'nofollow' : null}
+		rel={`${isExternal ? 'noopener noreferrer' : ''}${isNoFollow ? ' nofollow' : ''}`}
 		target={isExternal ? '_blank' : null}
 	>
 		<!-- putting these items on separate lines will create a space -->

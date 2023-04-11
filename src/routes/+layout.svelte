@@ -55,11 +55,9 @@
 	});
 </script>
 
-<div
-	class="relative mx-auto flex h-full min-h-screen w-full flex-col items-start px-4 sm:px-6 md:max-w-3xl lg:px-8"
->
+<div class="relative mx-auto flex h-full min-h-screen w-full flex-col items-start">
 	<Header />
-	<main class="mb-content mt-content relative h-full w-full">
+	<main class="mt-content content-section relative h-full w-full">
 		<slot />
 	</main>
 	<Footer />

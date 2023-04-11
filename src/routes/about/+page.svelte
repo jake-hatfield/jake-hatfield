@@ -3,6 +3,7 @@
 	import Item from '$routes/about/Item.svelte';
 	import Link from '$components/utilities/Link.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
+	import Social from '$components/layout/Social.svelte';
 
 	// lib
 	import { creative, future, technical } from '$lib/metadata/skills';
@@ -90,6 +91,12 @@
 			).toUpperCase()}."</mark
 		>
 	</p>
+</section>
+<section class="mt-content">
+	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">My socials</h2>
+	</header>
+	<Social />
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">

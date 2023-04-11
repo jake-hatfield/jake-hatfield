@@ -27,7 +27,7 @@
 	$: ({ createdAt, hiddenRepo, readingTime, repository, site, tag, updatedAt } = item);
 </script>
 
-<div class="mt-5 text-neutral-400 md:flex md:items-center">
+<div class="mt-5 text-neutral-200 md:flex md:items-center">
 	{#if tag}
 		<div class="flex items-center">
 			<Tag class="mt-0.5 flex-none text-orange-400" size={20} />

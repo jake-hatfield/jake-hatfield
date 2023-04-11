@@ -27,6 +27,10 @@ Sam mentioned to me that their current contract development team wasn't close to
 
 I had my sights on creating [Leadgeek v2](./leadgeek-v2) in the near future and wanted a chance to build and test a design system from scratch, and he currently had a dev team where the game plan was just to mash together WordPress plugins.
 
+<Lightbox description="The home page's hero section">
+    <img alt="The home page's hero section" src="./index-hero.jpg" />
+</Lightbox>
+
 ## Goals
 
 Sam's goal for Transform Writing is to have a bit of a side-hustle running in the background as he pursues his full-time career.
@@ -91,6 +95,10 @@ I hadn't built a project with Supabase before, but I chose it for 3 reasons:
 
 In the end, I'm really glad I got some experience with it. I think I would choose it for almost every side-project in the future.
 
+<Lightbox description="The profile page">
+    <img alt="The profile page" src="./profile.jpg" />
+</Lightbox>
+
 ### SendGrid and Twilio
 
 Sam requested to have email and SMS notifications for clients and admins when a submitted document was updated. I hadn't worked with either of these services before, but I knew they were pretty much the industry-standard for their respective notification methods.
@@ -98,6 +106,10 @@ Sam requested to have email and SMS notifications for clients and admins when a 
 Their API is easy to pick up and the documentation is great.
 
 ## Overview
+
+<Lightbox description="The billing page">
+    <img alt="The billing page" src="./billing.jpg" />
+</Lightbox>
 
 ### Design system
 
@@ -111,6 +123,10 @@ I now use my Graphene design system for all my projects, including this portfoli
 
 I'm really glad I invested the time and effort into my own design system. I feel like it helped me become a better front-end engineer long-term.
 
+<Lightbox description="The sign in page">
+    <img alt="The sign in page" src="./sign-in.jpg" />
+</Lightbox>
+
 ### Image enhancements
 
 At the time of this writing, SvelteKit doesn't natively support progressive image enhancements such as a blur-up effect or `.svg` outlining an image on load like Next.js or Gatsby.
@@ -120,6 +136,10 @@ Although Transform Writing isn't image-intensive, I wanted it to have a polished
 It's not terribly complicated, but I'm happy with the finished product. Essentially, I created an API route that receives the path of the relevant images and returns a low resolution placeholder of that image. As the full-resolution version of the image loads in, you get a blur-up effect.
 
 Under the hood, the `lowResolutionPlaceholder` function uses `sharp` to take a buffer and return a new sub-sampled buffer of 50% reduced quality. In the `+layout.svelte` file, I create a lazy load instance (if there isn't one made already) and load in the full-resolution version after the page mounts.
+
+<Lightbox description="The submission page">
+    <img alt="The submission page" src="./submission.jpg" />
+</Lightbox>
 
 ### Securely handling documents
 
@@ -139,10 +159,6 @@ Docs are kept secure and links to access them require the use of signed URLs. Th
 
 ### Product
 
-<Lightbox description="The home page's hero section">
-    <img alt="The home page's hero section" src="./index-hero.jpg" />
-</Lightbox>
-
 <Lightbox description="The home page's pricing section">
     <img alt="The home page's pricing section" src="./index-pricing-compare.jpg" />
 </Lightbox>
@@ -155,23 +171,7 @@ Docs are kept secure and links to access them require the use of signed URLs. Th
     <img alt="The sign up page" src="./sign-up.jpg" />
 </Lightbox>
 
-<Lightbox description="The sign in page">
-    <img alt="The sign in page" src="./sign-in.jpg" />
-</Lightbox>
-
-<Lightbox description="The submission page">
-    <img alt="The submission page" src="./submission.jpg" />
-</Lightbox>
-
 ### Settings
-
-<Lightbox description="The profile page">
-    <img alt="The profile page" src="./profile.jpg" />
-</Lightbox>
-
-<Lightbox description="The billing page">
-    <img alt="The billing page" src="./billing.jpg" />
-</Lightbox>
 
 <Lightbox description="The security page">
     <img alt="The security page" src="./security.jpg" />

@@ -22,6 +22,7 @@
 	export let icon: typeof ProgressBarRound | null = null;
 	export let iconSize = 18;
 	export let isCentered = false;
+	export let isExternal = false;
 	export let isFullWidth = false;
 	export let isNoFollow = false;
 	export let isSelected = false;
@@ -68,7 +69,7 @@
 			? 'bg-violet-700 text-lime-400 hover:bg-violet-800'
 			: kind === 'tertiary'
 			? 'bg-neutral-700 text-white hover:bg-neutral-800'
-			: 'bg-black hover:bg-violet-700 text-lime-400'
+			: 'bg-transparent hover:bg-violet-700 text-lime-400'
 	} ring-1 ring-transparent focus:outline-none focus:ring-lime-400 transition duration-150`;
 
 	const commonIconSize = iconSize ? iconSize : size === 'sm' || size === 'field' ? 16 : 18;
@@ -94,9 +95,10 @@
 				onClick && onClick();
 			}}
 			class={`${commonLayoutClasses} ${commonTypographyClasses} ${
-				isInactive ? 'cursor-not-allowed bg-neutral-800 text-neutral-400' : commonStyleClasses
+				isInactive ? 'cursor-not-allowed bg-neutral-800 text-neutral-200' : commonStyleClasses
 			} ${isSelected && !isInactive ? selectedClasses : ''} ${$$props.class ? $$props.class : ''}`}
-			rel={isNoFollow ? 'nofollow' : null}
+			rel={`${isExternal ? 'noopener noreferrer' : ''}${isNoFollow ? ' nofollow' : ''}`}
+			target={isExternal ? '_blank' : null}
 		>
 			{#if type !== 'icon'}
 				{#if loading}
@@ -128,7 +130,7 @@
 				onMouseLeave();
 			}}
 			class={`${commonLayoutClasses} ${commonTypographyClasses} ${
-				isInactive ? 'cursor-not-allowed bg-neutral-800 text-neutral-400' : commonStyleClasses
+				isInactive ? 'cursor-not-allowed bg-neutral-800 text-neutral-200' : commonStyleClasses
 			} ${isSelected && !isInactive ? selectedClasses : ''} ${$$props.class ? $$props.class : ''}`}
 			disabled={isInactive}
 			{...$$props.rest}

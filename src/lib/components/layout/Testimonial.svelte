@@ -22,7 +22,7 @@
 	<blockquote class="text-base text-neutral-200">
 		<slot name="content" />
 	</blockquote>
-	<p class="mt-3 text-neutral-400">
+	<p class="mt-3 text-neutral-200">
 		<span role="img" aria-label="Megaphone emoji">📢</span> <cite>{author}</cite>
 	</p>
 	<Quotes

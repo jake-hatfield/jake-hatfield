@@ -43,6 +43,10 @@ The initial release of the starter ended up being 28+ components, a blog, dynami
 
 I'll likely add more components, functions, and tests over time to keep this starter up-to-date with components I build in other frameworks, as long as they'd fit into the Graphene design system.
 
+<Lightbox description="Light mode">
+    <img alt="Light mode" src="./index.jpg" />
+</Lightbox>
+
 ### Design system
 
 Speaking of design systems, Graphene was really fun to think about. My first experience in building a design system was trying to make the [v1 site](./leadgeek-v1-site) and the [v1 app](./leadgeek-v1-app) cohesive, and I think my ability to build a library has come a long way since then.
@@ -107,10 +111,6 @@ The starter is a simple one-page website to showcase the mobile-responsive and c
 ## Showcase
 
 ### Product
-
-<Lightbox description="Light mode">
-    <img alt="Light mode" src="./index.jpg" />
-</Lightbox>
 
 <Lightbox description="Dark mode">
     <img alt="Dark mode" src="./index-dark.jpg" />

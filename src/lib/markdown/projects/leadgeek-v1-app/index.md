@@ -25,6 +25,10 @@ This was Leadgeek's core product for nearly 2 years, which is an <Link href='htt
 
 > This project hasn't been in production since Q1 2023, as [Leadgeek v2](./leadgeek-v2) has replaced it.
 
+<Lightbox description="The Feed">
+    <img alt="The Feed" src="./feed.jpg" />
+</Lightbox>
+
 ## Goals
 
 My vision for this project was really simple: my potential competitor's products were overwhelmingly low-quality, clunky, and malformed spreadsheets. I saw an opportunity to improve an already-profitable niche and provide small businesses with a superior, modern solution.
@@ -37,6 +41,10 @@ All I really knew was that I wanted to build a subscription-based, login-protect
 
 Since the main benefit of products like mine are to save clients time, I wanted to create personalizations that would maximize that and set me apart from competitors. I knew that if I could build a tailored experience and set my price point competitively, I would be able to get a foothold into the niche.
 
+<Lightbox description="Sort leads (dark mode)">
+    <img alt="Sort leads (dark mode)" src="./sort-dark.jpg" />
+</Lightbox>
+
 ## Results
 
 The success of Leadgeek can be completely attributed to this web app. It served over 420 customers in the nearly 2 years it was active and provided an amazing full-stack experience. Not only did it provide a challenging project to work on for 14 hours every single day, but it generated $130k+ from the starting point of a big fat $0.
@@ -48,6 +56,10 @@ What particularly stood out as a learning experience with this project is how to
 I didn't know how to build something like this when I started, and I had to overcome technical debt from past decisions as a result. Namely, refactoring from JavaScript to TypeScript, but also with things like my RESTful API (ya ever just make every request a `POST` request because you don't really know that there are other kinds until much later? That was a nice rework).
 
 As a result, I learned much more quickly on subsequent projects how _not_ to do things and what infrastructure decisions to make instead.
+
+<Lightbox description="The detailed view for each lead">
+    <img alt="The detailed view for each lead" src="./detailed-view.jpg" />
+</Lightbox>
 
 ## Tech stack
 
@@ -79,10 +91,15 @@ This was the basic flow for users:
 7. Leads are fuzzy-searchable globally from the header navigation. You can search by lead title, source title, or Amazon Standard Identification Number (ASIN).
 8. A notification system allow admins to push updates to users individually or globally.
 9. Your preferences can be managed in the settings pages:
+
    - `/settings/account` for contact info, password resets, and appearance (e.g. dark mode)
    - `/settings/billing` to update your subscription and view past invoices
    - `/settings/arbitrage` to update your selling preferences, namely your preferred column order in the exported `.csv`
    - `/settings/affiliate` provides you with your unique affiliate link and shows your commission history
+
+<Lightbox description="The account page (dark mode)">
+    <img alt="The account page (dark mode)" src="./account-dark.jpg" />
+</Lightbox>
 
 ### Security and auth
 
@@ -93,6 +110,10 @@ User-created passwords are hashed and salted with 10 rounds, so no raw password 
 The reset password logic was also implemented from scratch. If a user requests to reset their password, a lookup in the database by email is performed. If a user is found, a reset password token with a 1-hour expiration is generated.
 
 I send the user an email via Nodemailer containing a link to the `reset-password` page with the token appended as a URL query. On the password reset page, the token is grabbed from the query and verified in the database. Then, the user can only reset their password if the token is valid and they're shown a "Sorry, you'll need to request a new reset..." message if invalid.
+
+<Lightbox description="The affiliate page">
+    <img alt="The affiliate page" src="./affiliate.jpg" />
+</Lightbox>
 
 ### Affiliate system
 
@@ -110,6 +131,10 @@ Once it was ready, I plugged it into the [v1 site](./leadgeek-v1-site) as the en
 The only thing I didn't automate is PayPal payments, which I could have if the volume of affiliates was creating a bottleneck in my productivity. Since it never did, I didn't mess with PayPal's API.
 
 Easy to implement. Scalable. Fun to put together. A win all around.
+
+<Lightbox description="The billing page">
+    <img alt="The billing page" src="./billing.jpg" />
+</Lightbox>
 
 ### Billing system
 
@@ -134,38 +159,14 @@ It was kind of a headache to implement, but I got more familiar with Stripe's AP
 
 ### Product
 
-<Lightbox description="The Feed">
-    <img alt="The Feed" src="./feed.jpg" />
-</Lightbox>
-
 <Lightbox description="Filter leads">
     <img alt="Filter leads" src="./filter.jpg" />
 </Lightbox>
 
-<Lightbox description="Sort leads (dark mode)">
-    <img alt="Sort leads (dark mode)" src="./sort-dark.jpg" />
-</Lightbox>
-
-<Lightbox description="The detailed view for each lead">
-    <img alt="The detailed view for each lead" src="./detailed-view.jpg" />
-</Lightbox>
-
 ### Settings
-
-<Lightbox description="The account page (dark mode)">
-    <img alt="The account page (dark mode)" src="./account-dark.jpg" />
-</Lightbox>
-
-<Lightbox description="The billing page">
-    <img alt="The billing page" src="./billing.jpg" />
-</Lightbox>
 
 <Lightbox description="The arbitrage page">
     <img alt="The arbitrage page" src="./arbitrage.jpg" />
-</Lightbox>
-
-<Lightbox description="The affiliate page">
-    <img alt="The affiliate page" src="./affiliate.jpg" />
 </Lightbox>
 
 ## Hindsight

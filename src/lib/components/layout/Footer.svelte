@@ -1,71 +1,19 @@
 <script lang="ts">
 	// components
-	import Button from '$components/utilities/Button.svelte';
-
-	// icons
-	import LogoBehance from '$assets/images/vectors/LogoBehance.svelte';
-	import LogoDiscord from 'carbon-icons-svelte/lib/LogoDiscord.svelte';
-	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
-	import LogoYoutube from 'carbon-icons-svelte/lib/LogoYoutube.svelte';
-	import LogoDribbble from '$assets/images/vectors/LogoDribbble.svelte';
-	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
-	import LogoYCombinator from '$assets/images/vectors/LogoYCombinator.svelte';
-	import Rss from '$assets/images/vectors/Rss.svelte';
-	import SendAltFilled from 'carbon-icons-svelte/lib/SendAltFilled.svelte';
-
-	// lib
-	import metadata from '$lib/metadata';
-
-	// data
-	const socialLinks = [
-		{ href: `mailto:${metadata.email}`, icon: SendAltFilled, title: 'Contact' },
-		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
-		{ href: metadata.social.dribbble, icon: LogoDribbble, title: 'Dribbble' },
-		{ href: metadata.social.behance, icon: LogoBehance, title: 'Behance' },
-		{ href: metadata.social.hackerNews, icon: LogoYCombinator, title: 'Hacker News' },
-		{ href: metadata.social.discord, icon: LogoDiscord, title: 'Discord' },
-		{ href: metadata.social.spotify, icon: LogoSpotify, title: 'Spotify' },
-		{
-			href: metadata.social.youtube,
-			icon: LogoYoutube,
-			title: 'YouTube',
-		},
-	];
+	import Social from '$components/layout/Social.svelte';
 </script>
 
-<div class="mt-auto w-full">
-	<footer
-		class="mt-5 mb-3 flex flex-col-reverse border-t-2 border-neutral-900 pt-3 md:flex-row md:items-center md:justify-between"
-	>
-		<p class="mt-3 text-neutral-400 md:mt-0">
-			&copy; {new Date().getFullYear()} Jake Hatfield
-		</p>
-		<nav>
-			<ul class="flex flex-wrap items-center">
-				{#each socialLinks as { href, icon, title }}
-					<li class="ml-0.5 first:ml-0">
-						<Button
-							{href}
-							{icon}
-							isNoFollow
-							kind="ghost"
-							{title}
-							tooltipPosition="top"
-							type="icon"
-						/>
-					</li>
-				{/each}
-				<li class="ml-0.5">
-					<Button
-						href="/rss.xml"
-						icon={Rss}
-						kind="ghost"
-						title="RSS"
-						tooltipPosition="top"
-						type="icon"
-					/>
-				</li>
-			</ul>
-		</nav>
-	</footer>
+<div class="z-40 mx-auto mt-auto w-full">
+	<div class="mt-content w-full border-t-2 border-neutral-900">
+		<div class="mx-auto max-w-7xl px-3">
+			<footer
+				class="mb-3 flex flex-col-reverse pt-3 md:flex-row md:items-center md:justify-between"
+			>
+				<p class="mt-3 text-neutral-200 md:mt-0">
+					&copy; {new Date().getFullYear()} Jake Hatfield
+				</p>
+				<Social />
+			</footer>
+		</div>
+	</div>
 </div>

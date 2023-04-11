@@ -65,7 +65,7 @@
 		<label
 			for={id}
 			class={`block font-medium text-neutral-100 ${isLabelHidden ? 'sr-only' : ''} ${
-				isReadOnly ? 'text-neutral-400 cursor-not-allowed' : 'cursor-text'
+				isReadOnly ? 'text-neutral-200 cursor-not-allowed' : 'cursor-text'
 			}`}
 		>
 			{label}
@@ -85,7 +85,7 @@
 				error
 					? 'border-red-300 text-red-400 placeholder-red-300 focus:ring-red-500 focus:border-red-500'
 					: isReadOnly
-					? 'border-transparent text-neutral-400 cursor-not-allowed'
+					? 'border-transparent text-neutral-200 cursor-not-allowed'
 					: 'border-violet-700 text-neutral-100 focus:ring-white focus:border-white cursor-text'
 			} placeholder-neutral-400 focus:outline-none sm:text-sm mono`}
 			disabled={isReadOnly}
@@ -110,7 +110,7 @@
 				transition:fade={{ duration: 150 }}
 				class={`absolute inset-y-0 ${
 					error ? 'right-10' : 'right-2.5'
-				} text-neutral-400 transition duration-150`}
+				} text-neutral-200 transition duration-150`}
 				data-testId={showPasswordText ? 'hide-password-text' : 'show-password-text'}
 			>
 				{#if showPasswordText}
@@ -131,7 +131,7 @@
 					{error}
 				</p>
 			{:else if isReadOnly}
-				<p class="text-neutral-400" id={`${id}-read-only`}>This field is read-only</p>
+				<p class="text-neutral-200" id={`${id}-read-only`}>This field is read-only</p>
 			{:else if helperText}
 				<p class="text-white" id={`${id}-helper-text`}>
 					{helperText}
