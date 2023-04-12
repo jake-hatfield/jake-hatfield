@@ -148,13 +148,17 @@ This information is widely accepted as the standard format for product analysis 
 
 Stripe for payments. No subscriptions to manage, which made access to the login-protected areas a bit easier than normal.
 
+<Lightbox description="An example email that uses the Amazon SP-API to notify a user of their ungated products">
+    <img alt="An example email that uses the Amazon SP-API to notify a user of their ungated products" src="./email.jpg" />
+</Lightbox>
+
 ### Maizzle and SendGrid
 
 I went with Maizzle for creating emails that were sent via SendGrid. I chose it because it's based on TailwindCSS, which I was already familiar with, but I took it a step further with Markdown.
 
 In Maizzle I created 2 base templates, 1 for transactional emails and 1 for promotional emails. The content of these emails was written completely in Markdown and styled using TailwindCSS so I can interate and create new emails extremely easily.
 
-> Code for these templated emails is in a private repository in <Link href='https://github.com/jake-hatfield' isExternal isUnderlined title='my Github'/>, and is available upon <Link href='mailto:me@jake-hatfield.com?subject=Private%20Repo%20Access%20Request' isExternal isUnderlined title='request'/>.
+> Code for these email templates is in repository on <Link href='https://github.com/jake-hatfield/leadgeek-emails' isExternal isUnderlined title='my Github'/>.
 
 ### Sentry, Vitest, Playwright, and Github Actions
 
