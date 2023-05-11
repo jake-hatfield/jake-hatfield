@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: true
 image: projects/transform-writing.jpg
 keywords: [sveltekit, full-stack project]
+isIndexed: true
 repository: null
 site: https://transformwriting.com
 summary: Turn in proofread essays with confidence

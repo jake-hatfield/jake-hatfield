@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/c-meme30.jpg
 keywords: [node.js, express.js, backend project]
+isIndexed: true
 repository: https://github.com/jake-hatfield/c-meme30
 site: null
 summary: Play Star Wars prequel voice lines in your Discord server

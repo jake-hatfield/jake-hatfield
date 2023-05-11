@@ -22,7 +22,6 @@
 		{ href: metadata.social.github, icon: LogoGithub, title: 'Github' },
 		{ href: metadata.social.linkedin, icon: LogoLinkedin, title: 'LinkedIn' },
 		{ href: metadata.social.behance, icon: LogoBehance, title: 'Behance' },
-		{ href: metadata.social.hackerNews, icon: LogoYCombinator, title: 'Hacker News' },
 		{ href: metadata.social.discord, icon: LogoDiscord, title: 'Discord' },
 		{ href: metadata.social.spotify, icon: LogoSpotify, title: 'Spotify' },
 		{

@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/leadgeek-v1-site.jpg
 keywords: [gatsby.js, frontend project]
+isIndexed: false
 repository: https://github.com/jake-hatfield/leadgeek-v1-site
 site: null
 summary: The marketing website for its companion web app

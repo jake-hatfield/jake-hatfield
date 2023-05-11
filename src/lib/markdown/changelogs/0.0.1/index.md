@@ -4,6 +4,7 @@ description: null
 hidden: false
 image: changelogs/v0.0.1.jpg
 keywords: []
+isIndexed: true
 repository: null
 site: null
 summary: I've been writing and reflecting, now it's time to take some action

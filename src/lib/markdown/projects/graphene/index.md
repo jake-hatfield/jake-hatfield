@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/graphene.jpg
 keywords: []
+isIndexed: true
 repository: https://github.com/jake-hatfield/graphene
 site: null
 summary: Kick off your next Next.js project with a pre-built starter

@@ -27,6 +27,7 @@ export default async ({ fetch, url }) => {
 			faviconHeight: 512,
 			caption: metadata.siteTitle,
 		},
+		isIndexed: item.isIndexed,
 		isMarkdownItem: true,
 		keywords: item.keywords ?? [],
 		kind: item.type,

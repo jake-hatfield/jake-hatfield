@@ -4,6 +4,7 @@ description: null
 hidden: false
 image: articles/product-demo.jpg
 keywords: [SaaS product demos]
+isIndexed: true
 repository: null
 site: https://cxl.com/blog/product-demo/
 summary: Original research into what key aspects of a SaaS product demo are most important

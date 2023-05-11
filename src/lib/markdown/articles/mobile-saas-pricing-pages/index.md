@@ -4,6 +4,7 @@ description: null
 hidden: false
 image: articles/mobile-saas-pricing-pages.jpg
 keywords: [SaaS pricing pages, SaaS mobile optimization]
+isIndexed: true
 repository: null
 site: https://cxl.com/blog/mobile-saas-pricing-pages/
 summary: Original research into how to optimize SaaS pricing pages for mobile devices

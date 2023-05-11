@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: true
 image: projects/leadgeek-v2.jpg
 keywords: [sveltekit, full-stack project]
+isIndexed: false
 repository: null
 summary: Find products to flip on Amazon with a modern workflow
 site: https://leadgeek.io

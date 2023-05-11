@@ -4,6 +4,7 @@ description: null
 hidden: false
 image: changelogs/v0.0.3.jpg
 keywords: []
+isIndexed: true
 repository: null
 site: null
 summary: Iterating on Doom Scheme

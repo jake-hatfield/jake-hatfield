@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/doom-scheme.jpg
 keywords: []
+isIndexed: true
 repository: https://github.com/jake-hatfield/doom-scheme
 site: null
 summary: Use artificial intelligence to help compose your next rap verse
