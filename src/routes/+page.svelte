@@ -5,6 +5,7 @@
 	import Link from '$components/utilities/Link.svelte';
 	import Recent from '$components/layout/item/Recent.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
+	import Social from '$components/layout/Social.svelte';
 	import Testimonial from '$components/layout/Testimonial.svelte';
 
 	// icons
@@ -87,6 +88,12 @@
 			title="View my resume"
 		/>
 	</div>
+</section>
+<section class="mt-content">
+	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
+		<h2 class="text-2xl font-black">My socials</h2>
+	</header>
+	<Social />
 </section>
 <Recent emptyState={emptyState.projects} items={projects} type="projects" />
 <Testimonial author="Samuel Broadbent, Founder of Transform Writing" class="mt-content">

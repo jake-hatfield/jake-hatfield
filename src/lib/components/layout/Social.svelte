@@ -8,7 +8,6 @@
 	import LogoLinkedin from 'carbon-icons-svelte/lib/LogoLinkedin.svelte';
 	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
 	import LogoSpotify from '$assets/images/vectors/LogoSpotify.svelte';
-	import LogoYCombinator from '$assets/images/vectors/LogoYCombinator.svelte';
 	import LogoYoutube from 'carbon-icons-svelte/lib/LogoYoutube.svelte';
 	import Rss from '$assets/images/vectors/Rss.svelte';
 	import SendAltFilled from 'carbon-icons-svelte/lib/SendAltFilled.svelte';
@@ -32,7 +31,7 @@
 	];
 </script>
 
-<nav>
+<nav class={$$props.class ? $$props.class : ''}>
 	<ul class="flex flex-wrap items-center">
 		{#each socialLinks as { href, icon, title }}
 			<li class="ml-0.5 first:ml-0">
