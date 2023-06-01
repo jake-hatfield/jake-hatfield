@@ -34,8 +34,8 @@ _Ah, it's progress_
   - [Leadgeek v1 Site](/projects/leadgeek-v1-site)
   - [C-Meme30](/projects/c-meme30)
 - Case studies
-  - [Cracking the Product Demo Code: Lessons From 78 SaaS Demos](product-demo)
-  - [How to Design Mobile SaaS Pricing Pages that Don’t Suck](mobile-saas-pricing-pages)
+  - [Cracking the Product Demo Code: Lessons From 78 SaaS Demos](/articles/product-demo)
+  - [How to Design Mobile SaaS Pricing Pages that Don’t Suck](/articles/mobile-saas-pricing-pages)
 - [Resume](/resume.pdf)
 
 ## In progress
