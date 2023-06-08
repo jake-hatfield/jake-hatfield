@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/doom-scheme.jpg
 keywords: []
+isFeatured: false
 isIndexed: true
 repository: https://github.com/jake-hatfield/doom-scheme
 site: null

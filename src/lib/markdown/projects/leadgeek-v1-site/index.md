@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/leadgeek-v1-site.jpg
 keywords: [gatsby.js, frontend project]
+isFeatured: true
 isIndexed: false
 repository: https://github.com/jake-hatfield/leadgeek-v1-site
 site: null

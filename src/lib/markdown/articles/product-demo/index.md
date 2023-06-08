@@ -4,6 +4,7 @@ description: null
 hidden: false
 image: articles/product-demo.jpg
 keywords: [SaaS product demos]
+isFeatured: false
 isIndexed: true
 repository: null
 site: https://cxl.com/blog/product-demo/

@@ -2,7 +2,7 @@
 import { readingTime } from 'reading-time-estimator';
 
 // lib
-import { handlePluralization, kebabCase } from '$lib/utilities/string';
+import { kebabCase } from '$lib/utilities/string';
 
 // types
 import type { FinalizedItem, Types } from '$types/markdown/Item';
@@ -22,27 +22,22 @@ export default (type: Types, limit: string | null, hidden = false) => {
 	return filterAndSortItems(items, limit, hidden);
 };
 
-export const filterAndSortItems = (
-	items: FinalizedItem[],
-	limit: string | null,
-	hidden: boolean,
-) => {
-	return (
-		items
-			// don't show hidden items
-			.filter((item) => (hidden ? true : !item.hidden))
-			// order items by published date
-			.sort((a, b) =>
-				new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime()
-					? -1
-					: new Date(a.createdAt).getTime() < new Date(b.createdAt).getTime()
-					? 1
-					: 0,
-			)
-			// limit the number of items as requested
-			.slice(0, limit ? +limit : items.length)
-	);
-};
+export const filterAndSortItems = (items: FinalizedItem[], limit: string | null, hidden: boolean) =>
+	items
+		// don't show hidden items
+		.filter((item) => (hidden ? true : !item.hidden))
+		// order items by published date
+		.sort((a, b) =>
+			new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime()
+				? -1
+				: new Date(a.createdAt).getTime() < new Date(b.createdAt).getTime()
+				? 1
+				: 0,
+		)
+		// order items by featured status
+		.sort((a, b) => (a.isFeatured === b.isFeatured ? 0 : a.isFeatured ? -1 : 1))
+		// limit the number of items as requested
+		.slice(0, limit ? +limit : items.length);
 
 export const formatPath = (path: string) =>
 	path.slice(0, path.lastIndexOf('/')).split(`/`).splice(5).join('/');

@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/graphene.jpg
 keywords: []
+isFeatured: false
 isIndexed: true
 repository: https://github.com/jake-hatfield/graphene
 site: null

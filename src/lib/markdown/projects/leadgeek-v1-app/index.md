@@ -5,6 +5,7 @@ hidden: false
 hiddenRepo: false
 image: projects/leadgeek-v1-app.jpg
 keywords: [mern stack project, full stack project]
+isFeatured: false
 isIndexed: false
 repository: https://github.com/jake-hatfield/leadgeek-v1-app
 site: null

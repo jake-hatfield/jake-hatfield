@@ -7,6 +7,7 @@ export interface Item {
 	image: string;
 	hidden: boolean;
 	hiddenRepo: boolean;
+	isFeatured: boolean;
 	isIndexed: boolean;
 	repository: string | null;
 	site: string | null;
