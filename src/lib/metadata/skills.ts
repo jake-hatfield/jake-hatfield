@@ -6,6 +6,7 @@ import LogoAdobePremierePro from '$assets/images/vectors/LogoAdobePremierePro.sv
 import LogoAdobeXD from '$assets/images/vectors/LogoAdobeXD.svelte';
 import LogoCSS from '$assets/images/vectors/LogoCSS.svelte';
 import LogoD3JS from '$assets/images/vectors/LogoD3JS.svelte';
+import LogoDjango from '$assets/images/vectors/LogoDjango.svelte';
 import LogoElixir from '$assets/images/vectors/LogoElixir.svelte';
 import LogoExpo from '$assets/images/vectors/LogoExpo.svelte';
 import LogoExpress from '$assets/images/vectors/LogoExpress.svelte';
@@ -31,7 +32,9 @@ import LogoNgrok from '$assets/images/vectors/LogoNgrok.svelte';
 import LogoNodeJS from '$assets/images/vectors/LogoNodeJS.svelte';
 import LogoOpenAI from '$assets/images/vectors/LogoOpenAI.svelte';
 import LogoPlaywright from '$assets/images/vectors/LogoPlaywright.svelte';
+import LogoPostgres from '$assets/images/vectors/LogoPostgres.svelte';
 import LogoPostman from '$assets/images/vectors/LogoPostman.svelte';
+import LogoPython from '$assets/images/vectors/LogoPython.svelte';
 import LogoRailway from '$assets/images/vectors/LogoRailway.svelte';
 import LogoReact from '$assets/images/vectors/LogoReact.svelte';
 import LogoRedux from '$assets/images/vectors/LogoRedux.svelte';
@@ -59,8 +62,10 @@ export const technical = [
 	{ icon: LogoCSS, title: 'CSS' },
 	{ icon: LogoJavaScript, title: 'JavaScript' },
 	{ icon: LogoTypeScript, title: 'TypeScript' },
+	{ icon: LogoPython, title: 'Python' },
 	{ icon: LogoNodeJS, title: 'Node.js' },
 	{ icon: LogoExpress, title: 'Express.js' },
+	{ icon: LogoDjango, title: 'Django' },
 	{ icon: LogoReact, title: 'React / React Native' },
 	{ icon: LogoRedux, title: 'Redux' },
 	{ icon: LogoNextJS, title: 'Next.js' },
@@ -68,9 +73,10 @@ export const technical = [
 	{ icon: LogoSvelte, title: 'Svelte / SvelteKit' },
 	{ icon: LogoTailwindCSS, title: 'TailwindCSS' },
 	{ icon: LogoGraphQL, title: 'GraphQL' },
-	{ icon: LogoSupabase, title: 'Supabase (PostgreSQL)' },
-	{ icon: LogoFirebase, title: 'Firebase (NoSQL)' },
-	{ icon: LogoMongoDB, title: 'MongoDB (NoSQL)' },
+	{ icon: LogoSupabase, title: 'Supabase' },
+	{ icon: LogoFirebase, title: 'Firebase' },
+	{ icon: LogoMongoDB, title: 'MongoDB' },
+	{ icon: LogoPostgres, title: 'PostgreSQL' },
 	{ icon: LogoVitest, title: 'Vitest' },
 	{ icon: LogoJest, title: 'Jest' },
 	{ icon: LogoPlaywright, title: 'Playwright' },

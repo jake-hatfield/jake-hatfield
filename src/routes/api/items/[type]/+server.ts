@@ -71,8 +71,6 @@ export const GET: RequestHandler = async (event) => {
 			};
 		});
 
-		console.log(items);
-
 		return new Response(JSON.stringify(items));
 	} catch (error) {
 		return handleApiError(event.url.pathname, 500, error, { items: [] });
