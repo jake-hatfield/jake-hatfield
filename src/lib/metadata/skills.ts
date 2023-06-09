@@ -4,6 +4,7 @@ import LogoAdobeIllustrator from '$assets/images/vectors/LogoAdobeIllustrator.sv
 import LogoAdobePhotoshop from '$assets/images/vectors/LogoAdobePhotoshop.svelte';
 import LogoAdobePremierePro from '$assets/images/vectors/LogoAdobePremierePro.svelte';
 import LogoAdobeXD from '$assets/images/vectors/LogoAdobeXD.svelte';
+import LogoAngular from '$assets/images/vectors/LogoAngular.svelte';
 import LogoCSS from '$assets/images/vectors/LogoCSS.svelte';
 import LogoD3JS from '$assets/images/vectors/LogoD3JS.svelte';
 import LogoDjango from '$assets/images/vectors/LogoDjango.svelte';
@@ -71,6 +72,7 @@ export const technical = [
 	{ icon: LogoNextJS, title: 'Next.js' },
 	{ icon: LogoGatsby, title: 'Gatsby' },
 	{ icon: LogoSvelte, title: 'Svelte / SvelteKit' },
+	{ icon: LogoAngular, title: 'Angular' },
 	{ icon: LogoTailwindCSS, title: 'TailwindCSS' },
 	{ icon: LogoGraphQL, title: 'GraphQL' },
 	{ icon: LogoSupabase, title: 'Supabase' },
