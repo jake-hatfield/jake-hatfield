@@ -59,10 +59,6 @@
 		maintainable on the side, I'm looking for my next challenging project.
 	</p>
 	<p class="mt-3">
-		I graduated from Texas A&M in '16 with a B.S. in Biology that I would love to use in conjunction
-		with programming one day. Whether that will ever happen is TBD.
-	</p>
-	<p class="mt-3">
 		I picked up programming as a necessity for building products and was surprised to find that I
 		fell in love with it. Through trial-and-error, I've become well-versed in the development
 		requirements of modern applications.
@@ -72,10 +68,9 @@
 		that all into a responsive, accessible, and intuitive front end.
 	</p>
 	<p class="mt-3">
-		I feel like my experience solo-building products from scratch and selling them to real people
-		has accelerated my learning and made me extremely well-rounded. At the same time, I've realized
-		over the last 3+ years that I can only accomplish a finite amount building and marketing
-		products by myself.
+		I feel like my experience building products from scratch and selling them to real people has
+		accelerated my learning and made me extremely well-rounded. At the same time, I've realized
+		recently that I can only accomplish a finite amount building and marketing products by myself.
 	</p>
 	<p class="mt-3">
 		Consequently, <mark

@@ -8,6 +8,7 @@ import LogoAngular from '$assets/images/vectors/LogoAngular.svelte';
 import LogoCSS from '$assets/images/vectors/LogoCSS.svelte';
 import LogoD3JS from '$assets/images/vectors/LogoD3JS.svelte';
 import LogoDjango from '$assets/images/vectors/LogoDjango.svelte';
+import LogoDocker from '$assets/images/vectors/LogoDocker.svelte';
 import LogoElixir from '$assets/images/vectors/LogoElixir.svelte';
 import LogoExpo from '$assets/images/vectors/LogoExpo.svelte';
 import LogoExpress from '$assets/images/vectors/LogoExpress.svelte';
@@ -25,6 +26,7 @@ import LogoHeroku from '$assets/images/vectors/LogoHeroku.svelte';
 import LogoHTML from '$assets/images/vectors/LogoHTML.svelte';
 import LogoJavaScript from '$assets/images/vectors/LogoJavaScript.svelte';
 import LogoJest from '$assets/images/vectors/LogoJest.svelte';
+import LogoKubernetes from '$assets/images/vectors/LogoKubernetes.svelte';
 import LogoMaizzle from '$assets/images/vectors/LogoMaizzle.svelte';
 import LogoMongoDB from '$assets/images/vectors/LogoMongoDB.svelte';
 import LogoNetlify from '$assets/images/vectors/LogoNetlify.svelte';
@@ -90,6 +92,8 @@ export const technical = [
 	{ icon: LogoNgrok, title: 'ngrok' },
 	{ icon: LogoGit, title: 'Git' },
 	{ icon: LogoGithubActions, title: 'Github Actions' },
+	{ icon: LogoDocker, title: 'Docker' },
+	{ icon: LogoKubernetes, title: 'Kubernetes' },
 	{ icon: LogoSentry, title: 'Sentry' },
 	{ icon: LogoHeroku, title: 'Heroku' },
 	{ icon: LogoNetlify, title: 'Netlify' },
