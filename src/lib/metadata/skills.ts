@@ -29,6 +29,7 @@ import LogoJest from '$assets/images/vectors/LogoJest.svelte';
 import LogoKubernetes from '$assets/images/vectors/LogoKubernetes.svelte';
 import LogoMaizzle from '$assets/images/vectors/LogoMaizzle.svelte';
 import LogoMongoDB from '$assets/images/vectors/LogoMongoDB.svelte';
+import LogoNestJs from '$assets/images/vectors/LogoNestJs.svelte';
 import LogoNetlify from '$assets/images/vectors/LogoNetlify.svelte';
 import LogoNextJS from '$assets/images/vectors/LogoNextJS.svelte';
 import LogoNgrok from '$assets/images/vectors/LogoNgrok.svelte';
@@ -37,6 +38,7 @@ import LogoOpenAI from '$assets/images/vectors/LogoOpenAI.svelte';
 import LogoPlaywright from '$assets/images/vectors/LogoPlaywright.svelte';
 import LogoPostgres from '$assets/images/vectors/LogoPostgres.svelte';
 import LogoPostman from '$assets/images/vectors/LogoPostman.svelte';
+import LogoPrisma from '$assets/images/vectors/LogoPrisma.svelte';
 import LogoPython from '$assets/images/vectors/LogoPython.svelte';
 import LogoRailway from '$assets/images/vectors/LogoRailway.svelte';
 import LogoReact from '$assets/images/vectors/LogoReact.svelte';
@@ -68,6 +70,7 @@ export const technical = [
 	{ icon: LogoPython, title: 'Python' },
 	{ icon: LogoNodeJS, title: 'Node.js' },
 	{ icon: LogoExpress, title: 'Express.js' },
+	{ icon: LogoNestJs, title: 'NestJS' },
 	{ icon: LogoDjango, title: 'Django' },
 	{ icon: LogoReact, title: 'React / React Native' },
 	{ icon: LogoRedux, title: 'Redux' },
@@ -77,6 +80,7 @@ export const technical = [
 	{ icon: LogoAngular, title: 'Angular' },
 	{ icon: LogoTailwindCSS, title: 'TailwindCSS' },
 	{ icon: LogoGraphQL, title: 'GraphQL' },
+	{ icon: LogoPrisma, title: 'Prisma' },
 	{ icon: LogoSupabase, title: 'Supabase' },
 	{ icon: LogoFirebase, title: 'Firebase' },
 	{ icon: LogoMongoDB, title: 'MongoDB' },
