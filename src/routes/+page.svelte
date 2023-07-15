@@ -50,8 +50,7 @@
 			<h1 class="pt-3 text-3xl font-black">Jake Hatfield</h1>
 		</header>
 		<p class="mt-5">
-			I'm a self-taught full-stack software engineer running a bootstrapped solo business in
-			Houston, TX. <span role="img" aria-label="Pin emoji">📌</span>
+			I'm a self-taught full-stack software engineer living in Houston, TX. <span role="img" aria-label="Pin emoji">📌</span>
 		</p>
 		<p class="mt-3">
 			I want to design and build digital products like other people play piano, so I created this
@@ -60,11 +59,6 @@
 				isUnderlined
 				title="learnings"
 			/>, and <Link href="/articles" isUnderlined title="thoughts" /> are helping me achieve this goal.
-		</p>
-		<p class="mt-3">
-			<mark>I'm currently looking to join a team of other software engineers</mark>
-			who are solving meaningful problems on a bigger scale than I can accomplish completely on my own.
-			<span role="img" aria-label="Call me hand emoji">🤙</span>
 		</p>
 	</div>
 	<div class="md:ml-8 md:w-1/3">
