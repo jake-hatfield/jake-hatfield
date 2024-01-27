@@ -31,7 +31,7 @@
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h1 class="text-3xl font-black">Changelogs</h1>
+		<h1 class="header text-3xl font-black">Changelogs</h1>
 	</header>
 	<ul>
 		{#each changelogs as changelog}

@@ -22,6 +22,7 @@
 
 	// styles
 	import '$assets/app.css';
+	import '@fontsource/silkscreen';
 
 	// types
 	import type { ILazyLoadInstance } from 'vanilla-lazyload';

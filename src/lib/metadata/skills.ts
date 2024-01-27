@@ -26,6 +26,7 @@ import LogoHeroku from '$assets/images/vectors/LogoHeroku.svelte';
 import LogoHTML from '$assets/images/vectors/LogoHTML.svelte';
 import LogoJavaScript from '$assets/images/vectors/LogoJavaScript.svelte';
 import LogoJest from '$assets/images/vectors/LogoJest.svelte';
+import LogoJquery from '$assets/images/vectors/LogoJquery.svelte';
 import LogoKubernetes from '$assets/images/vectors/LogoKubernetes.svelte';
 import LogoMaizzle from '$assets/images/vectors/LogoMaizzle.svelte';
 import LogoMongoDB from '$assets/images/vectors/LogoMongoDB.svelte';
@@ -35,6 +36,7 @@ import LogoNextJS from '$assets/images/vectors/LogoNextJS.svelte';
 import LogoNgrok from '$assets/images/vectors/LogoNgrok.svelte';
 import LogoNodeJS from '$assets/images/vectors/LogoNodeJS.svelte';
 import LogoOpenAI from '$assets/images/vectors/LogoOpenAI.svelte';
+import LogoPHP from '$assets/images/vectors/LogoPHP.svelte';
 import LogoPlaywright from '$assets/images/vectors/LogoPlaywright.svelte';
 import LogoPostgres from '$assets/images/vectors/LogoPostgres.svelte';
 import LogoPostman from '$assets/images/vectors/LogoPostman.svelte';
@@ -55,6 +57,7 @@ import LogoTypeScript from '$assets/images/vectors/LogoTypeScript.svelte';
 import LogoVercel from '$assets/images/vectors/LogoVercel.svelte';
 import LogoVisualStudioCode from '$assets/images/vectors/LogoVisualStudioCode.svelte';
 import LogoVitest from '$assets/images/vectors/LogoVitest.svelte';
+import LogoVue from '$assets/images/vectors/LogoVue.svelte';
 import LogoWordpress from '$assets/images/vectors/LogoWordpress.svelte';
 
 export const future = [
@@ -67,6 +70,8 @@ export const technical = [
 	{ icon: LogoCSS, title: 'CSS' },
 	{ icon: LogoJavaScript, title: 'JavaScript' },
 	{ icon: LogoTypeScript, title: 'TypeScript' },
+	{ icon: LogoJquery, title: 'jQuery' },
+	{ icon: LogoPHP, title: 'PHP' },
 	{ icon: LogoPython, title: 'Python' },
 	{ icon: LogoNodeJS, title: 'Node.js' },
 	{ icon: LogoExpress, title: 'Express.js' },
@@ -77,6 +82,7 @@ export const technical = [
 	{ icon: LogoNextJS, title: 'Next.js' },
 	{ icon: LogoGatsby, title: 'Gatsby' },
 	{ icon: LogoSvelte, title: 'Svelte / SvelteKit' },
+	{ icon: LogoVue, title: 'Vue' },
 	{ icon: LogoAngular, title: 'Angular' },
 	{ icon: LogoTailwindCSS, title: 'TailwindCSS' },
 	{ icon: LogoGraphQL, title: 'GraphQL' },

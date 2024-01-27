@@ -17,7 +17,7 @@
 	<section class="content-section-text">
 		<article id="content-markdown" itemscope itemtype="http://schema.org/Article">
 			<header>
-				<h1 class="inline-block text-2xl font-black md:text-3xl">
+				<h1 class="header inline-block text-2xl font-black md:text-3xl">
 					{item.title}
 				</h1>
 				<Header {item} />

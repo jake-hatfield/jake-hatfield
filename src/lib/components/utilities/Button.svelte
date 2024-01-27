@@ -94,7 +94,7 @@
 				isTooltipActive = false;
 				onClick && onClick();
 			}}
-			class={`${commonLayoutClasses} ${commonTypographyClasses} ${
+			class={`header ${commonLayoutClasses} ${commonTypographyClasses} ${
 				isInactive ? 'cursor-not-allowed bg-neutral-800 text-neutral-200' : commonStyleClasses
 			} ${isSelected && !isInactive ? selectedClasses : ''} ${$$props.class ? $$props.class : ''}`}
 			rel={`${isExternal ? 'noopener noreferrer' : ''}${isNoFollow ? ' nofollow' : ''}`}

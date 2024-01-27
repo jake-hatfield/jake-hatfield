@@ -44,13 +44,16 @@
 <section class="md:flex md:items-start md:justify-between">
 	<div class="mb-5 md:mb-0 md:w-2/3">
 		<header>
-			<p class="text-lg font-black">
+			<p class="header text-lg font-black">
 				<span role="img" aria-label="Waving emoji">👋</span> Howdy, I'm
 			</p>
-			<h1 class="pt-3 text-3xl font-black">Jake Hatfield</h1>
+			<h1 class="header pt-3 text-3xl font-black">Jake Hatfield</h1>
 		</header>
 		<p class="mt-5">
-			I'm a self-taught full-stack software engineer living in Houston, TX. <span role="img" aria-label="Pin emoji">📌</span>
+			I'm a self-taught full-stack software engineer living in Houston, TX. <span
+				role="img"
+				aria-label="Pin emoji">📌</span
+			>
 		</p>
 		<p class="mt-3">
 			I want to design and build digital products like other people play piano, so I created this
@@ -85,7 +88,7 @@
 </section>
 <section class="mt-content">
 	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">My socials</h2>
+		<h2 class="header text-2xl font-black">My socials</h2>
 	</header>
 	<Social />
 </section>

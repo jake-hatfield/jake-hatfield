@@ -20,6 +20,10 @@ html {
 	font-family: 'IBM Plex Mono', monospace !important;
 }
 
+.header {
+	font-family: 'Silkscreen', sans-serif !important;
+}
+
 ::selection {
 	@apply bg-lime-400 text-lime-900;
 }
@@ -33,7 +37,7 @@ html {
 		@apply text-base;
 
 		a {
-			@apply link-underline;
+			@apply link-underline header;
 		}
 
 		blockquote {
@@ -50,20 +54,20 @@ html {
 		}
 
 		h2 {
-			@apply mono mt-12 text-xl font-black md:text-2xl;
+			@apply mono header mt-12 text-xl font-black md:text-2xl;
 		}
 
 		h3 {
-			@apply mono mt-10 font-black md:text-xl;
+			@apply mono header mt-10 font-black md:text-xl;
 		}
 
 		h4 {
-			@apply mono mt-8 font-black;
+			@apply mono header mt-8 font-black;
 		}
 
 		h5,
 		h6 {
-			@apply mono mt-5 font-black;
+			@apply mono header mt-5 font-black;
 		}
 
 		img {

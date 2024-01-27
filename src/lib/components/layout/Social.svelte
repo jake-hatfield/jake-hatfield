@@ -33,7 +33,7 @@
 
 <nav class={$$props.class ? $$props.class : ''}>
 	<ul class="flex flex-wrap items-center">
-		{#each socialLinks as { href, icon, title }}
+		{#each socialLinks as { href, icon, title }, i}
 			<li class="ml-0.5 first:ml-0">
 				<Button
 					{href}
@@ -42,6 +42,7 @@
 					isNoFollow
 					kind="ghost"
 					{title}
+					tooltipAlignment={i === 0 ? 'start' : 'center'}
 					tooltipPosition="top"
 					type="icon"
 				/>
@@ -53,6 +54,7 @@
 				icon={Rss}
 				kind="ghost"
 				title="RSS"
+				tooltipAlignment="end"
 				tooltipPosition="top"
 				type="icon"
 			/>

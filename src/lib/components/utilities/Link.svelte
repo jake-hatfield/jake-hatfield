@@ -26,7 +26,7 @@
 {#if disabled}
 	<p
 		aria-label={ariaLabel}
-		class={`inline text-neutral-200 text-opacity-80 ${$$props.class ? $$props.class : ''}`}
+		class={`header inline text-neutral-200 text-opacity-80 ${$$props.class ? $$props.class : ''}`}
 	>
 		<!-- putting these items on separate lines will create a space -->
 		{title}{#if isExternal}
@@ -38,9 +38,9 @@
 {:else}
 	<a
 		aria-label={ariaLabel}
-		class={`${isBlock ? 'inline-block' : 'inline'} ${isUnderlined ? 'link-underline' : 'link'} ${
-			icon || isExternal ? 'mr-0.5' : ''
-		} ${$$props.class ? $$props.class : ''}`}
+		class={`header ${isBlock ? 'inline-block' : 'inline'} ${
+			isUnderlined ? 'link-underline' : 'link'
+		} ${icon || isExternal ? 'mr-0.5' : ''} ${$$props.class ? $$props.class : ''}`}
 		{href}
 		on:click={onClick}
 		rel={`${isExternal ? 'noopener noreferrer' : ''}${isNoFollow ? ' nofollow' : ''}`}

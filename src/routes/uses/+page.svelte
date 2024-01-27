@@ -25,7 +25,7 @@
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h1 class="text-3xl font-black">Uses</h1>
+		<h1 class="header text-3xl font-black">Uses</h1>
 	</header>
 	<p class="mt-5">
 		I'm inspired quite a bit by <Link
@@ -47,7 +47,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">Workstation</h2>
+		<h2 class="header text-2xl font-black">Workstation</h2>
 	</header>
 	<ul class="mt-5">
 		<Use
@@ -141,7 +141,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">Development</h2>
+		<h2 class="header text-2xl font-black">Development</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://code.visualstudio.com/" title="VSCode" type="IDE">
@@ -196,7 +196,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">Design</h2>
+		<h2 class="header text-2xl font-black">Design</h2>
 	</header>
 	<ul class="mt-5">
 		<Use
@@ -266,7 +266,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">Deployment</h2>
+		<h2 class="header text-2xl font-black">Deployment</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://www.netlify.com/" title="Netlify" type="Hosting">
@@ -320,7 +320,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">Apps</h2>
+		<h2 class="header text-2xl font-black">Apps</h2>
 	</header>
 	<ul class="mt-5">
 		<Use href="https://slack.com/" title="Slack" type="Team communication">

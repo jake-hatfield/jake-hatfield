@@ -34,7 +34,7 @@
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h1 class="text-3xl font-black">About</h1>
+		<h1 class="header text-3xl font-black">About</h1>
 	</header>
 	<p class="mt-5">
 		I'm a self-taught full-stack engineer and I wrote my first line of code in '19. I created this
@@ -73,13 +73,13 @@
 </section>
 <section class="mt-content">
 	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">My socials</h2>
+		<h2 class="header text-2xl font-black">My socials</h2>
 	</header>
 	<Social />
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">My technologies</h2>
+		<h2 class="header text-2xl font-black">My technologies</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
 		{#each technical as item}
@@ -89,7 +89,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">My software</h2>
+		<h2 class="header text-2xl font-black">My software</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
 		{#each creative as item}
@@ -99,7 +99,7 @@
 </section>
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="text-2xl font-black">My future learning interests</h2>
+		<h2 class="header text-2xl font-black">My future learning interests</h2>
 	</header>
 	<ul class="mt-5 grid gap-5 md:grid-cols-2">
 		{#each future as item}
@@ -109,7 +109,7 @@
 </section>
 <section class="mt-content">
 	<header>
-		<h2 class="text-2xl font-black">
+		<h2 class="header text-2xl font-black">
 			<Link class="mt-1.5" href="/uses" isUnderlined title="My tools" />
 		</h2>
 	</header>

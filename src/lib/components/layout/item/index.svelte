@@ -38,7 +38,7 @@
 		</a>
 		<div class="p-5">
 			<header>
-				<h2 class="text-xl font-black">
+				<h2 class="header text-xl font-black">
 					{title}
 				</h2>
 				<Header {item} />

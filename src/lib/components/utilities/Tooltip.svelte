@@ -12,7 +12,7 @@
 <span
 	aria-hidden="true"
 	aria-expanded="true"
-	class={`absolute min-w-fit w-full ${
+	class={`header absolute min-w-fit w-full ${
 		alignment === 'start'
 			? 'left-0'
 			: alignment === 'center'

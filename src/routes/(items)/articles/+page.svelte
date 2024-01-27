@@ -31,7 +31,7 @@
 
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h1 class="text-3xl font-black">Articles</h1>
+		<h1 class="header text-3xl font-black">Articles</h1>
 	</header>
 	<ul>
 		{#each articles as article}
