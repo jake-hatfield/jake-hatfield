@@ -32,7 +32,7 @@
 {#key tag}
 	<section>
 		<header class="border-b-2 border-neutral-900 pb-1.5">
-			<h1 class="text-3xl font-black">
+			<h1 class="text-3xl font-black header">
 				#{tag}
 			</h1>
 		</header>
