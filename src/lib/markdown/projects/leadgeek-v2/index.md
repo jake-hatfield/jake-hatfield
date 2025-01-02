@@ -300,9 +300,7 @@ It's not just user-facing, but also internally-facing in case I'm able to hire m
 
 I hate Google Analytics, I really do. Nothing is ever free, and using GA makes your users Google's product. Not only that, but you have to display abrasive cookie banners to comply with GDPR. Ick.
 
-I opted for Fathom Analytics, which is a privacy-focused, paid analytics tool. One of the most massive advantages I hadn't considered when switching is that I get significantly better anonymous data since I can serve my analytics script from a custom domain _not on a blocklist_.
-
-It's really enjoyable to use, and I'll happily continue to pay for the service for all my sites.
+I opted for Umami, which is a privacy-focused, self-hosted tool. I run it on a Raspberry Pi 4. One of the most massive advantages I hadn't considered when switching is that I get significantly better anonymous data since I can serve my analytics script from a custom domain _not on a blocklist_.
 
 ## Showcase
 
