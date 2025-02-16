@@ -39,7 +39,7 @@
 	<script
 		defer
 		src="https://umami.doomscheme.com/script.js"
-		data-website-id="1e037c3f-08ed-4a5f-8b08-daa496e50e95"></script>
+		data-website-id="28c1e295-2e54-4320-b55c-f2cd6f130d2b"></script>
 </svelte:head>
 <div class="relative mx-auto flex h-full min-h-screen w-full flex-col items-start">
 	<Header />
