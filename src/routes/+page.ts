@@ -2,10 +2,12 @@
 import type { PageLoad } from './$types';
 import type { FinalizedItem } from '$types/markdown/Item';
 
+const FEATURED_PROJECT_SLUG = 'leadgeek-v2';
+const SECONDARY_PROJECT_SLUGS = ['transform-writing', 'graphene'];
+
 export const load: PageLoad = async ({ fetch }) => {
-	const [articlesRes, changelogsRes, imagePlaceholdersRes, projectsRes] = await Promise.all([
-		fetch('/api/items/articles?limit=3'),
-		fetch('/api/items/changelogs?limit=3'),
+	const [articlesRes, imagePlaceholdersRes, projectsRes] = await Promise.all([
+		fetch('/api/items/articles?limit=2'),
 		fetch('/api/images', {
 			method: 'POST',
 			headers: {
@@ -15,13 +17,21 @@ export const load: PageLoad = async ({ fetch }) => {
 				images: ['avatar.jpeg'],
 			}),
 		}),
-		fetch('/api/items/projects?limit=3'),
+		fetch('/api/items/projects'),
 	]);
 
 	const articles: FinalizedItem[] = await articlesRes.json();
-	const changelogs: FinalizedItem[] = await changelogsRes.json();
 	const { imagePlaceholders }: { imagePlaceholders: string[] } = await imagePlaceholdersRes.json();
-	const projects: FinalizedItem[] = await projectsRes.json();
+	const allProjects: FinalizedItem[] = await projectsRes.json();
 
-	return { articles, changelogs, imagePlaceholders, projects };
+	const featuredProject =
+		allProjects.find((project) => project.slug === FEATURED_PROJECT_SLUG) ??
+		allProjects.find((project) => project.isFeatured) ??
+		allProjects[0];
+
+	const secondaryProjects = SECONDARY_PROJECT_SLUGS.map((slug) =>
+		allProjects.find((project) => project.slug === slug),
+	).filter((project): project is FinalizedItem => Boolean(project));
+
+	return { articles, featuredProject, imagePlaceholders, projects: secondaryProjects };
 };

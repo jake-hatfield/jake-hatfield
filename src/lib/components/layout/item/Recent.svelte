@@ -18,13 +18,16 @@
 	export let emptyState: EmptyStateType;
 	export let items: FinalizedItem[];
 	export let type: Types;
+
+	// optional props
+	export let heading = `Recent ${type}`;
 </script>
 
 <section class="mt-content">
 	<header
 		class="header border-b-2 border-neutral-900 pb-1.5 md:flex md:items-end md:justify-between"
 	>
-		<h2 class="text-xl font-black md:text-2xl">Recent {type}</h2>
+		<h2 class="text-xl font-black md:text-2xl">{heading}</h2>
 		<Link
 			class="mt-3 md:mt-0"
 			href={`/${kebabCase(type)}`}
