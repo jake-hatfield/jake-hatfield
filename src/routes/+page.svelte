@@ -15,6 +15,7 @@
 	// lib
 	import emptyState from '$lib/metadata/emptyState';
 	import metadata from '$lib/metadata';
+	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// assets
 	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.jpeg?width=832;268&format=webp&srcset';
@@ -29,16 +30,13 @@
 	$: ({ articles, featuredProject, imagePlaceholders, projects } = data);
 
 	// seo
-	const seoProps = {
+	const seoProps = getPageSeoProps({
 		breadcrumbs: [{ title: 'Home', slug: '' }],
-		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription:
 			'Jake Hatfield is a frontend lead at Teak and a self-taught engineer in Houston, TX. Explore featured work, client testimonials, and writing on product development.',
-		readingTime: '5 mins.',
 		slug: '',
 		title: 'Home',
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-	};
+	});
 </script>
 
 <SEO {...seoProps} />

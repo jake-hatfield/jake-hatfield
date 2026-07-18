@@ -15,6 +15,7 @@
 	import Home from 'carbon-icons-svelte/lib/Home.svelte';
 	import InformationSquare from 'carbon-icons-svelte/lib/InformationSquare.svelte';
 	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
+	import Settings from 'carbon-icons-svelte/lib/Settings.svelte';
 
 	// lib
 	import { kebabCase } from '$lib/utilities/string';
@@ -23,6 +24,7 @@
 	const primaryLinks = ['Projects', 'Changelogs', 'Articles'];
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
+		{ href: '/uses', icon: Settings, title: 'Uses' },
 		{ href: '/resume.pdf', icon: Document, title: 'Resume' },
 	];
 
@@ -80,6 +82,7 @@
 			</ul>
 			<div class="lg:hidden">
 				<Button
+					aria-controls="mobile-menu"
 					aria-expanded={isMobileMenuActive}
 					icon={isMobileMenuActive ? Close : Menu}
 					kind="ghost"
@@ -90,11 +93,11 @@
 			</div>
 		</nav>
 		{#if isMobileMenuActive}
-			<nav class="absolute inset-x-0 top-[45px] z-40" in:fly|local>
+			<nav class="absolute inset-x-0 top-[45px] z-40" in:fly|local aria-label="Mobile">
 				<div class="relative">
 					<div class="absolute h-full w-full border-b-2 border-neutral-900 bg-black" />
 
-					<ul class="p-3 ">
+					<ul class="p-3" id="mobile-menu">
 						{#each primaryLinks as link}
 							<li class="mt-1.5 first:mt-0">
 								<Button

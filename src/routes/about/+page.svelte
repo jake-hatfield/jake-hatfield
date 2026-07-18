@@ -7,6 +7,7 @@
 
 	// lib
 	import { creative, future, technical } from '$lib/metadata/skills';
+	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// types
 	import type { PageData } from './$types';
@@ -18,16 +19,12 @@
 	// seo
 	const title = 'About';
 	const slug = 'about';
-	const seoProps = {
-		breadcrumbs: [{ title, slug }],
-		createdAt: '2022-10-06T00:00:00.000+0100',
+	const seoProps = getPageSeoProps({
 		metaDescription:
 			"Learn about Jake Hatfield's story and see what skills he uses to build projects.",
-		readingTime: '5 mins.',
 		slug,
 		title,
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-	};
+	});
 </script>
 
 <SEO {...seoProps} />

@@ -13,6 +13,7 @@ export default {
 	createdAt: '2022-10-06T00:00:00.000+0100',
 	description:
 		"Jake Hatfield's personal website. Check out the thoughts, learnings, and projects currently taking up his time.",
+	updatedAt: '2026-07-18T00:00:00.000+0100',
 	keywords: [
 		'Jake Hatfield',
 		'Jacob Hatfield',

@@ -6,19 +6,16 @@
 
 	// lib
 	import metadata from '$lib/metadata';
+	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// seo
 	const title = 'Uses';
 	const slug = 'uses';
-	const seoProps = {
-		breadcrumbs: [{ title, slug }],
-		createdAt: '2022-10-06T00:00:00.000+0100',
+	const seoProps = getPageSeoProps({
 		metaDescription: 'See what tools Jake Hatfield uses to create projects.',
-		readingTime: '5 mins.',
 		slug,
 		title,
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-	};
+	});
 </script>
 
 <SEO {...seoProps} />
@@ -75,7 +72,7 @@
 		>
 			<div class="mt-3" slot="description">
 				<p>
-					My first 4k monitor. works great for graphic design, video editing, gaming, etc. I spend a
+					My first 4k monitor. Works great for graphic design, video editing, gaming, etc. I spend a
 					lot of time in front of a screen as a byproduct of work, so it's nice for my eyes not to
 					be dying at the end of the day.
 				</p>

@@ -19,4 +19,9 @@ export default {
 		icon: AppDeveloper,
 		title: 'No projects',
 	},
+	tags: {
+		description: 'Try browsing projects, articles, or changelogs instead',
+		icon: Contract,
+		title: 'Nothing here',
+	},
 };
