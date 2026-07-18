@@ -107,10 +107,10 @@ const findImportPath = (imports: Record<string, MarkdownImporter>, slug: string)
 const getTypeFromPath = (path: string) => path.split('markdown/')[1].split('/')[0] as Types;
 
 const buildListItem = (path: string, item: MarkdownModule): FinalizedItem => {
-	const contentForReadingTime = item.metadata.summary || item.metadata.description || '';
+	const output = item.default.render();
 
 	return {
-		readingTime: readingTime(contentForReadingTime).text,
+		readingTime: readingTime(output.html).text,
 		slug: formatPath(path),
 		tag: kebabCase(item.metadata.tag),
 		type: getTypeFromPath(path),
