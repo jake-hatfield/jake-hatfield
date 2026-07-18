@@ -2,6 +2,8 @@
 	// icons
 	import Launch from 'carbon-icons-svelte/lib/Launch.svelte';
 
+	import { isStaticAssetPath } from '$lib/utilities/navigation';
+
 	// types
 	import type ProgressBarRound from 'carbon-icons-svelte/lib/ProgressBarRound.svelte';
 
@@ -21,6 +23,8 @@
 
 	if (icon && isExternal)
 		throw new Error('Link component cannot have an icon and an isExternal status');
+
+	$: reloadPage = isStaticAssetPath(href);
 </script>
 
 {#if disabled}
@@ -41,6 +45,7 @@
 		class={`header ${isBlock ? 'inline-block' : 'inline'} ${
 			isUnderlined ? 'link-underline' : 'link'
 		} ${icon || isExternal ? 'mr-0.5' : ''} ${$$props.class ? $$props.class : ''}`}
+		data-sveltekit-reload={reloadPage || undefined}
 		{href}
 		on:click={onClick}
 		rel={`${isExternal ? 'noopener noreferrer' : ''}${isNoFollow ? ' nofollow' : ''}`}

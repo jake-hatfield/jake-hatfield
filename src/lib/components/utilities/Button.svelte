@@ -5,6 +5,7 @@
 
 	// lib
 	import { handleClickOutside } from '$lib/utilities/click';
+	import { isStaticAssetPath } from '$lib/utilities/navigation';
 
 	// types
 	import type ProgressBarRound from 'carbon-icons-svelte/lib/ProgressBarRound.svelte';
@@ -75,12 +76,14 @@
 	const commonIconSize = iconSize ? iconSize : size === 'sm' || size === 'field' ? 16 : 18;
 
 	$: isInactive = loading || disabled;
+	$: reloadPage = href ? isStaticAssetPath(href) : false;
 </script>
 
 <div class="relative inline" use:handleClickOutside={clickOutside}>
 	{#if href}
 		<a
 			aria-label={type === 'icon' ? title : ''}
+			data-sveltekit-reload={reloadPage || undefined}
 			{href}
 			on:mouseenter={() => {
 				isTooltipActive = true;
