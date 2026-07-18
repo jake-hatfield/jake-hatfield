@@ -14,6 +14,10 @@
 
 	// styles
 	import '$assets/app.css';
+	import '@fontsource/ibm-plex-mono/400.css';
+	import '@fontsource/ibm-plex-mono/600.css';
+	import '@fontsource/ibm-plex-sans/400.css';
+	import '@fontsource/ibm-plex-sans/600.css';
 	import '@fontsource/silkscreen';
 
 	// types
