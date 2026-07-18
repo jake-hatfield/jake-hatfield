@@ -34,7 +34,7 @@
 		breadcrumbs: [{ title: 'Home', slug: '' }],
 		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription:
-			'Jake Hatfield is a self-taught full-stack engineer in Houston, TX. Explore featured work, client testimonials, and writing on product development.',
+			'Jake Hatfield is a frontend lead at Teak and a self-taught engineer in Houston, TX. Explore featured work, client testimonials, and writing on product development.',
 		readingTime: '5 mins.',
 		slug: '',
 		title: 'Home',
@@ -53,11 +53,19 @@
 			<h1 class="header pt-3 text-3xl font-black">Jake Hatfield</h1>
 		</header>
 		<p class="mt-5">
-			I'm a self-taught full-stack engineer in Houston, TX who designs and ships digital products
-			from zero to production. <span role="img" aria-label="Pin emoji">📌</span>
+			I'm a self-taught engineer in Houston, TX who designs and ships digital products from zero to
+			production. <span role="img" aria-label="Pin emoji">📌</span>
 		</p>
 		<p class="mt-3">
-			<mark>Open to full-time roles and select freelance projects.</mark> This site is where I share
+			<mark
+				>I'm a frontend lead at <Link
+					href="https://helloteak.com"
+					isExternal
+					isUnderlined
+					title="Teak"
+				/>.</mark
+			>
+			This site is where I share
 			<Link href="/projects" isUnderlined title="projects" />, <Link
 				href="/articles"
 				isUnderlined
@@ -67,10 +75,10 @@
 		<div class="mt-6 flex flex-wrap gap-3">
 			<Button href="/resume.pdf" icon={ArrowRight} kind="secondary" title="View my resume" />
 			<Button
-				href={`mailto:${metadata.email}?subject=Let's%20work%20together`}
+				href={`mailto:${metadata.email}`}
 				icon={SendAltFilled}
 				kind="primary"
-				title="Get in touch"
+				title="Say hello"
 			/>
 		</div>
 	</div>
@@ -110,15 +118,10 @@
 		<h2 class="header text-2xl font-black">Let's connect</h2>
 	</header>
 	<p class="text-neutral-200">
-		Want to talk about a role, a project, or just say hello? I'd love to hear from you.
+		Have a question, want to collaborate, or just want to say hi? I'd love to hear from you.
 	</p>
 	<div class="mt-5 flex flex-wrap gap-3">
-		<Button
-			href={`mailto:${metadata.email}?subject=Let's%20work%20together`}
-			icon={SendAltFilled}
-			kind="primary"
-			title="Email me"
-		/>
+		<Button href={`mailto:${metadata.email}`} icon={SendAltFilled} kind="primary" title="Email me" />
 		<Button href="/about" icon={ArrowRight} kind="secondary" title="About me" />
 		<Button href="/resume.pdf" icon={ArrowRight} kind="ghost" title="View resume" />
 	</div>
