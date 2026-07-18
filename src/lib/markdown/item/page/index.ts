@@ -2,41 +2,29 @@
 import { error } from '@sveltejs/kit';
 
 // lib
-import { formatPath, getImports } from '$lib/markdown';
+import { getItemModule, typeGuardPost } from '$lib/markdown';
 
 // types
-import type { FinalizedItem, Types } from '$types/markdown/Item';
+import type { Types } from '$types/markdown/Item';
 
-export default (type: Types, event) => {
-	// Get items' info
-	const imports = getImports(type);
-
-	const items: FinalizedItem[] = [];
-
-	// Get the posts' slugs
-	for (const path in imports) {
-		const item = imports[path];
-		const i = { item, slug: formatPath(path) };
-
-		items.push(i);
+export default async (type: Types, event) => {
+	if (!typeGuardPost(type)) {
+		throw error(404, 'Could not load item');
 	}
 
-	// Find the post with the slug
-	const filteredItem = items.find((item) => {
-		return (
-			item.slug.toLowerCase() ===
-			`${
-				event.params.category ? `${event.params.category.toLowerCase()}/` : ''
-			}${event.params.slug.toLowerCase()}`
-		);
-	});
+	const slug = event.params.slug?.toLowerCase();
 
-	if (!filteredItem) {
-		throw error(500, 'Could not load item');
+	if (!slug) {
+		throw error(404, 'Could not load item');
+	}
+
+	const module = await getItemModule(type, slug);
+
+	if (!module) {
+		throw error(404, 'Could not load item');
 	}
 
 	return {
-		// Tell page to load that post's module
-		page: filteredItem.item.default,
+		page: module.default,
 	};
 };

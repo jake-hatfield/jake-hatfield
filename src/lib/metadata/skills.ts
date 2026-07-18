@@ -1,166 +1,78 @@
 // assets
-import LogoAdobeAfterEffects from '$assets/images/vectors/LogoAdobeAfterEffects.svelte';
-import LogoAdobeIllustrator from '$assets/images/vectors/LogoAdobeIllustrator.svelte';
-import LogoAdobePhotoshop from '$assets/images/vectors/LogoAdobePhotoshop.svelte';
-import LogoAdobePremierePro from '$assets/images/vectors/LogoAdobePremierePro.svelte';
-import LogoAdobeXD from '$assets/images/vectors/LogoAdobeXD.svelte';
-import LogoAngular from '$assets/images/vectors/LogoAngular.svelte';
-import LogoCSS from '$assets/images/vectors/LogoCSS.svelte';
-import LogoD3JS from '$assets/images/vectors/LogoD3JS.svelte';
-import LogoDjango from '$assets/images/vectors/LogoDjango.svelte';
-import LogoDocker from '$assets/images/vectors/LogoDocker.svelte';
-import LogoElixir from '$assets/images/vectors/LogoElixir.svelte';
-import LogoExpo from '$assets/images/vectors/LogoExpo.svelte';
-import LogoExpress from '$assets/images/vectors/LogoExpress.svelte';
-import LogoFathom from '$assets/images/vectors/LogoFathom.svelte';
-import LogoFigma from '$assets/images/vectors/LogoFigma.svelte';
-import LogoFirebase from '$assets/images/vectors/LogoFirebase.svelte';
-import LogoGatsby from '$assets/images/vectors/LogoGatsby.svelte';
-import LogoGraphQL from '$assets/images/vectors/LogoGraphQL.svelte';
-import LogoGit from '$assets/images/vectors/LogoGit.svelte';
-import LogoGithubActions from '$assets/images/vectors/LogoGithubActions.svelte';
-import LogoGo from '$assets/images/vectors/LogoGo.svelte';
-import LogoGoogleAds from '$assets/images/vectors/LogoGoogleAds.svelte';
-import LogoGoogleAnalytics from '$assets/images/vectors/LogoGoogleAnalytics.svelte';
-import LogoHeroku from '$assets/images/vectors/LogoHeroku.svelte';
-import LogoHTML from '$assets/images/vectors/LogoHTML.svelte';
-import LogoJavaScript from '$assets/images/vectors/LogoJavaScript.svelte';
-import LogoJest from '$assets/images/vectors/LogoJest.svelte';
-import LogoJquery from '$assets/images/vectors/LogoJquery.svelte';
-import LogoKubernetes from '$assets/images/vectors/LogoKubernetes.svelte';
-import LogoMaizzle from '$assets/images/vectors/LogoMaizzle.svelte';
-import LogoMongoDB from '$assets/images/vectors/LogoMongoDB.svelte';
-import LogoNestJs from '$assets/images/vectors/LogoNestJs.svelte';
-import LogoNetlify from '$assets/images/vectors/LogoNetlify.svelte';
-import LogoNextJS from '$assets/images/vectors/LogoNextJS.svelte';
-import LogoNgrok from '$assets/images/vectors/LogoNgrok.svelte';
-import LogoNodeJS from '$assets/images/vectors/LogoNodeJS.svelte';
-import LogoOpenAI from '$assets/images/vectors/LogoOpenAI.svelte';
-import LogoPHP from '$assets/images/vectors/LogoPHP.svelte';
-import LogoPlaywright from '$assets/images/vectors/LogoPlaywright.svelte';
-import LogoPostgres from '$assets/images/vectors/LogoPostgres.svelte';
-import LogoPostman from '$assets/images/vectors/LogoPostman.svelte';
-import LogoPrisma from '$assets/images/vectors/LogoPrisma.svelte';
-import LogoPython from '$assets/images/vectors/LogoPython.svelte';
-import LogoRailway from '$assets/images/vectors/LogoRailway.svelte';
-import LogoReact from '$assets/images/vectors/LogoReact.svelte';
-import LogoRedux from '$assets/images/vectors/LogoRedux.svelte';
-import LogoSentry from '$assets/images/vectors/LogoSentry.svelte';
-import LogoSlack from '$assets/images/vectors/LogoSlack.svelte';
-import LogoStripe from '$assets/images/vectors/LogoStripe.svelte';
-import LogoSupabase from '$assets/images/vectors/LogoSupabase.svelte';
-import LogoSvelte from '$assets/images/vectors/LogoSvelte.svelte';
-import LogoTailwindCSS from '$assets/images/vectors/LogoTailwindCSS.svelte';
-import LogoTestingLibrary from '$assets/images/vectors/LogoTestingLibrary.svelte';
-import LogoTwilio from '$assets/images/vectors/LogoTwilio.svelte';
-import LogoTypeScript from '$assets/images/vectors/LogoTypeScript.svelte';
-import LogoVercel from '$assets/images/vectors/LogoVercel.svelte';
-import LogoVisualStudioCode from '$assets/images/vectors/LogoVisualStudioCode.svelte';
-import LogoVitest from '$assets/images/vectors/LogoVitest.svelte';
-import LogoVue from '$assets/images/vectors/LogoVue.svelte';
-import LogoWordpress from '$assets/images/vectors/LogoWordpress.svelte';
+import type { ComponentType, SvelteComponent } from 'svelte';
+
+type SkillIcon = ComponentType<SvelteComponent<{ height?: number; width?: number }>>;
+
+const skill = (title: string, icon: () => Promise<{ default: SkillIcon }>) => ({
+	title,
+	icon,
+});
 
 export const future = [
-	{ icon: LogoGo, title: 'Go' },
-	{ icon: LogoElixir, title: 'Elixir' },
+	skill('Go', () => import('$assets/images/vectors/LogoGo.svelte')),
+	skill('Elixir', () => import('$assets/images/vectors/LogoElixir.svelte')),
 ];
 
 export const technical = [
-	{ icon: LogoHTML, title: 'HTML' },
-	{ icon: LogoCSS, title: 'CSS' },
-	{ icon: LogoJavaScript, title: 'JavaScript' },
-	{ icon: LogoTypeScript, title: 'TypeScript' },
-	{ icon: LogoJquery, title: 'jQuery' },
-	{ icon: LogoPHP, title: 'PHP' },
-	{ icon: LogoPython, title: 'Python' },
-	{ icon: LogoNodeJS, title: 'Node.js' },
-	{ icon: LogoExpress, title: 'Express.js' },
-	{ icon: LogoNestJs, title: 'NestJS' },
-	{ icon: LogoDjango, title: 'Django' },
-	{ icon: LogoReact, title: 'React / React Native' },
-	{ icon: LogoRedux, title: 'Redux' },
-	{ icon: LogoNextJS, title: 'Next.js' },
-	{ icon: LogoGatsby, title: 'Gatsby' },
-	{ icon: LogoSvelte, title: 'Svelte / SvelteKit' },
-	{ icon: LogoVue, title: 'Vue' },
-	{ icon: LogoAngular, title: 'Angular' },
-	{ icon: LogoTailwindCSS, title: 'TailwindCSS' },
-	{ icon: LogoGraphQL, title: 'GraphQL' },
-	{ icon: LogoPrisma, title: 'Prisma' },
-	{ icon: LogoSupabase, title: 'Supabase' },
-	{ icon: LogoFirebase, title: 'Firebase' },
-	{ icon: LogoMongoDB, title: 'MongoDB' },
-	{ icon: LogoPostgres, title: 'PostgreSQL' },
-	{ icon: LogoVitest, title: 'Vitest' },
-	{ icon: LogoJest, title: 'Jest' },
-	{ icon: LogoPlaywright, title: 'Playwright' },
-	{ icon: LogoTestingLibrary, title: 'Testing Library' },
-	{ icon: LogoD3JS, title: 'D3.js' },
-	{ icon: LogoMaizzle, title: 'Maizzle' },
-	{ icon: LogoOpenAI, title: 'OpenAI' },
-	{ icon: LogoExpo, title: 'Expo' },
-	{ icon: LogoNgrok, title: 'ngrok' },
-	{ icon: LogoGit, title: 'Git' },
-	{ icon: LogoGithubActions, title: 'Github Actions' },
-	{ icon: LogoDocker, title: 'Docker' },
-	{ icon: LogoKubernetes, title: 'Kubernetes' },
-	{ icon: LogoSentry, title: 'Sentry' },
-	{ icon: LogoHeroku, title: 'Heroku' },
-	{ icon: LogoNetlify, title: 'Netlify' },
-	{ icon: LogoVercel, title: 'Vercel' },
-	{ icon: LogoRailway, title: 'Railway' },
-	{ icon: LogoWordpress, title: 'WordPress' },
-	{ icon: LogoStripe, title: 'Stripe' },
-	{ icon: LogoTwilio, title: 'Twilio' },
+	skill('HTML', () => import('$assets/images/vectors/LogoHTML.svelte')),
+	skill('CSS', () => import('$assets/images/vectors/LogoCSS.svelte')),
+	skill('JavaScript', () => import('$assets/images/vectors/LogoJavaScript.svelte')),
+	skill('TypeScript', () => import('$assets/images/vectors/LogoTypeScript.svelte')),
+	skill('jQuery', () => import('$assets/images/vectors/LogoJquery.svelte')),
+	skill('PHP', () => import('$assets/images/vectors/LogoPHP.svelte')),
+	skill('Python', () => import('$assets/images/vectors/LogoPython.svelte')),
+	skill('Node.js', () => import('$assets/images/vectors/LogoNodeJS.svelte')),
+	skill('Express.js', () => import('$assets/images/vectors/LogoExpress.svelte')),
+	skill('NestJS', () => import('$assets/images/vectors/LogoNestJs.svelte')),
+	skill('Django', () => import('$assets/images/vectors/LogoDjango.svelte')),
+	skill('React / React Native', () => import('$assets/images/vectors/LogoReact.svelte')),
+	skill('Redux', () => import('$assets/images/vectors/LogoRedux.svelte')),
+	skill('Next.js', () => import('$assets/images/vectors/LogoNextJS.svelte')),
+	skill('Gatsby', () => import('$assets/images/vectors/LogoGatsby.svelte')),
+	skill('Svelte / SvelteKit', () => import('$assets/images/vectors/LogoSvelte.svelte')),
+	skill('Vue', () => import('$assets/images/vectors/LogoVue.svelte')),
+	skill('Angular', () => import('$assets/images/vectors/LogoAngular.svelte')),
+	skill('TailwindCSS', () => import('$assets/images/vectors/LogoTailwindCSS.svelte')),
+	skill('GraphQL', () => import('$assets/images/vectors/LogoGraphQL.svelte')),
+	skill('Prisma', () => import('$assets/images/vectors/LogoPrisma.svelte')),
+	skill('Supabase', () => import('$assets/images/vectors/LogoSupabase.svelte')),
+	skill('Firebase', () => import('$assets/images/vectors/LogoFirebase.svelte')),
+	skill('MongoDB', () => import('$assets/images/vectors/LogoMongoDB.svelte')),
+	skill('PostgreSQL', () => import('$assets/images/vectors/LogoPostgres.svelte')),
+	skill('Vitest', () => import('$assets/images/vectors/LogoVitest.svelte')),
+	skill('Jest', () => import('$assets/images/vectors/LogoJest.svelte')),
+	skill('Playwright', () => import('$assets/images/vectors/LogoPlaywright.svelte')),
+	skill('Testing Library', () => import('$assets/images/vectors/LogoTestingLibrary.svelte')),
+	skill('D3.js', () => import('$assets/images/vectors/LogoD3JS.svelte')),
+	skill('Maizzle', () => import('$assets/images/vectors/LogoMaizzle.svelte')),
+	skill('OpenAI', () => import('$assets/images/vectors/LogoOpenAI.svelte')),
+	skill('Expo', () => import('$assets/images/vectors/LogoExpo.svelte')),
+	skill('ngrok', () => import('$assets/images/vectors/LogoNgrok.svelte')),
+	skill('Git', () => import('$assets/images/vectors/LogoGit.svelte')),
+	skill('Github Actions', () => import('$assets/images/vectors/LogoGithubActions.svelte')),
+	skill('Docker', () => import('$assets/images/vectors/LogoDocker.svelte')),
+	skill('Kubernetes', () => import('$assets/images/vectors/LogoKubernetes.svelte')),
+	skill('Sentry', () => import('$assets/images/vectors/LogoSentry.svelte')),
+	skill('Heroku', () => import('$assets/images/vectors/LogoHeroku.svelte')),
+	skill('Netlify', () => import('$assets/images/vectors/LogoNetlify.svelte')),
+	skill('Vercel', () => import('$assets/images/vectors/LogoVercel.svelte')),
+	skill('Railway', () => import('$assets/images/vectors/LogoRailway.svelte')),
+	skill('WordPress', () => import('$assets/images/vectors/LogoWordpress.svelte')),
+	skill('Stripe', () => import('$assets/images/vectors/LogoStripe.svelte')),
+	skill('Twilio', () => import('$assets/images/vectors/LogoTwilio.svelte')),
 ];
 
 export const creative = [
-	{
-		icon: LogoPostman,
-		title: 'Postman',
-	},
-	{
-		icon: LogoAdobeAfterEffects,
-		title: 'Adobe After Effects',
-	},
-	{
-		icon: LogoAdobeIllustrator,
-		title: 'Adobe Illustrator',
-	},
-	{
-		icon: LogoAdobePhotoshop,
-		title: 'Adobe Photoshop',
-	},
-	{
-		icon: LogoAdobePremierePro,
-		title: 'Adobe Premiere Pro',
-	},
-	{
-		icon: LogoAdobeXD,
-		title: 'Adobe XD',
-	},
-	{
-		icon: LogoFigma,
-		title: 'Figma',
-	},
-	{
-		icon: LogoGoogleAds,
-		title: 'Google Ads',
-	},
-	{
-		icon: LogoGoogleAnalytics,
-		title: 'Google Analytics',
-	},
-	{
-		icon: LogoFathom,
-		title: 'Fathom Analytics',
-	},
-	{
-		icon: LogoSlack,
-		title: 'Slack',
-	},
-	{
-		icon: LogoVisualStudioCode,
-		title: 'Visual Studio Code',
-	},
+	skill('Postman', () => import('$assets/images/vectors/LogoPostman.svelte')),
+	skill('Adobe After Effects', () => import('$assets/images/vectors/LogoAdobeAfterEffects.svelte')),
+	skill('Adobe Illustrator', () => import('$assets/images/vectors/LogoAdobeIllustrator.svelte')),
+	skill('Adobe Photoshop', () => import('$assets/images/vectors/LogoAdobePhotoshop.svelte')),
+	skill('Adobe Premiere Pro', () => import('$assets/images/vectors/LogoAdobePremierePro.svelte')),
+	skill('Adobe XD', () => import('$assets/images/vectors/LogoAdobeXD.svelte')),
+	skill('Figma', () => import('$assets/images/vectors/LogoFigma.svelte')),
+	skill('Google Ads', () => import('$assets/images/vectors/LogoGoogleAds.svelte')),
+	skill('Google Analytics', () => import('$assets/images/vectors/LogoGoogleAnalytics.svelte')),
+	skill('Fathom Analytics', () => import('$assets/images/vectors/LogoFathom.svelte')),
+	skill('Slack', () => import('$assets/images/vectors/LogoSlack.svelte')),
+	skill('Visual Studio Code', () => import('$assets/images/vectors/LogoVisualStudioCode.svelte')),
 ];

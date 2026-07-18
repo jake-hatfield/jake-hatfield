@@ -2,6 +2,7 @@
 	// components
 	import Animated from '$components/layout/Animated.svelte';
 	import Header from '$components/layout/item/Header.svelte';
+	import Thumbnail from '$components/layout/item/Thumbnail.svelte';
 	import Link from '$components/utilities/Link.svelte';
 
 	// icons
@@ -23,17 +24,14 @@
 	$: href = `/${type}/${slug}`;
 </script>
 
-<Animated class="h-[736px] lg:h-[564px]">
+<Animated>
 	<li class="mt-5 border-2 border-neutral-800 bg-neutral-900">
 		<a
 			aria-label={`View the ${title} ${handlePluralization.singular(type)}`}
 			class="group relative block h-full max-h-64 w-full overflow-hidden transition ease-in-out lg:max-h-80"
 			{href}
 		>
-			<div
-				class="h-64 border-b-2 border-neutral-800 bg-cover bg-center duration-500 group-hover:scale-110 lg:h-80 "
-				style={`background-image: url("/images/items/${image}")`}
-			/>
+			<Thumbnail alt="" {image} loading="lazy" />
 			<div class="absolute inset-0 bg-lime-400 opacity-0 duration-300 group-hover:opacity-30" />
 		</a>
 		<div class="p-5">

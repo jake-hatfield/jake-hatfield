@@ -7,26 +7,30 @@ import { kebabCase } from '$lib/utilities/string';
 // types
 import type { FinalizedItem, Types } from '$types/markdown/Item';
 
-// helpers to import the relevant markdown folder
-const articles = import.meta.glob('$lib/markdown/articles/**/*.md', { eager: true });
-const changelogs = import.meta.glob('$lib/markdown/changelogs/**/*.md', { eager: true });
-const projects = import.meta.glob('$lib/markdown/projects/**/*.md', { eager: true });
+type MarkdownModule = {
+	default: {
+		render: () => { html: string; css: { code: string; map: null }; head: string };
+	};
+	metadata: FinalizedItem;
+};
 
-export default (type: Types, limit: string | null, hidden = false) => {
-	// get the requested imports
-	const imports = getImports(type);
+type MarkdownImporter = () => Promise<MarkdownModule>;
 
-	// get the items from those imports
-	const items = getItemsFromImports(imports);
+const articles = import.meta.glob<MarkdownModule>('$lib/markdown/articles/**/*.md');
+const changelogs = import.meta.glob<MarkdownModule>('$lib/markdown/changelogs/**/*.md');
+const projects = import.meta.glob<MarkdownModule>('$lib/markdown/projects/**/*.md');
+const allMarkdown = import.meta.glob<MarkdownModule>('$lib/markdown/**/*.md');
+
+export default async (type: Types, limit: string | null, hidden = false) => {
+	const imports = getImportGlob(type);
+	const items = await getListItemsFromImports(imports);
 
 	return filterAndSortItems(items, limit, hidden);
 };
 
 export const filterAndSortItems = (items: FinalizedItem[], limit: string | null, hidden: boolean) =>
 	items
-		// don't show hidden items
 		.filter((item) => (hidden ? true : !item.hidden))
-		// order items by published date
 		.sort((a, b) =>
 			new Date(a.createdAt).getTime() > new Date(b.createdAt).getTime()
 				? -1
@@ -34,24 +38,20 @@ export const filterAndSortItems = (items: FinalizedItem[], limit: string | null,
 				? 1
 				: 0,
 		)
-		// order items by featured status
 		.sort((a, b) => (a.isFeatured === b.isFeatured ? 0 : a.isFeatured ? -1 : 1))
-		// limit the number of items as requested
 		.slice(0, limit ? +limit : items.length);
 
 export const formatPath = (path: string) =>
 	path.slice(0, path.lastIndexOf('/')).split(`/`).splice(5).join('/');
 
-export const getAllItems = (hidden = false) => {
-	const allImports = import.meta.glob('$lib/markdown/**/*.md', { eager: true });
+export const getAllItems = async (hidden = false) => {
+	const items = await getListItemsFromImports(allMarkdown);
 
-	const allItems = getItemsFromImports(allImports);
-
-	return filterAndSortItems(allItems, null, hidden);
+	return filterAndSortItems(items, null, hidden);
 };
 
-export const getAllCategories = () => {
-	const items = getAllItems();
+export const getAllCategories = async () => {
+	const items = await getAllItems();
 
 	return groupItemsByTags(
 		items
@@ -62,61 +62,88 @@ export const getAllCategories = () => {
 	);
 };
 
-export const getCategory = (category: string) => {
-	const categories = getAllCategories();
+export const getCategory = async (category: string) => {
+	const categories = await getAllCategories();
 
 	return categories.find((c) => c.tag === category);
 };
 
-export const getImports = (type: Types) => {
-	// import the relevant markdown folder
-	let imports: Record<string, unknown> = {};
+export const getItemBySlug = async (type: Types, slug: string) => {
+	const imports = getImportGlob(type);
+	const path = findImportPath(imports, slug);
 
-	// assign the imports to the type requested
-	switch (type) {
-		case 'articles':
-			imports = articles;
-			break;
-		case 'changelogs':
-			imports = changelogs;
-			break;
-		case 'projects':
-			imports = projects;
-			break;
-		default:
-			break;
-	}
+	if (!path) return null;
 
-	return imports;
+	const item = await imports[path]();
+
+	return buildFullItem(path, item);
 };
 
-const getItemsFromImports = (imports: Record<string, unknown>) => {
-	const items: FinalizedItem[] = [];
+export const getItemModule = async (type: Types, slug: string) => {
+	const imports = getImportGlob(type);
+	const path = findImportPath(imports, slug);
 
-	// loop over the files in the found folder
-	for (const path in imports) {
-		const item = imports[path];
+	if (!path) return null;
 
-		if (item) {
-			// render the content of the item
-			const output = item.default.render();
+	return imports[path]();
+};
 
-			// estimate the reading time
-			const unformattedType = path.split('markdown/')[1].split('/')[0];
-
-			// add it to the items variable with the slug, reading time, and rendered output
-			items.push({
-				readingTime: readingTime(output.html).text,
-				slug: formatPath(path),
-				tag: kebabCase(item.metadata.tag),
-				type: unformattedType,
-				...item.metadata,
-				...output,
-			});
-		}
+export const getImportGlob = (type: Types) => {
+	switch (type) {
+		case 'articles':
+			return articles;
+		case 'changelogs':
+			return changelogs;
+		case 'projects':
+			return projects;
+		default:
+			return {};
 	}
+};
 
-	return items;
+const findImportPath = (imports: Record<string, MarkdownImporter>, slug: string) =>
+	Object.keys(imports).find((path) => formatPath(path).toLowerCase() === slug.toLowerCase());
+
+const getTypeFromPath = (path: string) => path.split('markdown/')[1].split('/')[0] as Types;
+
+const buildListItem = (path: string, item: MarkdownModule): FinalizedItem => {
+	const output = item.default.render();
+
+	return {
+		readingTime: readingTime(output.html).text,
+		slug: formatPath(path),
+		tag: kebabCase(item.metadata.tag),
+		type: getTypeFromPath(path),
+		...item.metadata,
+		html: '',
+		css: { code: '', map: null },
+		head: '',
+	};
+};
+
+const buildFullItem = (path: string, item: MarkdownModule): FinalizedItem => {
+	const output = item.default.render();
+
+	return {
+		readingTime: readingTime(output.html).text,
+		slug: formatPath(path),
+		tag: kebabCase(item.metadata.tag),
+		type: getTypeFromPath(path),
+		...item.metadata,
+		...output,
+	};
+};
+
+const getListItemsFromImports = async (imports: Record<string, MarkdownImporter>) => {
+	const entries = await Promise.all(
+		Object.entries(imports).map(async ([path, loadModule]) => {
+			const item = await loadModule();
+
+			return buildListItem(path, item);
+		}),
+	);
+
+	return entries;
 };
 
 export const groupItemsByTags = (items: { tag: string; item: FinalizedItem }[]) =>
@@ -124,19 +151,16 @@ export const groupItemsByTags = (items: { tag: string; item: FinalizedItem }[]) 
 		const foundValue = acc.find((a) => a.tag === tag);
 
 		if (foundValue) {
-			// add onto the existing category in the array
 			foundValue.items.push(item);
 		} else {
-			// create a new category in the array
 			acc.push({
 				tag,
 				items: [item],
 			});
 		}
-		// if tag exists, add the item to the items array for that tag
-		// otherwise create a new tag to the accumulator
+
 		return acc;
-	}, []);
+	}, [] as { tag: string; items: FinalizedItem[] }[]);
 
 export const typeGuardPost = (type: string): type is Types => {
 	return ['articles', 'changelogs', 'projects'].includes(type);
