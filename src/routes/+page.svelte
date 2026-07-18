@@ -18,8 +18,7 @@
 	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// assets
-	import AvatarSrcsetWebp from '$assets/images/rasters/avatar.jpeg?width=832;268&format=webp&srcset';
-	import AvatarSrcset from '$assets/images/rasters/avatar.jpeg?width=832;268&srcset';
+	import AvatarWebp from '$assets/images/rasters/avatar.jpeg?width=832&format=webp';
 	import Avatar from '$assets/images/rasters/avatar.jpeg?width=832';
 
 	// types
@@ -27,9 +26,7 @@
 
 	// props
 	export let data: PageData;
-	$: ({ articles, featuredProject, imagePlaceholders, projects } = data);
-
-	// seo
+	$: ({ articles, featuredProject, projects } = data);
 	const seoProps = getPageSeoProps({
 		breadcrumbs: [{ title: 'Home', slug: '' }],
 		metaDescription:
@@ -77,10 +74,9 @@
 			alt="Jake Hatfield"
 			height={300}
 			loading="eager"
-			placeholder={imagePlaceholders[0]}
 			sources={[
-				{ srcset: AvatarSrcsetWebp, type: 'image/webp' },
-				{ srcset: AvatarSrcset, type: 'image/jpeg' },
+				{ srcset: AvatarWebp, type: 'image/webp' },
+				{ srcset: Avatar, type: 'image/jpeg' },
 			]}
 			src={Avatar}
 			width={268}

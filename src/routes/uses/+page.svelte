@@ -46,22 +46,35 @@
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Workstation</h2>
 	</header>
+	<p class="mt-5">
+		I code primarily on an M1 Mac these days and keep my desktop around for gaming. Most of the
+		peripherals below live on the same desk setup.
+	</p>
+
+	<h3 class="header mt-8 text-xl font-black">Daily driver</h3>
+	<ul class="mt-5">
+		<Use href="https://www.apple.com/macbook-air/" title="Apple M1 MacBook Air" type="Laptop">
+			<div class="mt-3" slot="description">
+				<p>
+					My primary machine for day-to-day engineering work. It's quiet, fast enough for everything I
+					ship, and easy to move around the house when I want a change of scenery.
+				</p>
+			</div>
+		</Use>
+	</ul>
+
+	<h3 class="header mt-content text-xl font-black">Gaming setup</h3>
 	<ul class="mt-5">
 		<Use
 			href="https://pcpartpicker.com/list/RJDHrD"
-			title="i9-9900k, GeForce RTX 3060TI, 32 GB of RAM, 2 TB m.2 SSD"
+			title="i9-9900k, GeForce RTX 3060 Ti, 32 GB of RAM, 2 TB m.2 SSD"
 			type="PC"
 		>
 			<div class="mt-3" slot="description">
 				<p>
-					This is the first computer I ever built, and it's so much fun to use. Being present for
-					and having to deal with <Link
-						href="https://youtu.be/UNcx9JdC9VM?t=238"
-						isExternal
-						isUnderlined
-						title="this nonsense"
-					/> to get my GPU was worth. Prior to this I was using a laptop that got hotter than the surface
-					of the sun while browsing the internet, so it's a big upgrade for me.
+					The first computer I ever built, and still a blast to use. These days it's mostly reserved
+					for gaming instead of development, but it was a huge upgrade over the laptop that used to
+					get hotter than the surface of the sun while browsing the internet.
 				</p>
 			</div>
 		</Use>
@@ -266,19 +279,18 @@
 		<h2 class="header text-2xl font-black">Deployment</h2>
 	</header>
 	<ul class="mt-5">
-		<Use href="https://www.netlify.com/" title="Netlify" type="Hosting">
-			<div class="mt-3" slot="description">
-				<p>
-					I've hosted most of my Gatsby.js projects here, but I'm slowly making the switch to Vercel
-					for static sites since they have a better free plan and d a r k m o d e.
-				</p>
-			</div>
-		</Use>
 		<Use href="https://www.vercel.com/" title="Vercel" type="Hosting">
 			<div class="mt-3" slot="description">
 				<p>
-					Generous free plan, plays nicely with SvelteKit projects. seems to be one of the go-tos
-					with developers for hosting nowadays.
+					My default for SvelteKit projects and static sites. Generous free plan, smooth deploys,
+					and it has been the most reliable host in my stack lately.
+				</p>
+			</div>
+		</Use>
+		<Use href="https://www.netlify.com/" title="Netlify" type="Hosting">
+			<div class="mt-3" slot="description">
+				<p>
+					I still host a few older Gatsby projects here, but most new work has moved to Vercel.
 				</p>
 			</div>
 		</Use>

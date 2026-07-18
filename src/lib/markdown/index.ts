@@ -3,16 +3,10 @@ import { readingTime } from 'reading-time-estimator';
 
 // lib
 import { kebabCase } from '$lib/utilities/string';
+import { renderMarkdownModule, type MarkdownModule } from '$lib/markdown/render';
 
 // types
 import type { FinalizedItem, Types } from '$types/markdown/Item';
-
-type MarkdownModule = {
-	default: {
-		render: () => { html: string; css: { code: string; map: null }; head: string };
-	};
-	metadata: FinalizedItem;
-};
 
 type MarkdownImporter = () => Promise<MarkdownModule>;
 
@@ -107,14 +101,14 @@ const findImportPath = (imports: Record<string, MarkdownImporter>, slug: string)
 const getTypeFromPath = (path: string) => path.split('markdown/')[1].split('/')[0] as Types;
 
 const buildListItem = (path: string, item: MarkdownModule): FinalizedItem => {
-	const output = item.default.render();
+	const output = renderMarkdownModule(item);
 
 	return {
 		readingTime: readingTime(output.html).text,
 		slug: formatPath(path),
-		tag: kebabCase(item.metadata.tag),
+		tag: kebabCase(item.metadata.tag as string),
 		type: getTypeFromPath(path),
-		...item.metadata,
+		...(item.metadata as FinalizedItem),
 		html: '',
 		css: { code: '', map: null },
 		head: '',
@@ -122,14 +116,14 @@ const buildListItem = (path: string, item: MarkdownModule): FinalizedItem => {
 };
 
 const buildFullItem = (path: string, item: MarkdownModule): FinalizedItem => {
-	const output = item.default.render();
+	const output = renderMarkdownModule(item);
 
 	return {
 		readingTime: readingTime(output.html).text,
 		slug: formatPath(path),
-		tag: kebabCase(item.metadata.tag),
+		tag: kebabCase(item.metadata.tag as string),
 		type: getTypeFromPath(path),
-		...item.metadata,
+		...(item.metadata as FinalizedItem),
 		...output,
 	};
 };

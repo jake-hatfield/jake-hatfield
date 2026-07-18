@@ -2,6 +2,7 @@
 import satori from 'satori';
 import { html } from 'satori-html';
 import { Resvg } from '@resvg/resvg-js';
+import { render } from 'svelte/server';
 
 // components
 import OpenGraphImage from '$components/utilities/seo/OpenGraphImage.svelte';
@@ -16,9 +17,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 export const GET: RequestHandler = async ({ url }) => {
 	try {
 		const description = url.searchParams.get('description');
-		// square, rect, or rectAlt
 		let format = url.searchParams.get('format');
-		// type of content on the site, (e.g. "blog", "doc", etc.)
 		const title = url.searchParams.get('title');
 
 		if (!format) format = 'square';
@@ -34,8 +33,10 @@ export const GET: RequestHandler = async ({ url }) => {
 			height = 600;
 		}
 
-		const result = OpenGraphImage.render({ description, format, title });
-		const element = html(result.html);
+		const { body } = render(OpenGraphImage, {
+			props: { description, format, title },
+		});
+		const element = html(body);
 
 		const svg = await satori(element, {
 			fonts: [{ name: 'IBM Plex Mono', data: Buffer.from(IBMPlexMono) }],

@@ -1,10 +1,8 @@
 <script lang="ts">
 	// svelte
+	import { onMount } from 'svelte';
 	import { quadInOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
-
-	// app
-	import { browser } from '$app/environment';
 
 	// packages
 	import { inview } from 'svelte-inview';
@@ -13,27 +11,31 @@
 	import { clamp } from '$lib/utilities/number';
 
 	// state
-	let isInView: boolean;
-	let prefersReducedMotion = true;
+	let isInView = false;
+	let prefersReducedMotion = false;
 
-	if (browser) {
+	onMount(() => {
 		prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	}
+
+		if (prefersReducedMotion) {
+			isInView = true;
+		}
+	});
 </script>
 
 <div
 	use:inview={{ unobserveOnEnter: true, rootMargin: '-50px' }}
-	on:change={({ detail }) => {
+	oninview_change={({ detail }) => {
 		isInView = detail.inView;
 	}}
 >
-	{#if isInView || prefersReducedMotion}
+	{#if isInView}
 		{#if prefersReducedMotion}
 			<slot />
 		{:else}
 			<div
 				in:fade|local={{
-					delay: 300,
+					delay: clamp(Math.floor(Math.random() * 1000), 300, 350),
 					duration: 350,
 					easing: quadInOut,
 				}}
@@ -42,6 +44,6 @@
 			</div>
 		{/if}
 	{:else}
-		<div class={$$props.class ? $$props.class : ''} aria-hidden="true" />
+		<div class={$$props.class ? $$props.class : ''} aria-hidden="true"></div>
 	{/if}
 </div>

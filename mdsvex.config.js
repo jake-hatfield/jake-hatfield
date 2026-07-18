@@ -7,8 +7,13 @@ import rehypeSlug from 'rehype-slug';
 export default {
 	extensions: ['.md'],
 	rehypePlugins: [
-		// Adds 'target' and 'rel' to external links
-		rehypeExternalLinks,
+		[
+			rehypeExternalLinks,
+			{
+				target: '_blank',
+				rel: ['noopener', 'noreferrer'],
+			},
+		],
 		// Adds 'id' attributes to Headings (h1,h2,etc)
 		rehypeSlug,
 		[
