@@ -39,12 +39,12 @@
 	} | null = null;
 	export let isIndexed = true;
 	export let shortMetaDescription = description;
-	export let title = 'Online Arbitrage Lead Marketplace';
+	export let title = siteTitle;
 	export let updatedAt = metadata.createdAt;
 
 	// global page title format
 	const pageTitle = `${title} - ${siteTitle}`;
-	const url = `${siteUrl}/${slug}`;
+	const url = slug ? `${siteUrl}/${slug}` : siteUrl;
 	const imageUrl = encodeURI(
 		`${siteUrl}/api/open-graph?title=${title}&description=${shortMetaDescription}`,
 	);

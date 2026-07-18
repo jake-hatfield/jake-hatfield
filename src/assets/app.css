@@ -143,6 +143,14 @@ html {
 	@apply mono text-3xl font-black leading-snug tracking-tight md:text-4xl;
 }
 
+.primary-header {
+	@apply main-header;
+}
+
+.content-section-text {
+	@apply w-full;
+}
+
 mark,
 .highlight {
 	@apply bg-violet-700 text-lime-400;

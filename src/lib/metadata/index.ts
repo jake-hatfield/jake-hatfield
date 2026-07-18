@@ -6,7 +6,7 @@ export const isDevEnv = () => {
 
 const domain = 'jake-hatfield.com';
 
-const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000' : domain;
+const siteUrl = isDevEnv() ? 'http://127.0.0.1:3000' : `https://${domain}`;
 
 export default {
 	author: 'Jake Hatfield',
@@ -25,7 +25,7 @@ export default {
 	ogLanguage: 'en_US',
 	siteTitle: 'Jake Hatfield',
 	siteShortTitle: 'Jake Hatfield',
-	siteUrl: `https://${siteUrl}`,
+	siteUrl,
 	email: `me@${domain}`,
 	social: {
 		behance: 'https://www.behance.net/jake-hatfield',

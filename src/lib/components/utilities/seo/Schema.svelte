@@ -2,6 +2,9 @@
 	// packages
 	import hash from 'object-hash';
 
+	// lib
+	import metadata from '$lib/metadata';
+
 	// types
 	import type { Image } from '$types/markdown/Image';
 
@@ -25,6 +28,8 @@
 
 	const entityHash = hash({ author }, { algorithm: 'md5' });
 
+	const { description: siteDescription, siteTitle } = metadata;
+
 	const schemaOrgEntity =
 		entityMeta !== null
 			? {
@@ -46,25 +51,18 @@
 			  }
 			: null;
 
-	// ⚠️ important ⚠️: uncomment if using search on the site
-	// const schemaOrgWebsite = {
-	// 	'@type': 'WebSite',
-	// 	'@id': `${siteUrl}/#website`,
-	// 	url: siteUrl,
-	// 	name: siteTitle,
-	// 	description: siteTitleAlt,
-	// 	publisher: {
-	// 		'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-	// 	},
-	// 	potentialAction: [
-	// 		{
-	// 			'@type': 'SearchAction',
-	// 			target: `${siteUrl}/?s={search_term_string}`,
-	// 			'query-input': 'required name=search_term_string',
-	// 		},
-	// 	],
-	// 	inLanguage: siteLanguage,
-	// };
+	// ⚠️ important ⚠️: uncomment potentialAction if using search on the site
+	const schemaOrgWebsite = {
+		'@type': 'WebSite',
+		'@id': `${siteUrl}/#website`,
+		url: siteUrl,
+		name: siteTitle,
+		description: siteDescription,
+		publisher: {
+			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+		},
+		inLanguage: siteLanguage,
+	};
 
 	const schemaOrgImageObject = {
 		'@type': 'ImageObject',
@@ -172,8 +170,7 @@
 	// create an array of included schema items
 	const schemaOrgArray = [
 		schemaOrgEntity,
-		// ⚠️ important ⚠️: uncomment if using search on the site
-		// schemaOrgWebsite,
+		schemaOrgWebsite,
 		schemaOrgImageObject,
 		schemaOrgWebPage,
 		schemaOrgBreadcrumbList,
