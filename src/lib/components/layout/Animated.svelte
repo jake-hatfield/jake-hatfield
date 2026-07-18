@@ -42,6 +42,6 @@
 			</div>
 		{/if}
 	{:else}
-		<div class={$$props.class ? $$props.class : ''} aria-hidden="true" />
+		<div class={$$props.class ? $$props.class : ''} aria-hidden="true"></div>
 	{/if}
 </div>

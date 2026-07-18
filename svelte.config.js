@@ -1,19 +1,11 @@
-// svelte
 import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
-
-// packages
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
-
-// lib
 import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: [
-		mdsvex(mdsvexConfig),
-		preprocess({ postcss: true, preserve: ['module', 'ld+json'] }),
-	],
+	preprocess: [mdsvex(mdsvexConfig), vitePreprocess({ postcss: true })],
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	kit: {
 		adapter: adapter(),

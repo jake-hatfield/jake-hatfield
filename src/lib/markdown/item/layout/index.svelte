@@ -3,6 +3,12 @@
 	import Header from '$components/layout/item/Header.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
 
+	// lib
+	import {
+		getItemImagePath,
+		getItemImageSrcset,
+	} from '$lib/utilities/image/itemHero';
+
 	// types
 	import type { LayoutData } from '.svelte-kit/types/src/routes/$types';
 
@@ -23,13 +29,20 @@
 				<Header {item} />
 			</header>
 			<div>
-				<img
-					class="mt-12 w-full border-2 border-violet-700"
-					src={`/images/items/${item.image}`}
-					alt={`${item.title}'s hero image`}
-					loading="lazy"
-					decoding="async"
-				/>
+				<picture>
+					<source
+						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 960px, 1280px"
+						srcset={getItemImageSrcset(item.image)}
+						type="image/webp"
+					/>
+					<img
+						class="mt-12 w-full border-2 border-violet-700"
+						src={getItemImagePath(item.image)}
+						alt={`${item.title}'s hero image`}
+						decoding="async"
+						loading="lazy"
+					/>
+				</picture>
 			</div>
 			<div class="content">
 				<slot />

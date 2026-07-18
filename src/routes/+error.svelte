@@ -20,13 +20,6 @@
 			poster="/silicon-valley-error.webp"
 		>
 			<source src="/silicon-valley-error.mp4" type="video/mp4" />
-			<img
-				class="w-full"
-				src="/silicon-valley-error.gif"
-				alt="Silicon Valley error gif"
-				loading="lazy"
-				decoding="async"
-			/>
 		</video>
 		<p class="content-uppercase mt-8 text-lime-400">{$page.status}</p>
 		<h1 class="primary-header mt-3">
