@@ -3,6 +3,9 @@
 	import { quadInOut } from 'svelte/easing';
 	import { fade } from 'svelte/transition';
 
+	// app
+	import { browser } from '$app/environment';
+
 	// packages
 	import { inview } from 'svelte-inview';
 
@@ -11,6 +14,11 @@
 
 	// state
 	let isInView: boolean;
+	let prefersReducedMotion = true;
+
+	if (browser) {
+		prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	}
 </script>
 
 <div
@@ -19,17 +27,21 @@
 		isInView = detail.inView;
 	}}
 >
-	{#if isInView}
-		<div
-			in:fade|local={{
-				delay: clamp(Math.floor(Math.random() * 1000), 300, 350),
-				duration: 350,
-				easing: quadInOut,
-			}}
-		>
+	{#if isInView || prefersReducedMotion}
+		{#if prefersReducedMotion}
 			<slot />
-		</div>
+		{:else}
+			<div
+				in:fade|local={{
+					delay: 300,
+					duration: 350,
+					easing: quadInOut,
+				}}
+			>
+				<slot />
+			</div>
+		{/if}
 	{:else}
-		<div class={$$props.class ? $$props.class : ''} />
+		<div class={$$props.class ? $$props.class : ''} aria-hidden="true" />
 	{/if}
 </div>

@@ -1,7 +1,12 @@
 <script lang="ts">
 	// components
+	import EmptyState from '$components/layout/EmptyState.svelte';
 	import Item from '$components/layout/item/index.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
+
+	// lib
+	import emptyState from '$lib/metadata/emptyState';
+	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// types
 	import type { PageData } from './$types';
@@ -10,21 +15,17 @@
 	export let data: PageData;
 	const { items, tag } = data;
 
-	// seo
 	const title = `#${tag}`;
-	const slug = tag;
-	const seoProps = {
+	const seoProps = getPageSeoProps({
 		breadcrumbs: [
 			{ title: 'tags', slug: 'tags' },
-			{ title, slug },
+			{ title, slug: tag },
 		],
-		createdAt: '2022-10-06T00:00:00.000+0100',
 		metaDescription: `View items tagged "${tag}"`,
 		readingTime: '1 mins.',
 		slug: `tags/${tag}`,
 		title,
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-	};
+	});
 </script>
 
 <SEO {...seoProps} />
@@ -32,7 +33,7 @@
 {#key tag}
 	<section>
 		<header class="border-b-2 border-neutral-900 pb-1.5">
-			<h1 class="text-3xl font-black header">
+			<h1 class="header text-3xl font-black">
 				#{tag}
 			</h1>
 		</header>
@@ -43,7 +44,7 @@
 				{/each}
 			</ul>
 		{:else}
-			nothing here
+			<EmptyState emptyState={emptyState.tags} />
 		{/if}
 	</section>
 {/key}

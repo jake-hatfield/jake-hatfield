@@ -6,6 +6,7 @@
 
 	// lib
 	import emptyState from '$lib/metadata/emptyState';
+	import { getPageSeoProps } from '$lib/metadata/seo';
 
 	// types
 	import type { PageData } from './$types';
@@ -16,15 +17,11 @@
 	// seo
 	const title = 'Projects';
 	const slug = 'projects';
-	const seoProps = {
-		breadcrumbs: [{ title, slug }],
-		createdAt: '2022-10-06T00:00:00.000+0100',
+	const seoProps = getPageSeoProps({
 		metaDescription: 'See what Jake Hatfield is working on.',
-		readingTime: '5 mins.',
 		slug,
 		title,
-		updatedAt: '2022-10-06T00:00:00.000+0100',
-	};
+	});
 </script>
 
 <SEO {...seoProps} />

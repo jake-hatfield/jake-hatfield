@@ -1,6 +1,6 @@
 // lib
 import metadata from '$lib/metadata';
-import { getAllItems } from '$lib/markdown';
+import { getAllCategories, getAllItems } from '$lib/markdown';
 
 // types
 import type { FinalizedItem } from '$types/markdown/Item';
@@ -9,15 +9,24 @@ import type { FinalizedItem } from '$types/markdown/Item';
 const { siteUrl } = metadata;
 
 export const GET = async () => {
-	return new Response(xml(await getAllItems(), ['about', 'uses', 'articles', 'changelogs', 'projects']), {
-		headers: {
-			'Cache-Control': 'max-age=0, s-maxage=3600',
-			'Content-Type': 'application/xml',
+	const [items, categories] = await Promise.all([getAllItems(), getAllCategories()]);
+
+	return new Response(
+		xml(items, ['about', 'uses', 'articles', 'changelogs', 'projects'], categories),
+		{
+			headers: {
+				'Cache-Control': 'max-age=0, s-maxage=3600',
+				'Content-Type': 'application/xml',
+			},
 		},
-	});
+	);
 };
 
-const xml = (items: FinalizedItem[], pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
+const xml = (
+	items: FinalizedItem[],
+	pages: string[],
+	categories: { tag: string; items: FinalizedItem[] }[],
+) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
   xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
@@ -38,6 +47,17 @@ const xml = (items: FinalizedItem[], pages: string[]) => `<?xml version="1.0" en
     <loc>${siteUrl}/${page}</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  `,
+		)
+		.join('')}
+  ${categories
+		.map(
+			({ tag }) => `
+  <url>
+    <loc>${siteUrl}/tags/${tag}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   `,
 		)

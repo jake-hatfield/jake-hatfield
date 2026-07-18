@@ -45,9 +45,15 @@
 		src="https://umami.doomscheme.com/script.js"
 		data-website-id="28c1e295-2e54-4320-b55c-f2cd6f130d2b"></script>
 </svelte:head>
+<a
+	class="header sr-only left-4 top-4 z-50 bg-lime-400 px-3 py-2 text-black focus:not-sr-only focus:absolute"
+	href="#main-content"
+>
+	Skip to content
+</a>
 <div class="relative mx-auto flex h-full min-h-screen w-full flex-col items-start">
 	<Header />
-	<main class="mt-content content-section relative h-full w-full">
+	<main id="main-content" class="mt-content content-section relative h-full w-full">
 		<slot />
 	</main>
 	<Footer />

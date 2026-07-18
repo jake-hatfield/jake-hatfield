@@ -20,7 +20,6 @@ const config = {
 		alias: {
 			$assets: './src/assets/*',
 			$components: './src/lib/components/*',
-			$stores: './src/stores/*',
 			$routes: './src/routes/*',
 			$types: './src/types/*',
 		},
