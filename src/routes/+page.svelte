@@ -6,7 +6,6 @@
 	import Link from '$components/utilities/Link.svelte';
 	import Recent from '$components/layout/item/Recent.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
-	import Social from '$components/layout/Social.svelte';
 	import Testimonials from '$components/layout/Testimonials.svelte';
 
 	// icons
@@ -57,14 +56,7 @@
 			production. <span role="img" aria-label="Pin emoji">📌</span>
 		</p>
 		<p class="mt-3">
-			<mark
-				>I'm a frontend lead at <Link
-					href="https://helloteak.com"
-					isExternal
-					isUnderlined
-					title="Teak"
-				/>.</mark
-			>
+			I'm a frontend lead at <Link href="https://helloteak.com" isExternal isUnderlined title="Teak" />.
 			This site is where I share
 			<Link href="/projects" isUnderlined title="projects" />, <Link
 				href="/articles"
@@ -124,11 +116,5 @@
 		<Button href={`mailto:${metadata.email}`} icon={SendAltFilled} kind="primary" title="Email me" />
 		<Button href="/about" icon={ArrowRight} kind="secondary" title="About me" />
 		<Button href="/resume.pdf" icon={ArrowRight} kind="ghost" title="View resume" />
-	</div>
-	<div class="mt-content">
-		<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
-			<h3 class="header text-xl font-black">My socials</h3>
-		</header>
-		<Social />
 	</div>
 </section>
