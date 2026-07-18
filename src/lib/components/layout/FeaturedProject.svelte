@@ -2,6 +2,7 @@
 	// components
 	import Button from '$components/utilities/Button.svelte';
 	import Header from '$components/layout/item/Header.svelte';
+	import Thumbnail from '$components/layout/item/Thumbnail.svelte';
 	import Link from '$components/utilities/Link.svelte';
 
 	// icons
@@ -30,10 +31,7 @@
 			class="group relative block overflow-hidden"
 			{href}
 		>
-			<div
-				class="h-72 border-b-2 border-neutral-800 bg-cover bg-center duration-500 group-hover:scale-105 lg:h-96"
-				style={`background-image: url("/images/items/${image}")`}
-			/>
+			<Thumbnail alt={`${title} preview`} imageClass="h-72 lg:h-96" {image} loading="eager" />
 			<div class="absolute inset-0 bg-lime-400 opacity-0 duration-300 group-hover:opacity-20" />
 		</a>
 		<div class="p-5 lg:p-8">

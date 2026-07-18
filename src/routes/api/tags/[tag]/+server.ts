@@ -21,7 +21,7 @@ export const GET: RequestHandler = async ({ params, url }) => {
 		return handleApiError(url.pathname, 404, error, { items: [] });
 	}
 
-	const category = getCategory(tag);
+	const category = await getCategory(tag);
 
 	if (!category) {
 		error = {

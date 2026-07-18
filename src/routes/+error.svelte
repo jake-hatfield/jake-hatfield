@@ -11,11 +11,23 @@
 
 <section class="content-section-text mt-content">
 	<header class="text-center">
-		<img
-			class="mx-auto mt-8 w-full border-2 border-violet-700"
-			src="/silicon-valley-error.gif"
-			alt="Silicon Valley error gif"
-		/>
+		<video
+			class="mx-auto mt-8 w-full max-w-md border-2 border-violet-700"
+			autoplay
+			loop
+			muted
+			playsinline
+			poster="/silicon-valley-error.webp"
+		>
+			<source src="/silicon-valley-error.mp4" type="video/mp4" />
+			<img
+				class="w-full"
+				src="/silicon-valley-error.gif"
+				alt="Silicon Valley error gif"
+				loading="lazy"
+				decoding="async"
+			/>
+		</video>
 		<p class="content-uppercase mt-8 text-lime-400">{$page.status}</p>
 		<h1 class="primary-header mt-3">
 			{#if $page.status === 404}

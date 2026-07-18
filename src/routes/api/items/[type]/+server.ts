@@ -35,7 +35,7 @@ export const GET: RequestHandler = async (event) => {
 			return handleApiError(url.pathname, 400, error, { items: [] });
 		}
 
-		const rawItems = getItems(type, url.searchParams.get('limit'));
+		const rawItems = await getItems(type, url.searchParams.get('limit'));
 
 		const items = Object.keys(rawItems).map((index) => {
 			const {

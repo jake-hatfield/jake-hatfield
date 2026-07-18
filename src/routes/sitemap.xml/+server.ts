@@ -9,7 +9,7 @@ import type { FinalizedItem } from '$types/markdown/Item';
 const { siteUrl } = metadata;
 
 export const GET = async () => {
-	return new Response(xml(getAllItems(), ['about', 'uses', 'articles', 'changelogs', 'projects']), {
+	return new Response(xml(await getAllItems(), ['about', 'uses', 'articles', 'changelogs', 'projects']), {
 		headers: {
 			'Cache-Control': 'max-age=0, s-maxage=3600',
 			'Content-Type': 'application/xml',

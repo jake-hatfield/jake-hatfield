@@ -12,7 +12,7 @@ const assetsUrl = `${siteUrl}/_app/immutable/assets`;
 
 export const GET = async () => {
 	// create the xml body
-	const body = xml(getAllItems());
+	const body = xml(await getAllItems());
 
 	// set the headers
 	const options = {

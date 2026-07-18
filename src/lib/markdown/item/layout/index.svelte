@@ -27,6 +27,8 @@
 					class="mt-12 w-full border-2 border-violet-700"
 					src={`/images/items/${item.image}`}
 					alt={`${item.title}'s hero image`}
+					loading="lazy"
+					decoding="async"
 				/>
 			</div>
 			<div class="content">

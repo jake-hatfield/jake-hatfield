@@ -4,7 +4,7 @@
 	export let loading: 'lazy' | 'eager' = 'lazy';
 	export let maxWidth: string = '832px';
 	export let placeholder: string;
-	export let sizes: string = `(max-width: ${maxWidth}) 100vw, ${maxWidth}}`;
+	export let sizes: string = `(max-width: ${maxWidth}) 100vw, ${maxWidth}`;
 	export let sources: { srcset: string; type: string }[];
 	export let src: string;
 	export let style: string = '';

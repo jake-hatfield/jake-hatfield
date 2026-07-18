@@ -1,6 +1,6 @@
 // lib
 import { handleApiError } from '$lib/utilities/api';
-import getItems, { typeGuardPost } from '$lib/markdown';
+import getItems, { getItemBySlug, typeGuardPost } from '$lib/markdown';
 
 // types
 import type { RequestHandler } from '@sveltejs/kit';
@@ -34,7 +34,7 @@ export const GET: RequestHandler = async (event) => {
 		return handleApiError(url.pathname, 404, error, { item: null });
 	}
 
-	const item = getItems(type, null).find((item) => item.slug === queriedItem);
+	const item = await getItemBySlug(type, queriedItem);
 
 	if (!item) {
 		error = {
