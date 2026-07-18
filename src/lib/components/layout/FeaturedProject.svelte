@@ -36,7 +36,6 @@
 		</a>
 		<div class="p-5 lg:p-8">
 			<header>
-				<p class="content-uppercase text-lime-400">Flagship project</p>
 				<h3 class="header mt-3 text-2xl font-black lg:text-3xl">
 					<Link {href} isUnderlined {title} />
 				</h3>
