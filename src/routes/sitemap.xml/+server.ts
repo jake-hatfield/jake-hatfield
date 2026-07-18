@@ -12,7 +12,7 @@ export const GET = async () => {
 	const [items, categories] = await Promise.all([getAllItems(), getAllCategories()]);
 
 	return new Response(
-		xml(items, ['about', 'uses', 'articles', 'changelogs', 'projects'], categories),
+		xml(items, ['about', 'articles', 'changelogs', 'projects'], categories),
 		{
 			headers: {
 				'Cache-Control': 'max-age=0, s-maxage=3600',

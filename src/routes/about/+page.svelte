@@ -88,14 +88,3 @@
 		concurrency, and whether the grass is actually greener.
 	</p>
 </section>
-
-<section class="mt-content">
-	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">
-			<Link href="/uses" isUnderlined title="My tools" />
-		</h2>
-	</header>
-	<p class="mt-5 text-neutral-300">
-		Curious about the desk, apps, and services behind the work? The Uses page has the full rundown.
-	</p>
-</section>

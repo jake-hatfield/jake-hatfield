@@ -16,7 +16,6 @@
 	import Home from 'carbon-icons-svelte/lib/Home.svelte';
 	import InformationSquare from 'carbon-icons-svelte/lib/InformationSquare.svelte';
 	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
-	import Settings from 'carbon-icons-svelte/lib/Settings.svelte';
 
 	const primaryLinks = [
 		{ href: '/projects', title: 'Work' },
@@ -25,7 +24,6 @@
 
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
-		{ href: '/uses', icon: Settings, title: 'Uses' },
 		{ href: '/resume.pdf', icon: Document, title: 'Resume' },
 	];
 
