@@ -13,7 +13,7 @@
 
 <div class={`mt-5 mx-auto ${$$props.class ? $$props.class : ''}`}>
 	<svelte:component this={icon} class="h-10 text-orange-400" />
-	<h5 class="mt-3 text-lg font-black">{title}</h5>
+	<h5 class="header mt-3 text-lg font-black">{title}</h5>
 	<p class="mt-0.5 text-neutral-200">
 		{description}
 	</p>

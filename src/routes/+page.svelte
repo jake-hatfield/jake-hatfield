@@ -1,32 +1,26 @@
 <script lang="ts">
-	// components
 	import Button from '$components/utilities/Button.svelte';
 	import FeaturedProject from '$components/layout/FeaturedProject.svelte';
 	import Image from '$components/utilities/Image.svelte';
 	import Link from '$components/utilities/Link.svelte';
 	import Recent from '$components/layout/item/Recent.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
-	import Testimonials from '$components/layout/Testimonials.svelte';
 
-	// icons
 	import ArrowRight from 'carbon-icons-svelte/lib/ArrowRight.svelte';
 	import SendAltFilled from 'carbon-icons-svelte/lib/SendAltFilled.svelte';
 
-	// lib
 	import emptyState from '$lib/metadata/emptyState';
 	import metadata from '$lib/metadata';
 	import { getPageSeoProps } from '$lib/metadata/seo';
 
-	// assets
 	import AvatarWebp from '$assets/images/rasters/avatar.jpeg?width=832&format=webp';
 	import Avatar from '$assets/images/rasters/avatar.jpeg?width=832';
 
-	// types
 	import type { PageData } from './$types';
 
-	// props
 	export let data: PageData;
 	$: ({ articles, featuredProject, projects } = data);
+
 	const seoProps = getPageSeoProps({
 		breadcrumbs: [{ title: 'Home', slug: '' }],
 		metaDescription:
@@ -38,26 +32,23 @@
 
 <SEO {...seoProps} />
 
-<section class="md:flex md:items-start md:justify-between">
-	<div class="mb-5 md:mb-0 md:w-2/3">
+<section class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+	<div class="order-2 md:order-1 md:w-3/5">
 		<header>
 			<p class="header text-lg font-black">
 				<span role="img" aria-label="Waving emoji">👋</span> Howdy, I'm
 			</p>
-			<h1 class="header pt-3 text-3xl font-black">Jake Hatfield</h1>
+			<h1 class="header pt-3 text-3xl font-black md:text-4xl">Jake Hatfield</h1>
+			<p class="content-uppercase mt-3 text-lime-400">Frontend lead · Houston, TX</p>
 		</header>
-		<p class="mt-5">
-			I'm a self-taught engineer in Houston, TX who designs and ships digital products from zero to
-			production. <span role="img" aria-label="Pin emoji">📌</span>
+		<p class="mt-5 text-neutral-200">
+			I design and ship digital products from zero to production — currently leading frontend at
+			<Link href="https://helloteak.com" isExternal isUnderlined title="Teak" />.
 		</p>
-		<p class="mt-3">
-			I'm a frontend lead at <Link href="https://helloteak.com" isExternal isUnderlined title="Teak" />.
+		<p class="mt-3 text-neutral-300">
 			This site is where I share
-			<Link href="/projects" isUnderlined title="projects" />, <Link
-				href="/articles"
-				isUnderlined
-				title="writing"
-			/>, and the work I'm most proud of.
+			<Link href="/projects" isUnderlined title="work" />,
+			<Link href="/articles" isUnderlined title="writing" />, and the projects I'm most proud of.
 		</p>
 		<div class="mt-6 flex flex-wrap gap-3">
 			<Button href="/resume.pdf" icon={ArrowRight} kind="secondary" title="View my resume" />
@@ -69,7 +60,7 @@
 			/>
 		</div>
 	</div>
-	<div class="md:ml-8 md:w-1/3">
+	<div class="order-1 mx-auto w-full max-w-xs md:order-2 md:mx-0 md:w-2/5 md:max-w-sm">
 		<Image
 			alt="Jake Hatfield"
 			height={300}
@@ -95,20 +86,4 @@
 	type="projects"
 />
 
-<Testimonials />
-
-<Recent emptyState={emptyState.articles} heading="Writing" items={articles} type="articles" />
-
-<section class="mt-content">
-	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">Let's connect</h2>
-	</header>
-	<p class="text-neutral-200">
-		Have a question, want to collaborate, or just want to say hi? I'd love to hear from you.
-	</p>
-	<div class="mt-5 flex flex-wrap gap-3">
-		<Button href={`mailto:${metadata.email}`} icon={SendAltFilled} kind="primary" title="Email me" />
-		<Button href="/about" icon={ArrowRight} kind="secondary" title="About me" />
-		<Button href="/resume.pdf" icon={ArrowRight} kind="ghost" title="View resume" />
-	</div>
-</section>
+<Recent emptyState={emptyState.articles} heading="Recent writing" items={articles} type="articles" />

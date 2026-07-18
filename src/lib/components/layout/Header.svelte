@@ -1,6 +1,7 @@
 <script lang="ts">
 	// svelte
 	import { fly } from 'svelte/transition';
+	import { onDestroy } from 'svelte';
 
 	// app
 	import { browser } from '$app/environment';
@@ -17,31 +18,63 @@
 	import Menu from 'carbon-icons-svelte/lib/Menu.svelte';
 	import Settings from 'carbon-icons-svelte/lib/Settings.svelte';
 
-	// lib
-	import { kebabCase } from '$lib/utilities/string';
+	const primaryLinks = [
+		{ href: '/projects', title: 'Work' },
+		{ href: '/articles', title: 'Writing' },
+	];
 
-	// data
-	const primaryLinks = ['Projects', 'Changelogs', 'Articles'];
 	const secondaryLinks = [
 		{ href: '/about', icon: InformationSquare, title: 'About' },
 		{ href: '/uses', icon: Settings, title: 'Uses' },
 		{ href: '/resume.pdf', icon: Document, title: 'Resume' },
 	];
 
-	// state
 	let isMobileMenuActive = false;
+	let prefersReducedMotion = false;
 
-	// functions
+	if (browser) {
+		prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	}
+
+	const setBodyScrollLock = (locked: boolean) => {
+		if (!browser) return;
+		document.body.style.overflow = locked ? 'hidden' : '';
+	};
+
 	const closeMobileMenu = () => {
 		isMobileMenuActive = false;
+		setBodyScrollLock(false);
+	};
+
+	const toggleMobileMenu = () => {
+		isMobileMenuActive = !isMobileMenuActive;
+		setBodyScrollLock(isMobileMenuActive);
+	};
+
+	onDestroy(() => setBodyScrollLock(false));
+
+	const isActivePath = (href: string) => {
+		if (!browser) return false;
+
+		const pathname = $page.url.pathname;
+
+		if (href === '/projects') {
+			return pathname.startsWith('/projects');
+		}
+
+		if (href === '/articles') {
+			return pathname.startsWith('/articles') || pathname.startsWith('/changelogs');
+		}
+
+		return pathname === href || pathname.startsWith(`${href}/`);
 	};
 </script>
 
 <div class="sticky top-0 z-40 w-full backdrop-blur-md">
 	<div class="absolute h-full w-full border-b-2 border-neutral-900 bg-black opacity-90" />
-	<header class="relative mx-auto mt-3 max-w-7xl pb-1.5 md:mt-0">
-		<nav class="mt-3 flex w-full items-center justify-between px-3">
-			<div class="flex items-center">
+	<header class="relative mx-auto max-w-4xl pb-1.5 md:mt-0">
+		<nav class="mt-3 flex w-full items-center justify-between px-3 sm:px-6 lg:px-8">
+			<div class="flex items-center gap-3 lg:gap-5">
 				<Button
 					href="/"
 					icon={Home}
@@ -51,27 +84,27 @@
 					tooltipAlignment="start"
 				/>
 				<ul class="hidden items-center lg:flex">
-					{#each primaryLinks as link}
-						<li class="ml-5">
+					{#each primaryLinks as { href, title }}
+						<li>
 							<Button
-								href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
-								isSelected={browser && $page.url.pathname === `/${link.toLowerCase()}`}
+								{href}
+								isSelected={isActivePath(href)}
 								kind="ghost"
 								onClick={closeMobileMenu}
 								selectedClasses="text-violet-400 hover:text-lime-400"
-								title={link}
+								{title}
 							/>
 						</li>
 					{/each}
 				</ul>
 			</div>
-			<ul class="hidden items-center lg:flex">
+			<ul class="hidden items-center gap-3 lg:flex">
 				{#each secondaryLinks as { href, icon, title }}
-					<li class="ml-5 first:ml-0">
+					<li>
 						<Button
 							{href}
 							{icon}
-							isSelected={browser && $page.url.pathname === href.toLowerCase()}
+							isSelected={isActivePath(href)}
 							kind="ghost"
 							onClick={closeMobileMenu}
 							selectedClasses="text-violet-400 hover:text-lime-400"
@@ -86,27 +119,37 @@
 					aria-expanded={isMobileMenuActive}
 					icon={isMobileMenuActive ? Close : Menu}
 					kind="ghost"
-					onClick={() => (isMobileMenuActive = !isMobileMenuActive)}
+					onClick={toggleMobileMenu}
 					title="Menu"
 					type="icon"
 				/>
 			</div>
 		</nav>
 		{#if isMobileMenuActive}
-			<nav class="absolute inset-x-0 top-[45px] z-40" in:fly|local aria-label="Mobile">
-				<div class="relative">
-					<div class="absolute h-full w-full border-b-2 border-neutral-900 bg-black" />
-
+			<button
+				aria-label="Close menu"
+				class="fixed inset-0 z-30 bg-black/70 lg:hidden"
+				on:click={closeMobileMenu}
+				tabindex="-1"
+				type="button"
+			></button>
+			<nav
+				class="absolute inset-x-0 top-[45px] z-40"
+				aria-label="Mobile"
+				in:fly={prefersReducedMotion ? { duration: 0 } : { duration: 200, y: -8 }}
+			>
+				<div class="relative border-b-2 border-neutral-900 bg-black">
 					<ul class="p-3" id="mobile-menu">
-						{#each primaryLinks as link}
+						{#each primaryLinks as { href, title }}
 							<li class="mt-1.5 first:mt-0">
 								<Button
 									class="text-left"
-									href={link === 'Home' ? '/' : `/${kebabCase(link)}`}
+									{href}
 									isFullWidth
+									isSelected={isActivePath(href)}
 									kind="ghost"
-									onClick={() => closeMobileMenu()}
-									title={link}
+									onClick={closeMobileMenu}
+									{title}
 								/>
 							</li>
 						{/each}
@@ -117,6 +160,7 @@
 									{href}
 									{icon}
 									isFullWidth
+									isSelected={isActivePath(href)}
 									kind="ghost"
 									onClick={closeMobileMenu}
 									{title}

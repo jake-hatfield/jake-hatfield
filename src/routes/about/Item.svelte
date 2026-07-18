@@ -1,5 +1,4 @@
 <script lang="ts">
-	// components
 	import Animated from '$components/layout/Animated.svelte';
 
 	import type { ComponentType, SvelteComponent } from 'svelte';
@@ -11,13 +10,14 @@
 		title: string;
 	};
 
-	// * required props *
 	export let item: SkillItem;
 </script>
 
 <Animated>
 	<li class="flex items-center">
-		{#await item.icon() then module}
+		{#await item.icon()}
+			<span aria-hidden="true" class="skill-icon-placeholder"></span>
+		{:then module}
 			<svelte:component this={module.default} height={24} width={24} />
 		{/await}
 		<span class="ml-3">{item.title}</span>

@@ -20,6 +20,14 @@
 
 <SEO {...seoProps} />
 
+<nav aria-label="Uses sections" class="page-subnav">
+	<a href="#workstation">Workstation</a>
+	<a href="#development">Development</a>
+	<a href="#design">Design</a>
+	<a href="#deployment">Deployment</a>
+	<a href="#apps">Apps</a>
+</nav>
+
 <section>
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h1 class="header text-3xl font-black">Uses</h1>
@@ -42,7 +50,7 @@
 		>.
 	</p>
 </section>
-<section class="mt-content">
+<section id="workstation" class="mt-content scroll-mt-28">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Workstation</h2>
 	</header>
@@ -149,7 +157,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-content">
+<section id="development" class="mt-content scroll-mt-28">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Development</h2>
 	</header>
@@ -204,7 +212,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-content">
+<section id="design" class="mt-content scroll-mt-28">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Design</h2>
 	</header>
@@ -274,7 +282,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-content">
+<section id="deployment" class="mt-content scroll-mt-28">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Deployment</h2>
 	</header>
@@ -327,7 +335,7 @@
 		</Use>
 	</ul>
 </section>
-<section class="mt-content">
+<section id="apps" class="mt-content scroll-mt-28">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Apps</h2>
 	</header>

@@ -25,7 +25,7 @@
 	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">Featured work</h2>
 	</header>
-	<article class="border-2 border-neutral-800 bg-neutral-900">
+	<article class="featured-card">
 		<a
 			aria-label={`View the ${title} case study`}
 			class="group relative block overflow-hidden"

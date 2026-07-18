@@ -1,22 +1,17 @@
 <script lang="ts">
-	// components
 	import Item from '$routes/about/Item.svelte';
 	import Link from '$components/utilities/Link.svelte';
 	import SEO from '$components/utilities/seo/index.svelte';
-	import Social from '$components/layout/Social.svelte';
+	import Testimonials from '$components/layout/Testimonials.svelte';
 
-	// lib
-	import { creative, future, technical } from '$lib/metadata/skills';
+	import { futureLearning, skillCategories } from '$lib/metadata/skills';
 	import { getPageSeoProps } from '$lib/metadata/seo';
 
-	// types
 	import type { PageData } from './$types';
 
-	// props
 	export let data: PageData;
 	$: ({ projects } = data);
 
-	// seo
 	const title = 'About';
 	const slug = 'about';
 	const seoProps = getPageSeoProps({
@@ -33,28 +28,28 @@
 	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h1 class="header text-3xl font-black">About</h1>
 	</header>
-	<p class="mt-5">
+	<p class="mt-5 text-neutral-200">
 		I'm a self-taught full-stack engineer and I wrote my first line of code in '19. I created this
-		site to share what <Link href="/projects" isUnderlined title="projects" />, <Link
+		site to share what <Link href="/projects" isUnderlined title="work" />, <Link
 			href="/changelogs"
 			isUnderlined
 			title="learnings"
-		/>, and <Link href="/articles" isUnderlined title="thoughts" /> are currently taking my time and
+		/>, and <Link href="/articles" isUnderlined title="writing" /> are currently taking my time and
 		attention.
 	</p>
-	<p class="mt-3">
+	<p class="mt-3 text-neutral-300">
 		Most of my experiences have been trial-by-fire as I solo-bootstrapped a business called <Link
 			href="/projects/leadgeek-v2"
 			isUnderlined
 			title="Leadgeek"
 		/> in '20 that has evolved from a spreadsheet with custom macros into an entire suite of tools.
 	</p>
-	<p class="mt-3">
+	<p class="mt-3 text-neutral-300">
 		I'm still here ~{new Date().getFullYear() - 2020} years later, thanks mostly to trusty old Google
 		and the deep desire not to make the same mistake twice
 		<span role="img" aria-label="Sweat smile emoji">😅</span>.
 	</p>
-	<p class="mt-3">
+	<p class="mt-3 text-neutral-300">
 		I picked up programming as a necessity for building products and was surprised to find that I
 		fell in love with it. Through trial-and-error, I've become well-versed in the development
 		requirements of modern applications.
@@ -68,46 +63,39 @@
 		>
 	</p>
 </section>
-<section class="mt-content">
-	<header class="mb-5 border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">My socials</h2>
-	</header>
-	<Social />
-</section>
-<section class="mt-content">
-	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">My technologies</h2>
-	</header>
-	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each technical as item}
-			<Item {item} />
-		{/each}
-	</ul>
-</section>
-<section class="mt-content">
-	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">My software</h2>
-	</header>
-	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each creative as item}
-			<Item {item} />
-		{/each}
-	</ul>
-</section>
+
+<Testimonials />
+
+{#each skillCategories as category}
+	<section class="mt-content">
+		<header class="border-b-2 border-neutral-900 pb-1.5">
+			<h2 class="header text-2xl font-black">{category.title}</h2>
+		</header>
+		<ul class="skill-grid">
+			{#each category.skills as item}
+				<Item {item} />
+			{/each}
+		</ul>
+	</section>
+{/each}
+
 <section class="mt-content">
 	<header class="border-b-2 border-neutral-900 pb-1.5">
-		<h2 class="header text-2xl font-black">My future learning interests</h2>
+		<h2 class="header text-2xl font-black">On the horizon</h2>
 	</header>
-	<ul class="mt-5 grid gap-5 md:grid-cols-2">
-		{#each future as item}
-			<Item {item} />
-		{/each}
-	</ul>
+	<p class="mt-5 text-neutral-300">
+		I'm exploring {futureLearning.join(' and ')} next — mostly out of curiosity about performance,
+		concurrency, and whether the grass is actually greener.
+	</p>
 </section>
+
 <section class="mt-content">
-	<header>
+	<header class="border-b-2 border-neutral-900 pb-1.5">
 		<h2 class="header text-2xl font-black">
-			<Link class="mt-1.5" href="/uses" isUnderlined title="My tools" />
+			<Link href="/uses" isUnderlined title="My tools" />
 		</h2>
 	</header>
+	<p class="mt-5 text-neutral-300">
+		Curious about the desk, apps, and services behind the work? The Uses page has the full rundown.
+	</p>
 </section>

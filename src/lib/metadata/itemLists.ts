@@ -9,11 +9,11 @@ export const itemListMeta: Record<
 > = {
 	projects: {
 		metaDescription: 'See what Jake Hatfield is working on.',
-		title: 'Projects',
+		title: 'Work',
 	},
 	articles: {
 		metaDescription: 'Read what Jake Hatfield is learning about.',
-		title: 'Articles',
+		title: 'Writing',
 	},
 	changelogs: {
 		metaDescription: 'Read what Jake Hatfield is thinking about.',

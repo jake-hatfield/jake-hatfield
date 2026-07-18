@@ -5,7 +5,7 @@
 
 <div class="z-40 mx-auto mt-auto w-full">
 	<div class="mt-content w-full border-t-2 border-neutral-900">
-		<div class="mx-auto max-w-7xl px-3">
+		<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 			<footer
 				class="mb-3 flex flex-col-reverse pt-3 md:flex-row md:items-center md:justify-between"
 			>
