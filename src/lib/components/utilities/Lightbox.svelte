@@ -28,8 +28,8 @@
 			class="fixed inset-0 -top-20 z-40 h-[10000px] cursor-zoom-out bg-neutral-700 opacity-75 lg:-top-12"
 			on:click={() => (isActive = false)}
 			use:handleKeyboardShortcut={{ code: 'Escape', callback: () => (isActive = false) }}
-		></div>
-		<div
+		/>
+		<aside
 			aria-label={description}
 			aria-modal="true"
 			class="minimal-scrollbar fixed left-2 right-2 top-0 z-40 max-h-screen max-w-6xl transform overflow-y-auto bg-neutral-900 p-8 md:top-1/2 md:left-1/2 md:max-h-screen md:w-full md:-translate-x-1/2 md:-translate-y-1/2"
@@ -38,6 +38,6 @@
 			<div class="mx-auto flex min-w-full max-w-none justify-center">
 				<slot />
 			</div>
-		</div>
+		</aside>
 	</div>
 {/if}
