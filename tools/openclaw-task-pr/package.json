@@ -1,0 +1,9 @@
+{
+  "name": "openclaw-task-pr",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "bin": { "openclaw-task-pr": "bin/openclaw-task-pr.mjs" },
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=24" }
+}
