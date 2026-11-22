@@ -26,7 +26,7 @@ function string(value, name) { if (typeof value !== 'string' || !value) fail('in
 function evidence(path) {
   let e; try { e = JSON.parse(readFileSync(path, 'utf8')); } catch { fail('invalid evidence JSON'); }
   if (!e || e.version !== 1 || !e.artifacts || !e.test) fail('invalid evidence schema/version');
-  for (const k of ['taskId', 'repository', 'defaultBranch', 'taskBranch', 'baseCommit', 'outputCommit']) string(e[k], k);
+  for (const k of ['taskId', 'repository', 'defaultBranch', 'taskBranch', 'baseCommit', 'outputCommit', 'outputTree']) string(e[k], k);
   if (!Number.isInteger(e.commitCount) || e.commitCount < 1) fail('invalid evidence: commitCount');
   if (!Array.isArray(e.changedFiles) || e.changedFiles.some(x => typeof x !== 'string')) fail('invalid evidence: changedFiles');
   for (const k of ['bundle', 'patch']) {
@@ -55,6 +55,8 @@ function validate(e, ep, cwd) {
   const head = run('git', ['rev-parse', 'HEAD'], { cwd });
   const output = run('git', ['rev-parse', '--verify', e.outputCommit + '^{commit}'], { cwd });
   if (head !== output) fail('HEAD does not match evidence output commit');
+  const outputTree = run('git', ['rev-parse', '--verify', output + '^{tree}'], { cwd });
+  if (outputTree !== e.outputTree) fail('output tree does not match evidence');
   if (result('git', ['merge-base', '--is-ancestor', base, output], cwd).status !== 0) fail('base is not an ancestor of output');
   if (Number(run('git', ['rev-list', '--count', base + '..' + output], { cwd })) !== e.commitCount) fail('descendant commit count does not match evidence');
   const changed = run('git', ['diff', '--name-only', base + '..' + output], { cwd }).split('\n').filter(Boolean).sort();
@@ -62,10 +64,10 @@ function validate(e, ep, cwd) {
   if (changed.length !== expected.length || changed.some((v, i) => v !== expected[i])) fail('changed files do not match evidence');
   if (result('git', ['diff', '--check', base + '..' + output], cwd).status !== 0) fail('git diff --check failed');
   run('git', ['bundle', 'verify', artifactPath(e.artifacts.bundle.file, dir)], { cwd });
-  return { output, changed, gitDir: run('git', ['rev-parse', '--git-dir'], { cwd }) };
+  return { output, outputTree, changed, gitDir: run('git', ['rev-parse', '--git-dir'], { cwd }) };
 }
 function body(e, o, s) {
-  return ['## Task', '- ID: ' + e.taskId, '- URL: ' + o['task-url'], '', '## Implementation', o.summary, '- Output commit: ' + s.output, '- Changed files:', ...s.changed.map(f => '  - ' + f), '', '## Validation', '- Test command: ' + e.test.argv.join(' '), '- Test result: exit ' + e.test.exitCode, '- Evidence hashes:', '  - bundle: ' + e.artifacts.bundle.sha256, '  - patch: ' + e.artifacts.patch.sha256, '  - test log: ' + e.test.sha256, '', '## Model details', o.model, ''].join('\n');
+  return ['## Task', '- ID: ' + e.taskId, '- URL: ' + o['task-url'], '', '## Implementation', o.summary, '- Output commit: ' + s.output, '- Output tree: ' + s.outputTree, '- Changed files:', ...s.changed.map(f => '  - ' + f), '', '## Validation', '- Test command: ' + e.test.argv.join(' '), '- Test result: exit ' + e.test.exitCode, '- Evidence hashes:', '  - bundle: ' + e.artifacts.bundle.sha256, '  - patch: ' + e.artifacts.patch.sha256, '  - test log: ' + e.test.sha256, '', '## Model details', o.model, ''].join('\n');
 }
 function existing(o, branch, cwd) {
   let rows; try { rows = JSON.parse(run('gh', ['pr', 'list', '--repo', o.repo, '--head', branch, '--state', 'open', '--json', 'number,url,headRefName'], { cwd }) || '[]'); } catch { fail('gh pr list returned invalid JSON'); }

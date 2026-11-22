@@ -48,8 +48,32 @@ test('rejection from bad hash occurs before gh or push mutation', () => {
 test('failed test evidence is rejected before gh or push mutation', () => {
   const x = setup(); const e = JSON.parse(readFileSync(x.evidence)); e.test.exitCode = 1; writeFileSync(x.evidence, JSON.stringify(e)); assert.throws(() => call(x), /test argv.*result/); assert.equal(existsSync(x.log), false); assert.throws(() => sh(['rev-parse', 'refs/heads/task/TASK-1'], x.remote));
 });
+for (const [name, value] of [['missing', undefined], ['empty', ''], ['non-string', 123]]) {
+  test(name + ' outputTree is rejected before gh or push', () => {
+    const x = setup(), e = JSON.parse(readFileSync(x.evidence));
+    e.outputTree = value; writeFileSync(x.evidence, JSON.stringify(e));
+    const trace = join(x.dir, 'git.trace'); x.env.GIT_TRACE = trace;
+    assert.throws(() => call(x), /invalid evidence: outputTree/);
+    assert.equal(existsSync(x.log), false);
+    assert.equal(existsSync(trace), false);
+    assert.throws(() => sh(['rev-parse', 'refs/heads/task/TASK-1'], x.remote));
+  });
+}
+test('tampered outputTree is rejected before any gh or push command', () => {
+  const x = setup(), e = JSON.parse(readFileSync(x.evidence));
+  e.outputTree = sh(['rev-parse', 'main^{tree}'], x.repo);
+  writeFileSync(x.evidence, JSON.stringify(e));
+  const trace = join(x.dir, 'git.trace'); x.env.GIT_TRACE = trace;
+  assert.throws(() => call(x), /output tree does not match evidence/);
+  assert.equal(existsSync(x.log), false);
+  assert.doesNotMatch(readFileSync(trace, 'utf8'), /\bpush\b/);
+  assert.throws(() => sh(['rev-parse', 'refs/heads/task/TASK-1'], x.remote));
+});
 test('created body contains task implementation validation hashes and model', () => {
   const x = setup(); call(x); const b = readFileSync(x.body, 'utf8'), e = JSON.parse(readFileSync(x.evidence)); for (const s of ['## Task', 'TASK-1', 'https://tasks/TASK-1', '## Implementation', 'Implemented safely', e.outputCommit, 'change.txt', '## Validation', 'node --test', e.artifacts.bundle.sha256, e.artifacts.patch.sha256, e.test.sha256, '## Model details', 'test-model']) assert.match(b, new RegExp(s));
+  const implementation = b.split('## Implementation\n')[1].split('\n## Validation')[0];
+  const verifiedTree = sh(['rev-parse', e.outputCommit + '^{tree}'], x.repo);
+  assert.ok(implementation.split('\n').includes('- Output tree: ' + verifiedTree));
 });
 test('returns an existing exact-head PR without push or creation', () => {
   const x = setup('existing'); const r = call(x); assert.deepEqual(r, { status: 'existing', number: 7, url: 'https://example.test/pr/7' }); const calls = readFileSync(x.log, 'utf8'); assert.match(calls, /pr list/); assert.doesNotMatch(calls, /pr create/); assert.throws(() => sh(['rev-parse', 'refs/heads/task/TASK-1'], x.remote));

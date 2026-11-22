@@ -19,6 +19,7 @@ Evidence is the schema-version-1 JSON emitted by `openclaw-task-git finish`:
   "taskBranch": "nad/TASK-123-change",
   "baseCommit": "<40-hex SHA>",
   "outputCommit": "<40-hex SHA>",
+  "outputTree": "<40-hex tree SHA>",
   "commitCount": 1,
   "changedFiles": ["file.txt"],
   "test": { "argv": ["node", "--test"], "exitCode": 0, "log": "TASK-123.test.log", "sha256": "<64-hex SHA-256>" },
@@ -29,6 +30,6 @@ Evidence is the schema-version-1 JSON emitted by `openclaw-task-git finish`:
 }
 ```
 
-Artifact filenames are resolved relative to the evidence file. Before `gh auth status`, `gh repo view`, push, or PR mutation, the command verifies artifact hashes, the bundle, clean top-level checkout, branch, base/output commits, ancestry, descendant count, changed files, and `git diff --check`. It then confirms the GitHub default branch and checks for an open PR with the exact head branch. An existing PR is returned without push/create. PR bodies are temporary files under `.git`; commands use `spawnSync`, never a shell.
+Artifact filenames are resolved relative to the evidence file. `outputTree` is a required non-empty string. Before any `gh` or push command, the command verifies artifact hashes, the bundle, clean top-level checkout, branch, base/output commits, the actual tree resolved from `outputCommit`, ancestry, descendant count, changed files, and `git diff --check`. Missing or mismatched `outputTree` evidence is rejected before publication. The verified output tree is included in the PR body's Implementation section. It then confirms the GitHub default branch and checks for an open PR with the exact head branch. An existing PR is returned without push/create. PR bodies are temporary files under `.git`; commands use `spawnSync`, never a shell.
 
 Run tests with `npm test`.
