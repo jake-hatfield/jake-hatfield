@@ -1,0 +1,9 @@
+{
+  "name": "openclaw-task-recorder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "bin": { "openclaw-task-recorder": "bin/openclaw-task-recorder.mjs" },
+  "scripts": { "test": "node --test" }
+}
